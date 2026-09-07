@@ -52,7 +52,6 @@
             align-items: center;
             gap: 14px;
             padding: 12px 14px;
-
             background: #080817;
             border: 1px solid #292943;
             border-radius: 25px;
@@ -70,7 +69,6 @@
             border-radius: 50%;
             background: #030308;
             border: 1px solid #3b3b58;
-
             color: white;
             font-size: 1.25rem;
             font-style: italic;
@@ -105,13 +103,10 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-
             padding: 9px 17px;
             border-radius: 22px;
-
             font-size: 0.88rem;
             font-weight: 700;
-
             transition: 0.2s ease;
         }
 
@@ -145,20 +140,16 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 9px;
-
             margin: 18px 5px 5px;
         }
 
         .social-links a {
             padding: 8px 15px;
-
             background: #0d0d1d;
             border: 1px solid #29293f;
             border-radius: 20px;
-
             color: #b8b8ca;
             font-size: 0.85rem;
-
             transition: 0.2s ease;
         }
 
@@ -167,6 +158,21 @@
             background: #17172a;
             border-color: #55556e;
             transform: translateY(-1px);
+        }
+
+        .social-button,
+        .contact-button {
+            display: inline-flex !important;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-button svg,
+        .contact-button svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            flex-shrink: 0;
         }
 
         /* =========================
@@ -206,128 +212,54 @@
 
         .section-title {
             margin: 0 0 18px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid #2c2c45;
             color: white;
-            font-size: 1.45rem;
+            font-size: 1.35rem;
         }
 
-        .section-title span {
-            color: #67e8f9;
-        }
-
-        p {
-            color: #c7c7d5;
-        }
-
-        .intro {
-            font-size: 1.05rem;
-        }
-
-        /* =========================
-           INFO CARDS
-        ========================= */
-
-        .info-card {
-            padding: 22px;
+        .info-card,
+        .goal-card,
+        .thing {
             background: #0d0d1d;
             border: 1px solid #29293f;
             border-radius: 18px;
         }
 
-        .info-card p:first-child {
-            margin-top: 0;
+        .info-card {
+            padding: 22px;
         }
 
-        .info-card p:last-child {
-            margin-bottom: 0;
+        .intro {
+            margin-top: 0;
+            font-size: 1.05rem;
         }
 
         .tools {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 15px;
+            margin-top: 8px;
         }
 
         .tag {
-            padding: 6px 12px;
-            border-radius: 16px;
-            background: #151527;
-            border: 1px solid #303049;
-            color: #bfc0d1;
-            font-size: 0.82rem;
-        }
-
-        /* =========================
-           GOAL
-        ========================= */
-
-        .goal-card {
-            padding: 24px;
-            background:
-                linear-gradient(135deg, #11112b, #0b0b19);
-            border: 1px solid #30304a;
-            border-radius: 20px;
-        }
-
-        .goal-number {
-            margin: 0;
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 800;
-        }
-
-        .goal-number span {
+            padding: 5px 10px;
+            background: #17172a;
+            border: 1px solid #34344d;
+            border-radius: 999px;
             color: #67e8f9;
+            font-size: 0.78rem;
         }
-
-        .progress {
-            width: 100%;
-            height: 9px;
-            margin: 15px 0;
-
-            background: #24243a;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            width: 20%;
-            height: 100%;
-
-            background: linear-gradient(
-                90deg,
-                #38bdf8,
-                #67e8f9
-            );
-
-            border-radius: 20px;
-        }
-
-        .goal-text {
-            margin-bottom: 0;
-            color: #9d9daf;
-            font-size: 0.9rem;
-        }
-
-        /* =========================
-           WHAT I DO
-        ========================= */
 
         .things {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 12px;
         }
 
         .thing {
-            padding: 14px 16px;
-
-            background: #0d0d1d;
-            border: 1px solid #29293f;
-            border-radius: 15px;
-
+            padding: 15px 16px;
             color: #c9c9d7;
-            font-size: 0.92rem;
         }
 
         /* =========================
@@ -337,17 +269,13 @@
         .archive-link {
             display: inline-flex;
             margin: 4px 0 25px;
-
             padding: 9px 16px;
             border-radius: 20px;
-
             background: #101025;
             border: 1px solid #30304a;
-
             color: #67e8f9;
             font-size: 0.9rem;
             font-weight: 700;
-
             transition: 0.2s ease;
         }
 
@@ -364,11 +292,9 @@
 
         .project {
             overflow: hidden;
-
             background: #0c0c1b;
             border: 1px solid #29293f;
             border-radius: 18px;
-
             transition: 0.2s ease;
         }
 
@@ -386,10 +312,8 @@
             width: 100%;
             height: auto;
             display: block;
-
             aspect-ratio: 16 / 9;
             object-fit: cover;
-
             transition: 0.25s ease;
         }
 
@@ -403,7 +327,6 @@
 
         .project-title {
             display: block;
-
             color: white;
             font-size: 1rem;
             font-weight: 700;
@@ -421,26 +344,45 @@
             font-size: 0.82rem;
         }
 
-
         /* =========================
-           SOCIAL & CONTACT ICONS
+           100 MV GOAL
         ========================= */
 
-        .social-button,
-        .contact-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .goal-card {
+            padding: 22px;
         }
 
-        .social-button svg,
-        .contact-button svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-            flex-shrink: 0;
+        .goal-number {
+            margin: 0;
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 800;
         }
 
+        .goal-number span {
+            color: #85859c;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .progress {
+            height: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+            background: #1b1b2d;
+            border-radius: 999px;
+        }
+
+        .progress-bar {
+            width: 20%;
+            height: 100%;
+            background: linear-gradient(90deg, #67e8f9, #60a5fa);
+            border-radius: inherit;
+        }
+
+        .goal-text {
+            color: #9191a7;
+        }
 
         /* =========================
            CONTACT
@@ -505,18 +447,15 @@
             transform: translateY(-2px);
         }
 
-
         /* =========================
            IMPORTANT INFORMATION
         ========================= */
 
         .important {
             padding: 25px;
-
             background: #0d0d1d;
             border: 1px dashed #44445e;
             border-radius: 20px;
-
             text-align: center;
         }
 
@@ -533,10 +472,8 @@
         .quote {
             margin-top: 18px;
             padding: 15px;
-
             background: #080817;
             border-radius: 14px;
-
             color: #85859c;
             font-style: italic;
         }
@@ -548,7 +485,6 @@
         footer {
             padding: 25px 0 5px;
             text-align: center;
-
             color: #62627a;
             font-size: 0.82rem;
         }
@@ -558,7 +494,6 @@
         ========================= */
 
         @media (max-width: 700px) {
-
             .page {
                 width: 94%;
                 padding-top: 15px;
@@ -595,7 +530,6 @@
         }
 
         @media (max-width: 430px) {
-
             .profile-actions {
                 margin-left: 0;
             }
@@ -637,7 +571,6 @@
 
             <div class="profile-actions">
 
-                <!--https://www.youtube.com/@Pack0Pm-->
                 <a
                     class="profile-button subscribe-button"
                     href="https://www.youtube.com/@Pack0Pm"
@@ -647,7 +580,6 @@
                     Subscribe
                 </a>
 
-                <!--https://www.youtube.com/@Pack0Pm-->
                 <a
                     class="profile-button channel-button"
                     href="https://www.youtube.com/@Pack0Pm"
@@ -662,46 +594,72 @@
         </div>
 
 
-        <!-- SOCIAL LINKS -->
+        <!-- =========================
+             SOCIAL LINKS
+        ========================= -->
 
         <div class="social-links">
 
-            <!-- CHANGE THESE LINKS -->
-
+            <!-- YouTube -->
             <a
                 href="https://www.youtube.com/@Pack0Pm"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="social-button"
             >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.8 3.9-6.8 3.9Z"/>
+                </svg>
                 YouTube
             </a>
 
+            <!-- Discord -->
             <a
                 href="https://discord.com/users/759341756025798656"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="social-button"
             >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.5 5.2A18.6 18.6 0 0 0 15 3.8l-.6 1.2a16.5 16.5 0 0 0-4.8 0L9 3.8a18.6 18.6 0 0 0-4.5 1.4C1.7 9.4 1 13.5 1.3 17.6A18.4 18.4 0 0 0 6.8 20l1.3-1.7a11 11 0 0 1-1.9-.9l.5-.4a13.1 13.1 0 0 0 10.6 0l.5.4c-.6.4-1.3.7-1.9.9l1.3 1.7a18.4 18.4 0 0 0 5.5-2.4c.4-4.8-.7-8.8-3.7-12.4ZM8.7 15.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8 2 1.8 2-.8 2-1.8 2Z"/>
+                </svg>
                 Discord
             </a>
 
+            <!-- X -->
             <a
                 href="https://x.com/Pack0pm"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="social-button"
             >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.4L2.8 2h6.4l4.4 5.8L18.9 2Zm-1.1 17.7h1.7L8.2 4.2H6.4l11.4 15.5Z"/>
+                </svg>
                 X
             </a>
 
+            <!-- TikTok -->
             <a
                 href="https://www.tiktok.com/@pack0pm"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="social-button"
             >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M19.3 7.1a5.7 5.7 0 0 1-3.5-1.2v8.2a5.9 5.9 0 1 1-5.9-5.9c.4 0 .8 0 1.2.1v3a3 3 0 1 0 1.7 2.8V2h3a5.7 5.7 0 0 0 3.5 3.5v1.6Z"/>
+                </svg>
                 TikTok
             </a>
 
-            <!--doubletp90@gmail.com-->
-            <a href="mailto:doubletp90@gmail.com">
+            <!-- Email -->
+            <a
+                href="mailto:doubletp90@gmail.com"
+                class="social-button"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M2 5h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.3l10 6.2 10-6.2V7H2Zm20 10V9.7l-9.5 5.9a1 1 0 0 1-1 0L2 9.7V17h20Z"/>
+                </svg>
                 Email
             </a>
 
@@ -717,7 +675,7 @@
             <div class="hero">
 
                 <h1>
-                    > About Me <
+                    &gt; About Me &lt;
                 </h1>
 
                 <p>
@@ -883,9 +841,7 @@
 
                 <div class="projects">
 
-
                     <!-- 01 -->
-
                     <div class="project">
 
                         <a
@@ -921,7 +877,6 @@
 
 
                     <!-- 02 -->
-
                     <div class="project">
 
                         <a
@@ -957,7 +912,6 @@
 
 
                     <!-- 03 -->
-
                     <div class="project">
 
                         <a
@@ -980,11 +934,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                ヤラララ (YARARARA) feat. 重音テト
+                                YARARARA feat. 重音テト
                             </a>
 
                             <p class="producer">
-                                ABM | Project 4
+                                ABM | Project 3
                             </p>
 
                         </div>
@@ -993,7 +947,6 @@
 
 
                     <!-- 04 -->
-
                     <div class="project">
 
                         <a
@@ -1016,11 +969,11 @@
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Baka Backer / feat. Kasane Teto
+                                Baka Backer
                             </a>
 
                             <p class="producer">
-                                Shü | Project 7
+                                Shü | Project 4
                             </p>
 
                         </div>
@@ -1029,7 +982,6 @@
 
 
                     <!-- 05 -->
-
                     <div class="project">
 
                         <a
@@ -1040,7 +992,7 @@
                         >
                             <img
                                 src="https://img.youtube.com/vi/QzXs2d02_8A/hqdefault.jpg"
-                                alt="Don't Let Me Down thumbnail"
+                                alt="Don't Let Me Down feat. GUMI thumbnail"
                             >
                         </a>
 
@@ -1056,7 +1008,7 @@
                             </a>
 
                             <p class="producer">
-                                d0tc0mmie | Project 10
+                                d0tc0mmie | Project 5
                             </p>
 
                         </div>
@@ -1065,7 +1017,6 @@
 
 
                     <!-- 06 -->
-
                     <div class="project">
 
                         <a
@@ -1076,7 +1027,7 @@
                         >
                             <img
                                 src="https://img.youtube.com/vi/jK-tt-3XJ7c/hqdefault.jpg"
-                                alt="Do That Again thumbnail"
+                                alt="Do That Again feat. GUMI thumbnail"
                             >
                         </a>
 
@@ -1092,7 +1043,7 @@
                             </a>
 
                             <p class="producer">
-                                Teirrel | Project 11
+                                Teirrel | Project 6
                             </p>
 
                         </div>
@@ -1101,7 +1052,6 @@
 
 
                     <!-- 07 -->
-
                     <div class="project">
 
                         <a
@@ -1137,7 +1087,6 @@
 
 
                     <!-- 08 -->
-
                     <div class="project">
 
                         <a
@@ -1173,7 +1122,6 @@
 
 
                     <!-- 09 -->
-
                     <div class="project">
 
                         <a
@@ -1207,7 +1155,6 @@
 
                     </div>
 
-
                 </div>
 
             </section>
@@ -1239,7 +1186,7 @@
 
                 </div>
 
-                        </section>
+            </section>
 
 
             <!-- =========================
@@ -1263,31 +1210,40 @@
 
                 <div class="contact-links">
 
-                    <!-- LINK: EMAIL -->
+                    <!-- Email -->
                     <a
                         href="mailto:doubletp90@gmail.com"
                         class="contact-button"
                     >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M2 5h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.3l10 6.2 10-6.2V7H2Zm20 10V9.7l-9.5 5.9a1 1 0 0 1-1 0L2 9.7V17h20Z"/>
+                        </svg>
                         Email ↗
                     </a>
 
-                    <!-- LINK: DISCORD -->
+                    <!-- Discord -->
                     <a
                         href="https://discord.com/users/759341756025798656"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="contact-button"
                     >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19.5 5.2A18.6 18.6 0 0 0 15 3.8l-.6 1.2a16.5 16.5 0 0 0-4.8 0L9 3.8a18.6 18.6 0 0 0-4.5 1.4C1.7 9.4 1 13.5 1.3 17.6A18.4 18.4 0 0 0 6.8 20l1.3-1.7a11 11 0 0 1-1.9-.9l.5-.4a13.1 13.1 0 0 0 10.6 0l.5.4c-.6.4-1.3.7-1.9.9l1.3 1.7a18.4 18.4 0 0 0 5.5-2.4c.4-4.8-.7-8.8-3.7-12.4ZM8.7 15.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/>
+                        </svg>
                         Discord ↗
                     </a>
 
-                    <!-- LINK: X -->
+                    <!-- X -->
                     <a
                         href="https://x.com/Pack0pm"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="contact-button"
                     >
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.4L2.8 2h6.4l4.4 5.8L18.9 2Zm-1.1 17.7h1.7L8.2 4.2H6.4l11.4 15.5Z"/>
+                        </svg>
                         X ↗
                     </a>
 
@@ -1332,9 +1288,9 @@
 
                         — Me, approximately uncountable subtitle lines later
 
-                    
+                    </div>
 
-                
+                </div>
 
             </section>
 
@@ -1344,9 +1300,7 @@
 
 
     <footer>
-
         Made with subtitles, Aegisub, and questionable amounts of time.
-
     </footer>
 
 </div>
