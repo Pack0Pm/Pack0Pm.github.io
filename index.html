@@ -580,6 +580,7 @@
 .navbar.show {
     transform: translateY(0);
 }
+
 .navbar a {
     position: relative;
     display: inline-flex;
@@ -595,52 +596,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
 
-    transition: color 0.25s ease;
-}
-
-.navbar a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 3px;
-
-    width: 0;
-    height: 2px;
-
-    background: #67e8f9;
-    border-radius: 999px;
-
-    transform: translateX(-50%);
-    transition: width 0.25s ease;
-}
-
-.navbar a:hover {
-    color: #fff;
-}
-
-.navbar a.active {
-    color: #67e8f9;
-}
-
-.navbar a.active::after {
-    width: calc(100% - 28px);
-}
-
-.navbar a {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 9px 16px;
-    border-radius: 999px;
-
-    color: #85859c;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-
-    transition: color 0.25s ease;
+    transition: color 0.25s ease, background 0.25s ease;
 }
 
 /* Underline */
@@ -662,26 +618,18 @@
 
 /* Hover */
 .navbar a:hover {
-    color: #fff;
+    color: #ffffff;
+    background: #17172a;
 }
 
 /* Currently selected section */
 .navbar a.active {
     color: #67e8f9;
+    background: #101025;
 }
 
 .navbar a.active::after {
     width: calc(100% - 28px);
-}
-
-.navbar a:hover {
-    color: #ffffff;
-    background: #17172a;
-}
-
-.navbar a.active {
-    color: #67e8f9;
-    background: #101025;
 }
 
 /* Keep sections from hiding underneath the sticky navbar */
@@ -905,8 +853,8 @@ section,
 
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#services">What I Do</a>
-        <a href="#portfolio">My Works</a>
+        <a href="#what-i-do">What I Do</a>
+        <a href="#my-works">My Works</a>
         <a href="#contact">Contact</a>
 
     </nav>
@@ -1141,7 +1089,7 @@ section,
                  WHAT I DO
             ========================= -->
 
-            <section id="services">
+            <section id="what-i-do">
 
     <h2 class="section-title">
         What I Do <span>🎬</span>
@@ -1182,7 +1130,7 @@ section,
                  MY WORKS
             ========================= -->
 
-            <section id="portfolio">
+            <section id="my-works">
 
     <h2 class="section-title">
         My Works <span>📚</span>
