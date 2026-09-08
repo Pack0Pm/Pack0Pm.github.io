@@ -236,11 +236,13 @@
         }
 
         .tools {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    text-align: center;
+}
 
         .tag {
             padding: 5px 10px;
@@ -1215,14 +1217,12 @@ main::before {
   max-width: 980px;
 }
 
-.hero h1::after {
-  content: "_";
-  color: var(--cyan);
-  animation: caretBlink 1s steps(1) infinite;
+.hero h1 {
+    color: #d8d8e8;
 }
 
-@keyframes caretBlink {
-  50% { opacity: 0; }
+.hero h1 .bracket {
+    color: #67e8f9;
 }
 
 /* Unified surfaces: fewer one-off visual rules. */
@@ -1242,7 +1242,72 @@ section > .card {
 }
 
 .profile-card,
-.project-card,
+.project-card, {
+    /* your existing CSS */
+}
+
+
+/* =========================
+   LATEST WORK
+========================= */
+
+.featured-project {
+    position: relative;
+    margin: 35px 0 45px;
+    padding: 22px;
+    background: linear-gradient(135deg, rgba(103,232,249,.10), rgba(23,23,74,.65));
+    border: 1px solid rgba(103,232,249,.45);
+    border-radius: 24px;
+    box-shadow: 0 0 35px rgba(103,232,249,.08);
+    overflow: hidden;
+}
+
+.featured-label {
+    margin-bottom: 16px;
+    color: #67e8f9;
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.featured-image-link {
+    display: block;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.featured-image-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform .35s ease;
+}
+
+.featured-image-link:hover img {
+    transform: scale(1.03);
+}
+
+.featured-info {
+    padding: 18px 4px 2px;
+}
+
+.featured-title {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 800;
+    transition: color .2s ease;
+}
+
+.featured-title:hover {
+    color: #67e8f9;
+}
+
+.featured-producer {
+    margin: 7px 0 0;
+    color: #85859c;
+    font-size: .85rem;
+}
 .thing-card,
 .contact-card {
   transition:
@@ -1687,7 +1752,7 @@ section > .card {
             <div class="hero" id="home">
 
                 <h1>
-                    &gt; About Me &lt;
+                    <span class="bracket">&gt;</span> About Me <span class="bracket">&lt;</span>
                 </h1>
 
                 <p>
@@ -1841,17 +1906,59 @@ section > .card {
                     and Synthesizer V music videos.
                 </p>
 
-                <a
-                    class="archive-link"
-                    href="https://www.youtube.com/playlist?list=PLf3_u5ost2n4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    View my subtitle archive →
-                </a>
+                <a 
+    class="archive-link" 
+    href="https://www.youtube.com/playlist?list=PLf3_u5ost2n4"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    View my subtitle archive →
+</a>
 
 
-                <div class="projects">
+<!-- =========================
+     LATEST WORK
+========================= -->
+
+<div class="featured-project">
+
+    <div class="featured-label">
+        ✦ LATEST WORK
+    </div>
+
+    <a
+        class="featured-image-link"
+        href="https://www.youtube.com/watch?v=UlhFuCzxNbk"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <img
+            src="https://img.youtube.com/vi/UlhFuCzxNbk/hqdefault.jpg"
+            alt="Planet Webstar / Aoki Lapis, Merli thumbnail"
+        >
+    </a>
+
+    <div class="featured-info">
+
+        <a
+            class="featured-title"
+            href="https://www.youtube.com/watch?v=UlhFuCzxNbk"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Planet Webstar / Aoki Lapis, Merli
+        </a>
+
+        <p class="featured-producer">
+            Atena
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="projects">
 
                     <!-- 01 -->
                     <div class="project">
