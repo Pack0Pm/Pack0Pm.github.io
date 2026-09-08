@@ -1033,9 +1033,6 @@ footer{padding:35px 0 15px}
     </style>
 
 <style id="production-1000x-css">
-/* =========================================================
-                    PRODUCTION LAYER
-   ========================================================= */
 
 :root {
   --bg-0: #050712;
@@ -1439,6 +1436,83 @@ section > .card {
   #backToTop {
     right: 12px;
     bottom: 12px;
+  }
+}
+</style>
+
+<style id="about-center-fix">
+/* About section alignment fix */
+#about {
+  text-align: center;
+}
+
+#about h2,
+#about > .section-subtitle,
+#about > p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#about .about-card,
+#about .about-content,
+#about .about-intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* The existing "HI! I'M PACKPM 👋" heading was inheriting a left alignment. */
+#about h3 {
+  text-align: center !important;
+}
+
+#about h3::after {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Keep the actual cards/content readable instead of forcing long paragraphs
+   into a narrow centered text block. */
+#about .card,
+#about .thing-card,
+#about .about-card {
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  #about {
+    text-align: center;
+  }
+}
+</style>
+
+<style id="hero-center-fix">
+/* Center the main "About Me" hero title and subtitle on the viewport. */
+.hero#home {
+  text-align: center !important;
+  justify-items: center !important;
+}
+
+.hero#home h1,
+.hero#home p {
+  width: 100%;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.hero#home h1 {
+  max-width: 1100px;
+}
+
+.hero#home p {
+  max-width: 900px;
+}
+
+@media (max-width: 600px) {
+  .hero#home h1,
+  .hero#home p {
+    text-align: center !important;
   }
 }
 </style>
@@ -2494,15 +2568,7 @@ window.addEventListener("load", updateNavbarVisibility);
 <script id="production-1000x-js">
 (() => {
   "use strict";
-
-  /* =========================================================
-     NTERACTION LAYER
-     - Event delegation
-     - Passive scroll listener
-     - IntersectionObserver for reveals
-     - Accessible back-to-top
-     - Respect reduced motion
-     ========================================================= */
+  
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
