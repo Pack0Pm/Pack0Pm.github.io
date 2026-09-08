@@ -610,6 +610,121 @@ section,
     scroll-margin-top: 100px;
 }
 
+/* =========================
+   STARTUP ANIMATION
+========================= */
+
+.startup-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at center, #17174a 0%, #09091b 50%, #05050d 100%);
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.startup-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.startup-content {
+    text-align: center;
+}
+
+.startup-greeting {
+    margin: 0;
+
+    color: white;
+
+    font-size: clamp(2.2rem, 7vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+
+    opacity: 0;
+    transform: translateY(10px);
+
+    animation: greetingIn 0.7s ease forwards;
+}
+
+.startup-subtitle {
+    margin: 12px 0 0;
+
+    color: #67e8f9;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    animation: subtitleIn 0.8s ease 0.35s forwards;
+}
+
+.startup-loader {
+    width: 120px;
+    height: 2px;
+
+    margin: 30px auto 0;
+
+    overflow: hidden;
+
+    background: #292943;
+    border-radius: 999px;
+}
+
+.startup-loader-bar {
+    width: 0;
+    height: 100%;
+
+    background: #67e8f9;
+
+    animation: loadingBar 2.8s ease forwards;
+}
+
+@keyframes greetingIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtitleIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes loadingBar {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
 
 /* =========================
    MOBILE NAVIGATION
@@ -634,6 +749,31 @@ section,
 </head>
 
 <body>
+
+    <!-- =========================
+         STARTUP SCREEN
+    ========================= -->
+
+    <div class="startup-screen" id="startupScreen">
+
+        <div class="startup-content">
+
+            <h1 class="startup-greeting" id="startupGreeting">
+                Hello
+            </h1>
+
+            <p class="startup-subtitle">
+                Packpm • Subtitle Creator
+            </p>
+
+            <div class="startup-loader">
+                <div class="startup-loader-bar"></div>
+            </div>
+
+        </div>
+
+    </div>
+
 
     <!-- =========================
          NAVIGATION
@@ -1406,6 +1546,71 @@ section,
     </footer>
 
 </div>
+
+<script>
+    const greetings = [
+        "Hello",
+        "สวัสดี",
+        "こんにちは",
+        "안녕하세요",
+        "你好",
+        "Hola"
+    ];
+
+    const greetingElement = document.getElementById("startupGreeting");
+    const startupScreen = document.getElementById("startupScreen");
+
+    let currentGreeting = 0;
+
+    function changeGreeting() {
+
+        greetingElement.style.opacity = "0";
+        greetingElement.style.transform = "translateY(-10px)";
+
+        setTimeout(() => {
+
+            currentGreeting++;
+
+            if (currentGreeting < greetings.length) {
+
+                greetingElement.textContent =
+                    greetings[currentGreeting];
+
+                greetingElement.style.transform =
+                    "translateY(10px)";
+
+                greetingElement.style.opacity = "0";
+
+                requestAnimationFrame(() => {
+                    greetingElement.style.transition =
+                        "opacity 0.5s ease, transform 0.5s ease";
+
+                    greetingElement.style.opacity = "1";
+                    greetingElement.style.transform =
+                        "translateY(0)";
+                });
+
+            }
+
+        }, 450);
+    }
+
+
+    greetings.slice(1).forEach((_, index) => {
+
+        setTimeout(() => {
+            changeGreeting();
+        }, 750 * (index + 1));
+
+    });
+
+
+    setTimeout(() => {
+
+        startupScreen.classList.add("hide");
+
+    }, 3200);
+</script>
 
 </body>
 </html>
