@@ -543,12 +543,114 @@
                 padding: 7px 12px;
             }
         }
+
+        /* =========================
+             NAVIGATION
+        ========================= */
+
+.navbar {
+    position: sticky;
+    top: 15px;
+    z-index: 1000;
+
+    width: fit-content;
+    max-width: 95%;
+    margin: 0 auto 18px;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    padding: 7px;
+
+    background: rgba(8, 8, 23, 0.88);
+    border: 1px solid #292943;
+    border-radius: 999px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.navbar a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 9px 16px;
+
+    border-radius: 999px;
+
+    color: #85859c;
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    transition: 0.2s ease;
+}
+
+.navbar a:hover {
+    color: #ffffff;
+    background: #17172a;
+}
+
+.navbar a.active {
+    color: #67e8f9;
+    background: #101025;
+}
+
+/* Keep sections from hiding underneath the sticky navbar */
+
+section,
+.hero {
+    scroll-margin-top: 100px;
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        width: 94%;
+        gap: 2px;
+        padding: 5px;
+    }
+
+    .navbar a {
+        padding: 8px 10px;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+    }
+
+}
     </style>
 </head>
 
 <body>
 
-<div class="page">
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav class="navbar">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">What I Do</a>
+        <a href="#portfolio">My Works</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <div class="page">
 
     <!-- =========================
          PROFILE CARD
@@ -672,7 +774,7 @@
                  HERO
             ========================= -->
 
-            <div class="hero">
+            <div class="hero" id="home">
 
                 <h1>
                     &gt; About Me &lt;
@@ -689,10 +791,10 @@
                  ABOUT ME
             ========================= -->
 
-            <section>
+            <section id="about">
 
-                <h2 class="section-title">
-                    Hi! I'm Packpm <span>👋</span>
+    <h2 class="section-title">
+        Hi! I'm Packpm <span>👋</span>
                 </h2>
 
                 <div class="info-card">
@@ -777,10 +879,10 @@
                  WHAT I DO
             ========================= -->
 
-            <section>
+            <section id="services">
 
-                <h2 class="section-title">
-                    What I Do <span>🎬</span>
+    <h2 class="section-title">
+        What I Do <span>🎬</span>
                 </h2>
 
                 <div class="things">
@@ -818,10 +920,10 @@
                  MY WORKS
             ========================= -->
 
-            <section>
+            <section id="portfolio">
 
-                <h2 class="section-title">
-                    My Works <span>📚</span>
+    <h2 class="section-title">
+        My Works <span>📚</span>
                 </h2>
 
                 <p>
@@ -1193,7 +1295,7 @@
                  CONTACT
             ========================= -->
 
-            <section class="contact-section">
+            <section class="contact-section" id="contact">
 
                 <p class="contact-label">
                     C O N T A C T
