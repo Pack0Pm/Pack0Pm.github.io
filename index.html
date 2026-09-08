@@ -644,21 +644,62 @@ section,
     text-align: center;
 }
 
+/* =========================
+   STARTUP GREETING
+========================= */
+
 .startup-greeting {
+    display: flex;
+    justify-content: center;
+
     margin: 0;
 
     color: white;
-
     font-size: clamp(2.2rem, 7vw, 4.5rem);
     font-weight: 800;
     letter-spacing: 0.02em;
 
-    opacity: 0;
-    transform: translateY(10px);
-
-    animation: greetingIn 0.7s ease forwards;
+    min-height: 1.2em;
 }
 
+.greeting-letter {
+    display: inline-block;
+
+    opacity: 0;
+    transform: translateY(8px);
+
+    animation:
+        letterFadeIn 0.28s ease forwards;
+}
+
+.greeting-letter.fade-out {
+    animation:
+        letterFadeOut 0.25s ease forwards;
+}
+
+@keyframes letterFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes letterFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
 .startup-subtitle {
     margin: 12px 0 0;
 
@@ -1548,6 +1589,7 @@ section,
 </div>
 
 <script>
+
     const greetings = [
         "Hello",
         "สวัสดี",
@@ -1557,59 +1599,146 @@ section,
         "Hola"
     ];
 
-    const greetingElement = document.getElementById("startupGreeting");
-    const startupScreen = document.getElementById("startupScreen");
+    const greetingElement =
+        document.getElementById("startupGreeting");
 
-    let currentGreeting = 0;
+    const startupScreen =
+        document.getElementById("startupScreen");
 
-    function changeGreeting() {
 
-        greetingElement.style.opacity = "0";
-        greetingElement.style.transform = "translateY(-10px)";
+    function showGreeting(text) {
 
-        setTimeout(() => {
+        greetingElement.innerHTML = "";
 
-            currentGreeting++;
+        /*
+         * Split the greeting into characters.
+         * Array.from() handles Japanese, Thai, Korean,
+         * and other Unicode characters much better than
+         * text.split("").
+         */
 
-            if (currentGreeting < greetings.length) {
+        const letters = Array.from(text);
 
-                greetingElement.textContent =
-                    greetings[currentGreeting];
+        letters.forEach((letter, index) => {
 
-                greetingElement.style.transform =
-                    "translateY(10px)";
+            const span =
+                document.createElement("span");
 
-                greetingElement.style.opacity = "0";
+            span.className = "greeting-letter";
 
-                requestAnimationFrame(() => {
-                    greetingElement.style.transition =
-                        "opacity 0.5s ease, transform 0.5s ease";
+            /*
+             * Preserve spaces.
+             */
 
-                    greetingElement.style.opacity = "1";
-                    greetingElement.style.transform =
-                        "translateY(0)";
-                });
+            span.textContent =
+                letter === " " ? "\u00A0" : letter;
 
-            }
+            /*
+             * Each letter starts slightly later
+             * than the previous one.
+             */
 
-        }, 450);
+            span.style.animationDelay =
+                `${index * 45}ms`;
+
+            greetingElement.appendChild(span);
+
+        });
     }
 
 
-    greetings.slice(1).forEach((_, index) => {
+    function fadeOutGreeting() {
 
-        setTimeout(() => {
-            changeGreeting();
-        }, 750 * (index + 1));
+        const letters =
+            greetingElement.querySelectorAll(
+                ".greeting-letter"
+            );
 
-    });
+        letters.forEach((letter, index) => {
+
+            letter.classList.add("fade-out");
+
+            /*
+             * Fade out from LEFT → RIGHT.
+             */
+
+            letter.style.animationDelay =
+                `${index * 40}ms`;
+
+        });
+
+    }
 
 
-    setTimeout(() => {
+    async function runStartup() {
+
+        for (let i = 0; i < greetings.length; i++) {
+
+            /*
+             * Show the new language.
+             */
+
+            showGreeting(greetings[i]);
+
+
+            /*
+             * Wait for the letters to appear.
+             */
+
+            const letterCount =
+                Array.from(greetings[i]).length;
+
+            const fadeInTime =
+                280 + (letterCount * 45);
+
+
+            await new Promise(resolve =>
+                setTimeout(resolve, fadeInTime)
+            );
+
+
+            /*
+             * Keep the word visible for a moment.
+             */
+
+            await new Promise(resolve =>
+                setTimeout(resolve, 150)
+            );
+
+
+            /*
+             * Fade the letters OUT
+             * from LEFT → RIGHT.
+             */
+
+            fadeOutGreeting();
+
+
+            const fadeOutTime =
+                250 + (letterCount * 40);
+
+
+            await new Promise(resolve =>
+                setTimeout(resolve, fadeOutTime)
+            );
+        }
+
+
+        /*
+         * Finally reveal the actual website.
+         */
 
         startupScreen.classList.add("hide");
 
-    }, 3200);
+    }
+
+
+    /*
+     * Start the animation.
+     */
+
+    runStartup();
+
 </script>
 
 </body>
