@@ -1242,7 +1242,7 @@ section > .card {
 }
 
 .profile-card,
-.project-card, {
+.project-card {
     /* your existing CSS */
 }
 
@@ -2802,6 +2802,875 @@ window.addEventListener("load", updateNavbarVisibility);
       qsa(".reveal").forEach((el) => el.classList.add("visible"));
     }
   });
+})();
+<script>
+/* =========================
+   PACKPM LANGUAGE SWITCHER
+   ENG / ไทย / 日本語
+========================= */
+
+(() => {
+
+    const languageData = {
+
+        en: {
+            nav: [
+                "Home",
+                "About",
+                "What I Do",
+                "My Works",
+                "Contact"
+            ],
+
+            profileMeta: "Subtitle Creator • Thailand",
+            subscribe: "Subscribe",
+            channel: "View channel ↗",
+
+            hero:
+                "Subtitle Creator • Vocaloid / UTAU / Synthesizer V",
+
+            aboutTitle:
+                "Hi! I'm Packpm 👋",
+
+            aboutIntro:
+                "I'm a subtitle creator from Thailand who mainly works with Vocaloid, UTAU, and Synthesizer V music.",
+
+            aboutSub:
+                "🎬 I create Thai subtitles and occasionally English subtitles for music videos I enjoy.",
+
+            favorite:
+                "🎵 Favorite synth:",
+
+            tools:
+                "💻 Tools I use:",
+
+            goalTitle:
+                "My Goal 🌱",
+
+            goalText:
+                "A small record of my journey toward subtitling 100 music videos.",
+
+            goalP1:
+                "I started making subtitles simply because I wanted more Vocaloid songs to be accessible to Thai-speaking listeners. Over time, it became something I genuinely love doing.",
+
+            goalP2:
+                "I also sometimes work directly with producers to provide official subtitles for their MVs.",
+
+            whatTitle:
+                "What I Do 🎬",
+
+            whatItems: [
+                "🇹🇭 Japanese / English → Thai lyric translation",
+                "🇬🇧 Japanese / Thai → English translation",
+                "🎬 Aegisub subtitle timing",
+                "✨ Subtitle styling and effects",
+                "📺 YouTube subtitle preparation",
+                "🤝 Subtitle contributions for Vocaloid producers"
+            ],
+
+            worksTitle:
+                "My Works 📚",
+
+            worksIntro:
+                "I've worked on subtitles for various Vocaloid, UTAU, and Synthesizer V music videos.",
+
+            archive:
+                "View my subtitle archive →",
+
+            latest:
+                "✦ LATEST WORK",
+
+            goal100Title:
+                "100 MVs Goal 📊",
+
+            goal100Text:
+                "Still a long way to go. But hey, one MV at a time.",
+
+            contactLabel:
+                "C O N T A C T",
+
+            contactTitle:
+                "Got an MV that needs subtitles?",
+
+            contactDesc:
+                "Drop me a message! If you want Thai or English subtitles for your song, I'd be happy to help. 🎬",
+
+            importantTitle:
+                "Completely Important Information 🥶",
+
+            important1:
+                "I love Aegisub.",
+
+            important2:
+                "I don't know why.",
+
+            important3:
+                "It has consumed my life.",
+
+            quote:
+                "\"Just one more MV.\"",
+
+            quoteBy:
+                "Me, approximately uncountable subtitle lines later",
+
+            footer:
+                "Made with subtitles, Aegisub, and questionable amounts of time.",
+
+            statusLeft:
+                "PACKPM.EXE • ONLINE",
+
+            statusRight:
+                "Aegisub / ASS / YTT / Web"
+        },
+
+
+        th: {
+            nav: [
+                "หน้าแรก",
+                "เกี่ยวกับผม",
+                "สิ่งที่ผมทำ",
+                "ผลงาน",
+                "ติดต่อ"
+            ],
+
+            profileMeta:
+                "ผู้สร้างซับ • ประเทศไทย",
+
+            subscribe:
+                "ติดตาม",
+
+            channel:
+                "ดูช่อง ↗",
+
+            hero:
+                "ผู้สร้างซับไตเติล • Vocaloid / UTAU / Synthesizer V",
+
+            aboutTitle:
+                "สวัสดี! ผมคือ Packpm 👋",
+
+            aboutIntro:
+                "ผมเป็นผู้สร้างซับจากประเทศไทย โดยหลัก ๆ ทำงานกับเพลง Vocaloid, UTAU และ Synthesizer V",
+
+            aboutSub:
+                "🎬 ผมทำซับภาษาไทย และบางครั้งก็ทำซับภาษาอังกฤษให้กับ MV ที่ผมชอบ",
+
+            favorite:
+                "🎵 ซินธ์ที่ชอบ:",
+
+            tools:
+                "💻 เครื่องมือที่ผมใช้:",
+
+            goalTitle:
+                "เป้าหมายของผม 🌱",
+
+            goalText:
+                "บันทึกการเดินทางเล็ก ๆ ของผมสู่การทำซับให้ครบ 100 MV",
+
+            goalP1:
+                "ผมเริ่มทำซับเพราะอยากให้เพลง Vocaloid เข้าถึงผู้ฟังชาวไทยได้มากขึ้น พอทำไปเรื่อย ๆ มันก็กลายเป็นสิ่งที่ผมรักจริง ๆ",
+
+            goalP2:
+                "บางครั้งผมก็ทำงานร่วมกับโปรดิวเซอร์โดยตรง เพื่อทำซับอย่างเป็นทางการให้กับ MV ของพวกเขา",
+
+            whatTitle:
+                "สิ่งที่ผมทำ 🎬",
+
+            whatItems: [
+                "🇹🇭 แปลเนื้อเพลง ญี่ปุ่น / อังกฤษ → ไทย",
+                "🇬🇧 แปลเนื้อเพลง ญี่ปุ่น / ไทย → อังกฤษ",
+                "🎬 จับเวลาซับด้วย Aegisub",
+                "✨ จัดสไตล์ซับและทำเอฟเฟกต์",
+                "📺 เตรียมซับสำหรับ YouTube",
+                "🤝 ทำซับให้กับโปรดิวเซอร์ Vocaloid"
+            ],
+
+            worksTitle:
+                "ผลงานของผม 📚",
+
+            worksIntro:
+                "ผมเคยทำซับให้กับ MV เพลง Vocaloid, UTAU และ Synthesizer V หลายเพลง",
+
+            archive:
+                "ดูคลังซับของผม →",
+
+            latest:
+                "✦ ผลงานล่าสุด",
+
+            goal100Title:
+                "เป้าหมาย 100 MV 📊",
+
+            goal100Text:
+                "ยังอีกไกล แต่ค่อย ๆ ทำไปทีละ MV",
+
+            contactLabel:
+                "ติดต่อ",
+
+            contactTitle:
+                "มี MV ที่ต้องการซับไหม?",
+
+            contactDesc:
+                "ทักมาหาผมได้เลย! ถ้าต้องการซับภาษาไทยหรือภาษาอังกฤษสำหรับเพลงของคุณ ผมยินดีช่วยครับ 🎬",
+
+            importantTitle:
+                "ข้อมูลสำคัญแบบสุด ๆ 🥶",
+
+            important1:
+                "ผมรัก Aegisub",
+
+            important2:
+                "ไม่รู้เหมือนกันว่าทำไม",
+
+            important3:
+                "มันกลืนกินชีวิตผมไปแล้ว",
+
+            quote:
+                "\"อีกแค่ MV เดียว\"",
+
+            quoteBy:
+                "ผมเอง หลังจากทำซับไปจนจำจำนวนบรรทัดไม่ได้แล้ว",
+
+            footer:
+                "สร้างด้วยซับไตเติล, Aegisub และเวลาจำนวนมหาศาลที่ไม่รู้หายไปไหน",
+
+            statusLeft:
+                "PACKPM.EXE • ออนไลน์",
+
+            statusRight:
+                "Aegisub / ASS / YTT / เว็บ"
+        },
+
+
+        ja: {
+            nav: [
+                "ホーム",
+                "私について",
+                "できること",
+                "作品",
+                "お問い合わせ"
+            ],
+
+            profileMeta:
+                "字幕制作者 • タイ",
+
+            subscribe:
+                "チャンネル登録",
+
+            channel:
+                "チャンネルを見る ↗",
+
+            hero:
+                "字幕制作者 • Vocaloid / UTAU / Synthesizer V",
+
+            aboutTitle:
+                "こんにちは！Packpmです 👋",
+
+            aboutIntro:
+                "タイで活動している字幕制作者です。主にVocaloid、UTAU、Synthesizer Vの楽曲を扱っています。",
+
+            aboutSub:
+                "🎬 好きなMVにタイ語字幕を付け、時々英語字幕も制作しています。",
+
+            favorite:
+                "🎵 好きな音声ライブラリ:",
+
+            tools:
+                "💻 使用ツール:",
+
+            goalTitle:
+                "目標 🌱",
+
+            goalText:
+                "100本の音楽MVに字幕を付けるまでの小さな記録です。",
+
+            goalP1:
+                "タイ語でVocaloidの曲をもっと楽しめる人を増やしたくて、字幕制作を始めました。続けていくうちに、本当に大好きな活動になりました。",
+
+            goalP2:
+                "プロデューサーの方と直接やり取りして、MVに公式字幕を提供することもあります。",
+
+            whatTitle:
+                "できること 🎬",
+
+            whatItems: [
+                "🇹🇭 日本語 / 英語 → タイ語歌詞翻訳",
+                "🇬🇧 日本語 / タイ語 → 英語翻訳",
+                "🎬 Aegisubでの字幕タイミング調整",
+                "✨ 字幕のスタイリングとエフェクト",
+                "📺 YouTube字幕の準備",
+                "🤝 Vocaloidプロデューサーへの字幕提供"
+            ],
+
+            worksTitle:
+                "作品 📚",
+
+            worksIntro:
+                "Vocaloid、UTAU、Synthesizer VのさまざまなMVで字幕を制作しています。",
+
+            archive:
+                "字幕アーカイブを見る →",
+
+            latest:
+                "✦ 最新作品",
+
+            goal100Title:
+                "100 MVへの道 📊",
+
+            goal100Text:
+                "まだまだ先は長い。でも、一つずつMVをやっていきます。",
+
+            contactLabel:
+                "お問い合わせ",
+
+            contactTitle:
+                "字幕が必要なMVがありますか？",
+
+            contactDesc:
+                "気軽にメッセージしてください！タイ語または英語字幕が必要なら、喜んでお手伝いします。🎬",
+
+            importantTitle:
+                "とても重要な情報 🥶",
+
+            important1:
+                "Aegisubが大好きです。",
+
+            important2:
+                "なぜかは分かりません。",
+
+            important3:
+                "もう人生を飲み込まれています。",
+
+            quote:
+                "「あと1本だけMV。」",
+
+            quoteBy:
+                "私です。数え切れないほどの字幕行を作った後に",
+
+            footer:
+                "字幕とAegisub、そして謎の大量の時間で作られています。",
+
+            statusLeft:
+                "PACKPM.EXE • オンライン",
+
+            statusRight:
+                "Aegisub / ASS / YTT / Web"
+        }
+    };
+
+
+    /* =========================
+       LANGUAGE SWITCHER STYLE
+    ========================= */
+
+    const style = document.createElement("style");
+
+    style.textContent = `
+        .language-switcher {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            z-index: 9997;
+
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            padding: 5px;
+
+            background: rgba(8, 8, 23, 0.88);
+            border: 1px solid #292943;
+            border-radius: 999px;
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+        }
+
+        .language-switcher button {
+            border: 0;
+            background: transparent;
+
+            color: #85859c;
+
+            padding: 7px 10px;
+            border-radius: 999px;
+
+            font:
+                700 0.68rem/1
+                Arial, Helvetica, sans-serif;
+
+            letter-spacing: 0.08em;
+
+            cursor: pointer;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .language-switcher button:hover {
+            color: #ffffff;
+            background: #17172a;
+            transform: translateY(-1px);
+        }
+
+        .language-switcher button.active {
+            color: #67e8f9;
+            background: #101025;
+        }
+
+        @media (max-width: 600px) {
+
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+
+            .language-switcher button {
+                padding: 6px 8px;
+                font-size: 0.62rem;
+            }
+
+        }
+    `;
+
+    document.head.appendChild(style);
+
+
+    /* =========================
+       CREATE SWITCHER
+    ========================= */
+
+    const switcher = document.createElement("div");
+
+    switcher.className = "language-switcher";
+
+    switcher.setAttribute(
+        "aria-label",
+        "Language selector"
+    );
+
+    switcher.innerHTML = `
+        <button type="button" data-lang="en">
+            ENG
+        </button>
+
+        <button type="button" data-lang="th">
+            ไทย
+        </button>
+
+        <button type="button" data-lang="ja">
+            日本語
+        </button>
+    `;
+
+    document.body.appendChild(switcher);
+
+
+    /* =========================
+       SMALL HELPERS
+    ========================= */
+
+    function setText(selector, value) {
+
+        const element =
+            document.querySelector(selector);
+
+        if (element) {
+            element.textContent = value;
+        }
+
+    }
+
+
+    function setTexts(selector, values) {
+
+        document
+            .querySelectorAll(selector)
+            .forEach((element, index) => {
+
+                if (values[index] !== undefined) {
+                    element.textContent =
+                        values[index];
+                }
+
+            });
+
+    }
+
+
+    /* =========================
+       APPLY LANGUAGE
+    ========================= */
+
+    function applyLanguage(lang) {
+
+        const t = languageData[lang];
+
+        if (!t) return;
+
+
+        document.documentElement.lang =
+            lang === "ja" ? "ja" : lang;
+
+
+        /* NAVIGATION */
+
+        setTexts(
+            ".navbar a",
+            t.nav
+        );
+
+
+        /* PROFILE */
+
+        setText(
+            ".profile-meta",
+            t.profileMeta
+        );
+
+        setText(
+            ".subscribe-button",
+            t.subscribe
+        );
+
+        setText(
+            ".channel-button",
+            t.channel
+        );
+
+
+        /* HERO */
+
+        setText(
+            ".hero p",
+            t.hero
+        );
+
+
+        /* ABOUT */
+
+        setText(
+            "#about h2.section-title",
+            t.aboutTitle
+        );
+
+        setText(
+            "#about .intro",
+            t.aboutIntro
+        );
+
+        setText(
+            "#about .intro + p",
+            t.aboutSub
+        );
+
+        const favorite =
+            document.querySelector(
+                "#about p:nth-of-type(3)"
+            );
+
+        if (favorite) {
+
+            favorite.innerHTML =
+                `${t.favorite} <strong>Kasane Teto</strong>`;
+
+        }
+
+
+        setText(
+            "#about p:nth-of-type(4)",
+            t.tools
+        );
+
+
+        /* GOAL */
+
+        const goalCard =
+            document.querySelector(".goal-card");
+
+        const goalSection =
+            goalCard?.closest("section");
+
+        if (goalSection) {
+
+            const title =
+                goalSection.querySelector(
+                    ".section-title"
+                );
+
+            if (title) {
+                title.textContent =
+                    t.goalTitle;
+            }
+
+        }
+
+        setText(
+            ".goal-card .goal-text",
+            t.goalText
+        );
+
+        const goalParagraphs =
+            document.querySelectorAll(
+                ".goal-card > p:not(.goal-number):not(.goal-text)"
+            );
+
+        if (goalParagraphs[0]) {
+            goalParagraphs[0].textContent =
+                t.goalP1;
+        }
+
+        if (goalParagraphs[1]) {
+            goalParagraphs[1].textContent =
+                t.goalP2;
+        }
+
+
+        /* WHAT I DO */
+
+        setText(
+            "#what-i-do .section-title",
+            t.whatTitle
+        );
+
+        setTexts(
+            "#what-i-do .thing",
+            t.whatItems
+        );
+
+
+        /* MY WORKS */
+
+        setText(
+            "#my-works .section-title",
+            t.worksTitle
+        );
+
+        setText(
+            "#my-works > p",
+            t.worksIntro
+        );
+
+        setText(
+            "#my-works .archive-link",
+            t.archive
+        );
+
+        setText(
+            "#my-works .featured-label",
+            t.latest
+        );
+
+
+        /* 100 MV GOAL */
+
+        const goalNumbers =
+            document.querySelectorAll(
+                ".goal-number"
+            );
+
+        if (goalNumbers.length > 1) {
+
+            const goal100Section =
+                goalNumbers[1].closest(
+                    "section"
+                );
+
+            if (goal100Section) {
+
+                setText(
+                    ".section-title",
+                    t.goal100Title
+                );
+
+                const text =
+                    goal100Section.querySelector(
+                        ".goal-text"
+                    );
+
+                if (text) {
+                    text.textContent =
+                        t.goal100Text;
+                }
+
+            }
+
+        }
+
+
+        /* CONTACT */
+
+        setText(
+            ".contact-label",
+            t.contactLabel
+        );
+
+        setText(
+            ".contact-section h2",
+            t.contactTitle
+        );
+
+        setText(
+            ".contact-description",
+            t.contactDesc
+        );
+
+
+        /* IMPORTANT INFORMATION */
+
+        const important =
+            document.querySelector(
+                ".important"
+            );
+
+        if (important) {
+
+            const title =
+                important.querySelector(
+                    ".section-title"
+                );
+
+            if (title) {
+                title.textContent =
+                    t.importantTitle;
+            }
+
+
+            const paragraphs =
+                important.querySelectorAll(
+                    ":scope > p"
+                );
+
+            if (paragraphs[0]) {
+                paragraphs[0].textContent =
+                    t.important1;
+            }
+
+            if (paragraphs[1]) {
+                paragraphs[1].textContent =
+                    t.important2;
+            }
+
+            if (paragraphs[2]) {
+                paragraphs[2].textContent =
+                    t.important3;
+            }
+
+
+            const quote =
+                important.querySelector(
+                    ".quote"
+                );
+
+            if (quote) {
+
+                quote.innerHTML =
+                    `😭🙏<br><br>${t.quote}<br>— ${t.quoteBy}`;
+
+            }
+
+        }
+
+
+        /* FOOTER */
+
+        setText(
+            "footer",
+            t.footer
+        );
+
+
+        /* STATUS RAIL */
+
+        const statusLeft =
+            document.querySelector(
+                ".pack-status-left span:last-child"
+            );
+
+        const statusRight =
+            document.querySelector(
+                ".pack-status-right"
+            );
+
+        if (statusLeft) {
+            statusLeft.textContent =
+                t.statusLeft;
+        }
+
+        if (statusRight) {
+            statusRight.textContent =
+                t.statusRight;
+        }
+
+
+        /* ACTIVE BUTTON */
+
+        switcher
+            .querySelectorAll("button")
+            .forEach(button => {
+
+                button.classList.toggle(
+                    "active",
+                    button.dataset.lang === lang
+                );
+
+            });
+
+
+        /* REMEMBER LANGUAGE */
+
+        try {
+            localStorage.setItem(
+                "packpm-language",
+                lang
+            );
+        } catch (error) {}
+
+    }
+
+
+    /* =========================
+       BUTTON EVENTS
+    ========================= */
+
+    switcher
+        .querySelectorAll("button")
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    applyLanguage(
+                        button.dataset.lang
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =========================
+       LOAD SAVED LANGUAGE
+    ========================= */
+
+    let savedLanguage = "en";
+
+    try {
+
+        savedLanguage =
+            localStorage.getItem(
+                "packpm-language"
+            ) || "en";
+
+    } catch (error) {}
+
+
+    applyLanguage(savedLanguage);
+
 })();
 </script>
 </body>
