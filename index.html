@@ -1589,15 +1589,12 @@ section,
 </div>
 
 <script>
-
     const greetings = [
-        "Hello",
-        "สวัสดี",
-        "こんにちは",
-        "안녕하세요",
-        "你好",
-        "Hola"
-    ];
+    "Hello",
+    "สวัสดี",
+    "こんにちは",
+    "안녕하세요"
+];
 
     const greetingElement =
         document.getElementById("startupGreeting");
@@ -1606,44 +1603,64 @@ section,
         document.getElementById("startupScreen");
 
 
+    /*
+     * Split text into visually meaningful characters.
+     * This prevents Thai vowel/mark characters from
+     * flying apart during the animation.
+     */
+
+    function splitCharacters(text) {
+
+        if (Intl.Segmenter) {
+
+            const segmenter = new Intl.Segmenter(
+                undefined,
+                { granularity: "grapheme" }
+            );
+
+            return Array.from(
+                segmenter.segment(text),
+                part => part.segment
+            );
+
+        }
+
+        return Array.from(text);
+    }
+
+
     function showGreeting(text) {
 
         greetingElement.innerHTML = "";
 
-        /*
-         * Split the greeting into characters.
-         * Array.from() handles Japanese, Thai, Korean,
-         * and other Unicode characters much better than
-         * text.split("").
-         */
-
-        const letters = Array.from(text);
+        const letters =
+            splitCharacters(text);
 
         letters.forEach((letter, index) => {
 
             const span =
                 document.createElement("span");
 
-            span.className = "greeting-letter";
-
-            /*
-             * Preserve spaces.
-             */
+            span.className =
+                "greeting-letter";
 
             span.textContent =
-                letter === " " ? "\u00A0" : letter;
+                letter === " "
+                    ? "\u00A0"
+                    : letter;
 
             /*
-             * Each letter starts slightly later
-             * than the previous one.
+             * FAST LEFT → RIGHT FADE IN
              */
 
             span.style.animationDelay =
-                `${index * 45}ms`;
+                `${index * 25}ms`;
 
             greetingElement.appendChild(span);
 
         });
+
+        return letters.length;
     }
 
 
@@ -1659,13 +1676,23 @@ section,
             letter.classList.add("fade-out");
 
             /*
-             * Fade out from LEFT → RIGHT.
+             * FAST LEFT → RIGHT FADE OUT
              */
 
             letter.style.animationDelay =
-                `${index * 40}ms`;
+                `${index * 20}ms`;
 
         });
+
+        return letters.length;
+    }
+
+
+    function wait(ms) {
+
+        return new Promise(resolve =>
+            setTimeout(resolve, ms)
+        );
 
     }
 
@@ -1674,68 +1701,48 @@ section,
 
         for (let i = 0; i < greetings.length; i++) {
 
-            /*
-             * Show the new language.
-             */
-
-            showGreeting(greetings[i]);
+            const count =
+                showGreeting(greetings[i]);
 
 
             /*
-             * Wait for the letters to appear.
+             * FAST FADE IN
              */
 
-            const letterCount =
-                Array.from(greetings[i]).length;
-
-            const fadeInTime =
-                280 + (letterCount * 45);
-
-
-            await new Promise(resolve =>
-                setTimeout(resolve, fadeInTime)
+            await wait(
+                280 + (count * 25)
             );
 
 
             /*
-             * Keep the word visible for a moment.
+             * SHORT HOLD
              */
 
-            await new Promise(resolve =>
-                setTimeout(resolve, 150)
-            );
+            await wait(70);
 
 
             /*
-             * Fade the letters OUT
-             * from LEFT → RIGHT.
+             * FADE OUT LEFT → RIGHT
              */
 
             fadeOutGreeting();
 
 
-            const fadeOutTime =
-                250 + (letterCount * 40);
-
-
-            await new Promise(resolve =>
-                setTimeout(resolve, fadeOutTime)
+            await wait(
+                250 + (count * 20)
             );
+
         }
 
 
         /*
-         * Finally reveal the actual website.
+         * REVEAL WEBSITE
          */
 
         startupScreen.classList.add("hide");
 
     }
 
-
-    /*
-     * Start the animation.
-     */
 
     runStartup();
 
