@@ -2803,6 +2803,8 @@ window.addEventListener("load", updateNavbarVisibility);
     }
   });
 })();
+</script>
+
 <script>
 /* =========================
    PACKPM LANGUAGE SWITCHER
@@ -3272,10 +3274,10 @@ window.addEventListener("load", updateNavbarVisibility);
        SMALL HELPERS
     ========================= */
 
-    function setText(selector, value) {
+    function setText(selector, value, root = document) {
 
         const element =
-            document.querySelector(selector);
+            root.querySelector(selector);
 
         if (element) {
             element.textContent = value;
@@ -3482,7 +3484,8 @@ window.addEventListener("load", updateNavbarVisibility);
 
                 setText(
                     ".section-title",
-                    t.goal100Title
+                    t.goal100Title,
+                    goal100Section
                 );
 
                 const text =
