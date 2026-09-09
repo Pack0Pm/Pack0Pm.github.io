@@ -227,8 +227,29 @@
         }
 
         .info-card {
-            padding: 22px;
-        }
+    position: relative;
+    overflow: hidden;
+
+    padding: 22px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(13, 13, 29, 0.98) 0%,
+            rgba(13, 13, 29, 0.92) 45%,
+            rgba(13, 13, 29, 0.62) 100%
+        ),
+        url("assets/Pear.png");
+
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.info-card > * {
+    position: relative;
+    z-index: 1;
+}
 
         .intro {
             margin-top: 0;
