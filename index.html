@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="google88712d6d2e44d723" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -656,9 +655,19 @@
     background: #101025;
 }
 
-.navbar a.active::after {
+ .navbar a.active::after {
     width: calc(100% - 28px);
 }
+
+.navbar a.questions-nav {
+    color: #a78bfa;
+}
+
+.navbar a.questions-nav:hover {
+    color: #ffffff;
+    background: rgba(167, 139, 250, 0.10);
+}
+
 
 /* Keep sections from hiding underneath the sticky navbar */
 
@@ -2449,6 +2458,7 @@ section{
         <a href="#what-i-do">What I Do</a>
         <a href="#my-works">My Works</a>
         <a href="#contact">Contact</a>
+        <a class="questions-nav" href="questions.html">Q&A ❓</a>
 
     </nav>
 
@@ -3656,7 +3666,8 @@ window.addEventListener("load", updateNavbarVisibility);
                 "About",
                 "What I Do",
                 "My Works",
-                "Contact"
+                "Contact",
+                "Q&A ❓"
             ],
 
             profileMeta: "Subtitle Creator • Thailand",
@@ -3770,7 +3781,8 @@ window.addEventListener("load", updateNavbarVisibility);
                 "เกี่ยวกับผม",
                 "สิ่งที่ทำ",
                 "ผลงาน",
-                "ช่องทางติดต่อ"
+                "ช่องทางติดต่อ",
+                "Q&A ❓"
             ],
 
             profileMeta:
@@ -3889,7 +3901,8 @@ window.addEventListener("load", updateNavbarVisibility);
                 "私について",
                 "できること",
                 "作品",
-                "お問い合わせ"
+                "お問い合わせ",
+                "Q&A ❓"
             ],
 
             profileMeta:
