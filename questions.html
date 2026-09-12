@@ -42,7 +42,7 @@ a{color:inherit;text-decoration:none}
 .hero h1 span{color:#67e8f9}
 .hero p{max-width:760px;margin:20px auto 0;color:#9ca3b8;font-size:1.02rem}
 .archive-note{display:inline-flex;margin-top:24px;padding:7px 11px;border:1px solid rgba(167,139,250,.2);border-radius:999px;background:rgba(167,139,250,.045);color:#c4b5fd;font:600 .62rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.13em;text-transform:uppercase}
-.question-list{display:grid;gap:28px}
+.question-list{display:grid;gap:28px;position:relative}.question-list::before{content:"";position:absolute;left:18px;top:0;bottom:0;width:1px;background:linear-gradient(rgba(103,232,249,0),rgba(103,232,249,.12) 10%,rgba(167,139,250,.12) 90%,rgba(167,139,250,0));pointer-events:none}.question-card{scroll-margin-top:110px}
 .question-card{
  position:relative;overflow:hidden;padding:30px 32px;border:1px solid rgba(148,163,184,.16);border-radius:24px;
  background:linear-gradient(180deg,rgba(255,255,255,.025),transparent 24%),rgba(12,17,35,.72);
@@ -51,8 +51,10 @@ a{color:inherit;text-decoration:none}
 }
 .question-card.visible{opacity:1;transform:none}
 .question-card:hover{border-color:rgba(103,232,249,.3);box-shadow:0 22px 58px rgba(0,0,0,.35),0 0 30px rgba(103,232,249,.05)}
+.question-card::after{content:"";position:absolute;right:24px;top:22px;width:5px;height:5px;border:1px solid rgba(103,232,249,.25);border-radius:50%;box-shadow:0 0 12px rgba(103,232,249,.12)}
 .question-card::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:2px;background:linear-gradient(#67e8f9,#a78bfa);box-shadow:0 0 13px rgba(103,232,249,.35)}
-.question-number{margin:0 0 10px;color:rgba(103,232,249,.52);font:700 .62rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.18em}
+.question-number{margin:0 0 10px;display:flex;align-items:center;gap:10px;color:rgba(103,232,249,.52);font:700 .62rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.18em}
+.question-number::after{content:"";height:1px;flex:1;max-width:90px;background:linear-gradient(90deg,rgba(103,232,249,.22),transparent)}
 .question-card h2{margin:0 0 22px;color:#fff;font-size:clamp(1.25rem,2.7vw,1.75rem);line-height:1.3;letter-spacing:-.02em}
 .answer{color:#cbd5e1;font-size:1rem}
 .answer p{margin:0 0 17px}.answer p:last-child{margin-bottom:0}.answer strong{color:#f8fafc}.answer em{color:#dbeafe}.answer blockquote{margin:22px 0;padding:16px 20px;border-left:2px solid rgba(103,232,249,.5);background:rgba(103,232,249,.035);border-radius:0 12px 12px 0;color:#b8c3d4;font-style:italic}.answer .chaos{color:#67e8f9;font-weight:700}
@@ -74,7 +76,7 @@ footer{text-align:center;padding:25px 0 10px;color:#62627a;font-size:.78rem}
 .x-cursor-glow{position:fixed;left:0;top:0;width:360px;height:360px;pointer-events:none;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(103,232,249,.1),rgba(103,232,249,.025) 28%,transparent 68%);transform:translate3d(calc(var(--mx,50vw) - 50%),calc(var(--my,50vh) - 50%),0);transition:transform .18s ease-out}
 html[lang="th"] body,html[lang="th"] body *{font-family:"IBM Plex Sans Thai","Noto Sans Thai",Arial,sans-serif}html[lang="th"] body{line-height:1.85}html[lang="th"] h1,html[lang="th"] h2,html[lang="th"] h3{letter-spacing:-.025em}
 @keyframes gridMove{to{background-position:0 46px,46px 0}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes letterIn{0%{opacity:0;transform:translate3d(0,18px,0) scale(.94)}70%{opacity:1;transform:translateY(-3px) scale(1.01);filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}@keyframes letterOut{to{opacity:0;transform:translate3d(0,-18px,0) scale(.96)}}@keyframes subIn{to{opacity:1;transform:none;letter-spacing:.34em}}@keyframes loading{to{width:100%}}@keyframes flicker{0%,91%,93%,100%{opacity:.58}92%{opacity:.15}}
-@media(max-width:700px){.page{padding-top:105px}.navbar{width:94%;gap:2px;padding:5px}.navbar a{padding:8px 9px;font-size:.63rem;letter-spacing:.06em}.hero{padding:40px 0 52px}.question-card{padding:25px 22px}.question-card::before{top:20px;bottom:20px}.answer{font-size:.96rem}.language-switcher{top:10px;right:10px}.language-switcher button{padding:6px 8px;font-size:.62rem}}
+@media(max-width:700px){.question-list::before{display:none}.page{padding-top:105px}.navbar{width:94%;gap:2px;padding:5px}.navbar a{padding:8px 9px;font-size:.63rem;letter-spacing:.06em}.hero{padding:40px 0 52px}.question-card{padding:25px 22px}.question-card::before{top:20px;bottom:20px}.answer{font-size:.96rem}.language-switcher{top:10px;right:10px}.language-switcher button{padding:6px 8px;font-size:.62rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.question-card{opacity:1;transform:none}.page-arriving .hero,.page-arriving .question-card{animation:none}}
 
 /* ===== CROSS-PAGE ARCHIVE TRANSITION ===== */
@@ -927,4 +929,4 @@ let ticking=false;function scrollUI(){document.documentElement.style.setProperty
 if(!reduce.matches&&matchMedia('(pointer:fine)').matches){const glow=document.createElement('div');glow.className='x-cursor-glow';document.body.appendChild(glow);let raf=0,mx=innerWidth/2,my=innerHeight/2;addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;if(raf)return;raf=requestAnimationFrame(()=>{document.documentElement.style.setProperty('--mx',mx+'px');document.documentElement.style.setProperty('--my',my+'px');raf=0})},{passive:true})}
 </script>
 </body>
-</html>Made with questions, answers, Aegisub, and questionable amounts of time.
+</html>
