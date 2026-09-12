@@ -75,16 +75,36 @@ html[lang="th"] body,html[lang="th"] body *{font-family:"IBM Plex Sans Thai","No
 @keyframes gridMove{to{background-position:0 46px,46px 0}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes letterIn{0%{opacity:0;transform:translate3d(0,18px,0) scale(.94)}70%{opacity:1;transform:translateY(-3px) scale(1.01);filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}@keyframes letterOut{to{opacity:0;transform:translate3d(0,-18px,0) scale(.96)}}@keyframes subIn{to{opacity:1;transform:none;letter-spacing:.34em}}@keyframes loading{to{width:100%}}@keyframes flicker{0%,91%,93%,100%{opacity:.58}92%{opacity:.15}}
 @media(max-width:700px){.page{padding-top:105px}.navbar{width:94%;gap:2px;padding:5px}.navbar a{padding:8px 9px;font-size:.63rem;letter-spacing:.06em}.hero{padding:40px 0 52px}.question-card{padding:25px 22px}.question-card::before{top:20px;bottom:20px}.answer{font-size:.96rem}.language-switcher{top:10px;right:10px}.language-switcher button{padding:6px 8px;font-size:.62rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.question-card{opacity:1;transform:none}.page-arriving .hero,.page-arriving .question-card{animation:none}}
+
+/* ===== CROSS-PAGE ARCHIVE TRANSITION ===== */
+.qa-crossfade{position:fixed;inset:0;z-index:100000;pointer-events:none;display:grid;place-items:center;background:#03040a;opacity:0;visibility:hidden;overflow:hidden}
+.qa-crossfade::before{content:"";position:absolute;width:18vmax;height:18vmax;border:1px solid rgba(103,232,249,.6);border-radius:50%;box-shadow:0 0 0 1px rgba(167,139,250,.18),0 0 90px rgba(103,232,249,.16);transform:scale(.18);opacity:0}
+.qa-crossfade::after{content:"";position:absolute;inset:-15%;background:linear-gradient(rgba(103,232,249,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(103,232,249,.05) 1px,transparent 1px);background-size:46px 46px;transform:scale(1.2);opacity:0;mask-image:radial-gradient(circle at center,#000,transparent 70%);-webkit-mask-image:radial-gradient(circle at center,#000,transparent 70%)}
+.qa-crossfade.active{opacity:1;visibility:visible}
+.qa-crossfade.active::before{animation:qaCrossBloom .95s cubic-bezier(.16,1,.3,1) forwards}
+.qa-crossfade.active::after{animation:qaCrossGrid .95s cubic-bezier(.16,1,.3,1) forwards}
+.qa-crossfade-core{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;opacity:0;transform:translateY(18px) scale(.94)}
+.qa-crossfade.active .qa-crossfade-core{animation:qaCrossCore .58s .08s cubic-bezier(.16,1,.3,1) forwards}
+.qa-crossfade-core span{font:700 .58rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.3em;color:rgba(148,163,184,.68)}
+.qa-crossfade-core strong{font:700 clamp(3.5rem,10vw,8rem)/.8 "Space Grotesk",Arial,sans-serif;letter-spacing:-.075em;color:#fff;text-shadow:0 0 28px rgba(103,232,249,.24)}
+.qa-crossfade-core span:last-child{color:rgba(196,181,253,.7);letter-spacing:.22em}
+body.qa-leaving .page,body.qa-leaving main{animation:qaCrossPageOut .62s cubic-bezier(.7,0,.84,0) forwards}
+@keyframes qaCrossBloom{0%{opacity:0;transform:scale(.18)}35%{opacity:1}100%{opacity:.72;transform:scale(15)}}
+@keyframes qaCrossGrid{0%{opacity:0;transform:scale(1.2)}45%{opacity:.75}100%{opacity:.16;transform:scale(1)}}
+@keyframes qaCrossCore{from{opacity:0;transform:translateY(18px) scale(.94);filter:blur(10px)}to{opacity:1;transform:none;filter:none}}
+@keyframes qaCrossPageOut{to{opacity:0;transform:scale(.985) translateY(-10px);filter:blur(5px)}}
+@media(prefers-reduced-motion:reduce){.qa-crossfade{display:none!important}body.qa-leaving .page,body.qa-leaving main{animation:none!important}}
 </style>
 </head>
 <body>
 <div class="language-switcher" aria-label="Language selector"><button type="button" data-lang="en">ENG</button><button type="button" data-lang="th">ไทย</button><button type="button" data-lang="ja">日本語</button></div>
-<nav class="navbar"><a href="index.html" class="back-link" data-back>← Portfolio</a><a href="#top" class="active" data-nav-home>Q&A</a></nav>
+<nav class="navbar"><a href="index.html" class="back-link" data-back data-portfolio-link>← Portfolio</a><a href="#top" class="active" data-nav-home>Q&A</a></nav>
+<div class="qa-crossfade" id="qaCrossfade" aria-hidden="true"><div class="qa-crossfade-core"><span>RETURNING TO</span><strong>PACKPM</strong><span>PORTFOLIO // HOME</span></div></div>
 <main class="page" id="top">
 <section class="hero"><div class="archive-note" data-kicker>PERSONAL ARCHIVE // Q&A</div><h1><span>&gt;</span> <span data-title>Questions I Ask Myself</span> <span>&lt;</span></h1><p data-subtitle>Questions I ask myself sometimes... and the answers I somehow came up with.</p></section>
 <section class="question-list" id="questions"></section>
 <div class="end-marker" data-end>END OF QUESTIONS // FOR NOW</div>
-<div class="back-wrap"><a class="back-button" href="index.html" data-back-button>← Back to Portfolio</a></div>
+<div class="back-wrap"><a class="back-button" href="index.html" data-back-button data-portfolio-link>← Back to Portfolio</a></div>
 <footer data-footer>Made with questions, answers, Aegisub, and questionable amounts of time. 👽</footer>
 </main>
 <script>
@@ -870,10 +890,32 @@ function render(lang){const d=data[lang]||data.en;document.documentElement.lang=
 switcher.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.lang)));
 let saved='en';try{saved=localStorage.getItem('packpm-language')||'en'}catch(e){}
 render(saved);
+document.querySelectorAll('[data-portfolio-link]').forEach(link=>link.addEventListener('click',event=>{
+  if(event.metaKey||event.ctrlKey||event.shiftKey||event.altKey) return;
+  event.preventDefault();
+  const reduceNow=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduceNow){ window.location.href=link.href; return; }
+  document.body.classList.add('qa-leaving');
+  const overlay=document.getElementById('qaCrossfade');
+  if(overlay) overlay.classList.add('active');
+  try{ sessionStorage.setItem('packpm-skip-startup','1'); }catch(e){}
+  setTimeout(()=>{window.location.href=link.href},620);
+}));
+
 const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
 function boot(){
   if(reduce.matches) return;
-  try{ if(sessionStorage.getItem('packpm-qa-transition')==='1'){ document.body.classList.add('page-arriving'); sessionStorage.removeItem('packpm-qa-transition'); } }catch(e){}
+  try{
+    if(sessionStorage.getItem('packpm-qa-arrival')==='1'){
+      sessionStorage.removeItem('packpm-qa-arrival');
+      document.body.classList.add('page-arriving');
+      const overlay=document.getElementById('qaCrossfade');
+      if(overlay){
+        overlay.classList.add('active');
+        setTimeout(()=>overlay.classList.remove('active'),90);
+      }
+    }
+  }catch(e){}
 }
 boot();
 let ticking=false;function scrollUI(){document.documentElement.style.setProperty('--scroll',Math.min(100,window.scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%');document.querySelector('.navbar').classList.toggle('show',window.scrollY>45);ticking=false}window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(scrollUI)}},{passive:true});scrollUI();
