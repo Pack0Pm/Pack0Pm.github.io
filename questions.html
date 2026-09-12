@@ -63,21 +63,21 @@ a{color:inherit;text-decoration:none}
 .back-button{display:inline-flex;align-items:center;gap:9px;padding:11px 19px;border:1px solid rgba(103,232,249,.22);border-radius:999px;background:rgba(103,232,249,.04);color:#67e8f9;font-size:.82rem;font-weight:700;transition:.25s ease}
 .back-button:hover{transform:translateY(-3px);background:rgba(103,232,249,.09);border-color:rgba(103,232,249,.5);box-shadow:0 12px 32px rgba(34,211,238,.1)}
 footer{text-align:center;padding:25px 0 10px;color:#62627a;font-size:.78rem}
-.startup-screen{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 50% 45%,rgba(103,232,249,.12),transparent 18%),radial-gradient(circle at 20% 20%,rgba(96,165,250,.1),transparent 30%),radial-gradient(circle at 80% 70%,rgba(167,139,250,.11),transparent 30%),#04050b;transition:opacity .9s cubic-bezier(.16,1,.3,1),visibility .9s cubic-bezier(.16,1,.3,1)}
-.startup-screen.hide{opacity:0;visibility:hidden;pointer-events:none}
-.startup-screen::before{content:"";position:absolute;inset:-20%;background:linear-gradient(rgba(103,232,249,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(103,232,249,.045) 1px,transparent 1px);background-size:46px 46px;transform:perspective(700px) rotateX(62deg) translateY(12%);transform-origin:center bottom;opacity:.55;animation:gridMove 12s linear infinite;mask-image:linear-gradient(to bottom,transparent,black 30%,black 80%,transparent);z-index:-2}
-.startup-screen::after{content:"";position:absolute;width:min(72vw,760px);aspect-ratio:1;border:1px solid rgba(103,232,249,.1);border-radius:50%;box-shadow:0 0 0 70px rgba(103,232,249,.018),0 0 0 140px rgba(103,232,249,.012),inset 0 0 70px rgba(103,232,249,.035);animation:orbit 9s linear infinite;z-index:-1}
-.startup-content{text-align:center;width:min(760px,90vw);padding:40px 20px}.startup-content::before{content:"SYSTEM / PACKPM.QA";display:block;margin-bottom:26px;color:rgba(103,232,249,.58);font:700 .65rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.28em;animation:flicker 3s steps(1,end) infinite}.startup-greeting{display:flex;justify-content:center;min-height:1.2em;margin:0;color:#fff;font-size:clamp(3rem,10vw,7.2rem);font-weight:800;line-height:.9;letter-spacing:-.065em;text-shadow:0 0 18px rgba(103,232,249,.2),0 0 60px rgba(103,232,249,.08)}.greeting-letter{display:inline-block;opacity:0;transform:translateY(18px) scale(.94);filter:blur(7px);animation:letterIn .58s cubic-bezier(.16,1,.3,1) forwards}.greeting-letter.fade-out{animation:letterOut .42s cubic-bezier(.16,1,.3,1) forwards}.startup-subtitle{margin:42px 0 0;color:#a5f3fc;font-size:.72rem;font-weight:800;letter-spacing:.34em;text-transform:uppercase;opacity:0;animation:subIn .9s .25s cubic-bezier(.16,1,.3,1) forwards}.startup-loader{position:relative;width:min(300px,70vw);height:3px;margin:28px auto 0;background:rgba(255,255,255,.08);border-radius:99px}.startup-loader::before{content:"OPENING ARCHIVE";position:absolute;left:0;bottom:11px;color:rgba(148,163,184,.62);font:600 .55rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.18em}.startup-loader-bar{width:0;height:100%;background:linear-gradient(90deg,#67e8f9,#60a5fa,#a78bfa);border-radius:inherit;box-shadow:0 0 16px rgba(103,232,249,.55);animation:loading 2.5s cubic-bezier(.16,1,.3,1) forwards}
+.archive-note{margin-bottom:34px;transform:translateY(-6px)}
+.page-arriving .hero{animation:archiveHeroIn .72s cubic-bezier(.16,1,.3,1) both}
+.page-arriving .question-card{animation:archiveCardIn .7s cubic-bezier(.16,1,.3,1) both}
+.page-arriving .question-card:nth-child(2){animation-delay:.06s}.page-arriving .question-card:nth-child(3){animation-delay:.1s}
+@keyframes archiveHeroIn{from{opacity:0;transform:translateY(22px) scale(.985);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+@keyframes archiveCardIn{from{opacity:0;transform:translateY(30px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
 .language-switcher{position:fixed;top:18px;right:18px;z-index:9998;display:flex;gap:4px;padding:5px;background:rgba(8,8,23,.88);border:1px solid #292943;border-radius:999px;backdrop-filter:blur(14px);box-shadow:0 12px 35px rgba(0,0,0,.25)}.language-switcher button{border:0;background:transparent;color:#85859c;padding:7px 10px;border-radius:999px;font:700 .68rem/1 Arial,sans-serif;letter-spacing:.08em;cursor:pointer;transition:.2s ease}.language-switcher button:hover{color:#fff;background:#17172a}.language-switcher button.active{color:#67e8f9;background:#101025}
 .x-cursor-glow{position:fixed;left:0;top:0;width:360px;height:360px;pointer-events:none;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(103,232,249,.1),rgba(103,232,249,.025) 28%,transparent 68%);transform:translate3d(calc(var(--mx,50vw) - 50%),calc(var(--my,50vh) - 50%),0);transition:transform .18s ease-out}
 html[lang="th"] body,html[lang="th"] body *{font-family:"IBM Plex Sans Thai","Noto Sans Thai",Arial,sans-serif}html[lang="th"] body{line-height:1.85}html[lang="th"] h1,html[lang="th"] h2,html[lang="th"] h3{letter-spacing:-.025em}
 @keyframes gridMove{to{background-position:0 46px,46px 0}}@keyframes orbit{to{transform:rotate(360deg)}}@keyframes letterIn{0%{opacity:0;transform:translate3d(0,18px,0) scale(.94)}70%{opacity:1;transform:translateY(-3px) scale(1.01);filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}@keyframes letterOut{to{opacity:0;transform:translate3d(0,-18px,0) scale(.96)}}@keyframes subIn{to{opacity:1;transform:none;letter-spacing:.34em}}@keyframes loading{to{width:100%}}@keyframes flicker{0%,91%,93%,100%{opacity:.58}92%{opacity:.15}}
 @media(max-width:700px){.page{padding-top:105px}.navbar{width:94%;gap:2px;padding:5px}.navbar a{padding:8px 9px;font-size:.63rem;letter-spacing:.06em}.hero{padding:40px 0 52px}.question-card{padding:25px 22px}.question-card::before{top:20px;bottom:20px}.answer{font-size:.96rem}.language-switcher{top:10px;right:10px}.language-switcher button{padding:6px 8px;font-size:.62rem}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.question-card{opacity:1;transform:none}.startup-screen{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.question-card{opacity:1;transform:none}.page-arriving .hero,.page-arriving .question-card{animation:none}}
 </style>
 </head>
 <body>
-<div class="startup-screen" id="startupScreen"><div class="startup-content"><h1 class="startup-greeting" id="startupGreeting">Hello</h1><p class="startup-subtitle">Questions I Ask Myself • Packpm</p><div class="startup-loader"><div class="startup-loader-bar"></div></div></div></div>
 <div class="language-switcher" aria-label="Language selector"><button type="button" data-lang="en">ENG</button><button type="button" data-lang="th">ไทย</button><button type="button" data-lang="ja">日本語</button></div>
 <nav class="navbar"><a href="index.html" class="back-link" data-back>← Portfolio</a><a href="#top" class="active" data-nav-home>Q&A</a></nav>
 <main class="page" id="top">
@@ -90,29 +90,780 @@ html[lang="th"] body,html[lang="th"] body *{font-family:"IBM Plex Sans Thai","No
 <script>
 const data={
 en:{title:'Questions I Ask Myself',subtitle:'Questions I ask myself sometimes... and the answers I somehow came up with.',kicker:'PERSONAL ARCHIVE // Q&A',back:'← Portfolio',backButton:'← Back to Portfolio',end:'END OF QUESTIONS // FOR NOW',footer:'Made with questions, answers, Aegisub, and questionable amounts of time. 👽',greetings:['Hello','Welcome','Questions'],questions:[
-['ทำไมถึงเป็น Subtitle Creator? 🎬',`ก็น่าจะเป็นเพราะตอนแรกผมแค่อยากให้เพลงที่ตัวเองชอบมี Subtitle ภาษาไทยครับ ไม่ได้เริ่มจากความคิดใหญ่โตอะไรเลย แค่รู้สึกว่าเพลงบางเพลงมันดีมาก แล้วก็อยากให้คนที่ฟังภาษาไทยได้มีโอกาสเข้าใจมันเหมือนที่ผมเข้าใจ\n\nจากนั้นก็เริ่มลองแปลเนื้อเพลง ลองจับ timing แล้วก็เริ่มเล่นกับ Aegisub ไปเรื่อย ๆ จากที่ตอนแรกเป็นแค่โปรแกรมที่เอาไว้ลองเล่น กลายเป็นโปรแกรมที่เปิดแทบทุกครั้งที่มี MV ที่อยากทำ\n\nยิ่งทำก็ยิ่งรู้ว่าการทำ Subtitle ไม่ได้มีแค่การแปลคำจากภาษาหนึ่งไปอีกภาษาหนึ่ง แต่มีทั้งการเลือกคำ การแบ่งบรรทัด timing, styling, effects และรายละเอียดเล็ก ๆ ที่ทำให้ Subtitle เข้ากับเพลงมากขึ้น\n\nบางครั้งคนดูอาจเห็นแค่ตัวหนังสือไม่กี่บรรทัดอยู่ด้านล่างของจอ แต่กว่าจะมาถึงตรงนั้นก็มีเวลาที่หายไปเยอะพอสมควรครับ 😭\n\nสุดท้ายแล้วผมคิดว่าผมเริ่มทำ Subtitle เพราะผมแค่ชอบเพลงเหล่านี้ และอยากให้คนอื่นมีโอกาสได้ชอบมันเหมือนกัน`],
-['แล้วทำไมถึงชอบ Vocaloid? 🎵',`ก็.... ไม่รู้สิครับ 😭 อาจเป็นเพราะประสบการณ์ชีวิตของผมที่ไม่ได้ดีอะไรขนาดนั้น... ออกเป็นเชิงแย่ด้วยซ้ำ แต่เพลงจากเสียงสังเคราะห์หรือ Vocaloid นี่แหละที่บางครั้งทำให้ผมรู้สึกเหมือนมีอะไรบางอย่างอยู่เป็นเพื่อน\n\nเพลงไม่ได้แก้ปัญหาทุกอย่างให้ผมหรอกครับ แต่บางเพลงทำให้วันที่แย่ ๆ มันผ่านไปได้ง่ายขึ้นนิดหนึ่ง บางเพลงทำให้รู้สึกว่า “เออ อย่างน้อยก็ยังมีเพลงนี้อยู่”\n\nแล้วผมก็ชอบตรงที่ Vocaloid, UTAU และ Synthesizer V เปิดโอกาสให้ producer แต่ละคนทำอะไรได้หลากหลายมาก เสียงเดียวกันก็สามารถไปอยู่ในเพลงคนละแบบ คนละอารมณ์ หรือคนละเรื่องราวได้\n\nยิ่งฟังเยอะก็ยิ่งเจอ producer ใหม่ ๆ เพลงใหม่ ๆ และสุดท้ายก็เริ่มรู้สึกผูกพันกับวงการนี้มากกว่าที่คิด\n\nบางทีถ้าไม่มีเพลงพวกนี้ ผมก็คงไม่ได้มาอยู่ตรงนี้ ไม่ได้มาเปิด Aegisub จนดึก ๆ และอาจไม่ได้รู้จักคนหลาย ๆ คนที่ได้รู้จักในตอนนี้ด้วยครับ`],
-['แล้วใครเป็นแรงบันดาลใจให้ทำสิ่งนี้? 🌟',`ก็.... มีนักแปลท่านหนึ่งครับ ใช้นามปากกาว่า <strong>Padthai</strong>\n\nชื่อแปลกโคตร 😭\n\nแต่ถึงชื่อจะฟังดูเหมือนอาหารที่ผมสั่งตอนหิว ผลงานของเขาไม่ได้แปลกตามชื่อเลยครับ 🗿\n\nผมรู้สึกว่างานแปลของเขาทำออกมาได้ดีมาก โดยเฉพาะการใช้ Aegisub ทั้งเรื่อง Subtitle timing, การจัดข้อความ แล้วก็การทำ Subtitle ให้เข้ากับเพลง ผมดูแล้วรู้สึกว่า “เออ... แบบนี้แหละที่อยากทำให้ได้”\n\nมันไม่ได้เป็นแค่การเอาเนื้อเพลงมาแปลแล้วใส่ลงไปในวิดีโอ แต่เหมือนเขาใส่รายละเอียดลงไปกับงานด้วย ซึ่งมันเป็นหนึ่งในสิ่งที่ทำให้ผมอยากพัฒนาการทำ Subtitle ของตัวเองต่อไป\n\nถ้ามีโอกาส ผมก็อยากติดตามผลงานของเขาต่อไปเรื่อย ๆ ครับ\n\nแล้วก็มีอีกคนหนึ่งที่เป็นแรงบันดาลใจให้ผมเหมือนกัน แต่จะเป็นคนละด้านกับ Padthai ครับ\n\nคนนั้นคือ <strong>Meowmerr</strong>\n\nถ้า Padthai เป็นคนที่ทำให้ผมสนใจเรื่อง Subtitle และการใช้ Aegisub มากขึ้น Meowmerr ก็เป็นคนที่ทำให้ผมสนใจในเรื่องการแปลเพลงและการถ่ายทอดความรู้สึกของเพลงผ่านภาษามากขึ้น\n\nผลงานแปลของเขา รวมถึงงานร้อง Cover ก็เป็นงานที่ผมรู้สึกว่าคุณภาพดีมากจริง ๆ ทั้งการเลือกคำ การถ่ายทอดความหมาย แล้วก็การทำให้มันยังฟังเป็นธรรมชาติอยู่\n\nถ้าใครสนใจงานแปลหรือเพลง Cover ผมก็แนะนำให้ลองไปดูผลงานของเขาเลยครับ บอกเลยว่าคุณภาพมาก 🗣️🔥\n\nและผมว่ามันน่าสนใจดีเหมือนกันที่แรงบันดาลใจของผมไม่ได้มาจากคนเพียงคนเดียว หรือมาจากสิ่งเดียว\n\nบางคนทำให้ผมอยากทำ Subtitle ให้เก่งขึ้น\n\nบางคนทำให้ผมอยากแปลให้ดีขึ้น\n\nบางคนทำให้ผมอยากเข้าใจเพลงให้มากขึ้น\n\nและผลงานของพวกเขาเองก็อาจเคย inspired ใครบางคนมาเรื่อย ๆ โดยที่เจ้าตัวอาจไม่รู้ด้วยซ้ำ\n\nเหมือนที่ผมเองก็เคยได้รับแรงบันดาลใจจากผลงานของคนอื่นมาเหมือนกันครับ ❤️`],
-['แล้ว Aegisub เข้ามาเกี่ยวอะไรด้วย? 💻',`ถ้าพูดง่าย ๆ ก็คือ.... <strong>มันเริ่มจากการที่ผมอยากทำ Subtitle แล้วดันไปเจอ Aegisub ครับ</strong> 😭\n\nจากนั้นมันก็เหมือนเดินเข้าไปในหลุมที่ไม่มีทางปีนกลับขึ้นมาได้\n\nตอนแรกก็แค่ลองทำ timing\n\nแล้วก็ลอง styling\n\nแล้วก็ลอง effects\n\nแล้วก็เริ่มสนใจว่า “ถ้าทำแบบนี้จะเป็นยังไง?”\n\nแล้วก็เปิด Aegisub ต่ออีกสามชั่วโมง 🗿\n\nผมคิดว่าถ้าไม่มี Aegisub ผมก็คงไม่ได้เรียนรู้เรื่อง Subtitle ในระดับที่ทำอยู่ตอนนี้ เพราะมันทำให้ผมได้ลองผิดลองถูกด้วยตัวเองเยอะมาก\n\nจนตอนนี้บางครั้งแค่ได้ยินเพลง ผมก็เริ่มคิดในหัวแล้วว่า “ตรงนี้ Subtitle น่าจะขึ้นประมาณนี้... ตรงนี้ควรแบ่งบรรทัด... ตรงนี้ใส่ effect นิดหนึ่งก็น่าจะดี”\n\nเรียกได้ว่า Aegisub ไม่ได้เป็นแค่เครื่องมือที่ผมใช้ทำงานแล้วครับ\n\n<strong>มันกลายเป็นโปรแกรมที่กินชีวิตไปแล้ว</strong> 😭🙏`],
-['แล้ว Subtitle ที่ดีสำหรับผมคืออะไร? 🎬',`ก็น่าจะเป็นว่า... <strong>ไม่จำเป็นต้องทำบน Aegisub ก็ได้มั้ง</strong> 😭\n\nสำหรับผม Subtitle ที่ดีไม่ได้วัดกันว่าใช้โปรแกรมอะไร หรือมี styling อลังการแค่ไหน แต่สิ่งที่สำคัญกว่าคือมันสามารถสื่อความหมายที่ producer อยากจะสื่อออกมาได้มากแค่ไหน\n\nบางครั้งการแปลตรงตัวทุกคำอาจไม่ได้ทำให้คนดูเข้าใจความรู้สึกของเพลงมากที่สุด เพราะเนื้อเพลงบางเพลงมีคำเล่น คำเปรียบเทียบ หรือประโยคที่ถ้าแปลตรง ๆ แล้วมันอาจฟังดูแปลกมากในอีกภาษา\n\nเพราะงั้นเวลาทำ Subtitle ผมจะพยายามคิดว่า\n\n<blockquote>“ถ้าคนที่ไม่เข้าใจภาษาต้นฉบับมาเห็น Subtitle นี้ เขาจะเข้าใจสิ่งที่เพลงกำลังพยายามบอกไหม?”</blockquote>\n\nแล้วก็มีอีกอย่างที่สำคัญสำหรับผมคือ <strong>ร้องตามได้</strong> 🗿\n\nถ้า Subtitle อ่านยากจนต้องหยุดเพลงเพื่ออ่านทุกบรรทัด หรือประโยคยาวจนเพลงไปถึงไหนแล้วแต่คนดูยังอ่านไม่จบ มันก็คงไม่ใช่ Subtitle ที่ดีเท่าไหร่\n\nเพราะสุดท้ายแล้ว Subtitle ก็ควรจะช่วยให้คนดูเพลินกับเพลง ไม่ใช่ทำให้ต้องมานั่งสอบอ่านจับใจความระหว่างฟังเพลง 😭🙏\n\nดังนั้นสำหรับผม Subtitle ที่ดีอาจไม่ได้เป็น Subtitle ที่ “สวยที่สุด” หรือ “แปลตรงที่สุด”\n\nแต่เป็น Subtitle ที่ทำให้คนดูเข้าใจเพลงได้ง่ายขึ้น และยังรู้สึกถึงสิ่งที่ producer ตั้งใจใส่ลงไปในเพลงได้อยู่`],
-['แล้วทำไมถึงทำ Subtitle ให้ฟรี? 💸',`ถ้าตอบแบบตรง ๆ เลยก็คือ... <strong>ผมไม่มีช่องทางรับเงินจากหลายประเทศครับ 😭</strong>\n\nแต่ถ้าตอบแบบผู้ดีหน่อย 🗿... เพราะบางเพลงที่ผมฟังหรือดูอยู่ มันดีเกินกว่าที่ผมจะปล่อยผ่านไปเฉย ๆ\n\nผมไม่ได้ทำ Subtitle ให้ MV ที่ชอบเพราะคิดว่า “เพลงนี้ไม่มี Subtitle งั้นเอามาแปล ๆ ให้เสร็จ ๆ ไป”\n\nถ้าผมเลือกทำ Subtitle ให้เพลงหนึ่ง ผมอยากทำเพราะรู้สึกว่า <blockquote>“นี่แหละ ผลงานชิ้นเอกของ producer ที่ผมชอบ”</blockquote>\n\nแล้วผมก็อยากให้คนไทยได้มีโอกาสรู้จักมันเหมือนที่ผมได้รู้จัก\n\nถึงบางครั้งจะเป็นงานที่ใช้เวลานานมาก ตั้งแต่แปลเนื้อเพลง เช็กความหมาย จับ timing ทำ styling แก้คำ แก้ timing แล้วกลับมาดูซ้ำอีกรอบจนเริ่มสงสัยว่าทำไมชีวิตเราถึงมาอยู่ตรงนี้ 😭\n\nผมไม่ได้อยากหยิบ MV อะไรก็ได้มาแปลเพื่อให้จำนวนงานเพิ่มขึ้น หรือทำแบบลวก ๆ แล้วบอกว่า “เสร็จแล้ว”\n\nถ้าจะทำ ผมก็อยากทำให้มันเป็น Subtitle ที่ผมเองยังรู้สึกว่าอยากเปิดดูอีกครั้ง\n\nเพราะสิ่งที่ผมอยากได้กลับมาไม่ใช่เงิน แต่อยากเห็นว่าเพลงที่ผมรักสามารถไปถึงคนที่อาจไม่เคยรู้จักมันมาก่อน\n\nถ้ามีคนไทยสักคนกดเข้ามาดู Subtitle แล้วคิดว่า “เฮ้ย เพลงนี้ดีนี่หว่า”\n\nสำหรับผม แค่นั้นก็ถือว่าคุ้มแล้วครับ ❤️`],
-['แล้วทำไมถึงอยากช่วย producer หน้าใหม่? 🌱',`ถึงวงการอาจจะไม่ได้อยู่ในช่วงที่คนพูดถึงกันเยอะเหมือนเมื่อก่อน แต่ก็ยังมี producer ใหม่ ๆ ที่เพิ่งเริ่มทำเพลงและมีผลงานที่น่าสนใจออกมาเรื่อย ๆ\n\nแล้วบางครั้งผมก็เจอเพลงที่คิดว่า “ทำไมเพลงนี้คนยังไม่ค่อยรู้จักวะ?”\n\nผมเลยอยากช่วยให้พวกเขามีโอกาสถูกค้นพบโดยคนฟังชาวไทยบ้าง\n\nผมไม่ได้คิดว่าการทำ Subtitle หนึ่งครั้งจะเปลี่ยนชีวิต producer ได้ หรือทำให้เพลงดังขึ้นทันทีอะไรแบบนั้นครับ\n\nแต่ Subtitle เล็ก ๆ หนึ่งชุดอาจทำให้คนที่ไม่เข้าใจภาษาต้นฉบับหยุดดูเพลงนั้นได้นานขึ้นอีกหน่อย แล้วบางทีคนคนนั้นก็อาจไปฟังเพลงอื่นของ producer ต่อ\n\nผมเลยรู้สึกว่าถ้าผมสามารถช่วยอะไรเล็ก ๆ น้อย ๆ แบบนี้ได้ ก็อยากช่วยครับ\n\nและส่วนใหญ่ผมก็ไม่ได้คาดหวังอะไรตอบแทน แค่อยากให้เพลงที่ผมคิดว่าดีได้มีโอกาสไปถึงคนอีกกลุ่มหนึ่งก็พอ`],
-['แล้วการทำงานกับ producer เป็นยังไง? 🤝',`ก็... หลังจากได้ทำงานร่วมกับ producer ที่ตัวเองชอบ ผมรู้สึกค่อนข้างอายและประหม่าในตอนแรกครับ 😭\n\nเพราะก่อนหน้านั้นเราก็เป็นแค่คนที่นั่งฟังเพลงของเขาอยู่หน้าคอม แล้วจู่ ๆ ต้องส่งข้อความไปหาเจ้าของเพลงจริง ๆ มันก็มีความรู้สึกประมาณว่า “เอ่อ... เขาจะตอบไหมวะ” อยู่เหมือนกัน 🗿\n\nแต่หลังจากได้ทำงานด้วยกันจริง ๆ ผมก็รู้สึกว่าได้รู้จักตัวของ producer มากขึ้น ไม่ได้รู้จักแค่จากเพลงที่เขาทำ แต่ได้เห็นวิธีทำงาน วิธีคิด แล้วก็ได้เรียนรู้อะไรหลายอย่างจากการคุยกัน\n\nนอกจากประสบการณ์แล้ว ผมก็ได้ connection และโอกาสใหม่ ๆ กลับมาด้วย ซึ่งผมรู้สึกขอบคุณมากครับ\n\nมีหลายอย่างที่ผมคงเล่าไม่ได้ เพราะบางเรื่องเป็นข้อมูลภายในของงานหรือของ producer เอง\n\n<strong>ง่าย ๆ คือ ไม่บอกออกกกก 🗣🔥</strong>\n\nแต่โดยรวมแล้วผมรู้สึกว่าการได้ทำงานกับ producer เป็นหนึ่งในส่วนที่ทำให้การทำ Subtitle ของผมมีความหมายมากขึ้น เพราะมันทำให้รู้ว่าเบื้องหลัง MV หนึ่งเพลงมีคนจริง ๆ ที่ใส่เวลาและความพยายามลงไปเยอะมาก`],
-['แล้วเคยมี MV ไหนที่ทำแล้วรู้สึกว่า “คุ้มจริง ๆ” ไหม? ❤️',`มีหลายเพลงเลยครับ แต่ผมว่ามันตอบยากเหมือนกันว่าเพลงไหน “คุ้มที่สุด” เพราะแต่ละเพลงมันมีเหตุผลที่ทำให้จำได้ไม่เหมือนกัน\n\nบางเพลงจำได้เพราะตอนทำสนุกมาก\n\nบางเพลงจำได้เพราะเป็นงานที่ยากจนตอนทำแทบจะโยนคอมทิ้ง 😭\n\nบางเพลงจำได้เพราะตอนนั้นผมกำลังอยู่ในช่วงชีวิตบางช่วง แล้วพอกลับมาเปิดเพลงนั้นอีกครั้ง มันก็ทำให้คิดถึงวันเก่า ๆ ขึ้นมาเฉยเลย\n\nแล้วบางเพลงก็จำได้เพราะ producer ตอบกลับมา\n\nตอนแรกอาจเป็นแค่ MV หนึ่งเพลงที่ผมชอบ แต่พอได้คุยกับคนที่สร้างเพลงนั้นจริง ๆ มันก็กลายเป็นความทรงจำอีกแบบหนึ่งไปเลย\n\nผมคิดว่าความ “คุ้ม” ของการทำ Subtitle สำหรับผม ไม่ได้อยู่ที่ว่า Subtitle นั้นมีคนดูเท่าไหร่ หรือมีคนมากดชมผมมากแค่ไหน\n\nบางครั้งมันอาจเป็นแค่คนหนึ่งคนที่ได้เข้าใจเนื้อเพลงมากขึ้น หรือคนหนึ่งคนที่ได้รู้จัก producer ที่ไม่เคยรู้จักมาก่อน\n\nหรือแม้แต่ตัวผมเองที่วันหนึ่งกลับมาเปิดเพลงนั้น แล้วนึกขึ้นมาได้ว่า\n\n<blockquote>“อ๋อ... ตอนนั้นเรานั่งทำเพลงนี้อยู่นี่หว่า”</blockquote>\n\nแค่นั้นก็เพียงพอที่จะทำให้ MV หนึ่งเพลงกลายเป็นความทรงจำไปแล้วครับ`],
-['แล้วทำไมถึงยังทำต่อจนถึงตอนนี้? 🔥',`ก็... น่าจะเพราะหลายอย่างรวมกันครับ\n\nอย่างแรกเลยคือ <strong>producer</strong>\n\nหลังจากได้มีโอกาสทำงานกับ producer หลายคน ผมก็เริ่มรู้สึกว่า MV หนึ่งเพลงไม่ได้เป็นแค่เพลงหนึ่งเพลงอีกต่อไป มันมีคนที่สร้างมันขึ้นมา มีความคิด มีเวลา มีความพยายาม และบางครั้งก็มีเรื่องราวของเขาอยู่ข้างหลังเพลงนั้น\n\nอีกอย่างคือ <strong>producer หน้าใหม่</strong>\n\nบางครั้งผมเจอเพลงที่คิดว่า “ทำไมเพลงนี้คนยังไม่ค่อยรู้จักวะ?” แล้วก็รู้สึกว่า ถ้าผมช่วยให้คนไทยสักคนค้นพบเพลงนั้นได้ ผมก็ได้ช่วยอะไรบางอย่างแล้ว\n\nแล้วก็มีอีกอย่างที่สำคัญมากคือ <strong>ความทรงจำ</strong>\n\nทุก MV ที่ทำเสร็จไม่ได้เป็นแค่ไฟล์ Subtitle ที่เอาไปเก็บไว้ในโฟลเดอร์ แต่แต่ละงานมันจำได้ว่า ตอนนั้นทำช่วงไหน ฟังเพลงอะไร คุยกับใคร เจอปัญหาอะไร เหนื่อยแค่ไหน แล้วตอนนั้นรู้สึกยังไงกับเพลงนั้น\n\nพอเวลาผ่านไป ผมอาจจำรายละเอียดของ MV บางเพลงไม่ได้ด้วยซ้ำ แต่ถ้ากลับมาเห็น Subtitle ที่ตัวเองเคยทำ ผมก็อาจนึกขึ้นมาได้ว่า\n\n<blockquote>“อ๋อ... ช่วงนั้นเราเคยอยู่ตรงนี้นี่เอง”</blockquote>\n\nเพราะงั้นผมคิดว่าที่ผมยังทำต่อจนถึงตอนนี้ ไม่ใช่เพราะผมต้องทำ แต่เพราะผมยังมีเพลงที่อยากให้คนอื่นได้รู้จัก ยังมี producer ที่อยากสนับสนุน ยังมีงานที่อยากลองทำ และยังมีความทรงจำใหม่ ๆ ที่กำลังจะเกิดขึ้น\n\n<strong>เปิด Aegisub ต่อไปครับ 🗿🔥</strong>`],
-['แล้วเคยอยากเลิกทำ Subtitle ไหม? 🫠',`ถ้าจะตอบแบบไม่อ้อมค้อม... <strong>มีครับ....</strong>\n\nบางครั้งผมก็เคยคิดว่าอยากเลิกทำไปเลย ทั้งเรื่องเรียน ทั้ง burnout หรือบางครั้งทำงานออกมาแล้วรู้สึกว่ามันไม่ได้ไปถึงคนไทยเท่าที่เราอยากให้มันไปถึง\n\nเพราะการทำ Subtitle หนึ่งเพลงจริง ๆ แล้วใช้เวลามากกว่าที่คนอื่นเห็น คนดูอาจเห็นแค่ตัวหนังสือไม่กี่บรรทัดอยู่ด้านล่างของจอ แต่กว่าจะมาถึงตรงนั้นก็มีทั้งการแปล การเช็กความหมาย การหาคำที่เหมาะสม การจับ timing การจัดบรรทัด การทำ styling การแก้ไข แล้วก็การเปิดดูซ้ำไปซ้ำมา\n\nแล้วพอเอาทุกอย่างมารวมกับเรื่องเรียนหรือชีวิตประจำวัน มันก็มีวันที่รู้สึกว่า\n\n<blockquote>“เออ... กูจะทำไปทำไมวะ”</blockquote>\n\nแต่ในขณะเดียวกัน พอเห็นว่ามีเพลงใหม่ ๆ ออกมาเรื่อย ๆ แล้วบางเพลงไม่มี Subtitle ภาษาไทย หรือแม้แต่ภาษาอังกฤษเลย ผมก็กลับมาคิดอีกว่า\n\n<blockquote>“ถ้าเราไม่ทำ แล้วจะมีใครทำไหม?”</blockquote>\n\nผมไม่ได้หมายความว่าผมเป็นคนเดียวที่ทำได้ หรือว่าทุกเพลงจำเป็นต้องมี Subtitle จากผม แค่บางครั้งมันรู้สึกเสียดาย เพราะเพลงหนึ่งเพลงอาจมีเรื่องราวที่ producer ตั้งใจใส่ลงไปเยอะมาก แต่ถ้าคนฟังไม่เข้าใจภาษา เขาอาจพลาดสิ่งเหล่านั้นไป\n\nและนั่นก็เป็นเหตุผลที่ทำให้ผมยังกลับมาทำอีกครั้ง ถึงจะ burnout ถึงจะเหนื่อย ถึงจะบ่นว่า Aegisub กินชีวิต ถึงจะบอกว่า “พอแล้ว กูเลิกจริง ๆ” 🗿\n\nสุดท้ายพอมีเพลงใหม่ที่ผมชอบ... <strong>ก็กลับมาเปิด Aegisub อยู่ดี</strong> 😭🙏`],
-['แล้วถ้าย้อนกลับไปหา Packpm ตอนเริ่มทำ Subtitle ใหม่ ๆ จะบอกอะไรเขา? 🕰️',`ขอบอกว่าาาาา....\n\n<blockquote>“งานเองกาก 😭 แต่ถ้าทำต่อไปยังไงก็รุ่งแน่”</blockquote>\n\nแต่เอาจริง ๆ ถ้าย้อนกลับไปได้ ผมคงบอกมากกว่านั้นว่า <strong>“ไม่ต้องรีบเก่งก็ได้”</strong>\n\nตอนเริ่มทำใหม่ ๆ เราอาจจะยังไม่รู้ว่า timing ที่ดีควรเป็นยังไง ยังไม่รู้ว่าจะขึ้นบรรทัดตรงไหนดี ยังไม่รู้ว่าแปลประโยคนี้ยังไงให้มันฟังเป็นธรรมชาติ หรือยังไม่รู้ด้วยซ้ำว่า styling ที่ตัวเองทำอยู่มันดูดีจริงไหม 😭\n\nแต่มันไม่เป็นไร เพราะทุกครั้งที่ทำ มันก็ได้เรียนรู้อะไรเพิ่มขึ้นนิดหนึ่ง\n\nงานที่เคยคิดว่า “โคตรยาก” วันหนึ่งก็กลายเป็นเรื่องปกติ สิ่งที่เคยใช้เวลาสามชั่วโมง วันหนึ่งก็อาจทำได้เร็วขึ้น\n\nเพราะงั้นถ้าจะบอกอะไรกับตัวเองในวันนั้นจริง ๆ ก็คงเป็นว่า\n\n<strong>“ทำต่อไปเหอะ ถึงตอนนี้งานจะกาก แต่เดี๋ยวมึงจะเก่งขึ้นเอง”</strong>\n\nแล้วก็... เตรียมใจไว้ด้วย เพราะ Aegisub กำลังจะครอบครองชีวิตมึง 😭🙏`],
-['แล้ว Packpm อยากให้คนจำอะไรเกี่ยวกับตัวเอง? 👽',`ถ้าถามว่าอยากให้คนจำว่าเป็นใคร... ก็คงอยากให้จำว่าเป็น <strong>Subtitle Creator ชาวไทยคนหนึ่งที่ไม่ได้เข้ามาทำสิ่งนี้เพื่อแสวงหาผลกำไร</strong>\n\nแต่เป็นคนที่อยากให้คนเข้าใจเพลงที่ตัวเองรักมากขึ้น\n\nอยากให้คนไทยได้รู้จัก producer ที่อาจไม่เคยได้ยินชื่อมาก่อน\n\nอยากให้คนที่ไม่เข้าใจภาษาต้นฉบับสามารถเข้าใจเรื่องราวในเพลงได้\n\nและถ้า Subtitle ที่ผมทำเคยทำให้ใครสักคนค้นพบเพลงใหม่ ๆ หรือ producer ใหม่ ๆ ที่ตัวเองชอบ... ผมก็คงดีใจมากแล้วครับ\n\nไม่จำเป็นต้องจำชื่อ Packpm ก็ได้\n\nแค่จำได้ว่า <blockquote>“เคยมี Subtitle Creator ชาวไทยคนหนึ่งที่ทำสิ่งนี้เพราะเขารักเพลงพวกนั้นจริง ๆ”</blockquote>\n\nผมว่าก็พอแล้วครับ 👽`],
-['แล้วเป้าหมาย 100 MV คืออะไร? 📚',`100 MV สำหรับผมไม่ได้เป็นแค่ตัวเลขที่อยากเห็นบนหน้าสถิติครับ\n\nตอนแรกมันก็เป็นแค่งานหนึ่งเพลง แล้วก็กลายเป็นสองเพลง จากนั้นก็เริ่มมีหลายเพลงขึ้นเรื่อย ๆ จนวันหนึ่งผมคิดว่า <strong>“แล้วถ้าลองทำให้ครบ 100 MV ล่ะ?”</strong>\n\nจากตรงนั้นมันก็กลายเป็นเป้าหมายขึ้นมา\n\nแต่ยิ่งทำมากขึ้น ผมก็ยิ่งรู้สึกว่าแต่ละ MV ไม่ได้เป็นแค่ “+1” ในจำนวนงาน\n\nแต่ละเพลงมีเรื่องราวของมันเอง บางเพลงเป็นงานที่ทำสนุก บางเพลงเป็นงานที่เหนื่อยมาก บางเพลงทำให้รู้จัก producer ใหม่ บางเพลงทำให้ได้ connection ใหม่ ๆ และบางเพลงก็อาจกลายเป็นความทรงจำของช่วงชีวิตหนึ่งไปเลย\n\nเพราะงั้น 100 MV สำหรับผมจึงเหมือนการบันทึกการเดินทางมากกว่า\n\nมันเป็นทั้งการท้าทายตัวเองว่า จากคนที่ตอนแรกยังทำ Subtitle ไม่ค่อยเป็น จะสามารถพัฒนาตัวเองไปได้ไกลแค่ไหน\n\nแล้วก็เป็นการสร้าง archive เล็ก ๆ ที่วันหนึ่งผมสามารถกลับมาเปิดดูได้ว่า “เออ เราเคยทำอะไรไว้บ้างนะ”\n\nผมเองก็ไม่รู้ว่าจะใช้เวลานานแค่ไหนกว่าจะถึง 100 MV เพราะชีวิตก็ยังมีเรื่องเรียน เรื่องงาน และเรื่องอื่น ๆ ที่ต้องทำ\n\nแต่ตอนนี้มันยังเป็นเป้าหมายที่อยากไปให้ถึงครับ\n\n<strong>ทีละ MV ก็พอ</strong> ❤️`],
-['แล้วถ้าทำครบ 100 MV แล้ว จะทำอะไรต่อ? 👽',`เอาจริง ๆ คำถามนี้เป็นคำถามที่ผมยังตอบไม่ได้ครับ\n\nถ้าวันนั้นมาถึงจริง ๆ ผมอาจจะยังอยากทำ Subtitle ต่อก็ได้ เพราะถึงจะทำครบ 100 MV แล้ว ผมก็อาจจะยังเจอเพลงที่ชอบ ยังเจอ producer ที่อยากช่วย และยังมีอะไรใหม่ ๆ ให้ลองทำอยู่\n\nหรือบางทีผมอาจจะรู้สึกว่า <strong>“โอเค... แค่นี้ก็พอแล้ว”</strong> แล้วอยากพักสักหน่อย\n\nเพราะการทำ Subtitle ใช้เวลาเยอะกว่าที่คิดจริง ๆ ทั้งการแปล การเช็กความหมาย การจับ timing การทำ styling การแก้ไข รวมถึงการคุยกับ producer และบางครั้งก็ต้องเอาเวลาหลังเลิกเรียนหรือเวลาว่างไปทำ\n\nถ้าวันหนึ่งผม burnout หรือมีเรื่องเรียนและชีวิตจริงเข้ามามากขึ้น ผมก็อาจจะทำได้น้อยลง หรืออาจหยุดไปช่วงหนึ่งก็ได้\n\nและถ้าผมต้องหยุดจริง ๆ ผมก็ไม่คิดว่าสิ่งที่เคยทำมาทั้งหมดจะไม่มีความหมาย\n\nเพราะต่อให้ผมหยุดที่ MV ที่ 100, 101 หรือ 200 สิ่งเหล่านั้นก็ยังเป็นงานที่ผมเคยนั่งทำ เคยเหนื่อยกับมัน เคยสนุกกับมัน และเคยได้พบเจอผู้คนจากมัน\n\nบางทีหลังจากทำครบ 100 MV แล้ว ผมอาจไม่ได้รีบตั้งเป้าหมายใหม่ด้วยซ้ำ อาจจะหยุดนั่งดู archive ของตัวเอง แล้วค่อยคิดว่าอยากไปทางไหนต่อ\n\nตอนนี้ผมยังไม่รู้คำตอบของคำถามพวกนั้นครับ\n\nแต่บางที... คำตอบมันก็ควรเป็นของ <strong>Packpm ในวันนั้น</strong> ไม่ใช่ Packpm ในวันนี้ 😛`]
+['Why did I become a Subtitle Creator? 🎬',`I think it started because I simply wanted the songs I liked to have Thai subtitles. It was never some huge plan or anything. I just felt that some songs were really good, and I wanted Thai-speaking listeners to have a chance to understand them the way I did.
+
+So I started trying to translate lyrics, time subtitles, and mess around with Aegisub. What began as a program I was just experimenting with slowly became something I opened almost every time I found an MV I wanted to work on.
+
+The more I did it, the more I realized that making Subtitles isn't just about changing words from one language to another. There's word choice, line breaks, timing, styling, effects, and all the little details that make the Subtitle fit the song better.
+
+People might only see a few lines of text at the bottom of the screen, but getting those few lines there can take a surprisingly large amount of time. 😭
+
+In the end, I think I started making Subtitles simply because I love these songs, and I wanted other people to have the chance to love them too.`],
+['And why do I like Vocaloid? 🎵',`Well... I don't really know. 😭 Maybe it's because my life experiences haven't exactly been the best... sometimes they've been pretty bad, actually. But music made with synthetic voices, especially Vocaloid, has sometimes made me feel like there was something there keeping me company.
+
+Music doesn't fix every problem for me. But some songs make bad days a little easier to get through. Some songs make me think, “At least I still have this song.”
+
+I also love how Vocaloid, UTAU, and Synthesizer V give each producer so much freedom. The same voice can appear in completely different songs, moods, or stories depending on who is creating with it.
+
+The more I listened, the more new producers and new songs I found, and eventually I became much more attached to this scene than I expected.
+
+Sometimes I wonder if, without these songs, I wouldn't be here doing this at all — staying up late in Aegisub and meeting all the people I've met along the way.`],
+['Who inspired me to do this? 🌟',`There is one translator who goes by <strong>Padthai</strong>.
+
+What a weird name. 😭
+
+But even if the name sounds like something I'd order when I'm hungry, the work itself isn't weird at all. 🗿
+
+I think their translation work is really good, especially the way they use Aegisub — Subtitle timing, text arrangement, and making the Subtitle fit the music. I remember looking at their work and thinking, “Yeah... that's the kind of thing I want to be able to do.”
+
+It isn't just about translating lyrics and putting them into a video. There are a lot of little details in the work, and that is one of the things that made me want to keep improving my own Subtitle work.
+
+If I get the chance, I'd like to keep following their work in the future.
+
+There's also another person who inspired me, but in a different area from Padthai.
+
+That person is <strong>Meowmerr</strong>.
+
+If Padthai made me more interested in Subtitles and Aegisub, Meowmerr made me more interested in song translation and in how feelings can be carried through another language.
+
+Their translation work, as well as their Cover singing, is genuinely high quality. I really like the word choices, how the meaning is conveyed, and how natural the result still sounds.
+
+If you're interested in translation or song Covers, I'd definitely recommend checking out their work. The quality is seriously good. 🗣️🔥
+
+And I think it's interesting that my inspiration didn't come from just one person, or just one thing.
+
+Some people made me want to get better at Subtitles.
+
+Some made me want to become better at translation.
+
+Some made me want to understand songs more deeply.
+
+And their work may have inspired someone else again and again, without them even knowing it.
+
+Just like I've been inspired by other people's work too. ❤️`],
+['So where does Aegisub fit into all of this? 💻',`Simply put... <strong>it started because I wanted to make Subtitles and happened to find Aegisub.</strong> 😭
+
+Then it was like falling into a hole I could never climb back out of.
+
+At first, I just tried timing.
+
+Then styling.
+
+Then effects.
+
+Then I started wondering, “What happens if I do this?”
+
+And suddenly I'd been using Aegisub for another three hours. 🗿
+
+I think that if I hadn't found Aegisub, I probably wouldn't have learned Subtitles to the level I'm at now. It gave me a place to experiment and learn through trial and error.
+
+Now sometimes I hear a song and immediately start thinking, “The Subtitle should probably appear around here... this line should be split here... maybe a small effect would work here.”
+
+So Aegisub isn't just a tool I use anymore.
+
+<strong>It's basically a program that has eaten my life.</strong> 😭🙏`],
+['What is a good Subtitle to me? 🎬',`I guess... <strong>it doesn't necessarily have to be made in Aegisub.</strong> 😭
+
+For me, a good Subtitle isn't measured by what program was used or how impressive the styling is. What matters more is how well it communicates what the producer wanted to say.
+
+Sometimes translating every single word literally doesn't communicate the feeling of a song as well as it could. Lyrics can have wordplay, metaphors, or sentences that sound completely strange when translated directly.
+
+So when I make a Subtitle, I try to think about this:
+
+<blockquote>“If someone who doesn't understand the original language sees this Subtitle, will they understand what the song is trying to say?”</blockquote>
+
+And there's one more thing that's important to me: <strong>being able to sing along.</strong> 🗿
+
+If a Subtitle is so difficult to read that you have to pause the song to get through every line, or a sentence is so long that the song has already moved on while you're still reading it, then it probably isn't a very good Subtitle.
+
+A Subtitle should help people enjoy the song, not turn listening to music into a reading-comprehension exam. 😭🙏
+
+So for me, a good Subtitle might not be the “prettiest” or the “most literal.”
+
+It's the one that makes the song easier to understand while still letting the audience feel what the producer wanted to put into it.`],
+['Why do I make Subtitles for free? 💸',`If I answer honestly... <strong>I don't have a way to receive money from multiple countries.</strong> 😭
+
+But if I answer in a slightly more respectable way 🗿... it's because some of the songs I listen to or watch are simply too good for me to ignore.
+
+I don't make Subtitles for an MV I like because I think, “This song doesn't have Subtitles, so I'll translate it quickly and add another number to my archive.”
+
+If I choose to subtitle a song, I want it to be because I genuinely feel, <blockquote>“This is a masterpiece from a producer I like.”</blockquote>
+
+And I want Thai listeners to have the chance to discover it too.
+
+Sometimes the process takes a ridiculous amount of time — translating lyrics, checking meanings, timing, styling, fixing words, fixing timing, then watching it again until I start wondering why my life ended up here. 😭
+
+I don't want to pick random MVs just to make the number go up, or rush through one and say, “Done.”
+
+If I'm going to make a Subtitle, I want it to be something I'd still be happy to watch myself.
+
+What I want back isn't really money. I want to see a song I love reach someone who might never have discovered it otherwise.
+
+If even one Thai listener opens the Subtitle and thinks, “Whoa, this song is really good,”
+
+then for me, that was already worth it. ❤️`],
+['Why do I want to help new producers? 🌱',`The scene might not be in the kind of period where everyone talks about it as much as before, but there are still new producers starting out and releasing interesting work all the time.
+
+Sometimes I find a song and think, “How does this song not have more people listening to it?”
+
+So I want to help give those producers a chance to be discovered by Thai listeners too.
+
+I don't think one Subtitle will suddenly change a producer's life or make a song blow up overnight.
+
+But one small Subtitle might make someone who doesn't understand the original language stop and listen a little longer. Maybe that person then goes on to listen to another song by the same producer.
+
+If I can help make something like that happen, even in a small way, I want to help.
+
+And most of the time, I don't expect anything in return. I just want music I think is good to have a chance to reach another group of listeners.`],
+['What is it like working with producers? 🤝',`Well... after getting the chance to work with producers I personally like, I was pretty shy and nervous at first. 😭
+
+Before that, I was just someone sitting in front of a computer listening to their songs. Then suddenly I had to message the actual person who made the song. There was definitely a moment of, “Uh... are they even going to reply?” 🗿
+
+But after actually working together, I felt like I got to know the producers better. Not just through their music, but through the way they work, the way they think, and all the things I learned from talking with them.
+
+Besides experience, I also got connections and new opportunities, which I'm really grateful for.
+
+There are some things I can't talk about because they're internal information about the work or the producer.
+
+<strong>Basically: NOT TELLINGGGG 🗣🔥</strong>
+
+But overall, working with producers has been one of the things that made Subtitle work more meaningful to me. It reminds me that behind every MV is a real person who put a lot of time and effort into making it.`],
+['Have there been any MVs that made me feel “this was really worth it”? ❤️',`There are quite a few, but I think it's difficult to say which one was “the most worth it” because every song is memorable for a different reason.
+
+Some songs I remember because they were really fun to work on.
+
+Some I remember because they were so difficult that I almost wanted to throw my computer away. 😭
+
+Some I remember because I was going through a certain period of my life at the time, and opening that song again years later suddenly brings back old memories.
+
+And some I remember because the producer replied.
+
+At first it might just be an MV I liked, but once I got to talk to the person who actually created it, it became a different kind of memory.
+
+I don't think the “worth” of making a Subtitle is measured by how many people watched it or how much praise I got.
+
+Sometimes it might just be one person understanding the lyrics a little better, or one person discovering a producer they had never heard of before.
+
+Or even me, opening the song again one day and suddenly thinking:
+
+<blockquote>“Oh... I was working on this song back then.”</blockquote>
+
+Sometimes that's enough to turn one MV into a memory.`],
+['Why am I still doing this? 🔥',`I think it's probably a combination of a lot of things.
+
+The first is <strong>producers</strong>.
+
+After having the chance to work with different producers, I started feeling that an MV isn't just an MV anymore. There's a person who made it, with their ideas, time, effort, and sometimes their own story behind the song.
+
+Another thing is <strong>new producers</strong>.
+
+Sometimes I find a song and think, “How does this song not have more people listening to it?” And I feel that if I can help even one Thai listener discover it, then I've already helped in some small way.
+
+And another very important thing is <strong>memories</strong>.
+
+Every finished MV isn't just a Subtitle file sitting in a folder. I remember things about each project — when I worked on it, what I was listening to, who I talked with, what problems I ran into, how tired I was, and how I felt about that song at the time.
+
+As time passes, I might forget the details of some MVs completely. But if I see a Subtitle I made years ago, I might suddenly remember:
+
+<blockquote>“Oh... this is where I was in my life back then.”</blockquote>
+
+So I think I'm still doing this not because I have to, but because there are still songs I want other people to discover, producers I want to support, things I want to try, and new memories waiting to happen.
+
+<strong>Keep opening Aegisub. 🗿🔥</strong>`],
+['Have I ever wanted to quit making Subtitles? 🫠',`If I'm being completely honest... <strong>yes.</strong>
+
+Sometimes I've thought about quitting entirely — because of school, burnout, or because I finish a project and feel like it never reached as many Thai listeners as I hoped.
+
+Making one song's Subtitle actually takes much more time than people see. Viewers might only see a few lines at the bottom of the screen, but getting there involves translation, checking meanings, finding the right wording, timing, line breaks, styling, corrections, and watching it over and over.
+
+When all of that gets mixed with school and everyday life, there are definitely days when I think:
+
+<blockquote>“Why am I even doing this?”</blockquote>
+
+But then new songs keep coming out, and sometimes they have no Thai Subtitle, or even no English Subtitle, and I start thinking again:
+
+<blockquote>“If I don't do it, will someone else?”</blockquote>
+
+I don't mean that I'm the only person who can do it, or that every song needs a Subtitle from me. It just feels like a shame sometimes. A song can have so much meaning behind it, but if someone can't understand the language, they might miss all of that.
+
+And that's what keeps pulling me back, even when I'm burned out, tired, complaining that Aegisub has eaten my life, or saying, “That's it, I'm actually quitting this time.” 🗿
+
+Then a new song I like appears... <strong>and I open Aegisub again anyway.</strong> 😭🙏`],
+['If I could go back and talk to the Packpm who had just started making Subtitles, what would I say? 🕰️',`I would probably start with....
+
+<blockquote>“Your work kinda sucks 😭 but if you keep going, you'll definitely get better.”</blockquote>
+
+But seriously, if I could go back, I'd tell myself something more important: <strong>“You don't have to become good immediately.”</strong>
+
+When you first start, you might not know what good timing looks like. You might not know where to break a line, how to make a translation sound natural, or whether your styling actually looks good. 😭
+
+And that's okay, because every time you do it, you learn a little more.
+
+A job that once felt “impossible” eventually becomes normal. Something that used to take three hours might one day take much less.
+
+So if I could really tell that version of myself one thing, it would be:
+
+<strong>“Just keep going. Your work might be bad right now, but you'll get better.”</strong>
+
+And also... prepare yourself, because Aegisub is about to take over your life. 😭🙏`],
+['What do I want people to remember about me? 👽',`If you ask what I want people to remember me as... probably <strong>one Thai Subtitle Creator who didn't get into this to make a profit</strong>.
+
+I'm someone who wants people to understand the music I love a little more.
+
+I want Thai listeners to discover producers they might never have heard of before.
+
+I want people who don't understand the original language to be able to understand the stories inside songs.
+
+And if a Subtitle I made ever helped someone discover a new song or a new producer they ended up loving... I'd already be really happy.
+
+You don't even have to remember the name Packpm.
+
+Just remember that <blockquote>“There was once a Thai Subtitle Creator who did this because he genuinely loved those songs.”</blockquote>
+
+I think that would be enough. 👽`],
+['What is the 100 MV goal? 📚',`100 MVs isn't just a number I want to see on a statistics page.
+
+At first it was one song. Then two. Then more and more, until one day I thought, <strong>“What if I tried to reach 100 MVs?”</strong>
+
+From there, it became a goal.
+
+But the more I work, the more I realize that each MV isn't just “+1” to the count.
+
+Every song has its own story. Some were fun to work on, some were exhausting, some introduced me to new producers, some brought new connections, and some might end up becoming memories of a certain period of my life.
+
+So for me, 100 MVs is more like a record of the journey.
+
+It's also a challenge to myself: how far can someone who started out not knowing much about Subtitles actually improve?
+
+And it's a small archive I can come back to someday and look through, thinking, “Oh, what did I actually make back then?”
+
+I don't know how long it will take to reach 100, because life still includes school, work, and other things.
+
+But right now, it's still a goal I want to reach.
+
+<strong>One MV at a time is enough.</strong> ❤️`],
+['And after I finish 100 MVs, what will I do next? 👽',`Honestly, this is a question I still can't answer.
+
+When that day actually comes, I might still want to keep making Subtitles. Even after reaching 100, I might still find songs I love, producers I want to help, and new things I want to try.
+
+Or maybe I'll feel <strong>“Okay... that's enough for now.”</strong> and want to take a break.
+
+Making Subtitles really does take more time than it looks like. There's translation, meaning checks, timing, styling, corrections, communication with producers, and sometimes spending the time after school or during whatever free time I have.
+
+If I ever burn out, or school and real life become too much, I might do fewer projects or stop for a while.
+
+And if I really do have to stop, I don't think that means everything I made before that becomes meaningless.
+
+Because whether I stop at MV 100, 101, or 200, those are still projects I sat down to make, got tired over, had fun with, and met people through.
+
+Maybe after reaching 100 MVs, I won't even rush to set another goal. Maybe I'll just sit down, look through my archive, and think about where I want to go next.
+
+Right now, I still don't know the answers to those questions.
+
+But maybe... those answers should belong to <strong>Packpm on that day</strong>, not Packpm today. 😛`]
 ]},
 th:{title:'คำถามที่ผมถามตัวเอง',subtitle:'คำถามที่บางครั้งผมก็ถามตัวเอง... และคำตอบที่ไม่รู้ไปคิดมาได้ยังไง',kicker:'PERSONAL ARCHIVE // Q&A',back:'← กลับไปหน้า Portfolio',backButton:'← กลับไปหน้า Portfolio',end:'จบคำถาม // ไว้แค่นี้ก่อน',footer:'สร้างด้วยคำถาม คำตอบ Aegisub และเวลาจำนวนมหาศาลที่ไม่รู้หายไปไหน 👽',greetings:['สวัสดี','ยินดีต้อนรับ','คำถาม'],questions:[]},
 ja:{title:'自分に問いかけること',subtitle:'たまに自分に問いかけること…そして、なんとなく出てきた答え。',kicker:'PERSONAL ARCHIVE // Q&A',back:'← Portfolioへ',backButton:'← Portfolioへ戻る',end:'質問終了 // 今のところ',footer:'質問と答え、Aegisub、そして謎の大量の時間で作られています。👽',greetings:['こんにちは','ようこそ','質問'],questions:[]}
 };
-// Keep the long Thai answers as the source of truth for the page. English/Japanese labels are available now;
+// Multilingual Q&A content.
+const thaiQuestions=[
+['ทำไมถึงเป็น Subtitle Creator? 🎬',`ก็น่าจะเริ่มจากตอนที่แค่อยากให้เพลงที่ตัวเองชอบมี Subtitle ภาษาไทยครับ ไม่ได้เริ่มจากเป้าหมายใหญ่โตอะไร แค่รู้สึกว่าเพลงบางเพลงมันดีมาก และอยากให้คนที่ฟังภาษาไทยได้มีโอกาสเข้าใจมันเหมือนที่ผมเข้าใจ
+
+จากนั้นก็เริ่มลองแปลเนื้อเพลง จับ timing แล้วก็เล่นกับ Aegisub ไปเรื่อย ๆ จากโปรแกรมที่ตอนแรกเอาไว้ลองเล่น กลายเป็นโปรแกรมที่เปิดแทบทุกครั้งที่มี MV ที่อยากทำ
+
+ยิ่งทำก็ยิ่งรู้ว่า Subtitle ไม่ได้มีแค่การแปลคำ แต่มีทั้งการเลือกคำ การแบ่งบรรทัด timing, styling, effects และรายละเอียดเล็ก ๆ ที่ทำให้ Subtitle เข้ากับเพลงมากขึ้น
+
+คนดูอาจเห็นแค่ตัวหนังสือไม่กี่บรรทัด แต่กว่าจะมาถึงตรงนั้นก็มีเวลาที่หายไปเยอะเหมือนกันครับ 😭
+
+สุดท้ายแล้วผมคิดว่าผมเริ่มทำ Subtitle เพราะผมแค่ชอบเพลงเหล่านี้ และอยากให้คนอื่นมีโอกาสได้ชอบมันเหมือนกัน`],
+['แล้วทำไมถึงชอบ Vocaloid? 🎵',`ก็.... ไม่รู้สิครับ 😭 อาจเป็นเพราะประสบการณ์ชีวิตของผมไม่ได้ดีอะไรขนาดนั้น บางช่วงก็ออกไปทางแย่ด้วยซ้ำ แต่เพลงจากเสียงสังเคราะห์หรือ Vocaloid บางครั้งทำให้รู้สึกเหมือนมีอะไรบางอย่างอยู่เป็นเพื่อน
+
+เพลงไม่ได้แก้ปัญหาทุกอย่างให้ผมหรอกครับ แต่บางเพลงทำให้วันที่แย่ ๆ ผ่านไปง่ายขึ้นนิดหนึ่ง บางเพลงทำให้รู้สึกว่า “อย่างน้อยก็ยังมีเพลงนี้อยู่”
+
+ผมชอบตรงที่ Vocaloid, UTAU และ Synthesizer V เปิดโอกาสให้ producer แต่ละคนทำอะไรได้หลากหลายมาก เสียงเดียวกันสามารถไปอยู่ในเพลงคนละแบบ คนละอารมณ์ หรือคนละเรื่องราวได้
+
+ยิ่งฟังก็ยิ่งเจอ producer ใหม่ ๆ และเพลงใหม่ ๆ จนสุดท้ายรู้สึกผูกพันกับวงการนี้มากกว่าที่คิด
+
+บางทีถ้าไม่มีเพลงพวกนี้ ผมก็คงไม่ได้มาอยู่ตรงนี้ ไม่ได้เปิด Aegisub จนดึก ๆ และอาจไม่ได้รู้จักคนหลาย ๆ คนที่ได้รู้จักตอนนี้ด้วยครับ`],
+['แล้วใครเป็นแรงบันดาลใจให้ทำสิ่งนี้? 🌟',`ก็มีนักแปลท่านหนึ่งครับ ใช้นามปากกาว่า <strong>Padthai</strong>
+
+ชื่อแปลกโคตร 😭
+
+แต่ถึงชื่อจะฟังเหมือนอาหารที่ผมสั่งตอนหิว ผลงานของเขาไม่ได้แปลกตามชื่อเลยครับ 🗿
+
+ผมรู้สึกว่างานแปลของเขาดีมาก โดยเฉพาะการใช้ Aegisub ทั้ง Subtitle timing การจัดข้อความ และการทำ Subtitle ให้เข้ากับเพลง ดูแล้วรู้สึกว่า “เออ... แบบนี้แหละที่อยากทำให้ได้”
+
+มันไม่ได้มีแค่การแปลแล้วใส่ลงวิดีโอ แต่มีรายละเอียดในงานด้วย ซึ่งเป็นหนึ่งในสิ่งที่ทำให้ผมอยากพัฒนาการทำ Subtitle ต่อไป
+
+ถ้ามีโอกาส ผมก็อยากติดตามผลงานเขาต่อไปเรื่อย ๆ ครับ
+
+อีกคนที่ inspired ผมเหมือนกัน แต่เป็นคนละด้าน คือ <strong>Meowmerr</strong>
+
+ถ้า Padthai ทำให้ผมสนใจ Subtitle และ Aegisub มากขึ้น Meowmerr ก็ทำให้ผมสนใจเรื่องการแปลเพลงและการถ่ายทอดความรู้สึกของเพลงผ่านภาษามากขึ้น
+
+ผลงานแปลและงานร้อง Cover ของเขาคุณภาพดีมาก ทั้งการเลือกคำ การถ่ายทอดความหมาย และการทำให้ฟังเป็นธรรมชาติ
+
+ถ้าใครสนใจงานแปลหรือเพลง Cover ก็แนะนำให้ลองดูผลงานเขาเลยครับ คุณภาพจริง 🗣️🔥
+
+ผมว่ามันน่าสนใจดีที่แรงบันดาลใจไม่ได้มาจากคนเดียวหรือสิ่งเดียว บางคนทำให้ผมอยากทำ Subtitle ให้เก่งขึ้น บางคนทำให้อยากแปลให้ดีขึ้น บางคนทำให้อยากเข้าใจเพลงมากขึ้น
+
+และผลงานของพวกเขาเองก็อาจเคย inspired ใครบางคนมาเรื่อย ๆ โดยที่เจ้าตัวอาจไม่รู้ด้วยซ้ำ เหมือนที่ผมเองก็เคยได้รับแรงบันดาลใจจากผลงานของคนอื่นครับ ❤️`],
+['แล้ว Aegisub เข้ามาเกี่ยวอะไรด้วย? 💻',`ถ้าพูดง่าย ๆ ก็คือ.... <strong>ผมอยากทำ Subtitle แล้วดันไปเจอ Aegisub ครับ</strong> 😭
+
+จากนั้นก็เหมือนเดินเข้าไปในหลุมที่ไม่มีทางปีนกลับขึ้นมาได้
+
+ตอนแรกลอง timing แล้วก็ styling แล้วก็ effects แล้วก็เริ่มคิดว่า “ถ้าทำแบบนี้จะเป็นยังไง?”
+
+แล้วก็เปิด Aegisub ต่ออีกสามชั่วโมง 🗿
+
+ผมคิดว่าถ้าไม่มี Aegisub ผมก็คงไม่ได้เรียนรู้เรื่อง Subtitle ในระดับที่ทำอยู่ตอนนี้ เพราะมันทำให้ลองผิดลองถูกได้เยอะมาก
+
+จนตอนนี้บางครั้งแค่ได้ยินเพลงก็เริ่มคิดแล้วว่า ตรงนี้ Subtitle น่าจะขึ้นประมาณนี้ ตรงนี้ควรแบ่งบรรทัด ตรงนี้ใส่ effect นิดหนึ่งก็น่าจะดี
+
+เรียกได้ว่า Aegisub ไม่ได้เป็นแค่เครื่องมือแล้วครับ
+
+<strong>มันกลายเป็นโปรแกรมที่กินชีวิตไปแล้ว</strong> 😭🙏`],
+['แล้ว Subtitle ที่ดีสำหรับผมคืออะไร? 🎬',`ก็น่าจะเป็นว่า... <strong>ไม่จำเป็นต้องทำบน Aegisub ก็ได้มั้ง</strong> 😭
+
+สำหรับผม Subtitle ที่ดีไม่ได้วัดจากโปรแกรมหรือ styling ที่อลังการ แต่สำคัญกว่านั้นคือมันสื่อความหมายที่ producer อยากสื่อออกมาได้มากแค่ไหน
+
+บางครั้งการแปลตรงตัวทุกคำอาจไม่ได้ทำให้คนดูเข้าใจความรู้สึกของเพลงมากที่สุด เพราะมีทั้งคำเล่น คำเปรียบเทียบ หรือประโยคที่แปลตรง ๆ แล้วฟังแปลก
+
+เพราะงั้นเวลาทำ Subtitle ผมจะคิดว่า
+
+<blockquote>“ถ้าคนที่ไม่เข้าใจภาษาต้นฉบับมาเห็น Subtitle นี้ เขาจะเข้าใจสิ่งที่เพลงกำลังพยายามบอกไหม?”</blockquote>
+
+แล้วก็มีอีกอย่างที่สำคัญคือ <strong>ร้องตามได้</strong> 🗿
+
+ถ้าอ่านยากจนต้องหยุดเพลงเพื่ออ่านทุกบรรทัด หรือประโยคยาวจนเพลงไปถึงไหนแล้วแต่ยังอ่านไม่จบ มันก็คงไม่ใช่ Subtitle ที่ดีเท่าไหร่
+
+Subtitle ควรช่วยให้คนดูเพลินกับเพลง ไม่ใช่ทำให้ต้องสอบอ่านจับใจความระหว่างฟังเพลง 😭🙏
+
+ดังนั้นสำหรับผม Subtitle ที่ดีอาจไม่ใช่ Subtitle ที่สวยที่สุดหรือแปลตรงที่สุด แต่เป็น Subtitle ที่ทำให้เข้าใจเพลงง่ายขึ้น และยังรู้สึกถึงสิ่งที่ producer ตั้งใจใส่ลงไปได้อยู่`],
+['แล้วทำไมถึงทำ Subtitle ให้ฟรี? 💸',`ถ้าตอบตรง ๆ เลยก็คือ... <strong>ผมไม่มีช่องทางรับเงินจากหลายประเทศครับ 😭</strong>
+
+แต่ถ้าตอบแบบผู้ดีหน่อย 🗿... เพราะบางเพลงที่ผมฟังหรือดูอยู่มันดีเกินกว่าที่จะปล่อยผ่านไปเฉย ๆ
+
+ผมไม่ได้ทำ Subtitle เพราะอยากเพิ่มตัวเลขใน archive แต่ถ้าเลือกทำ ผมอยากทำเพราะรู้สึกว่า <blockquote>“นี่แหละ ผลงานชิ้นเอกของ producer ที่ผมชอบ”</blockquote>
+
+แล้วก็อยากให้คนไทยมีโอกาสรู้จักมันเหมือนกัน
+
+ถึงจะต้องแปล เช็กความหมาย จับ timing ทำ styling แก้คำ แก้ timing แล้วดูซ้ำจนสงสัยว่าทำไมชีวิตมาอยู่ตรงนี้ 😭 ผมก็ยังอยากทำให้มันเป็นงานที่ตัวเองเปิดดูอีกครั้งได้อย่างภูมิใจ
+
+สิ่งที่ผมอยากได้กลับมาไม่ใช่เงิน แต่อยากเห็นเพลงที่ผมรักไปถึงคนที่อาจไม่เคยรู้จักมันมาก่อน
+
+ถ้ามีคนไทยสักคนดู Subtitle แล้วคิดว่า “เฮ้ย เพลงนี้ดีนี่หว่า” สำหรับผมแค่นั้นก็คุ้มแล้วครับ ❤️`],
+['แล้วทำไมถึงอยากช่วย producer หน้าใหม่? 🌱',`ถึงวงการอาจไม่ได้อยู่ในช่วงที่คนพูดถึงเยอะเหมือนเมื่อก่อน แต่ก็ยังมี producer ใหม่ ๆ ที่เพิ่งเริ่มทำเพลงและมีผลงานน่าสนใจออกมาเรื่อย ๆ
+
+บางครั้งผมเจอเพลงที่คิดว่า “ทำไมเพลงนี้คนยังไม่ค่อยรู้จักวะ?”
+
+ผมเลยอยากช่วยให้พวกเขามีโอกาสถูกค้นพบโดยคนฟังชาวไทยบ้าง
+
+ผมไม่ได้คิดว่า Subtitle หนึ่งชุดจะเปลี่ยนชีวิต producer หรือทำให้เพลงดังทันที แต่ Subtitle เล็ก ๆ อาจทำให้คนที่ไม่เข้าใจภาษาต้นฉบับหยุดฟังนานขึ้น และอาจไปฟังเพลงอื่นต่อ
+
+ถ้าผมช่วยอะไรเล็ก ๆ แบบนี้ได้ ก็อยากช่วยครับ และส่วนใหญ่ไม่ได้คาดหวังอะไรตอบแทน แค่อยากให้เพลงที่ผมคิดว่าดีมีโอกาสไปถึงคนอีกกลุ่มหนึ่งก็พอ`],
+['แล้วการทำงานกับ producer เป็นยังไง? 🤝',`ก็... หลังจากได้ทำงานร่วมกับ producer ที่ตัวเองชอบ ผมค่อนข้างอายและประหม่าในตอนแรกครับ 😭
+
+ก่อนหน้านั้นเราก็เป็นแค่คนที่นั่งฟังเพลงของเขาอยู่หน้าคอม แล้วจู่ ๆ ต้องส่งข้อความไปหาเจ้าของเพลงจริง ๆ มันก็มีความรู้สึกว่า “เอ่อ... เขาจะตอบไหมวะ” อยู่เหมือนกัน 🗿
+
+แต่หลังจากได้ทำงานด้วยกันจริง ๆ ผมรู้สึกว่าได้รู้จักตัว producer มากขึ้น ทั้งวิธีทำงาน วิธีคิด และสิ่งที่ได้เรียนรู้จากการคุยกัน
+
+นอกจากประสบการณ์แล้ว ผมก็ได้ connection และโอกาสใหม่ ๆ กลับมาด้วย ซึ่งรู้สึกขอบคุณมากครับ
+
+มีหลายอย่างที่เล่าไม่ได้ เพราะเป็นข้อมูลภายในของงานหรือ producer เอง
+
+<strong>ง่าย ๆ คือ ไม่บอกออกกกก 🗣🔥</strong>
+
+โดยรวมแล้วการได้ทำงานกับ producer เป็นส่วนหนึ่งที่ทำให้ Subtitle ของผมมีความหมายขึ้น เพราะทำให้รู้ว่าเบื้องหลัง MV หนึ่งเพลงมีคนจริง ๆ ที่ใส่เวลาและความพยายามลงไปเยอะมาก`],
+['แล้วเคยมี MV ไหนที่ทำแล้วรู้สึกว่า “คุ้มจริง ๆ” ไหม? ❤️',`มีหลายเพลงเลยครับ แต่ตอบยากว่าเพลงไหนคุ้มที่สุด เพราะแต่ละเพลงมีเหตุผลที่ทำให้จำได้ไม่เหมือนกัน
+
+บางเพลงจำได้เพราะตอนทำสนุกมาก บางเพลงจำได้เพราะยากจนแทบอยากโยนคอมทิ้ง 😭 บางเพลงทำให้คิดถึงช่วงชีวิตเก่า ๆ และบางเพลงจำได้เพราะ producer ตอบกลับมา
+
+ตอนแรกอาจเป็นแค่ MV หนึ่งเพลงที่ชอบ แต่พอได้คุยกับคนที่สร้างเพลงนั้นจริง ๆ มันก็กลายเป็นความทรงจำอีกแบบหนึ่ง
+
+ความ “คุ้ม” สำหรับผมไม่ได้อยู่ที่ยอดดูหรือคำชม บางครั้งอาจเป็นแค่คนหนึ่งคนที่เข้าใจเนื้อเพลงมากขึ้น หรือคนหนึ่งคนที่ได้รู้จัก producer ใหม่
+
+หรือแม้แต่วันหนึ่งผมกลับมาเปิดเพลงนั้นแล้วคิดว่า
+
+<blockquote>“อ๋อ... ตอนนั้นเรานั่งทำเพลงนี้อยู่นี่หว่า”</blockquote>
+
+แค่นั้นก็พอจะทำให้ MV หนึ่งเพลงกลายเป็นความทรงจำแล้วครับ`],
+['แล้วทำไมถึงยังทำต่อจนถึงตอนนี้? 🔥',`ก็... น่าจะเพราะหลายอย่างรวมกันครับ
+
+อย่างแรกคือ <strong>producer</strong> หลังจากได้ทำงานกับ producer หลายคน ผมเริ่มรู้สึกว่า MV หนึ่งเพลงไม่ได้เป็นแค่เพลงหนึ่งเพลงอีกต่อไป มันมีคน มีความคิด มีเวลา มีความพยายาม และบางครั้งก็มีเรื่องราวอยู่ข้างหลัง
+
+อีกอย่างคือ <strong>producer หน้าใหม่</strong> บางครั้งเจอเพลงที่คิดว่า “ทำไมเพลงนี้คนยังไม่ค่อยรู้จักวะ?” แล้วรู้สึกว่าถ้าช่วยให้คนไทยสักคนค้นพบเพลงนั้นได้ ก็เหมือนได้ช่วยอะไรบางอย่าง
+
+และอีกอย่างที่สำคัญคือ <strong>ความทรงจำ</strong>
+
+ทุก MV ที่ทำเสร็จไม่ได้เป็นแค่ไฟล์ Subtitle แต่จำได้ว่าทำช่วงไหน ฟังเพลงอะไร คุยกับใคร เจอปัญหาอะไร เหนื่อยแค่ไหน และตอนนั้นรู้สึกยังไง
+
+พอเห็น Subtitle เก่า ๆ ก็อาจนึกขึ้นมาได้ว่า
+
+<blockquote>“อ๋อ... ช่วงนั้นเราเคยอยู่ตรงนี้นี่เอง”</blockquote>
+
+เพราะงั้นที่ยังทำต่อไม่ใช่เพราะต้องทำ แต่เพราะยังมีเพลงที่อยากให้คนอื่นรู้จัก producer ที่อยากสนับสนุน งานที่อยากลอง และความทรงจำใหม่ ๆ ที่กำลังจะเกิดขึ้น
+
+<strong>เปิด Aegisub ต่อไปครับ 🗿🔥</strong>`],
+['แล้วเคยอยากเลิกทำ Subtitle ไหม? 🫠',`ถ้าจะตอบแบบไม่อ้อมค้อม... <strong>มีครับ....</strong>
+
+บางครั้งผมก็คิดว่าอยากเลิก ทั้งเรื่องเรียน burnout หรือทำงานออกมาแล้วรู้สึกว่ามันไม่ได้ไปถึงคนไทยเท่าที่อยากให้ไปถึง
+
+การทำ Subtitle หนึ่งเพลงใช้เวลามากกว่าที่คนอื่นเห็น ทั้งแปล เช็กความหมาย หาคำ จับ timing แบ่งบรรทัด styling แก้ไข และดูซ้ำไปซ้ำมา
+
+พอรวมกับเรื่องเรียนหรือชีวิตประจำวันก็มีวันที่คิดว่า
+
+<blockquote>“เออ... กูจะทำไปทำไมวะ”</blockquote>
+
+แต่พอเห็นเพลงใหม่ ๆ ออกมาเรื่อย ๆ แล้วบางเพลงไม่มี Subtitle ภาษาไทย หรือแม้แต่ภาษาอังกฤษ ผมก็กลับมาคิดว่า
+
+<blockquote>“ถ้าเราไม่ทำ แล้วจะมีใครทำไหม?”</blockquote>
+
+ไม่ได้หมายความว่าผมเป็นคนเดียวที่ทำได้ หรือทุกเพลงต้องมี Subtitle จากผม แค่รู้สึกเสียดายถ้าคนฟังพลาดสิ่งที่ producer ตั้งใจใส่ลงไปเพราะไม่เข้าใจภาษา
+
+ถึงจะ burnout เหนื่อย หรือบอกว่า “พอแล้ว กูเลิกจริง ๆ” 🗿 สุดท้ายพอมีเพลงใหม่ที่ผมชอบ... <strong>ก็กลับมาเปิด Aegisub อยู่ดี</strong> 😭🙏`],
+['แล้วถ้าย้อนกลับไปหา Packpm ตอนเริ่มทำ Subtitle ใหม่ ๆ จะบอกอะไรเขา? 🕰️',`ขอบอกว่าาาาา....
+
+<blockquote>“งานเองกาก 😭 แต่ถ้าทำต่อไปยังไงก็รุ่งแน่”</blockquote>
+
+แต่เอาจริง ๆ ถ้าย้อนกลับไปได้ ผมคงบอกว่า <strong>“ไม่ต้องรีบเก่งก็ได้”</strong>
+
+ตอนเริ่มทำเราอาจยังไม่รู้ timing ที่ดีควรเป็นยังไง ไม่รู้จะแบ่งบรรทัดตรงไหน แปลยังไงให้ธรรมชาติ หรือ styling ที่ทำอยู่ดูดีจริงไหม 😭
+
+แต่ไม่เป็นไร เพราะทุกครั้งที่ทำก็เรียนรู้อะไรเพิ่มขึ้นนิดหนึ่ง งานที่เคยคิดว่ายาก วันหนึ่งก็กลายเป็นเรื่องปกติ
+
+เพราะงั้นถ้าจะบอกอะไรกับตัวเองในวันนั้นจริง ๆ ก็คงเป็นว่า
+
+<strong>“ทำต่อไปเหอะ ถึงตอนนี้งานจะกาก แต่เดี๋ยวมึงจะเก่งขึ้นเอง”</strong>
+
+แล้วก็... เตรียมใจไว้ด้วย เพราะ Aegisub กำลังจะครอบครองชีวิตมึง 😭🙏`],
+['แล้ว Packpm อยากให้คนจำอะไรเกี่ยวกับตัวเอง? 👽',`ถ้าถามว่าอยากให้คนจำว่าเป็นใคร... ก็คงอยากให้จำว่าเป็น <strong>Subtitle Creator ชาวไทยคนหนึ่งที่ไม่ได้เข้ามาทำสิ่งนี้เพื่อแสวงหาผลกำไร</strong>
+
+แต่เป็นคนที่อยากให้คนเข้าใจเพลงที่ตัวเองรักมากขึ้น อยากให้คนไทยรู้จัก producer ที่อาจไม่เคยได้ยินชื่อมาก่อน และอยากให้คนที่ไม่เข้าใจภาษาต้นฉบับเข้าใจเรื่องราวในเพลงได้
+
+ถ้า Subtitle ที่ผมทำเคยทำให้ใครค้นพบเพลงหรือ producer ใหม่ ๆ ที่ตัวเองชอบ ผมก็ดีใจมากแล้วครับ
+
+ไม่จำเป็นต้องจำชื่อ Packpm ก็ได้
+
+แค่จำได้ว่า <blockquote>“เคยมี Subtitle Creator ชาวไทยคนหนึ่งที่ทำสิ่งนี้เพราะเขารักเพลงพวกนั้นจริง ๆ”</blockquote>
+
+ผมว่าก็พอแล้วครับ 👽`],
+['แล้วเป้าหมาย 100 MV คืออะไร? 📚',`100 MV สำหรับผมไม่ได้เป็นแค่ตัวเลขครับ
+
+ตอนแรกมันเป็นแค่งานหนึ่งเพลง แล้วก็สองเพลง จากนั้นมีหลายเพลงขึ้นเรื่อย ๆ จนวันหนึ่งผมคิดว่า <strong>“แล้วถ้าลองทำให้ครบ 100 MV ล่ะ?”</strong>
+
+จากตรงนั้นมันก็กลายเป็นเป้าหมาย
+
+แต่ยิ่งทำมากขึ้นก็ยิ่งรู้ว่าแต่ละ MV ไม่ได้เป็นแค่ “+1” แต่ละเพลงมีเรื่องราว บางเพลงสนุก บางเพลงเหนื่อย บางเพลงทำให้รู้จัก producer ใหม่ บางเพลงทำให้ได้ connection และบางเพลงกลายเป็นความทรงจำของช่วงชีวิตหนึ่ง
+
+เพราะงั้น 100 MV สำหรับผมเหมือนการบันทึกการเดินทาง เป็น challenge ว่าจากคนที่ตอนแรกยังทำ Subtitle ไม่ค่อยเป็น จะพัฒนาตัวเองไปได้ไกลแค่ไหน
+
+และเป็น archive เล็ก ๆ ที่วันหนึ่งผมกลับมาเปิดดูได้ว่า “เออ เราเคยทำอะไรไว้บ้างนะ”
+
+ผมไม่รู้ว่าจะใช้เวลานานแค่ไหน เพราะชีวิตก็ยังมีเรื่องเรียน เรื่องงาน และเรื่องอื่น ๆ
+
+แต่ตอนนี้มันยังเป็นเป้าหมายที่อยากไปให้ถึงครับ
+
+<strong>ทีละ MV ก็พอ</strong> ❤️`],
+['แล้วถ้าทำครบ 100 MV แล้ว จะทำอะไรต่อ? 👽',`เอาจริง ๆ คำถามนี้เป็นคำถามที่ผมยังตอบไม่ได้ครับ
+
+ถ้าวันนั้นมาถึงจริง ๆ ผมอาจยังอยากทำ Subtitle ต่อก็ได้ เพราะอาจยังเจอเพลงที่ชอบ producer ที่อยากช่วย และอะไรใหม่ ๆ ให้ลอง
+
+หรือบางทีอาจรู้สึกว่า <strong>“โอเค... แค่นี้ก็พอแล้ว”</strong> แล้วอยากพัก
+
+การทำ Subtitle ใช้เวลาเยอะ ทั้งแปล เช็กความหมาย จับ timing ทำ styling แก้ไข คุยกับ producer และบางครั้งต้องเอาเวลาหลังเลิกเรียนหรือเวลาว่างไปทำ
+
+ถ้าวันหนึ่ง burnout หรือมีเรื่องเรียนและชีวิตจริงเข้ามามากขึ้น ผมก็อาจทำได้น้อยลงหรือหยุดไปช่วงหนึ่ง
+
+และถ้าต้องหยุดจริง ๆ ผมก็ไม่คิดว่าสิ่งที่เคยทำมาทั้งหมดจะไม่มีความหมาย
+
+เพราะต่อให้หยุดที่ MV 100, 101 หรือ 200 สิ่งเหล่านั้นก็ยังเป็นงานที่ผมเคยนั่งทำ เคยเหนื่อย เคยสนุก และเคยได้พบเจอผู้คนจากมัน
+
+บางทีหลังจาก 100 MV ผมอาจไม่รีบตั้งเป้าหมายใหม่ แต่อาจนั่งดู archive ของตัวเองแล้วค่อยคิดว่าอยากไปทางไหนต่อ
+
+ตอนนี้ผมยังไม่รู้คำตอบครับ
+
+แต่บางที... คำตอบมันก็ควรเป็นของ <strong>Packpm ในวันนั้น</strong> ไม่ใช่ Packpm ในวันนี้ 😛`]
+];
+const japaneseQuestions=[
+['なぜ Subtitle Creator になったの？ 🎬',`始まりは、ただ自分が好きな曲に Thai Subtitle があったらいいな、と思ったことでした。大きな目標があったわけではありません。ただ「この曲、本当にいいな」と思って、Thai を話す人にも自分と同じようにその曲を理解してもらえたらいいなと思ったんです。
+
+そこから歌詞を翻訳したり、Subtitle の timing を取ったり、Aegisub をいじったりするようになりました。最初はただ試してみるためのソフトだったのに、いつの間にか「この MV をやってみたい」と思ったら開くソフトになっていました。
+
+続けていくうちに、Subtitle は単に言葉を別の言語へ置き換えるだけじゃないと分かってきました。言葉選び、改行、timing、styling、effects、そして曲に合わせるための細かい調整があります。
+
+画面の下に数行の文字が見えるだけでも、そこまで持っていくのには意外とたくさんの時間が消えていきます。😭
+
+結局、Subtitle を始めた理由はシンプルで、僕がこういう曲が好きだから。そして、他の人にもこの曲を好きになるきっかけを持ってほしかったからです。`],
+['それで、なぜ Vocaloid が好きなの？ 🎵',`うーん……正直、よく分かりません。😭 僕の人生経験は、別にそんなに良いものばかりではなくて……むしろかなり悪い時期もありました。でも、合成音声、特に Vocaloid の音楽を聴いていると、何かがそばにいてくれるように感じることがあります。
+
+音楽がすべての問題を解決してくれるわけではありません。でも、つらい日を少しだけ楽にしてくれる曲はあります。「少なくとも、この曲はまだある」と思えるような曲です。
+
+Vocaloid、UTAU、Synthesizer V が好きなのは、producer ごとに本当に自由な表現ができるところでもあります。同じ声でも、作る人によって全然違う曲、感情、物語になります。
+
+聴けば聴くほど新しい producer や新しい曲に出会って、気づいたら思っていた以上にこの界隈に思い入れができていました。
+
+もしこういう曲がなかったら、今の僕はここにいなかったかもしれません。夜遅くまで Aegisub を開いていることも、今まで出会った人たちと知り合うことも、なかったかもしれません。`],
+['この活動を始めるきっかけになった人はいる？ 🌟',`一人、Padthai という名前で活動している翻訳者の方がいます。
+
+めちゃくちゃ変な名前ですよね。😭
+
+でも、お腹が空いたときに注文したくなるような名前とは違って、作品は全然変じゃありません。🗿
+
+翻訳のクオリティが本当に高いと思っています。特に Aegisub の使い方、Subtitle timing、文字の配置、そして曲に合わせた Subtitle の作り方がすごく良くて、見ていると「うん……こういうのができるようになりたい」と思いました。
+
+歌詞を翻訳して動画に入れるだけではなく、細かいところまで丁寧に作られている。その部分が、僕自身も Subtitle をもっと上達させたいと思う理由の一つになりました。
+
+機会があれば、これからも作品を追いかけていきたいです。
+
+そして、もう一人、別の方向から僕に影響を与えてくれた人がいます。
+
+それが Meowmerr です。
+
+Padthai が Subtitle と Aegisub に興味を持たせてくれた人だとしたら、Meowmerr は歌の翻訳や、言葉を通して曲の感情を伝えることに興味を持たせてくれました。
+
+翻訳作品だけでなく Cover の歌も、本当にクオリティが高いと思います。言葉選び、意味の伝え方、それでも自然に聴こえるところが好きです。
+
+翻訳や歌の Cover に興味がある人には、ぜひ作品を見てほしいです。本当にクオリティ高いです。🗣️🔥
+
+そして面白いのは、僕の inspiration は一人だけ、一つだけから来たわけじゃないということです。
+
+ある人は、もっと上手に Subtitle を作りたいと思わせてくれました。
+
+ある人は、もっと上手に翻訳したいと思わせてくれました。
+
+ある人は、もっと深く曲を理解したいと思わせてくれました。
+
+そして、その人たちの作品も、本人たちが知らないところで誰かを何度も inspired してきたのかもしれません。
+
+僕自身も、そうやって誰かの作品から inspiration をもらってきたんです。❤️`],
+['Aegisub はどう関係しているの？ 💻',`簡単に言えば……<strong>Subtitle を作りたくて、たまたま Aegisub に出会った</strong>のが始まりです。😭
+
+そして、それはもう二度と登れない穴に落ちたみたいなものでした。
+
+最初は timing を試して、
+
+次に styling。
+
+その次は effects。
+
+そして「これをやったらどうなるんだろう？」と考えるようになって、
+
+気づいたら Aegisub をさらに3時間開いていました。🗿
+
+Aegisub がなかったら、今のレベルまで Subtitle を学べていなかったと思います。自分で試して、失敗して、また直すことができたからです。
+
+今では曲を聴くだけで、「ここで Subtitle を出したらよさそう……ここで改行した方がいい……ここには少し effect を入れてもいいかも」と頭の中で考えてしまうことがあります。
+
+だから Aegisub はもう単なる道具ではありません。
+
+<strong>僕の人生を食べているソフトです。</strong> 😭🙏`],
+['僕にとって「良い Subtitle」って何？ 🎬',`たぶん……<strong>Aegisub で作られていなくてもいい</strong>んだと思います。😭
+
+僕にとって良い Subtitle は、どのソフトを使ったか、どれだけ派手な styling をしたかでは決まりません。それより大事なのは、producer が伝えたかったことをどれだけ伝えられるかです。
+
+歌詞を一語ずつ直訳しても、曲の感情まで一番よく伝わるとは限りません。言葉遊び、比喩、直訳すると別の言語では不自然になる表現もあります。
+
+だから Subtitle を作るときは、いつもこう考えます。
+
+<blockquote>「元の言語が分からない人がこの Subtitle を見たとき、曲が伝えようとしていることを理解できるだろうか？」</blockquote>
+
+そして、もう一つ大事なのが<strong>歌に合わせて読めること</strong>です。🗿
+
+一行読むために曲を止めなければならないほど読みにくかったり、文字が長すぎて曲が先に進んでしまったりするなら、あまり良い Subtitle とは言えないと思います。
+
+Subtitle は曲を楽しむための助けになるべきで、音楽を聴きながら読解テストを受けるものではないので。😭🙏
+
+だから僕にとって良い Subtitle は、「一番きれい」でも「一番直訳に近い」でもなく、
+
+曲を分かりやすくしながら、producer が込めたものもちゃんと感じられる Subtitle です。`],
+['なぜ Subtitle を無料で作るの？ 💸',`正直に答えるなら……<strong>いろんな国からお金を受け取れる方法を持っていないからです。</strong> 😭
+
+でも、少し真面目に答えるなら 🗿……好きで聴いたり見たりしている曲が、あまりにも良すぎて、そのまま見過ごせないからです。
+
+「この曲には Subtitle がないから、とりあえず翻訳して数字を一つ増やそう」という理由で作っているわけではありません。
+
+Subtitle を作るなら、<blockquote>「これは自分が好きな producer の masterpiece だ」</blockquote>と思える曲にしたいです。
+
+そして、それを Thai のリスナーにも知ってもらいたい。
+
+歌詞を翻訳して、意味を確認して、timing を取って、styling をして、言葉を直して、timing を直して、また何度も見直して……気づいたら「なんで僕の人生ここにいるんだろう」と思うくらい時間がかかることもあります。😭
+
+数字を増やすためだけに適当な MV を選んだり、急いで終わらせて「Done」と言ったりしたくはありません。
+
+やるなら、自分でももう一度見たいと思える Subtitle にしたいです。
+
+僕が欲しいのはお金というより、自分が好きな曲が、今まで知らなかった誰かのところまで届くことです。
+
+もし Thai のリスナーが一人でも Subtitle を見て、「うわ、この曲いいな」と思ってくれたら、それだけで十分に worth it です。❤️`],
+['なぜ新しい producer を手伝いたいの？ 🌱',`この界隈は、昔ほど大きく話題になる時期ではないのかもしれません。でも、今でも新しく曲を作り始める producer や、面白い作品を出している人はたくさんいます。
+
+ときどき曲を聴いて、「なんでこの曲、もっと知られてないんだろう？」と思うことがあります。
+
+だから、その producer が Thai のリスナーに見つけてもらうきっかけを少しでも作れたらいいなと思っています。
+
+一つの Subtitle が producer の人生を変えたり、曲を一晩で有名にしたりするとは思っていません。
+
+でも、小さな Subtitle 一つで、元の言語が分からない人が少し長くその曲を聴いてくれるかもしれない。そして、その人が producer の別の曲まで聴いてくれるかもしれません。
+
+もしそんな小さな手助けができるなら、やってみたいです。
+
+そしてほとんどの場合、見返りは求めていません。ただ、自分が良いと思った音楽が、もう一つのリスナー層に届くチャンスがあれば、それで十分です。`],
+['producer と一緒に仕事をするってどんな感じ？ 🤝',`えっと……自分が好きな producer と実際に仕事をする機会をもらったとき、最初はかなり恥ずかしくて緊張しました。😭
+
+それまでは、ただパソコンの前でその人の曲を聴いているだけでした。それなのに突然、その曲を作った本人にメッセージを送ることになって、「えっと……返信してくれるかな？」と思ったりしました。🗿
+
+でも、実際に一緒に仕事をしてみると、producer のことをもっと知れた気がします。曲だけではなく、仕事の進め方、考え方、そして話をする中でいろいろなことを学びました。
+
+経験だけではなく、connection や新しい機会も得ることができて、本当にありがたいです。
+
+もちろん、仕事や producer に関する internal information なので話せないこともあります。
+
+<strong>つまり：言わないよおおおお 🗣🔥</strong>
+
+でも全体として、producer と一緒に仕事をすることは、僕にとって Subtitle をもっと意味のあるものにしてくれました。MV の裏側には、本当に時間と努力をかけている人がいるんだと実感できるからです。`],
+['「これは本当にやってよかった」と思った MV はある？ ❤️',`いくつもあります。でも、どれが「一番 worth it」だったかを決めるのは難しいです。曲ごとに違う理由で覚えているからです。
+
+作っていて本当に楽しかった曲もあります。
+
+難しすぎて、パソコンを投げたくなった曲もあります。😭
+
+その頃の自分の人生のある時期と結びついていて、あとから聴き直すと昔の記憶が急に戻ってくる曲もあります。
+
+そして、producer が返信してくれたから覚えている曲もあります。
+
+最初はただ好きな MV だったのに、その曲を作った本人と話すことができた瞬間、別の種類の思い出になりました。
+
+僕にとって Subtitle を作る価値は、再生数や褒めてもらった数では測れません。
+
+たった一人が歌詞を少し深く理解できたことかもしれないし、今まで知らなかった producer を一人が見つけたことかもしれません。
+
+あるいは、いつか自分でその曲を開いて、
+
+<blockquote>「あ……これ、あの頃に作ってたんだ」</blockquote>
+
+と思い出すだけでもいい。
+
+それだけで、一つの MV は思い出になれると思います。`],
+['それでも、なぜ今まで続けているの？ 🔥',`たぶん、いろんなことが重なっているんだと思います。
+
+まず一つは <strong>producer</strong> です。
+
+いろいろな producer と仕事をする機会をもらってから、MV はただの MV ではなくなりました。そこには作った人がいて、考えがあって、時間があって、努力があって、ときにはその人自身の物語もあります。
+
+もう一つは <strong>新しい producer</strong> です。
+
+「なんでこの曲、もっと知られてないんだろう？」と思う曲に出会うと、それを Thai のリスナー一人にでも届けられたなら、何か小さな手助けができたと思えるんです。
+
+そして、もう一つ大事なのが <strong>思い出</strong> です。
+
+完成した MV は、ただフォルダの中にある Subtitle file ではありません。いつ作ったか、何を聴いていたか、誰と話したか、どんな問題があったか、どれだけ疲れていたか、その曲を当時どう感じていたかまで覚えています。
+
+時間が経てば、細かいことを忘れてしまう MV もあるかもしれません。でも昔作った Subtitle を見れば、突然こう思い出すかもしれません。
+
+<blockquote>「あ……あの頃の僕は、ここにいたんだ」</blockquote>
+
+だから今も続けているのは、「やらなきゃいけない」からではなく、まだ誰かに知ってほしい曲があって、応援したい producer がいて、試してみたいことがあって、これから生まれる思い出があるからだと思います。
+
+<strong>これからも Aegisub を開きます。🗿🔥</strong>`],
+['Subtitle をやめたいと思ったことはある？ 🫠',`正直に言うと……<strong>あります。</strong>
+
+学校のこと、burnout、そして頑張って作った作品が思ったほど Thai の人に届かなかったと感じるときなど、全部やめたいと思ったことはあります。
+
+一つの曲の Subtitle を作るのは、見えている以上に時間がかかります。画面の下には数行の文字しか見えなくても、その裏には翻訳、意味の確認、言葉選び、timing、改行、styling、修正、そして何度も見直す作業があります。
+
+そこに学校や日常生活まで重なると、
+
+<blockquote>「え、僕なんでこれやってるんだろう？」</blockquote>
+
+と思う日もあります。
+
+でも新しい曲は次々に出てきて、その中には Thai Subtitle がない曲や、English Subtitle すらない曲もあります。そういうとき、また考えてしまいます。
+
+<blockquote>「僕がやらなかったら、誰かやるのかな？」</blockquote>
+
+もちろん、僕だけができることだとは思っていません。全部の曲に僕の Subtitle が必要だとも思っていません。
+
+ただ、producer が曲に込めたものを、言葉が分からないという理由だけで誰かが見逃してしまうのは、少しもったいないと思うんです。
+
+だから burnout していても、疲れていても、「Aegisub に人生を食われた」と文句を言っていても、「もう本当にやめる」と言っていても……🗿
+
+好きな新曲が出てきたら、<strong>結局また Aegisub を開いてしまいます。</strong> 😭🙏`],
+['Subtitle を始めたばかりの自分に戻れるなら、何を言う？ 🕰️',`たぶん最初にこう言います。
+
+<blockquote>「お前の作品、けっこう下手だぞ 😭 でも続けていけば絶対に上手くなる。」</blockquote>
+
+でも本気で言うなら、もっと大事なのは <strong>「すぐに上手くならなくてもいい」</strong> ということです。
+
+始めたばかりの頃は、良い timing が何なのか分からないかもしれない。どこで改行すればいいか分からないかもしれない。この文章をどう訳せば自然になるのか分からないかもしれない。styling が本当に良いのかすら分からないかもしれません。😭
+
+でも、それでいいんです。やるたびに少しずつ学べばいい。
+
+昔は「無理すぎる」と思っていた作業も、いつか普通になります。3時間かかっていたことも、いつかもっと早くできるようになります。
+
+だから、あの頃の自分に一つだけ言うなら、
+
+<strong>「そのまま続けろ。今は下手でも、そのうち上手くなる。」</strong>
+
+そして……覚悟しておいてください。Aegisub がこれからお前の人生を支配します。😭🙏`],
+['僕について、何を覚えていてほしい？ 👽',`何者として覚えてほしいかと聞かれたら……たぶん、<strong>利益を得るためではなく、音楽を好きだから Subtitle を作っていた Thai の Subtitle Creator の一人</strong>としてです。
+
+自分が好きな音楽を、少しでも多くの人に理解してほしい。
+
+Thai のリスナーに、今まで知らなかった producer を知ってほしい。
+
+元の言語が分からない人にも、曲の中にある物語を感じてほしい。
+
+そして、もし僕の Subtitle が誰かに新しい曲や新しい producer と出会うきっかけになったなら、それだけで本当に嬉しいです。
+
+Packpm という名前まで覚えていなくてもいいです。
+
+ただ、<blockquote>「昔、こういう曲が本当に好きで Subtitle を作っていた Thai の Creator がいた」</blockquote>
+
+と思ってもらえたら、それで十分です。👽`],
+['100 MV の目標って何？ 📚',`100 MV は、統計ページに表示したい数字というだけではありません。
+
+最初は一曲でした。それが二曲になって、少しずつ増えていって、ある日ふと思いました。<strong>「じゃあ、100 MV までやってみたらどうだろう？」</strong>
+
+そこから目標になりました。
+
+でも続けるほど、MV 一つは単なる「+1」ではないと分かってきました。
+
+それぞれの曲に物語があります。楽しく作った曲、ものすごく疲れた曲、新しい producer と出会った曲、新しい connection ができた曲、そして人生のある時期の思い出になった曲もあります。
+
+だから僕にとって 100 MV は、旅の記録に近いです。
+
+最初は Subtitle があまり作れなかった自分が、どこまで成長できるのかを試す challenge でもあります。
+
+そしていつか archive を見返して、「あの頃、こんなものを作ってたんだ」と思える小さな記録でもあります。
+
+100 までどれくらいかかるかは分かりません。学校や仕事、その他の生活もあるからです。
+
+でも今は、まだ達成したい目標です。
+
+<strong>一つずつの MV でいい。</strong> ❤️`],
+['100 MV を達成したら、その後は何をする？ 👽',`正直、この質問にはまだ答えられません。
+
+その日が本当に来たとき、Subtitle をまだ続けたいと思っているかもしれません。100 を達成しても、好きな曲、新しく応援したい producer、新しく試したいことはまだ見つかるかもしれません。
+
+あるいは、<strong>「うん……今はここまででいいかな」</strong>と思って、少し休みたくなるかもしれません。
+
+Subtitle は思っている以上に時間がかかります。翻訳、意味の確認、timing、styling、修正、producer とのやり取り、そして学校の後や空いた時間を使って作業することもあります。
+
+もし burnout したり、学校や現実の生活が忙しくなったりしたら、作る数を減らしたり、しばらく止めたりするかもしれません。
+
+もし本当に止めることになったとしても、それまでに作ったものが意味を失うとは思いません。
+
+100、101、200 のどこで止まったとしても、それらは自分が座って作って、疲れて、楽しんで、そこから人と出会った作品だからです。
+
+100 MV の後、すぐ次の目標を決めないかもしれません。まず自分の archive をゆっくり見返して、その先にどこへ行きたいのか考えるかもしれません。
+
+今の僕には、まだその答えが分かりません。
+
+でもたぶん……その答えは、<strong>その日の Packpm</strong> が決めるべきもので、今日の Packpm が決めるものではないんだと思います。😛`]
+];
+data.th.questions=thaiQuestions; data.ja.questions=japaneseQuestions;
 // the Q&A body intentionally follows the user's Thai-written voice and can be translated later without changing layout.
-data.th.questions=data.en.questions; data.ja.questions=data.en.questions;
-// For Thai and Japanese modes, the question/answer body remains the authored Thai text so the personal voice is not machine-flattened.
 const switcher=document.querySelector('.language-switcher');
 const cardsRoot=document.getElementById('questions');
 function render(lang){const d=data[lang]||data.en;document.documentElement.lang=lang;document.querySelector('[data-title]').textContent=d.title;document.querySelector('[data-subtitle]').textContent=d.subtitle;document.querySelector('[data-kicker]').textContent=d.kicker;document.querySelector('[data-end]').textContent=d.end;document.querySelector('[data-footer]').textContent=d.footer;document.querySelector('[data-back]').textContent=d.back;document.querySelector('[data-back-button]').textContent=d.backButton;cardsRoot.innerHTML=d.questions.map((q,i)=>`<article class="question-card ${i===d.questions.length-1?'final-card':''}"><p class="question-number">QUESTION ${String(i+1).padStart(2,'0')}</p><h2>❓ ${q[0]}</h2><div class="answer">${q[1].split(/\n\n/).map(p=>`<p>${p}</p>`).join('')}</div></article>`).join('');document.querySelectorAll('.question-card').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),80+i*55));switcher.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));try{localStorage.setItem('packpm-language',lang)}catch(e){}}
@@ -120,7 +871,10 @@ switcher.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>re
 let saved='en';try{saved=localStorage.getItem('packpm-language')||'en'}catch(e){}
 render(saved);
 const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
-async function boot(){const s=document.getElementById('startupScreen'),g=document.getElementById('startupGreeting');if(reduce.matches){s.classList.add('hide');return}for(const word of data[saved].greetings){g.replaceChildren();const parts=window.Intl?.Segmenter?[...new Intl.Segmenter(undefined,{granularity:'grapheme'}).segment(word)].map(x=>x.segment):[...word];parts.forEach((c,i)=>{const span=document.createElement('span');span.className='greeting-letter';span.textContent=c===' '?'\u00a0':c;span.style.animationDelay=`${i*42}ms`;g.appendChild(span)});await new Promise(r=>setTimeout(r,380+parts.length*42));await new Promise(r=>setTimeout(r,220));g.querySelectorAll('.greeting-letter').forEach((el,i)=>{el.classList.add('fade-out');el.style.animationDelay=`${i*28}ms`});await new Promise(r=>setTimeout(r,380+parts.length*28))}s.classList.add('hide')}
+function boot(){
+  if(reduce.matches) return;
+  try{ if(sessionStorage.getItem('packpm-qa-transition')==='1'){ document.body.classList.add('page-arriving'); sessionStorage.removeItem('packpm-qa-transition'); } }catch(e){}
+}
 boot();
 let ticking=false;function scrollUI(){document.documentElement.style.setProperty('--scroll',Math.min(100,window.scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%');document.querySelector('.navbar').classList.toggle('show',window.scrollY>45);ticking=false}window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(scrollUI)}},{passive:true});scrollUI();
 if(!reduce.matches&&matchMedia('(pointer:fine)').matches){const glow=document.createElement('div');glow.className='x-cursor-glow';document.body.appendChild(glow);let raf=0,mx=innerWidth/2,my=innerHeight/2;addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;if(raf)return;raf=requestAnimationFrame(()=>{document.documentElement.style.setProperty('--mx',mx+'px');document.documentElement.style.setProperty('--my',my+'px');raf=0})},{passive:true})}
