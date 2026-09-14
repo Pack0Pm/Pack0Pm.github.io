@@ -152,12 +152,22 @@ html {
 }
 
 </style>
+<style id="final-polish-css">
+/* PACKPM // FINAL POLISH */
+.skip-link{position:fixed;left:16px;top:16px;z-index:10001;transform:translateY(-180%);padding:9px 13px;border:1px solid rgba(103,232,249,.45);border-radius:999px;background:#080b18;color:#fff;font:700 .74rem/1 "Space Grotesk",Arial,sans-serif;box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 22px rgba(34,211,238,.10);transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.skip-link:focus{transform:translateY(0);outline:none}
+:where(a,button,[tabindex]):focus-visible{outline:2px solid #67e8f9;outline-offset:3px}
+.navbar a:active,.back-button:active,.language-switcher button:active{transform:translateY(0) scale(.98)}
+.question-card{contain:layout paint}
+@media(max-width:700px){.skip-link{left:12px;top:12px}}
+</style>
 </head>
 <body>
+<a class="skip-link" href="#qa-content">Skip to content</a>
 <div class="language-switcher" aria-label="Language selector"><button type="button" data-lang="en">ENG</button><button type="button" data-lang="th">ไทย</button><button type="button" data-lang="ja">日本語</button></div>
 <nav class="navbar"><a href="index.html" class="back-link" data-back data-portfolio-link>← Portfolio</a><a href="#top" class="active" data-nav-home>Q&A</a></nav>
 <div class="qa-crossfade" id="qaCrossfade" aria-hidden="true"><div class="qa-crossfade-core"><span>RETURNING TO</span><strong>PACKPM</strong><span>PORTFOLIO // HOME</span></div></div>
-<main class="page" id="top">
+<main class="page" id="qa-content">
 <section class="hero"><div class="archive-note" data-kicker>PERSONAL ARCHIVE // Q&A</div><h1><span>&gt;</span> <span data-title>Questions I Ask Myself</span> <span>&lt;</span></h1><p data-subtitle>Questions I ask myself sometimes... and the answers I somehow came up with.</p></section>
 <section class="question-list" id="questions"></section>
 <div class="end-marker" data-end>END OF QUESTIONS // FOR NOW</div>

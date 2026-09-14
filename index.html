@@ -1071,6 +1071,57 @@ footer{padding:35px 0 15px}
 
     </style>
 
+<style id="final-polish-css">
+/* ============================================
+   PACKPM // FINAL POLISH
+   ============================================ */
+.skip-link{
+  position:fixed;left:16px;top:16px;z-index:10001;
+  transform:translateY(-180%);
+  padding:9px 13px;border:1px solid rgba(103,232,249,.45);
+  border-radius:999px;background:#080b18;color:#fff;
+  font:700 .74rem/1 "Space Grotesk",Arial,sans-serif;
+  box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 22px rgba(34,211,238,.10);
+  transition:transform .25s cubic-bezier(.16,1,.3,1);
+}
+.skip-link:focus{transform:translateY(0);outline:none}
+
+:where(a,button,[tabindex]):focus-visible{
+  outline:2px solid #67e8f9;
+  outline-offset:3px;
+}
+
+.navbar a:active,.contact-button:active,.archive-link:active,.social-links a:active{
+  transform:translateY(0) scale(.98);
+}
+
+.goal-card .progress{
+  position:relative;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.progress-bar{
+  width:0 !important;
+  box-shadow:0 0 18px rgba(34,211,238,.18);
+  transition:width 1.1s cubic-bezier(.22,.8,.2,1);
+}
+.goal-card.reveal.visible .progress-bar{
+  width:calc(var(--goal-progress, 21) * 1%) !important;
+}
+
+.project-card,.thing-card,.contact-card,.profile-card{
+  contain:layout paint;
+}
+
+@media (max-width:700px){
+  .skip-link{left:12px;top:12px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .progress-bar{transition:none}
+}
+</style>
+
 <style id="production-1000x-css">
 
 :root {
@@ -2513,6 +2564,7 @@ body::marker { content: none; }
 </head>
 
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
     <!-- =========================
          STARTUP SCREEN
@@ -2553,7 +2605,7 @@ body::marker { content: none; }
     </nav>
 
 
-    <div class="page">
+    <div class="page" id="main-content">
 
     <!-- =========================
          PROFILE CARD
@@ -2758,8 +2810,8 @@ body::marker { content: none; }
                         21+ <span>/ 100 MVs</span>
                     </p>
 
-                    <div class="progress">
-                        <div class="progress-bar"></div>
+                    <div class="progress" role="progressbar" aria-label="100 MV subtitle goal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="21">
+                        <div class="progress-bar" data-progress="21"></div>
                     </div>
 
                     <p class="goal-text">
@@ -3687,6 +3739,16 @@ window.addEventListener("load", updateNavbarVisibility);
       target.click();
     });
   });
+
+  // ---- Goal progress -------------------------------------------------------
+  const goalProgress = qs(".goal-card .progress");
+  const goalBar = qs(".goal-card .progress-bar");
+  if (goalProgress && goalBar) {
+    const progressValue = Math.max(0, Math.min(100, Number(goalBar.dataset.progress || goalProgress.getAttribute("aria-valuenow") || 21)));
+    goalProgress.setAttribute("aria-valuenow", String(progressValue));
+    goalProgress.setAttribute("aria-valuetext", `${progressValue} of 100 MVs completed`);
+    goalProgress.style.setProperty("--goal-progress", progressValue);
+  }
 
   // ---- Scroll reveal -------------------------------------------------------
   const revealTargets = qsa(".project-card, .thing-card, .contact-card, section, .profile-card");
