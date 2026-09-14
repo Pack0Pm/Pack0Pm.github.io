@@ -292,50 +292,115 @@
         }
 
         /* =========================================================
-                    PACKPM CYBERPUNK SCROLLBAR
+                    CYBER SCROLLBAR
         ========================================================= */
 
 html {
     scrollbar-width: thin;
-    scrollbar-color: #22d3ee #080817;
+    scrollbar-color: #22d3ee #050612;
 }
 
 /* Chrome / Edge / Safari */
 ::-webkit-scrollbar {
-    width: 9px;
-    height: 9px;
+    width: 11px;
+    height: 11px;
 }
+
+/* ─────────────────────────────────────────
+   TRACK
+   ───────────────────────────────────────── */
 
 ::-webkit-scrollbar-track {
-    background: #080817;
+    background:
+        linear-gradient(
+            180deg,
+            #050612 0%,
+            #080817 50%,
+            #050612 100%
+        );
+
+    border-left: 1px solid rgba(34, 211, 238, 0.08);
+
+    box-shadow:
+        inset 1px 0 rgba(167, 139, 250, 0.04);
 }
+
+/* ─────────────────────────────────────────
+   THUMB
+   ───────────────────────────────────────── */
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-        180deg,
-        #22d3ee,
-        #67e8f9
-    );
-    border: 2px solid #080817;
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            #67e8f9 0%,
+            #22d3ee 45%,
+            #0891b2 100%
+        );
+
+    border: 2px solid #050612;
     border-radius: 999px;
+
     box-shadow:
-        0 0 6px rgba(34, 211, 238, 0.45),
-        0 0 14px rgba(34, 211, 238, 0.20);
+        0 0 5px rgba(34, 211, 238, 0.65),
+        0 0 12px rgba(34, 211, 238, 0.35),
+        0 0 24px rgba(34, 211, 238, 0.12);
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
 }
+
+/* ─────────────────────────────────────────
+   HOVER
+   ───────────────────────────────────────── */
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-        180deg,
-        #67e8f9,
-        #a78bfa
-    );
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #67e8f9 22%,
+            #22d3ee 60%,
+            #a78bfa 100%
+        );
+
+    filter: brightness(1.15);
+
     box-shadow:
-        0 0 8px rgba(103, 232, 249, 0.75),
-        0 0 18px rgba(167, 139, 250, 0.35);
+        0 0 6px rgba(103, 232, 249, 0.95),
+        0 0 16px rgba(34, 211, 238, 0.70),
+        0 0 30px rgba(167, 139, 250, 0.35);
 }
 
+/* ─────────────────────────────────────────
+   ACTIVE / DRAGGING
+   ───────────────────────────────────────── */
+
+::-webkit-scrollbar-thumb:active {
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #22d3ee 45%,
+            #a78bfa
+        );
+
+    box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.75),
+        0 0 20px rgba(34, 211, 238, 0.85),
+        0 0 38px rgba(167, 139, 250, 0.45);
+}
+
+/* ─────────────────────────────────────────
+   CORNER
+   ───────────────────────────────────────── */
+
 ::-webkit-scrollbar-corner {
-    background: #080817;
+    background: #050612;
 }
 
         /* =========================
@@ -2505,6 +2570,39 @@ body.qa-leaving .page,body.qa-leaving .profile-card,body.qa-leaving main{animati
 <body>
 
     <!-- =========================
+         Scroll bar
+    ========================= -->
+
+    .scroll-progress {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100vh;
+
+    background:
+        linear-gradient(
+            180deg,
+            #67e8f9,
+            #22d3ee 45%,
+            #a78bfa
+        );
+
+    transform-origin: top;
+    transform: scaleY(0);
+
+    z-index: 99999;
+    pointer-events: none;
+
+    box-shadow:
+        0 0 8px rgba(34, 211, 238, 0.75),
+        0 0 18px rgba(34, 211, 238, 0.35),
+        0 0 30px rgba(167, 139, 250, 0.20);
+
+    transition: transform 0.08s linear;
+}
+
+    <!-- =========================
          STARTUP SCREEN
     ========================= -->
 
@@ -3346,6 +3444,41 @@ body.qa-leaving .page,body.qa-leaving .profile-card,body.qa-leaving main{animati
     </footer>
 
 </div>
+
+<script>
+(() => {
+    const progress = document.querySelector(".scroll-progress");
+
+    if (!progress) return;
+
+    function updateScrollProgress() {
+        const scrollTop = window.scrollY;
+        const scrollHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+
+        const amount =
+            scrollHeight > 0
+                ? scrollTop / scrollHeight
+                : 0;
+
+        progress.style.transform =
+            `scaleY(${Math.min(1, Math.max(0, amount))})`;
+    }
+
+    window.addEventListener(
+        "scroll",
+        updateScrollProgress,
+        { passive: true }
+    );
+
+    window.addEventListener(
+        "resize",
+        updateScrollProgress
+    );
+
+    updateScrollProgress();
+})();
+</script>
 
 <script>
     const greetings = [
