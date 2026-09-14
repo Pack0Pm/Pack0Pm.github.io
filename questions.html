@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Questions I Ask Myself • Packpm</title>
-<link rel="icon" type="image/png" href="assets/P.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -42,6 +41,47 @@ a{color:inherit;text-decoration:none}
 .hero h1 span{color:#67e8f9}
 .hero p{max-width:760px;margin:20px auto 0;color:#9ca3b8;font-size:1.02rem}
 .archive-note{display:inline-flex;margin-top:24px;padding:7px 11px;border:1px solid rgba(167,139,250,.2);border-radius:999px;background:rgba(167,139,250,.045);color:#c4b5fd;font:600 .62rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.13em;text-transform:uppercase}
+.lights-arriving .qa-lights{background:rgba(0,0,0,.34)}
+.lights-arriving .qa-light{opacity:0;animation:qaSpotlight 1.35s cubic-bezier(.16,1,.3,1) forwards}
+.lights-arriving .qa-light-a{animation-delay:.20s}.lights-arriving .qa-light-b{animation-delay:.58s}.lights-arriving .qa-light-c{animation-delay:.92s}.lights-arriving .qa-light-d{animation-delay:1.18s}
+@keyframes qaSpotlight{0%{opacity:0;transform:scale(.72)}55%{opacity:.16}100%{opacity:.12;transform:scale(1)}}
+/* =========================================================
+   PACKPM // Q&A VISUAL ARCHIVE UPGRADE
+   ========================================================= */
+.qa-lights{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden;background:rgba(0,0,0,.16)}
+.qa-light{position:absolute;display:block;width:46vw;height:46vw;min-width:420px;min-height:420px;border-radius:50%;filter:blur(48px);opacity:.14;mix-blend-mode:screen;background:radial-gradient(circle,rgba(103,232,249,.42) 0%,rgba(34,211,238,.17) 22%,transparent 67%);transform:translate3d(0,0,0);transition:opacity 1.2s ease}
+.qa-light-a{left:-18vw;top:4vh}.qa-light-b{right:-18vw;top:17vh;background:radial-gradient(circle,rgba(96,165,250,.35) 0%,rgba(103,232,249,.12) 24%,transparent 67%)}
+.qa-light-c{left:18vw;bottom:-30vw;width:55vw;height:55vw;background:radial-gradient(circle,rgba(167,139,250,.28) 0%,rgba(103,232,249,.10) 24%,transparent 68%)}
+.qa-light-d{right:8vw;bottom:-26vw;width:38vw;height:38vw;background:radial-gradient(circle,rgba(103,232,249,.25) 0%,transparent 68%)}
+.hero{isolation:isolate;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:14% 8% 4%;z-index:-1;border:1px solid rgba(103,232,249,.055);background:linear-gradient(rgba(103,232,249,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(103,232,249,.028) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,transparent,black 18%,black 75%,transparent)}
+.hero-question-mark{position:absolute;left:50%;top:47%;z-index:-1;transform:translate(-50%,-50%);font:700 clamp(13rem,34vw,31rem)/.7 "Space Grotesk",sans-serif;color:rgba(103,232,249,.026);text-shadow:0 0 80px rgba(103,232,249,.08);user-select:none}
+.hero-meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:-22px 0 28px;color:rgba(148,163,184,.48);font:600 .57rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.15em}
+.hero-meta span{padding:7px 10px;border:1px solid rgba(148,163,184,.10);border-radius:999px;background:rgba(8,8,23,.25)}
+.hero-scan{position:absolute;left:10%;right:10%;bottom:12px;height:1px;background:linear-gradient(90deg,transparent,rgba(103,232,249,.45),rgba(167,139,250,.28),transparent);box-shadow:0 0 14px rgba(103,232,249,.2)}
+.qa-section-divider{position:relative;display:flex;align-items:center;gap:14px;margin:50px 0 18px;padding-left:22px;color:rgba(103,232,249,.52);font:700 .62rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.24em;text-transform:uppercase}
+.qa-section-divider::before{content:"";position:absolute;left:0;top:50%;width:3px;height:22px;transform:translateY(-50%);background:linear-gradient(#67e8f9,#a78bfa);box-shadow:0 0 13px rgba(103,232,249,.3)}
+.qa-section-divider::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,rgba(103,232,249,.15),transparent)}
+.question-list{display:block;position:relative;padding-left:42px}
+.question-list::before{content:"";position:absolute;left:13px;top:0;bottom:0;width:1px;background:linear-gradient(rgba(103,232,249,.35),rgba(103,232,249,.10) 40%,rgba(167,139,250,.18) 75%,transparent)}
+.question-card{margin-bottom:28px}
+.question-card::after{content:"";position:absolute;left:-36px;top:30px;width:9px;height:9px;border:2px solid #67e8f9;border-radius:50%;background:#050611;box-shadow:0 0 0 5px rgba(103,232,249,.035),0 0 14px rgba(103,232,249,.45);transition:transform .3s ease,box-shadow .3s ease}
+.question-card:hover::after{transform:scale(1.25);box-shadow:0 0 0 6px rgba(103,232,249,.05),0 0 20px rgba(103,232,249,.65)}
+.question-card .question-number{display:flex;align-items:center;gap:10px}
+.question-card .question-number::after{content:"";width:38px;height:1px;background:rgba(103,232,249,.14)}
+.question-card:nth-of-type(odd){transform-origin:left center}
+.question-card.special-entry{border-color:rgba(103,232,249,.34);background:linear-gradient(135deg,rgba(103,232,249,.045),transparent 45%),rgba(12,17,35,.76)}
+.question-card.special-entry::before{background:linear-gradient(#67e8f9,#60a5fa,#a78bfa)}
+.question-card.final-card{padding:42px 38px;border-radius:28px;background:radial-gradient(circle at 75% 20%,rgba(167,139,250,.09),transparent 34%),linear-gradient(135deg,rgba(103,232,249,.045),transparent 45%),rgba(9,12,28,.84);box-shadow:0 30px 90px rgba(0,0,0,.42),0 0 50px rgba(167,139,250,.055)}
+.question-card.final-card::after{border-color:#a78bfa;box-shadow:0 0 0 5px rgba(167,139,250,.04),0 0 18px rgba(167,139,250,.5)}
+.final-card .question-number{color:rgba(167,139,250,.68)}
+.final-card h2{font-size:clamp(1.5rem,3.5vw,2.25rem)}
+.end-marker{position:relative}
+.end-marker::before,.end-marker::after{content:"";display:inline-block;width:min(22vw,180px);height:1px;vertical-align:middle;margin:0 14px;background:linear-gradient(90deg,transparent,rgba(103,232,249,.22))}
+.end-marker::after{background:linear-gradient(90deg,rgba(103,232,249,.22),transparent)}
+@media (prefers-reduced-motion: reduce){.qa-light{transition:none}.question-card::after{transition:none}}
+@media (max-width:700px){.hero-meta{gap:6px}.hero-meta span{font-size:.52rem}.question-list{padding-left:0}.question-list::before{display:none}.question-card::after{display:none}.qa-section-divider{margin-top:38px}.question-card.final-card{padding:32px 26px}.end-marker::before,.end-marker::after{width:12vw;margin:0 8px}}
+
 .question-list{display:grid;gap:28px}
 .question-card{
  position:relative;overflow:hidden;padding:30px 32px;border:1px solid rgba(148,163,184,.16);border-radius:24px;
@@ -167,9 +207,9 @@ html {
 <a class="skip-link" href="#qa-content">Skip to content</a>
 <div class="language-switcher" aria-label="Language selector"><button type="button" data-lang="en">ENG</button><button type="button" data-lang="th">ไทย</button><button type="button" data-lang="ja">日本語</button></div>
 <nav class="navbar"><a href="index.html" class="back-link" data-back data-portfolio-link>← Portfolio</a><a href="#top" class="active" data-nav-home>Q&A</a></nav>
-<div class="qa-crossfade" id="qaCrossfade" aria-hidden="true"><div class="qa-crossfade-core"><span>RETURNING TO</span><strong>PACKPM</strong><span>PORTFOLIO // HOME</span></div></div>
+<div class="qa-crossfade" id="qaCrossfade" aria-hidden="true"><div class="qa-crossfade-core"><span>RETURNING TO</span><strong>PACKPM</strong><span>PORTFOLIO // HOME</span></div></div><div class="qa-lights" aria-hidden="true"><i class="qa-light qa-light-a"></i><i class="qa-light qa-light-b"></i><i class="qa-light qa-light-c"></i><i class="qa-light qa-light-d"></i></div>
 <main class="page" id="qa-content">
-<section class="hero"><div class="archive-note" data-kicker>PERSONAL ARCHIVE // Q&A</div><h1><span>&gt;</span> <span data-title>Questions I Ask Myself</span> <span>&lt;</span></h1><p data-subtitle>Questions I ask myself sometimes... and the answers I somehow came up with.</p></section>
+<section class="hero"><div class="hero-question-mark" aria-hidden="true">?</div><div class="archive-note" data-kicker>PERSONAL ARCHIVE // Q&A</div><div class="hero-meta" aria-hidden="true"><span>ENTRIES // 15</span><span>STATUS // OPEN</span><span>SUBJECT // PACKPM</span></div><h1><span>&gt;</span> <span data-title>Questions I Ask Myself</span> <span>&lt;</span></h1><p data-subtitle>Questions I ask myself sometimes... and the answers I somehow came up with.</p><div class="hero-scan" aria-hidden="true"></div></section>
 <section class="question-list" id="questions"></section>
 <div class="end-marker" data-end>END OF QUESTIONS // FOR NOW</div>
 <div class="back-wrap"><a class="back-button" href="index.html" data-back-button data-portfolio-link>← Back to Portfolio</a></div>
@@ -954,7 +994,12 @@ data.th.questions=thaiQuestions; data.ja.questions=japaneseQuestions;
 // the Q&A body intentionally follows the user's Thai-written voice and can be translated later without changing layout.
 const switcher=document.querySelector('.language-switcher');
 const cardsRoot=document.getElementById('questions');
-function render(lang){const d=data[lang]||data.en;document.documentElement.lang=lang;document.querySelector('[data-title]').textContent=d.title;document.querySelector('[data-subtitle]').textContent=d.subtitle;document.querySelector('[data-kicker]').textContent=d.kicker;document.querySelector('[data-end]').textContent=d.end;document.querySelector('[data-footer]').textContent=d.footer;document.querySelector('[data-back]').textContent=d.back;document.querySelector('[data-back-button]').textContent=d.backButton;cardsRoot.innerHTML=d.questions.map((q,i)=>`<article class="question-card ${i===d.questions.length-1?'final-card':''}"><p class="question-number">QUESTION ${String(i+1).padStart(2,'0')}</p><h2>❓ ${q[0]}</h2><div class="answer">${q[1].split(/\n\n/).map(p=>`<p>${p}</p>`).join('')}</div></article>`).join('');document.querySelectorAll('.question-card').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),80+i*55));switcher.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));try{localStorage.setItem('packpm-language',lang)}catch(e){}}
+function render(lang){const d=data[lang]||data.en;document.documentElement.lang=lang;document.querySelector('[data-title]').textContent=d.title;document.querySelector('[data-subtitle]').textContent=d.subtitle;document.querySelector('[data-kicker]').textContent=d.kicker;document.querySelector('[data-end]').textContent=d.end;document.querySelector('[data-footer]').textContent=d.footer;document.querySelector('[data-back]').textContent=d.back;document.querySelector('[data-back-button]').textContent=d.backButton;const groups=lang==='th'?['จุดเริ่มต้น // ORIGIN','งาน // CRAFT','ผู้คน // PEOPLE','บันทึกข้างใน // INNER LOG','อนาคต // FUTURE'] : lang==='ja'?['始まり // ORIGIN','制作 // CRAFT','出会い // PEOPLE','内側の記録 // INNER LOG','未来 // FUTURE'] : ['ORIGIN // WHERE IT STARTED','CRAFT // THE WORK','PEOPLE // THE CONNECTIONS','INNER LOG // THE THOUGHTS','FUTURE // WHERE IT GOES'];
+const boundaries=[0,3,6,9,12];
+const special=new Set([7,10,13]);
+let html='';
+d.questions.forEach((q,i)=>{if(boundaries.includes(i)){const g=boundaries.indexOf(i);html+=`<div class="qa-section-divider" data-group="${g}">${groups[g]}</div>`;}const classes=`question-card ${i===d.questions.length-1?'final-card':''} ${special.has(i)?'special-entry':''}`;html+=`<article class="${classes}"><p class="question-number">QUESTION ${String(i+1).padStart(2,'0')}</p><h2>❓ ${q[0]}</h2><div class="answer">${q[1].split(/\n\n/).map(p=>`<p>${p}</p>`).join('')}</div></article>`;});
+cardsRoot.innerHTML=html;document.querySelectorAll('.question-card').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),80+i*55));switcher.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));try{localStorage.setItem('packpm-language',lang)}catch(e){}}
 switcher.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.lang)));
 let saved='en';try{saved=localStorage.getItem('packpm-language')||'en'}catch(e){}
 render(saved);
@@ -977,10 +1022,11 @@ function boot(){
     if(sessionStorage.getItem('packpm-qa-arrival')==='1'){
       sessionStorage.removeItem('packpm-qa-arrival');
       document.body.classList.add('page-arriving');
+      document.body.classList.add('lights-arriving');
       const overlay=document.getElementById('qaCrossfade');
       if(overlay){
         overlay.classList.add('active','arriving');
-        setTimeout(()=>overlay.classList.remove('active','arriving'),1100);
+        setTimeout(()=>{overlay.classList.remove('active','arriving');document.body.classList.remove('lights-arriving')},1600);
       }
     }
   }catch(e){}
