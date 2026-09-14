@@ -291,6 +291,53 @@
             color: #c9c9d7;
         }
 
+        /* =========================================================
+                    PACKPM CYBERPUNK SCROLLBAR
+        ========================================================= */
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #22d3ee #080817;
+}
+
+/* Chrome / Edge / Safari */
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #080817;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        #22d3ee,
+        #67e8f9
+    );
+    border: 2px solid #080817;
+    border-radius: 999px;
+    box-shadow:
+        0 0 6px rgba(34, 211, 238, 0.45),
+        0 0 14px rgba(34, 211, 238, 0.20);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        180deg,
+        #67e8f9,
+        #a78bfa
+    );
+    box-shadow:
+        0 0 8px rgba(103, 232, 249, 0.75),
+        0 0 18px rgba(167, 139, 250, 0.35);
+}
+
+::-webkit-scrollbar-corner {
+    background: #080817;
+}
+
         /* =========================
            PROJECTS
         ========================= */
