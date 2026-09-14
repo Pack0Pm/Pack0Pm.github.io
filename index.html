@@ -2453,6 +2453,63 @@ body.qa-leaving .page,body.qa-leaving .profile-card,body.qa-leaving main{animati
 @keyframes qaPageOut{to{opacity:0;transform:scale(.975) translateY(-14px);filter:blur(7px)}}
 @media(prefers-reduced-motion:reduce){.qa-transition{display:none!important}body.qa-leaving .page,body.qa-leaving .profile-card,body.qa-leaving main{animation:none!important}}
 </style>
+
+<style id="packpm-cyber-scrollbar-100x">
+/* =========================================================
+   PACKPM // CYBER SCROLLBAR 100X
+   ========================================================= */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #22d3ee #050612;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background:
+    linear-gradient(180deg, #050612 0%, #080817 50%, #050612 100%);
+  border-left: 1px solid rgba(34, 211, 238, 0.08);
+  box-shadow: inset 1px 0 rgba(167, 139, 250, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #67e8f9 0%, #22d3ee 45%, #0891b2 100%);
+  border: 2px solid #050612;
+  border-radius: 999px;
+  box-shadow:
+    0 0 5px rgba(34, 211, 238, 0.65),
+    0 0 12px rgba(34, 211, 238, 0.35),
+    0 0 24px rgba(34, 211, 238, 0.12);
+  transition: background 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #67e8f9 22%, #22d3ee 60%, #a78bfa 100%);
+  filter: brightness(1.15);
+  box-shadow:
+    0 0 6px rgba(103, 232, 249, 0.95),
+    0 0 16px rgba(34, 211, 238, 0.70),
+    0 0 30px rgba(167, 139, 250, 0.35);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, #ffffff, #22d3ee 45%, #a78bfa);
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.75),
+    0 0 20px rgba(34, 211, 238, 0.85),
+    0 0 38px rgba(167, 139, 250, 0.45);
+}
+
+::-webkit-scrollbar-corner {
+  background: #050612;
+}
+
+/* A thin cyan/violet scan beam follows the page scroll position. */
+body::marker { content: none; }
+</style>
 </head>
 
 <body>
