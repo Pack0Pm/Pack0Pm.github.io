@@ -75,7 +75,7 @@ a{color:inherit;text-decoration:none}
 .question-card.final-card{padding:42px 38px;border-radius:28px;background:radial-gradient(circle at 75% 20%,rgba(167,139,250,.09),transparent 34%),linear-gradient(135deg,rgba(103,232,249,.045),transparent 45%),rgba(9,12,28,.84);box-shadow:0 30px 90px rgba(0,0,0,.42),0 0 50px rgba(167,139,250,.055)}
 .question-card.final-card::after{border-color:#a78bfa;box-shadow:0 0 0 5px rgba(167,139,250,.04),0 0 18px rgba(167,139,250,.5)}
 .final-card .question-number{color:rgba(167,139,250,.68)}
-.final-card h2{font-size:clamp(1.5rem,3.5vw,2.25rem)}
+.final-card h2{font-size:clamp(1.65rem,3.1vw,2.65rem);line-height:1.02;letter-spacing:-.05em;white-space:nowrap;max-width:none}
 .end-marker{position:relative}
 .end-marker::before,.end-marker::after{content:"";display:inline-block;width:min(22vw,180px);height:1px;vertical-align:middle;margin:0 14px;background:linear-gradient(90deg,transparent,rgba(103,232,249,.22))}
 .end-marker::after{background:linear-gradient(90deg,rgba(103,232,249,.22),transparent)}
@@ -192,6 +192,80 @@ html {
     background: #050612;
 }
 
+
+
+/* =========================================================
+   PACKPM // Q&A V4 VISUAL POLISH
+   ========================================================= */
+.navbar{gap:5px}
+.qa-section-divider{
+  display:flex;align-items:center;gap:14px;margin:64px 0 24px;padding:6px 0;
+  color:rgba(103,232,249,.55);
+  font:700 .63rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;
+  letter-spacing:.22em;text-transform:uppercase;scroll-margin-top:105px;
+}
+.qa-section-divider::before,.qa-section-divider::after{content:"";height:1px;flex:1}
+.qa-section-divider::before{background:linear-gradient(90deg,transparent,rgba(34,211,238,.28))}
+.qa-section-divider::after{background:linear-gradient(90deg,rgba(167,139,250,.20),transparent)}
+.question-card.final-card{
+  min-height:min(720px,76vh);display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(54px,8vw,92px) clamp(28px,7vw,84px);
+  border-color:rgba(103,232,249,.34);border-radius:30px;overflow:hidden;
+  background:radial-gradient(circle at 50% 8%,rgba(103,232,249,.115),transparent 34%),radial-gradient(circle at 84% 82%,rgba(167,139,250,.10),transparent 31%),rgba(7,10,25,.84);
+  box-shadow:0 35px 110px rgba(0,0,0,.48),0 0 65px rgba(103,232,249,.075),inset 0 0 55px rgba(167,139,250,.03);
+}
+.question-card.final-card::before{
+  content:"100";position:absolute;right:-.03em;bottom:-.24em;color:rgba(103,232,249,.034);
+  font-size:clamp(10rem,31vw,23rem);font-weight:800;line-height:.78;letter-spacing:-.08em;pointer-events:none;
+}
+.question-card.final-card::after{
+  content:"";position:absolute;left:28px;top:34px;width:12px;height:12px;border:1px solid #67e8f9;border-radius:50%;
+  box-shadow:0 0 0 6px rgba(34,211,238,.06),0 0 22px rgba(103,232,249,.38);
+}
+.question-card.final-card .question-number{color:rgba(103,232,249,.75);letter-spacing:.22em}
+.question-card.final-card h2{max-width:780px;margin-left:auto;margin-right:auto;font-size:clamp(2rem,5.2vw,4.2rem);line-height:1.02;letter-spacing:-.035em}
+.question-card.final-card .answer{max-width:800px}
+.question-card.final-card .answer::before{
+  content:"NEXT RECORD // UNKNOWN";display:block;margin:0 auto 26px;padding-top:18px;
+  border-top:1px solid rgba(103,232,249,.10);color:#62627a;
+  font:600 .65rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.18em;text-align:center;
+}
+
+/* Cinematic spotlight entrance: 0–4s when arriving from the portfolio. */
+.qa-stage-intro{position:fixed;inset:0;z-index:10050;pointer-events:none;overflow:hidden;background:#02030b;opacity:1;transition:opacity .55s ease}
+.qa-stage-intro.done{opacity:0}
+.qa-stage-dim{position:absolute;inset:0;background:rgba(0,0,0,.80)}
+.qa-stage-light{position:absolute;width:58vw;height:58vw;max-width:1000px;max-height:1000px;border-radius:50%;filter:blur(22px);opacity:0;mix-blend-mode:screen;will-change:transform,opacity}
+.qa-stage-light::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.27) 0%,rgba(103,232,249,.22) 13%,rgba(34,211,238,.10) 35%,transparent 67%)}
+.qa-stage-light-1{left:-24vw;top:-3vw;background:radial-gradient(circle,rgba(103,232,249,.28),transparent 67%)}
+.qa-stage-light-2{right:-25vw;top:6vh;background:radial-gradient(circle,rgba(167,139,250,.24),transparent 67%)}
+.qa-stage-light-3{left:12vw;bottom:-28vw;background:radial-gradient(circle,rgba(96,165,250,.22),transparent 67%)}
+.qa-stage-light-4{right:4vw;top:-25vw;background:radial-gradient(circle,rgba(103,232,249,.24),transparent 66%)}
+.qa-stage-intro.active .qa-stage-light-1{animation:qaStageSearch1 1.18s .15s cubic-bezier(.2,.8,.2,1) forwards}
+.qa-stage-intro.active .qa-stage-light-2{animation:qaStageSearch2 1.28s .55s cubic-bezier(.2,.8,.2,1) forwards}
+.qa-stage-intro.active .qa-stage-light-3{animation:qaStageSearch3 1.24s .95s cubic-bezier(.2,.8,.2,1) forwards}
+.qa-stage-intro.active .qa-stage-light-4{animation:qaStageLock 1.15s 1.30s cubic-bezier(.2,.8,.2,1) forwards}
+.qa-stage-title{position:absolute;inset:0;display:grid;place-content:center;text-align:center;padding:24px;opacity:0;transform:translateY(10px) scale(.985)}
+.qa-stage-intro.active .qa-stage-title{animation:qaStageTitle 1s 1.58s cubic-bezier(.16,1,.3,1) forwards}
+.qa-stage-kicker{color:#67e8f9;font:700 .68rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.23em;text-transform:uppercase}
+.qa-stage-main{margin:13px 0 12px;color:#fff;font:800 clamp(2.6rem,7vw,6rem)/.94 "Space Grotesk",Arial,sans-serif;letter-spacing:-.045em;text-shadow:0 0 18px rgba(103,232,249,.18),0 0 42px rgba(34,211,238,.10)}
+.qa-stage-meta{color:#94a3b8;font:600 .75rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.11em}
+@keyframes qaStageSearch1{0%{opacity:0;transform:translate(-16vw,14vh) scale(.62)}40%{opacity:.88}100%{opacity:.68;transform:translate(20vw,3vh) scale(1)}}
+@keyframes qaStageSearch2{0%{opacity:0;transform:translate(16vw,4vh) scale(.62)}42%{opacity:.82}100%{opacity:.58;transform:translate(-19vw,2vh) scale(1)}}
+@keyframes qaStageSearch3{0%{opacity:0;transform:translate(-8vw,14vh) scale(.64)}45%{opacity:.72}100%{opacity:.45;transform:translate(10vw,-1vh) scale(1)}}
+@keyframes qaStageLock{0%{opacity:0;transform:translate(0,-18vh) scale(.78)}48%{opacity:.90}100%{opacity:.72;transform:translate(0,7vh) scale(1)}}
+@keyframes qaStageTitle{0%{opacity:0;transform:translateY(10px) scale(.985);filter:blur(8px)}48%{opacity:1;filter:blur(0)}100%{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.qa-stage-intro{display:none}.qa-stage-light,.qa-stage-title{animation:none!important}}
+@media (max-width:700px){
+  .navbar{top:9px;width:96%;border-radius:18px}
+  .navbar .back-link{width:100%}
+  .navbar a{padding:7px 9px;font-size:.64rem}
+  .qa-section-divider{scroll-margin-top:120px;margin-top:44px}
+  .question-card.final-card{min-height:unset;padding:48px 24px}
+  .question-card.final-card::before,.question-card.final-card::after{display:none}
+  .final-card h2{white-space:normal;font-size:clamp(1.55rem,7vw,2.35rem)}
+}
+
 </style>
 <style id="final-polish-css">
 /* PACKPM // FINAL POLISH */
@@ -202,11 +276,62 @@ html {
 .question-card{contain:layout paint}
 @media(max-width:700px){.skip-link{left:12px;top:12px}}
 </style>
+
+<style id="qa-final-tuning">
+/* =========================================================
+   PACKPM // Q&A FINAL TUNING
+   ========================================================= */
+.question-card.final-card h2{
+    max-width:none;
+    margin-left:0;
+    margin-right:0;
+    font-size:clamp(1.65rem,3.1vw,2.65rem);
+    line-height:1.02;
+    letter-spacing:-.05em;
+    white-space:nowrap;
+}
+
+/* Make the stage lights read as actual spotlights rather than invisible ambience. */
+.qa-stage-intro.active .qa-stage-dim{
+    background:rgba(0,0,0,.72);
+}
+.qa-stage-intro.active .qa-stage-light{
+    filter:blur(18px);
+}
+
+@media(max-width:700px){
+    .question-card.final-card h2{
+        white-space:normal;
+        font-size:clamp(1.55rem,7vw,2.35rem);
+    }
+}
+</style>
 </head>
 <body>
+<div class="qa-stage-intro" id="qaStageIntro" aria-hidden="true">
+  <div class="qa-stage-dim"></div>
+  <div class="qa-stage-light qa-stage-light-1"></div>
+  <div class="qa-stage-light qa-stage-light-2"></div>
+  <div class="qa-stage-light qa-stage-light-3"></div>
+  <div class="qa-stage-light qa-stage-light-4"></div>
+  <div class="qa-stage-title">
+    <div>
+      <div class="qa-stage-kicker">PERSONAL ARCHIVE // PACKPM</div>
+      <div class="qa-stage-main">QUESTIONS I ASK MYSELF</div>
+      <div class="qa-stage-meta">15 ENTRIES // STATUS: OPEN</div>
+    </div>
+  </div>
+</div>
 <a class="skip-link" href="#qa-content">Skip to content</a>
 <div class="language-switcher" aria-label="Language selector"><button type="button" data-lang="en">ENG</button><button type="button" data-lang="th">ไทย</button><button type="button" data-lang="ja">日本語</button></div>
-<nav class="navbar"><a href="index.html" class="back-link" data-back data-portfolio-link>← Portfolio</a><a href="#top" class="active" data-nav-home>Q&A</a></nav>
+<nav class="navbar" aria-label="Q&A sections">
+  <a href="index.html" class="back-link" data-back data-portfolio-link>← Portfolio</a>
+  <a href="#qa-origin" data-qa-nav="qa-origin">Origin</a>
+  <a href="#qa-craft" data-qa-nav="qa-craft">Craft</a>
+  <a href="#qa-people" data-qa-nav="qa-people">People</a>
+  <a href="#qa-inner" data-qa-nav="qa-inner">Inner Log</a>
+  <a href="#qa-future" data-qa-nav="qa-future">Future</a>
+</nav>
 <div class="qa-crossfade" id="qaCrossfade" aria-hidden="true"><div class="qa-crossfade-core"><span>RETURNING TO</span><strong>PACKPM</strong><span>PORTFOLIO // HOME</span></div></div><div class="qa-lights" aria-hidden="true"><i class="qa-light qa-light-a"></i><i class="qa-light qa-light-b"></i><i class="qa-light qa-light-c"></i><i class="qa-light qa-light-d"></i></div>
 <main class="page" id="qa-content">
 <section class="hero"><div class="hero-question-mark" aria-hidden="true">?</div><div class="archive-note" data-kicker>PERSONAL ARCHIVE // Q&A</div><div class="hero-meta" aria-hidden="true"><span>ENTRIES // 15</span><span>STATUS // OPEN</span><span>SUBJECT // PACKPM</span></div><h1><span>&gt;</span> <span data-title>Questions I Ask Myself</span> <span>&lt;</span></h1><p data-subtitle>Questions I ask myself sometimes... and the answers I somehow came up with.</p><div class="hero-scan" aria-hidden="true"></div></section>
@@ -998,7 +1123,7 @@ function render(lang){const d=data[lang]||data.en;document.documentElement.lang=
 const boundaries=[0,3,6,9,12];
 const special=new Set([7,10,13]);
 let html='';
-d.questions.forEach((q,i)=>{if(boundaries.includes(i)){const g=boundaries.indexOf(i);html+=`<div class="qa-section-divider" data-group="${g}">${groups[g]}</div>`;}const classes=`question-card ${i===d.questions.length-1?'final-card':''} ${special.has(i)?'special-entry':''}`;html+=`<article class="${classes}"><p class="question-number">QUESTION ${String(i+1).padStart(2,'0')}</p><h2>❓ ${q[0]}</h2><div class="answer">${q[1].split(/\n\n/).map(p=>`<p>${p}</p>`).join('')}</div></article>`;});
+d.questions.forEach((q,i)=>{if(boundaries.includes(i)){const g=boundaries.indexOf(i);const ids=['qa-origin','qa-craft','qa-people','qa-inner','qa-future'];html+=`<div id="${ids[g]}" class="qa-section-divider" data-group="${g}">${groups[g]}</div>`;}const classes=`question-card ${i===d.questions.length-1?'final-card':''} ${special.has(i)?'special-entry':''}`;const qTitle=i===d.questions.length-1?q[0].replace(/\s*[👽❓]\s*$/u,''):q[0];const qPrefix=i===d.questions.length-1?'':'❓ ';html+=`<article class="${classes}"><p class="question-number">QUESTION ${String(i+1).padStart(2,'0')}</p><h2>${qPrefix}${qTitle}</h2><div class="answer">${q[1].split(/\n\n/).map(p=>`<p>${p}</p>`).join('')}</div></article>`;});
 cardsRoot.innerHTML=html;document.querySelectorAll('.question-card').forEach((el,i)=>setTimeout(()=>el.classList.add('visible'),80+i*55));switcher.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));try{localStorage.setItem('packpm-language',lang)}catch(e){}}
 switcher.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>render(b.dataset.lang)));
 let saved='en';try{saved=localStorage.getItem('packpm-language')||'en'}catch(e){}
@@ -1011,7 +1136,7 @@ document.querySelectorAll('[data-portfolio-link]').forEach(link=>link.addEventLi
   document.body.classList.add('qa-leaving');
   const overlay=document.getElementById('qaCrossfade');
   if(overlay) overlay.classList.add('active');
-  try{ sessionStorage.setItem('packpm-skip-startup','1'); }catch(e){}
+  try{ sessionStorage.setItem('packpm-skip-startup','1'); sessionStorage.setItem('packpm-skip-qa-intro','1'); }catch(e){}
   setTimeout(()=>{window.location.href=link.href},900);
 }));
 
@@ -1034,6 +1159,46 @@ function boot(){
 boot();
 let ticking=false;function scrollUI(){document.documentElement.style.setProperty('--scroll',Math.min(100,window.scrollY/(document.documentElement.scrollHeight-innerHeight)*100)+'%');document.querySelector('.navbar').classList.toggle('show',window.scrollY>45);ticking=false}window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(scrollUI)}},{passive:true});scrollUI();
 if(!reduce.matches&&matchMedia('(pointer:fine)').matches){const glow=document.createElement('div');glow.className='x-cursor-glow';document.body.appendChild(glow);let raf=0,mx=innerWidth/2,my=innerHeight/2;addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;if(raf)return;raf=requestAnimationFrame(()=>{document.documentElement.style.setProperty('--mx',mx+'px');document.documentElement.style.setProperty('--my',my+'px');raf=0})},{passive:true})}
+</script>
+<script>
+(function(){
+  const intro=document.getElementById('qaStageIntro');
+  const navLinks=[...document.querySelectorAll('[data-qa-nav]')];
+  const navTargets=navLinks.map(link=>({link,id:link.dataset.qaNav,el:document.getElementById(link.dataset.qaNav)})).filter(x=>x.el);
+  const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function updateQASectionNav(){
+    if(!navTargets.length) return;
+    const marker=window.scrollY+170;
+    let active=navTargets[0].id;
+    navTargets.forEach(item=>{if(item.el.offsetTop<=marker) active=item.id;});
+    navLinks.forEach(link=>{
+      const isActive=link.dataset.qaNav===active;
+      link.classList.toggle('active',isActive);
+      if(isActive) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
+    });
+  }
+  navLinks.forEach(link=>link.addEventListener('click',()=>requestAnimationFrame(updateQASectionNav)));
+  window.addEventListener('scroll',updateQASectionNav,{passive:true});
+  window.addEventListener('load',updateQASectionNav);
+  updateQASectionNav();
+  let shouldIntro=true;
+  try{
+    const arriving=sessionStorage.getItem('packpm-qa-arrival')==='1';
+    const skip=sessionStorage.getItem('packpm-skip-qa-intro')==='1';
+    shouldIntro=arriving || !skip;
+    if(arriving) sessionStorage.removeItem('packpm-qa-arrival');
+    if(skip) sessionStorage.removeItem('packpm-skip-qa-intro');
+  }catch(e){}
+  if(intro && shouldIntro && !reduced){
+    document.body.classList.add('qa-in-cinematic');
+    intro.classList.add('active');
+    window.setTimeout(()=>{
+      intro.classList.add('done');
+      document.body.classList.remove('qa-in-cinematic');
+      window.setTimeout(()=>intro.remove(),650);
+    },4000);
+  }else if(intro){intro.remove();}
+})();
 </script>
 </body>
 </html>
