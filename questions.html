@@ -1135,9 +1135,10 @@ document.querySelectorAll('[data-portfolio-link]').forEach(link=>link.addEventLi
   const reduceNow=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduceNow){ window.location.href=link.href; return; }
   document.body.classList.add('qa-leaving');
+  try{ sessionStorage.removeItem('packpm-qa-arrival'); sessionStorage.removeItem('packpm-skip-qa-intro'); }catch(e){}
   const overlay=document.getElementById('qaCrossfade');
   if(overlay) overlay.classList.add('active');
-  try{ sessionStorage.setItem('packpm-skip-startup','1'); sessionStorage.setItem('packpm-skip-qa-intro','1'); }catch(e){}
+  try{ sessionStorage.setItem('packpm-skip-startup','1'); }catch(e){}
   setTimeout(()=>{window.location.href=link.href},900);
 }));
 
@@ -1239,14 +1240,15 @@ if(!reduce.matches&&matchMedia('(pointer:fine)').matches){const glow=document.cr
     if(skip) sessionStorage.removeItem('packpm-skip-qa-intro');
   }catch(e){}
 
-  /* The spotlight intro is the ONLY arrival animation on this page.
-     If we came from the portfolio, explicitly hide the old return overlay so it
-     can never flash above the stage lights for a frame. */
+  /* The spotlight intro owns ARRIVAL only.
+     Keep qaCrossfade available for the explicit ← Portfolio action.
+     We only strip an accidental arrival state here; we never hide the overlay
+     itself, because the back-navigation handler needs it later. */
   const oldArrivalOverlay=document.getElementById('qaCrossfade');
   if(oldArrivalOverlay){
-    oldArrivalOverlay.classList.remove('active','arriving');
-    oldArrivalOverlay.style.opacity='0';
-    oldArrivalOverlay.style.visibility='hidden';
+    oldArrivalOverlay.classList.remove('arriving');
+    oldArrivalOverlay.style.removeProperty('opacity');
+    oldArrivalOverlay.style.removeProperty('visibility');
   }
 
   if(intro && shouldIntro && !reduced){
