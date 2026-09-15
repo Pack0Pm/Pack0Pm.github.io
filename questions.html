@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Questions I Ask Myself • Packpm</title>
-<link rel="icon" type="image/png" href="assets/P.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -339,11 +338,11 @@ html {
 <section class="question-list" id="questions"></section>
 <div class="end-marker" data-end>END OF QUESTIONS // FOR NOW</div>
 <div class="back-wrap"><a class="back-button" href="index.html" data-back-button data-portfolio-link>← Back to Portfolio</a></div>
-<footer data-footer>Made with questions, answers, Aegisub, and questionable amounts of time. 👽</footer>
+<footer data-footer>Made with questions, answers, Aegisub, and questionable amounts of time.</footer>
 </main>
 <script>
 const data={
-en:{title:'Questions I Ask Myself',subtitle:'Questions I ask myself sometimes... and the answers I somehow came up with.',kicker:'PERSONAL ARCHIVE // Q&A',back:'← Portfolio',backButton:'← Back to Portfolio',end:'END OF QUESTIONS // FOR NOW',footer:'Made with questions, answers, Aegisub, and questionable amounts of time. 👽',greetings:['Hello','Welcome','Questions'],questions:[
+en:{title:'Questions I Ask Myself',subtitle:'Questions I ask myself sometimes... and the answers I somehow came up with.',kicker:'PERSONAL ARCHIVE // Q&A',back:'← Portfolio',backButton:'← Back to Portfolio',end:'END OF QUESTIONS // FOR NOW',footer:'Made with questions, answers, Aegisub, and questionable amounts of time.',greetings:['Hello','Welcome','Questions'],questions:[
 ['Why did I become a Subtitle Creator? 🎬',`I think it started because I simply wanted the songs I liked to have Thai subtitles. It was never some huge plan or anything. I just felt that some songs were really good, and I wanted Thai-speaking listeners to have a chance to understand them the way I did.
 
 So I started trying to translate lyrics, time subtitles, and mess around with Aegisub. What began as a program I was just experimenting with slowly became something I opened almost every time I found an MV I wanted to work on.
@@ -616,8 +615,8 @@ Right now, I still don't know the answers to those questions.
 
 But maybe... those answers should belong to <strong>Packpm on that day</strong>, not Packpm today. 😛`]
 ]},
-th:{title:'คำถามที่ผมถามตัวเอง',subtitle:'คำถามที่บางครั้งผมก็ถามตัวเอง... และคำตอบที่ไม่รู้ไปคิดมาได้ยังไง',kicker:'PERSONAL ARCHIVE // Q&A',back:'← กลับไปหน้า Portfolio',backButton:'← กลับไปหน้า Portfolio',end:'จบคำถาม // ไว้แค่นี้ก่อน',footer:'สร้างด้วยคำถาม คำตอบ Aegisub และเวลาจำนวนมหาศาลที่ไม่รู้หายไปไหน 👽',greetings:['สวัสดี','ยินดีต้อนรับ','คำถาม'],questions:[]},
-ja:{title:'自分に問いかけること',subtitle:'たまに自分に問いかけること…そして、なんとなく出てきた答え。',kicker:'PERSONAL ARCHIVE // Q&A',back:'← Portfolioへ',backButton:'← Portfolioへ戻る',end:'質問終了 // 今のところ',footer:'質問と答え、Aegisub、そして謎の大量の時間で作られています。👽',greetings:['こんにちは','ようこそ','質問'],questions:[]}
+th:{title:'คำถามที่ผมถามตัวเอง',subtitle:'คำถามที่บางครั้งผมก็ถามตัวเอง... และคำตอบที่ไม่รู้ไปคิดมาได้ยังไง',kicker:'PERSONAL ARCHIVE // Q&A',back:'← กลับไปหน้า Portfolio',backButton:'← กลับไปหน้า Portfolio',end:'จบคำถาม // ไว้แค่นี้ก่อน',footer:'สร้างด้วยคำถาม คำตอบ Aegisub และเวลาจำนวนมหาศาลที่ไม่รู้หายไปไหน',greetings:['สวัสดี','ยินดีต้อนรับ','คำถาม'],questions:[]},
+ja:{title:'自分に問いかけること',subtitle:'たまに自分に問いかけること…そして、なんとなく出てきた答え。',kicker:'PERSONAL ARCHIVE // Q&A',back:'← Portfolioへ',backButton:'← Portfolioへ戻る',end:'質問終了 // 今のところ',footer:'質問と答え、Aegisub、そして謎の大量の時間で作られています。',greetings:['こんにちは','ようこそ','質問'],questions:[]}
 };
 // Multilingual Q&A content.
 const thaiQuestions=[
@@ -1145,15 +1144,20 @@ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
 function boot(){
   if(reduce.matches) return;
   try{
-    if(sessionStorage.getItem('packpm-qa-arrival')==='1'){
-      sessionStorage.removeItem('packpm-qa-arrival');
-      document.body.classList.add('page-arriving');
-      document.body.classList.add('lights-arriving');
-      const overlay=document.getElementById('qaCrossfade');
-      if(overlay){
-        overlay.classList.add('active','arriving');
-        setTimeout(()=>{overlay.classList.remove('active','arriving');document.body.classList.remove('lights-arriving')},1600);
-      }
+    const arrivingFromPortfolio = sessionStorage.getItem('packpm-qa-arrival') === '1';
+
+    if(arrivingFromPortfolio){
+      /* IMPORTANT:
+         Do NOT run qaCrossfade on arrival.
+         The portfolio already played the outgoing Q&A transition before navigation.
+         Replaying another crossfade here was fighting the spotlight intro and caused
+         the split-second “outro” flash the user saw. Leave the arrival flag intact
+         so the spotlight controller below can consume it exactly once. */
+      document.body.classList.add('page-arriving','lights-arriving');
+
+      window.setTimeout(()=>{
+        document.body.classList.remove('lights-arriving');
+      },4000);
     }
   }catch(e){}
 }
@@ -1190,6 +1194,16 @@ if(!reduce.matches&&matchMedia('(pointer:fine)').matches){const glow=document.cr
     if(arriving) sessionStorage.removeItem('packpm-qa-arrival');
     if(skip) sessionStorage.removeItem('packpm-skip-qa-intro');
   }catch(e){}
+  /* The spotlight intro is the ONLY arrival animation on this page.
+     If we came from the portfolio, explicitly hide the old return overlay so it
+     can never flash above the stage lights for a frame. */
+  const oldArrivalOverlay=document.getElementById('qaCrossfade');
+  if(oldArrivalOverlay){
+    oldArrivalOverlay.classList.remove('active','arriving');
+    oldArrivalOverlay.style.opacity='0';
+    oldArrivalOverlay.style.visibility='hidden';
+  }
+
   if(intro && shouldIntro && !reduced){
     document.body.classList.add('qa-in-cinematic');
     intro.classList.add('active');
