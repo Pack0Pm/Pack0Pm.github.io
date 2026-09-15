@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>More? // Packpm</title>
+
+<link rel="icon" type="image/png" href="assets/P.png">
+
+<style>
+/* =========================================================
+   PACKPM // MORE?
+   ========================================================= */
+
+:root {
+    --bg: #050913;
+    --bg-soft: #08111e;
+
+    --text: #e8f7ff;
+    --muted: rgba(184, 211, 224, .58);
+    --dim: rgba(184, 211, 224, .34);
+
+    --cyan: #66d9ff;
+    --cyan-soft: rgba(102, 217, 255, .18);
+    --cyan-faint: rgba(102, 217, 255, .07);
+
+    --violet: #9c8cff;
+    --violet-soft: rgba(156, 140, 255, .13);
+
+    --border: rgba(132, 193, 220, .14);
+    --border-hover: rgba(102, 217, 255, .38);
+
+    --radius: 22px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(44, 117, 160, .08),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(93, 72, 170, .07),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #030711;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(102, 217, 255, .72),
+            rgba(83, 119, 190, .65),
+            rgba(156, 140, 255, .65)
+        );
+
+    box-shadow:
+        0 0 8px rgba(102, 217, 255, .25);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(102, 217, 255, .95),
+            rgba(156, 140, 255, .9)
+        );
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+#spaceField {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -5;
+
+    pointer-events: none;
+}
+
+.space-atmosphere {
+    position: fixed;
+    inset: 0;
+
+    z-index: -4;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            transparent 0%,
+            rgba(2, 6, 15, .1) 45%,
+            rgba(2, 6, 15, .62) 100%
+        );
+}
+
+
+/* =========================================================
+   TOP NAV
+   ========================================================= */
+
+.topbar {
+    position: relative;
+
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+
+    padding: 28px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 10;
+}
+
+.brand {
+    color: var(--text);
+
+    text-decoration: none;
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: .14em;
+}
+
+.brand span {
+    color: var(--cyan);
+}
+
+.back-mini {
+    color: var(--muted);
+
+    text-decoration: none;
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+    letter-spacing: .12em;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+.back-mini:hover {
+    color: var(--cyan);
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    width: min(1180px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.more-hero {
+    min-height: 66vh;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(280px, .85fr);
+
+    align-items: center;
+
+    gap: 80px;
+
+    padding:
+        90px
+        0
+        100px;
+}
+
+.more-hero-copy {
+    max-width: 720px;
+}
+
+.eyebrow {
+    margin-bottom: 24px;
+
+    color: rgba(102, 217, 255, .62);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: .2em;
+}
+
+.more-hero h1 {
+    margin: 0;
+
+    font-size:
+        clamp(76px, 13vw, 170px);
+
+    line-height: .82;
+
+    letter-spacing: -.07em;
+
+    font-weight: 800;
+
+    color: var(--text);
+
+    text-shadow:
+        0 0 40px rgba(102, 217, 255, .04);
+}
+
+.more-hero h1 span {
+    color: var(--cyan);
+
+    text-shadow:
+        0 0 24px rgba(102, 217, 255, .25);
+}
+
+.more-hero-copy > p {
+    max-width: 590px;
+
+    margin:
+        34px
+        0
+        0;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   QUIET SIGNAL
+   ========================================================= */
+
+.hero-signal {
+    position: relative;
+
+    width: min(390px, 100%);
+
+    margin-left: auto;
+
+    padding: 8px 0;
+
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    animation:
+        signalArrival 1.2s ease forwards;
+
+    animation-delay: .35s;
+}
+
+.signal-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 24px;
+
+    color: rgba(102, 217, 255, .62);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: .18em;
+}
+
+.signal-label::before {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+
+    flex: 0 0 auto;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 8px rgba(102, 217, 255, .8),
+        0 0 18px rgba(102, 217, 255, .3);
+
+    animation:
+        signalPulse 2.4s ease-in-out infinite;
+}
+
+.signal-content {
+    position: relative;
+
+    padding-left: 20px;
+
+    border-left:
+        1px solid rgba(102, 217, 255, .16);
+}
+
+.signal-title {
+    margin-bottom: 18px;
+
+    color: rgba(235, 249, 255, .78);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1.6;
+
+    letter-spacing: .12em;
+}
+
+.signal-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    margin-bottom: 25px;
+
+    color: rgba(170, 198, 212, .42);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.signal-lines span {
+    transition:
+        color .35s ease,
+        transform .35s ease;
+}
+
+.hero-signal:hover .signal-lines span:nth-child(1) {
+    color: rgba(102, 217, 255, .7);
+    transform: translateX(4px);
+}
+
+.hero-signal:hover .signal-lines span:nth-child(2) {
+    color: rgba(102, 217, 255, .6);
+    transform: translateX(7px);
+}
+
+.hero-signal:hover .signal-lines span:nth-child(3) {
+    color: rgba(102, 217, 255, .5);
+    transform: translateX(10px);
+}
+
+.signal-final {
+    margin-bottom: 10px;
+
+    color: rgba(235, 249, 255, .82);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: .08em;
+
+    animation:
+        signalBreath 4s ease-in-out infinite;
+}
+
+.signal-signature {
+    color: rgba(102, 217, 255, .38);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: .14em;
+}
+
+
+/* little waveform */
+
+.signal-wave {
+    display: flex;
+
+    align-items: center;
+
+    gap: 3px;
+
+    height: 18px;
+
+    margin:
+        24px
+        0
+        0
+        20px;
+
+    opacity: .35;
+}
+
+.signal-wave i {
+    display: block;
+
+    width: 2px;
+
+    height: 5px;
+
+    border-radius: 999px;
+
+    background: rgba(102, 217, 255, .7);
+
+    transform-origin: center;
+
+    animation:
+        signalWave 1.8s ease-in-out infinite;
+}
+
+.signal-wave i:nth-child(1)  { animation-delay: -.9s; }
+.signal-wave i:nth-child(2)  { animation-delay: -.6s; }
+.signal-wave i:nth-child(3)  { animation-delay: -.2s; }
+.signal-wave i:nth-child(4)  { animation-delay: -.7s; }
+.signal-wave i:nth-child(5)  { animation-delay: -.35s; }
+.signal-wave i:nth-child(6)  { animation-delay: -.8s; }
+.signal-wave i:nth-child(7)  { animation-delay: -.1s; }
+.signal-wave i:nth-child(8)  { animation-delay: -.5s; }
+.signal-wave i:nth-child(9)  { animation-delay: -.75s; }
+.signal-wave i:nth-child(10) { animation-delay: -.3s; }
+.signal-wave i:nth-child(11) { animation-delay: -.65s; }
+.signal-wave i:nth-child(12) { animation-delay: -.15s; }
+
+
+/* =========================================================
+   SIDE PAGE GRID
+   ========================================================= */
+
+.pages-section {
+    padding:
+        20px
+        0
+        120px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 12px;
+
+    letter-spacing: .14em;
+
+    color: rgba(235, 249, 255, .72);
+}
+
+.section-heading span {
+    color: rgba(184, 211, 224, .28);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .12em;
+}
+
+.pages-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card {
+    position: relative;
+
+    min-height: 230px;
+
+    padding: 28px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(10, 22, 37, .72),
+            rgba(6, 13, 24, .58)
+        );
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        border-color .4s ease,
+        box-shadow .4s ease,
+        background .4s ease;
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            280px circle at var(--mx, 50%) var(--my, 50%),
+            rgba(102, 217, 255, .08),
+            transparent 68%
+        );
+
+    opacity: .9;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    border-color: var(--border-hover);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(12, 29, 47, .78),
+            rgba(7, 15, 28, .68)
+        );
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, .25),
+        0 0 35px rgba(102, 217, 255, .04);
+}
+
+.card-number {
+    position: relative;
+    z-index: 1;
+
+    color: rgba(102, 217, 255, .42);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: .14em;
+}
+
+.card-number::after {
+    content: "";
+
+    margin-left: 10px;
+
+    color: rgba(102, 217, 255, .4);
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+}
+
+.card h3 {
+    position: relative;
+    z-index: 1;
+
+    margin:
+        65px
+        0
+        10px;
+
+    font-size: 25px;
+
+    letter-spacing: -.025em;
+}
+
+.card p {
+    position: relative;
+    z-index: 1;
+
+    margin: 0;
+
+    max-width: 420px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.75;
+}
+
+.card-arrow {
+    position: absolute;
+
+    right: 26px;
+    bottom: 25px;
+
+    z-index: 2;
+
+    color: rgba(235, 249, 255, .46);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: .1em;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+.card:hover .card-arrow {
+    color: var(--cyan);
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   ACTIVE Q&A CARD
+   ========================================================= */
+
+.card.active {
+    grid-column: 1 / -1;
+
+    min-height: 390px;
+
+    padding: 36px;
+
+    border-color:
+        rgba(102, 217, 255, .3);
+
+    background:
+        radial-gradient(
+            circle at 82% 20%,
+            rgba(102, 217, 255, .09),
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            rgba(10, 28, 46, .8),
+            rgba(6, 13, 24, .7)
+        );
+
+    box-shadow:
+        inset 0 0 50px rgba(102, 217, 255, .025);
+}
+
+.card.active h3 {
+    margin-top: 85px;
+
+    font-size:
+        clamp(34px, 5vw, 58px);
+
+    letter-spacing: -.045em;
+}
+
+.card.active .card-arrow {
+    right: 36px;
+    bottom: 32px;
+
+    padding:
+        9px
+        14px;
+
+    border:
+        1px solid rgba(102, 217, 255, .2);
+
+    border-radius: 999px;
+
+    background:
+        rgba(102, 217, 255, .04);
+}
+
+.card.active .card-number::after {
+    content: "AVAILABLE";
+}
+
+.active-signal {
+    position: absolute;
+
+    top: 35px;
+    right: 36px;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 10px rgba(102, 217, 255, .8),
+        0 0 22px rgba(102, 217, 255, .22);
+
+    animation:
+        signalPulse 2.4s ease-in-out infinite;
+}
+
+
+/* disabled cards */
+
+.card.disabled {
+    cursor: default;
+
+    opacity: .42;
+
+    min-height: 190px;
+}
+
+.card.disabled:hover {
+    transform: none;
+
+    border-color: var(--border);
+
+    box-shadow: none;
+}
+
+.card.disabled h3 {
+    margin-top: 48px;
+}
+
+.card.disabled .card-number::after {
+    content: "NOT YET";
+}
+
+
+/* =========================================================
+   RETURN
+   ========================================================= */
+
+.return-area {
+    display: flex;
+    justify-content: center;
+
+    padding:
+        0
+        0
+        100px;
+}
+
+.return-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding:
+        13px
+        18px;
+
+    border:
+        1px solid rgba(102, 217, 255, .17);
+
+    border-radius: 999px;
+
+    background:
+        rgba(102, 217, 255, .035);
+
+    color: rgba(235, 249, 255, .62);
+
+    text-decoration: none;
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: .11em;
+
+    transition:
+        color .3s ease,
+        border-color .3s ease,
+        background .3s ease,
+        transform .3s ease;
+}
+
+.return-button:hover {
+    color: var(--cyan);
+
+    border-color:
+        rgba(102, 217, 255, .38);
+
+    background:
+        rgba(102, 217, 255, .07);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RETURN TRANSITION
+   ========================================================= */
+
+#returnTransition {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        #030711;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+#returnTransition.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.return-transition-text {
+    text-align: center;
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+}
+
+.return-transition-small {
+    margin-bottom: 12px;
+
+    color: rgba(102, 217, 255, .55);
+
+    font-size: 10px;
+
+    letter-spacing: .2em;
+}
+
+.return-transition-main {
+    color: var(--text);
+
+    font-size:
+        clamp(24px, 5vw, 46px);
+
+    font-weight: 700;
+
+    letter-spacing: -.04em;
+}
+
+.return-transition-sub {
+    margin-top: 10px;
+
+    color: rgba(184, 211, 224, .34);
+
+    font-size: 9px;
+
+    letter-spacing: .16em;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    padding:
+        0
+        0
+        38px;
+
+    text-align: center;
+
+    color: rgba(184, 211, 224, .22);
+
+    font-family:
+        "JetBrains Mono",
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: .1em;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes signalArrival {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes signalPulse {
+    0%,
+    100% {
+        opacity: .35;
+        transform: scale(.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+}
+
+@keyframes signalBreath {
+    0%,
+    100% {
+        opacity: .62;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes signalWave {
+    0%,
+    100% {
+        height: 4px;
+        opacity: .35;
+    }
+
+    50% {
+        height: 15px;
+        opacity: .85;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .topbar,
+    main {
+        width: min(100% - 32px, 1180px);
+    }
+
+    .more-hero {
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding:
+            70px
+            0
+            80px;
+    }
+
+    .more-hero h1 {
+        font-size: clamp(72px, 23vw, 120px);
+    }
+
+    .more-hero-copy > p {
+        font-size: 14px;
+    }
+
+    .hero-signal {
+        width: 100%;
+
+        margin:
+            28px
+            0
+            0;
+
+        padding: 0;
+    }
+
+    .signal-content {
+        padding-left: 16px;
+    }
+
+    .signal-wave {
+        margin-left: 16px;
+    }
+
+    .pages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card.active {
+        grid-column: auto;
+
+        min-height: 320px;
+
+        padding: 28px;
+    }
+
+    .card.active h3 {
+        margin-top: 65px;
+    }
+
+    .active-signal {
+        top: 28px;
+        right: 28px;
+    }
+
+    .card.active .card-arrow {
+        right: 28px;
+        bottom: 25px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .hero-signal,
+    .signal-label::before,
+    .signal-final,
+    .signal-wave i,
+    .active-signal {
+        animation: none;
+    }
+
+    .hero-signal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<canvas id="spaceField"></canvas>
+<div class="space-atmosphere"></div>
+
+
+<!-- =======================================================
+     TOP BAR
+     ======================================================= -->
+
+<header class="topbar">
+
+    <a
+        class="brand"
+        href="index.html"
+        data-return
+    >
+        PACK<span>PM</span>
+    </a>
+
+    <a
+        class="back-mini"
+        href="index.html"
+        data-return
+    >
+        ← PORTFOLIO
+    </a>
+
+</header>
+
+
+<main>
+
+    <!-- ===================================================
+         HERO
+         =================================================== -->
+
+    <section class="more-hero">
+
+        <div class="more-hero-copy">
+
+            <div class="eyebrow">
+                MORE // SIDE PAGES
+            </div>
+
+            <h1>
+                MORE<span>?</span>
+            </h1>
+
+            <p>
+                The parts of Packpm that didn't quite fit
+                inside the main portfolio.
+                Questions, experiments, notes, weird ideas —
+                whatever happens next.
+            </p>
+
+        </div>
+
+
+        <!-- Quiet Packpm signal -->
+
+        <div
+            class="hero-signal"
+            aria-hidden="true"
+        >
+
+            <div class="signal-label">
+                SIGNAL // 04
+            </div>
+
+            <div class="signal-content">
+
+                <div class="signal-title">
+                    SUBTITLE WORK IN PROGRESS
+                </div>
+
+                <div class="signal-lines">
+                    <span>translation...</span>
+                    <span>timing...</span>
+                    <span>styling...</span>
+                </div>
+
+                <div class="signal-final">
+                    one more MV.
+                </div>
+
+                <div class="signal-signature">
+                    — PACKPM
+                </div>
+
+            </div>
+
+            <div class="signal-wave">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         SIDE PAGES
+         =================================================== -->
+
+    <section class="pages-section">
+
+        <div class="section-heading">
+
+            <h2>
+                // AVAILABLE &amp; FUTURE
+            </h2>
+
+            <span>
+                PACKPM // SIDE CHANNELS
+            </span>
+
+        </div>
+
+
+        <div class="pages-grid">
+
+
+            <!-- Q&A -->
+
+            <a
+                class="card active"
+                href="questions.html"
+                id="qaCard"
+            >
+
+                <div class="active-signal"></div>
+
+                <div class="card-number">
+                    01
+                </div>
+
+                <h3>
+                    Questions I Ask Myself
+                </h3>
+
+                <p>
+                    A personal archive of thoughts,
+                    weird questions, lessons,
+                    burnout, MVs, producers,
+                    and whatever else ended up living
+                    inside Packpm's head.
+                </p>
+
+                <span class="card-arrow">
+                    OPEN ↗
+                </span>
+
+            </a>
+
+
+            <!-- NOTES -->
+
+            <div class="card disabled">
+
+                <div class="card-number">
+                    02
+                </div>
+
+                <h3>
+                    Notes
+                </h3>
+
+                <p>
+                    WAITING FOR SOMETHING WORTH WRITING.
+                </p>
+
+                <span class="card-arrow">
+                    SOON
+                </span>
+
+            </div>
+
+
+            <!-- LAB -->
+
+            <div class="card disabled">
+
+                <div class="card-number">
+                    03
+                </div>
+
+                <h3>
+                    Lab
+                </h3>
+
+                <p>
+                    Experiments, strange ideas,
+                    unfinished things,
+                    and probably some questionable code.
+                </p>
+
+                <span class="card-arrow">
+                    UNDER CONSTRUCTION
+                </span>
+
+            </div>
+
+
+            <!-- ??? -->
+
+            <div class="card disabled">
+
+                <div class="card-number">
+                    04
+                </div>
+
+                <h3>
+                    ???
+                </h3>
+
+                <p>
+                    Whatever Packpm decides to make next.
+                </p>
+
+                <span class="card-arrow">
+                    UNKNOWN
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         RETURN
+         =================================================== -->
+
+    <div class="return-area">
+
+        <a
+            class="return-button"
+            href="index.html"
+            data-return
+        >
+            <span>←</span>
+            RETURN TO PORTFOLIO
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+    Made with subtitles, Aegisub, and questionable amounts of time.
+</footer>
+
+
+<!-- =======================================================
+     RETURN TRANSITION
+     ======================================================= -->
+
+<div id="returnTransition">
+
+    <div class="return-transition-text">
+
+        <div class="return-transition-small">
+            RETURNING TO
+        </div>
+
+        <div class="return-transition-main">
+            PACKPM
+        </div>
+
+        <div class="return-transition-sub">
+            PORTFOLIO // HOME
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+/* =========================================================
+   SPACE FIELD
+   ========================================================= */
+
+const canvas = document.getElementById("spaceField");
+const ctx = canvas.getContext("2d");
+
+let width = 0;
+let height = 0;
+let dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+let stars = [];
+let fallingStars = [];
+
+const STAR_COUNT = 125;
+const FALLING_STAR_COUNT = 4;
+
+
+/* resize */
+
+function resizeCanvas() {
+
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+
+    ctx.setTransform(
+        dpr,
+        0,
+        0,
+        dpr,
+        0,
+        0
+    );
+}
+
+
+/* =========================================================
+   STAR
+   ========================================================= */
+
+class Star {
+
+    constructor() {
+        this.reset(true);
+    }
+
+    reset(initial = false) {
+
+        this.x = Math.random() * width;
+        this.y = initial
+            ? Math.random() * height
+            : Math.random() * height;
+
+        this.depth =
+            .25 +
+            Math.random() * .75;
+
+        this.radius =
+            .35 +
+            Math.random() *
+            (1.15 * this.depth);
+
+        this.vx =
+            (Math.random() - .5)
+            * (.035 + this.depth * .055);
+
+        this.vy =
+            (Math.random() - .5)
+            * (.025 + this.depth * .045);
+
+        this.twinkle =
+            Math.random() * Math.PI * 2;
+
+        this.twinkleSpeed =
+            .008 +
+            Math.random() * .018;
+
+        this.alpha =
+            .16 +
+            this.depth * .48;
+    }
+
+    update() {
+
+        this.x += this.vx;
+        this.y += this.vy;
+
+        this.twinkle += this.twinkleSpeed;
+
+        if (
+            this.x < -10 ||
+            this.x > width + 10 ||
+            this.y < -10 ||
+            this.y > height + 10
+        ) {
+            this.reset();
+        }
+    }
+
+    draw() {
+
+        const flicker =
+            .76 +
+            Math.sin(this.twinkle) * .24;
+
+        const alpha =
+            this.alpha * flicker;
+
+        ctx.beginPath();
+
+        ctx.arc(
+            this.x,
+            this.y,
+            this.radius,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            `rgba(190, 225, 240, ${alpha})`;
+
+        ctx.fill();
+    }
+}
+
+
+/* =========================================================
+   FALLING STAR
+   ========================================================= */
+
+class FallingStar {
+
+    constructor() {
+        this.reset(true);
+    }
+
+    reset(initial = false) {
+
+        this.x =
+            Math.random() * width;
+
+        this.y =
+            initial
+                ? Math.random() * height
+                : -30 - Math.random() * 150;
+
+        this.length =
+            35 +
+            Math.random() * 75;
+
+        this.speed =
+            1.8 +
+            Math.random() * 2.2;
+
+        this.alpha =
+            .08 +
+            Math.random() * .16;
+
+        this.delay =
+            Math.random() * 7000;
+    }
+
+    update() {
+
+        this.y += this.speed;
+        this.x += this.speed * .35;
+
+        if (
+            this.y >
+            height + this.length
+        ) {
+            this.reset();
+        }
+    }
+
+    draw() {
+
+        const gradient =
+            ctx.createLinearGradient(
+                this.x,
+                this.y,
+                this.x - this.length * .35,
+                this.y - this.length
+            );
+
+        gradient.addColorStop(
+            0,
+            `rgba(102, 217, 255, ${this.alpha})`
+        );
+
+        gradient.addColorStop(
+            1,
+            "rgba(102, 217, 255, 0)"
+        );
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            this.x,
+            this.y
+        );
+
+        ctx.lineTo(
+            this.x - this.length * .35,
+            this.y - this.length
+        );
+
+        ctx.strokeStyle = gradient;
+        ctx.lineWidth = .7;
+
+        ctx.stroke();
+    }
+}
+
+
+/* =========================================================
+   INIT
+   ========================================================= */
+
+function initSpace() {
+
+    stars = [];
+
+    for (
+        let i = 0;
+        i < STAR_COUNT;
+        i++
+    ) {
+        stars.push(
+            new Star()
+        );
+    }
+
+    fallingStars = [];
+
+    for (
+        let i = 0;
+        i < FALLING_STAR_COUNT;
+        i++
+    ) {
+        fallingStars.push(
+            new FallingStar()
+        );
+    }
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+function animateSpace() {
+
+    ctx.clearRect(
+        0,
+        0,
+        width,
+        height
+    );
+
+    for (const star of stars) {
+
+        star.update();
+        star.draw();
+
+    }
+
+    for (const star of fallingStars) {
+
+        star.update();
+        star.draw();
+
+    }
+
+    requestAnimationFrame(
+        animateSpace
+    );
+}
+
+
+resizeCanvas();
+initSpace();
+animateSpace();
+
+
+window.addEventListener(
+    "resize",
+    () => {
+        resizeCanvas();
+        initSpace();
+    }
+);
+
+
+/* =========================================================
+   CARD MOUSE LIGHT
+   ========================================================= */
+
+document
+    .querySelectorAll(".card")
+    .forEach(card => {
+
+        card.addEventListener(
+            "mousemove",
+            event => {
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                const x =
+                    ((event.clientX - rect.left)
+                    / rect.width) * 100;
+
+                const y =
+                    ((event.clientY - rect.top)
+                    / rect.height) * 100;
+
+                card.style.setProperty(
+                    "--mx",
+                    `${x}%`
+                );
+
+                card.style.setProperty(
+                    "--my",
+                    `${y}%`
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   RETURN TRANSITION
+   ========================================================= */
+
+const transition =
+    document.getElementById(
+        "returnTransition"
+    );
+
+document
+    .querySelectorAll("[data-return]")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+                const destination =
+                    link.href;
+
+                transition.classList.add(
+                    "active"
+                );
+
+                sessionStorage.setItem(
+                    "packpm-skip-startup",
+                    "1"
+                );
+
+                sessionStorage.setItem(
+                    "packpm-returning-from-more",
+                    "1"
+                );
+
+                setTimeout(
+                    () => {
+                        window.location.href =
+                            destination;
+                    },
+                    850
+                );
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   Q&A TRANSITION
+   ========================================================= */
+
+const qaCard =
+    document.getElementById(
+        "qaCard"
+    );
+
+if (qaCard) {
+
+    qaCard.addEventListener(
+        "click",
+        () => {
+
+            sessionStorage.setItem(
+                "packpm-skip-startup",
+                "1"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+if (
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches
+) {
+
+    fallingStars = [];
+
+}
+</script>
+
+</body>
+</html>
