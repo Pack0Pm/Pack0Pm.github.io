@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Questions I Ask Myself • Packpm</title>
+<link rel="icon" type="image/png" href="assets/P.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -231,7 +232,7 @@ html {
   font:600 .65rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.18em;text-align:center;
 }
 
-/* Cinematic spotlight entrance: 0–4s when arriving from the portfolio. */
+/* Cinematic spotlight entrance: 0–3s when arriving from the portfolio. */
 .qa-stage-intro{position:fixed;inset:0;z-index:10050;pointer-events:none;overflow:hidden;background:#02030b;opacity:1;transition:opacity .55s ease}
 .qa-stage-intro.done{opacity:0}
 .qa-stage-dim{position:absolute;inset:0;background:rgba(0,0,0,.80)}
@@ -244,9 +245,9 @@ html {
 .qa-stage-intro.active .qa-stage-light-1{animation:qaStageSearch1 1.18s .15s cubic-bezier(.2,.8,.2,1) forwards}
 .qa-stage-intro.active .qa-stage-light-2{animation:qaStageSearch2 1.28s .55s cubic-bezier(.2,.8,.2,1) forwards}
 .qa-stage-intro.active .qa-stage-light-3{animation:qaStageSearch3 1.24s .95s cubic-bezier(.2,.8,.2,1) forwards}
-.qa-stage-intro.active .qa-stage-light-4{animation:qaStageLock 1.15s 1.30s cubic-bezier(.2,.8,.2,1) forwards}
+.qa-stage-intro.active .qa-stage-light-4{animation:qaStageLock .92s .98s cubic-bezier(.2,.8,.2,1) forwards}
 .qa-stage-title{position:absolute;inset:0;display:grid;place-content:center;text-align:center;padding:24px;opacity:0;transform:translateY(10px) scale(.985)}
-.qa-stage-intro.active .qa-stage-title{animation:qaStageTitle 1s 1.58s cubic-bezier(.16,1,.3,1) forwards}
+.qa-stage-intro.active .qa-stage-title{animation:qaStageTitle .82s 1.25s cubic-bezier(.16,1,.3,1) forwards}
 .qa-stage-kicker{color:#67e8f9;font:700 .68rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.23em;text-transform:uppercase}
 .qa-stage-main{margin:13px 0 12px;color:#fff;font:800 clamp(2.6rem,7vw,6rem)/.94 "Space Grotesk",Arial,sans-serif;letter-spacing:-.045em;text-shadow:0 0 18px rgba(103,232,249,.18),0 0 42px rgba(34,211,238,.10)}
 .qa-stage-meta{color:#94a3b8;font:600 .75rem/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.11em}
@@ -615,8 +616,8 @@ Right now, I still don't know the answers to those questions.
 
 But maybe... those answers should belong to <strong>Packpm on that day</strong>, not Packpm today. 😛`]
 ]},
-th:{title:'คำถามที่ผมถามตัวเอง',subtitle:'คำถามที่บางครั้งผมก็ถามตัวเอง... และคำตอบที่ไม่รู้ไปคิดมาได้ยังไง',kicker:'PERSONAL ARCHIVE // Q&A',back:'← กลับไปหน้า Portfolio',backButton:'← กลับไปหน้า Portfolio',end:'จบคำถาม // ไว้แค่นี้ก่อน',footer:'สร้างด้วยคำถาม คำตอบ Aegisub และเวลาจำนวนมหาศาลที่ไม่รู้หายไปไหน',greetings:['สวัสดี','ยินดีต้อนรับ','คำถาม'],questions:[]},
-ja:{title:'自分に問いかけること',subtitle:'たまに自分に問いかけること…そして、なんとなく出てきた答え。',kicker:'PERSONAL ARCHIVE // Q&A',back:'← Portfolioへ',backButton:'← Portfolioへ戻る',end:'質問終了 // 今のところ',footer:'質問と答え、Aegisub、そして謎の大量の時間で作られています。',greetings:['こんにちは','ようこそ','質問'],questions:[]}
+th:{title:'คำถามที่ผมถามตัวเอง',subtitle:'คำถามที่บางครั้งผมก็ถามตัวเอง... และคำตอบที่ไม่รู้ไปคิดมาได้ยังไง',kicker:'PERSONAL ARCHIVE // Q&A',back:'← กลับไปหน้า Portfolio',backButton:'← กลับไปหน้า Portfolio',end:'จบคำถาม // ไว้แค่นี้ก่อน',footer:'สร้างด้วยคำถาม คำตอบ Aegisub และเวลาจำนวนมหาศาลที่ไม่รู้หายไปไหน 👽',greetings:['สวัสดี','ยินดีต้อนรับ','คำถาม'],questions:[]},
+ja:{title:'自分に問いかけること',subtitle:'たまに自分に問いかけること…そして、なんとなく出てきた答え。',kicker:'PERSONAL ARCHIVE // Q&A',back:'← Portfolioへ',backButton:'← Portfolioへ戻る',end:'質問終了 // 今のところ',footer:'質問と答え、Aegisub、そして謎の大量の時間で作られています。👽',greetings:['こんにちは','ようこそ','質問'],questions:[]}
 };
 // Multilingual Q&A content.
 const thaiQuestions=[
@@ -1157,7 +1158,7 @@ function boot(){
 
       window.setTimeout(()=>{
         document.body.classList.remove('lights-arriving');
-      },4000);
+      },3000);
     }
   }catch(e){}
 }
@@ -1169,23 +1170,66 @@ if(!reduce.matches&&matchMedia('(pointer:fine)').matches){const glow=document.cr
 (function(){
   const intro=document.getElementById('qaStageIntro');
   const navLinks=[...document.querySelectorAll('[data-qa-nav]')];
-  const navTargets=navLinks.map(link=>({link,id:link.dataset.qaNav,el:document.getElementById(link.dataset.qaNav)})).filter(x=>x.el);
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function updateQASectionNav(){
-    if(!navTargets.length) return;
-    const marker=window.scrollY+170;
-    let active=navTargets[0].id;
-    navTargets.forEach(item=>{if(item.el.offsetTop<=marker) active=item.id;});
+
+  /*
+     The question list is rebuilt by render() whenever the language changes.
+     Never cache the section divider elements: cached nodes become detached after
+     a language switch and their old offsetTop values can make "Future" stay active.
+  */
+  function getNavTargets(){
+    return navLinks.map(link=>({
+      link,
+      id:link.dataset.qaNav,
+      el:document.getElementById(link.dataset.qaNav)
+    })).filter(item=>item.el);
+  }
+
+  function setActive(id){
     navLinks.forEach(link=>{
-      const isActive=link.dataset.qaNav===active;
+      const isActive=link.dataset.qaNav===id;
       link.classList.toggle('active',isActive);
-      if(isActive) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
+      if(isActive) link.setAttribute('aria-current','page');
+      else link.removeAttribute('aria-current');
     });
   }
-  navLinks.forEach(link=>link.addEventListener('click',()=>requestAnimationFrame(updateQASectionNav)));
+
+  function updateQASectionNav(){
+    const targets=getNavTargets();
+    if(!targets.length) return;
+
+    const marker=window.scrollY+170;
+    let active=targets[0].id;
+    targets.forEach(item=>{
+      if(item.el.offsetTop<=marker) active=item.id;
+    });
+    setActive(active);
+  }
+
+  navLinks.forEach(link=>{
+    link.addEventListener('click',()=>{
+      /*
+         Give the clicked section immediate visual feedback. The scroll handler
+         will then take over as the smooth scroll moves through the page.
+      */
+      setActive(link.dataset.qaNav);
+      requestAnimationFrame(updateQASectionNav);
+    });
+  });
+
   window.addEventListener('scroll',updateQASectionNav,{passive:true});
   window.addEventListener('load',updateQASectionNav);
+
+  /*
+     Language changes rebuild #questions. Recalculate against the new DOM on
+     every update instead of holding references to the previous language's nodes.
+  */
+  document.querySelectorAll('[data-lang]').forEach(button=>{
+    button.addEventListener('click',()=>requestAnimationFrame(updateQASectionNav));
+  });
+
   updateQASectionNav();
+
   let shouldIntro=true;
   try{
     const arriving=sessionStorage.getItem('packpm-qa-arrival')==='1';
@@ -1194,6 +1238,7 @@ if(!reduce.matches&&matchMedia('(pointer:fine)').matches){const glow=document.cr
     if(arriving) sessionStorage.removeItem('packpm-qa-arrival');
     if(skip) sessionStorage.removeItem('packpm-skip-qa-intro');
   }catch(e){}
+
   /* The spotlight intro is the ONLY arrival animation on this page.
      If we came from the portfolio, explicitly hide the old return overlay so it
      can never flash above the stage lights for a frame. */
@@ -1207,12 +1252,15 @@ if(!reduce.matches&&matchMedia('(pointer:fine)').matches){const glow=document.cr
   if(intro && shouldIntro && !reduced){
     document.body.classList.add('qa-in-cinematic');
     intro.classList.add('active');
+
     window.setTimeout(()=>{
       intro.classList.add('done');
       document.body.classList.remove('qa-in-cinematic');
       window.setTimeout(()=>intro.remove(),650);
-    },4000);
-  }else if(intro){intro.remove();}
+    },3000);
+  }else if(intro){
+    intro.remove();
+  }
 })();
 </script>
 </body>
