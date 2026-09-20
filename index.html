@@ -1957,6 +1957,329 @@ body::marker{display:none}
   .startup-screen{transition:none!important}
   .reveal{filter:none;transform:none;opacity:1}
 }
+
+/* =========================
+   MORE? GATEWAY
+========================= */
+
+.more-gateway{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:30px auto 8px;
+    padding:26px 0 12px;
+    min-height:82px;
+}
+
+/* Small connector from the section above */
+.more-gateway::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    width:1px;
+    height:22px;
+    background:linear-gradient(
+        to bottom,
+        rgba(103,232,249,0),
+        rgba(103,232,249,.32)
+    );
+}
+
+/* Ambient glow */
+.more-gateway::after{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:90px;
+    left:50%;
+    top:22px;
+    transform:translateX(-50%);
+    background:radial-gradient(
+        ellipse,
+        rgba(103,232,249,.075),
+        rgba(167,139,250,.025) 42%,
+        transparent 72%
+    );
+    filter:blur(16px);
+    pointer-events:none;
+}
+
+/* -------------------------
+   FIREFLY PARTICLES
+------------------------- */
+
+.more-firefly{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:#67e8f9;
+    box-shadow:
+        0 0 6px rgba(103,232,249,.8),
+        0 0 14px rgba(103,232,249,.25);
+    pointer-events:none;
+    opacity:.35;
+    animation:
+        moreFireflyFloat 4s ease-in-out infinite,
+        moreFireflyPulse 2.6s ease-in-out infinite;
+}
+
+.more-firefly:nth-child(2){
+    width:2px;
+    height:2px;
+    left:calc(50% - 92px);
+    top:35px;
+    animation-delay:-1.2s;
+}
+
+.more-firefly:nth-child(3){
+    width:2px;
+    height:2px;
+    left:calc(50% + 84px);
+    top:48px;
+    animation-delay:-2.4s;
+    background:#a78bfa;
+    box-shadow:
+        0 0 6px rgba(167,139,250,.8),
+        0 0 14px rgba(167,139,250,.22);
+}
+
+.more-firefly:nth-child(4){
+    left:calc(50% - 132px);
+    top:62px;
+    animation-delay:-3.1s;
+}
+
+.more-firefly:nth-child(5){
+    width:2px;
+    height:2px;
+    left:calc(50% + 125px);
+    top:28px;
+    animation-delay:-.7s;
+}
+
+.more-firefly:nth-child(6){
+    width:2px;
+    height:2px;
+    left:calc(50% - 48px);
+    top:20px;
+    animation-delay:-2.8s;
+    background:#a78bfa;
+    box-shadow:
+        0 0 6px rgba(167,139,250,.7),
+        0 0 12px rgba(167,139,250,.2);
+}
+
+@keyframes moreFireflyFloat{
+    0%,100%{
+        transform:translate3d(0,0,0);
+    }
+
+    50%{
+        transform:translate3d(
+            7px,
+            -10px,
+            0
+        );
+    }
+}
+
+@keyframes moreFireflyPulse{
+    0%,100%{
+        opacity:.18;
+        scale:.75;
+    }
+
+    45%{
+        opacity:.85;
+        scale:1;
+    }
+
+    65%{
+        opacity:.45;
+    }
+}
+
+/* -------------------------
+   BUTTON
+------------------------- */
+
+.more-button{
+    position:relative;
+    z-index:3;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+
+    min-width:132px;
+    padding:10px 19px;
+
+    border:1px solid rgba(103,232,249,.20);
+    border-radius:999px;
+
+    background:rgba(8,8,23,.72);
+
+    color:#9ca3b8;
+
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    text-decoration:none;
+
+    box-shadow:
+        0 8px 28px rgba(0,0,0,.18),
+        0 0 24px rgba(103,232,249,.025);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    transition:
+        color .3s ease,
+        border-color .3s ease,
+        background .3s ease,
+        transform .35s var(--x-ease),
+        box-shadow .35s ease;
+}
+
+/* Button's own little glow */
+.more-button::before{
+    content:"";
+    position:absolute;
+    inset:-8px;
+    border-radius:inherit;
+
+    background:radial-gradient(
+        circle,
+        rgba(103,232,249,.13),
+        transparent 68%
+    );
+
+    opacity:0;
+    transform:scale(.72);
+
+    transition:
+        opacity .35s ease,
+        transform .5s var(--x-ease);
+
+    pointer-events:none;
+}
+
+/* Tiny light sweep */
+.more-button::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:inherit;
+
+    background:linear-gradient(
+        110deg,
+        transparent 20%,
+        rgba(255,255,255,.10) 48%,
+        transparent 76%
+    );
+
+    transform:translateX(-130%);
+    transition:transform .6s ease;
+
+    pointer-events:none;
+}
+
+.more-button:hover{
+    color:#fff;
+
+    border-color:rgba(103,232,249,.48);
+
+    background:rgba(16,16,37,.9);
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 14px 38px rgba(0,0,0,.3),
+        0 0 30px rgba(103,232,249,.09);
+}
+
+.more-button:hover::before{
+    opacity:1;
+    transform:scale(1);
+}
+
+.more-button:hover::after{
+    transform:translateX(130%);
+}
+
+/* Tiny signal dot */
+.more-signal{
+    width:5px;
+    height:5px;
+    border-radius:50%;
+
+    background:var(--cyan,#67e8f9);
+
+    box-shadow:
+        0 0 8px rgba(103,232,249,.8);
+
+    animation:moreSignalPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes moreSignalPulse{
+    0%,100%{
+        opacity:.4;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.35);
+    }
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+    .more-gateway{
+        margin-top:24px;
+    }
+
+    .more-firefly:nth-child(2){
+        left:calc(50% - 65px);
+    }
+
+    .more-firefly:nth-child(3){
+        left:calc(50% + 60px);
+    }
+
+    .more-firefly:nth-child(4){
+        left:calc(50% - 90px);
+    }
+
+    .more-firefly:nth-child(5){
+        left:calc(50% + 85px);
+    }
+
+    .more-firefly:nth-child(6){
+        left:calc(50% - 35px);
+    }
+}
+
+/* Accessibility */
+@media(prefers-reduced-motion:reduce){
+
+    .more-firefly,
+    .more-signal{
+        animation:none;
+    }
+
+    .more-button,
+    .more-button::before,
+    .more-button::after{
+        transition:none;
+    }
+}
 </style>
 
 
@@ -3361,6 +3684,30 @@ body::marker { content: none; }
             ========================= -->
 
             <section>
+
+                <!-- =========================
+     MORE? GATEWAY
+========================= -->
+
+<div class="more-gateway" aria-label="More side pages">
+
+    <span class="more-firefly" aria-hidden="true"></span>
+    <span class="more-firefly" aria-hidden="true"></span>
+    <span class="more-firefly" aria-hidden="true"></span>
+    <span class="more-firefly" aria-hidden="true"></span>
+    <span class="more-firefly" aria-hidden="true"></span>
+    <span class="more-firefly" aria-hidden="true"></span>
+
+    <a
+        class="more-button"
+        href="more.html"
+        aria-label="Open More side pages"
+    >
+        <span class="more-signal" aria-hidden="true"></span>
+        More?
+    </a>
+
+</div>
 
                 <div class="important">
 
