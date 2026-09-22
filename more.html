@@ -148,6 +148,143 @@ body {
 }
 
 
+
+/* =========================================================
+   MORE? // CINEMATIC ARRIVAL
+   Plays on every normal More? page load.
+   ========================================================= */
+
+#moreIntro{
+    position:fixed;
+    inset:0;
+    z-index:200000;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+    pointer-events:none;
+    background:#02040a;
+    opacity:1;
+    visibility:visible;
+    isolation:isolate;
+    transition:opacity .42s ease, visibility .42s ease;
+}
+
+#moreIntro.done{
+    opacity:0;
+    visibility:hidden;
+}
+
+.more-intro-grid{
+    position:absolute;
+    inset:-12%;
+    opacity:0;
+    background:
+        linear-gradient(rgba(102,217,255,.055) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(102,217,255,.055) 1px,transparent 1px);
+    background-size:54px 54px;
+    mask-image:radial-gradient(circle at center,black 0%,transparent 72%);
+    -webkit-mask-image:radial-gradient(circle at center,black 0%,transparent 72%);
+    animation:moreIntroGrid .95s .05s ease forwards;
+}
+
+.more-intro-bloom{
+    position:absolute;
+    width:min(70vw,900px);
+    aspect-ratio:1;
+    border-radius:50%;
+    background:
+        radial-gradient(circle,
+            rgba(102,217,255,.15) 0%,
+            rgba(102,217,255,.07) 24%,
+            rgba(156,140,255,.045) 45%,
+            transparent 68%);
+    filter:blur(10px);
+    opacity:0;
+    transform:scale(.55);
+    animation:moreIntroBloom 1.05s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.more-intro-sweep{
+    position:absolute;
+    left:-10%;
+    width:120%;
+    height:1px;
+    top:50%;
+    background:linear-gradient(90deg,transparent,rgba(102,217,255,.8),rgba(255,255,255,.35),rgba(102,217,255,.8),transparent);
+    box-shadow:0 0 24px rgba(102,217,255,.22);
+    opacity:0;
+    transform:scaleX(.15);
+    animation:moreIntroSweep .72s .18s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.more-intro-content{
+    position:relative;
+    z-index:2;
+    width:min(900px,88vw);
+    text-align:center;
+    opacity:0;
+    transform:translateY(18px) scale(.97);
+    animation:moreIntroContent .72s .30s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.more-intro-kicker{
+    color:rgba(102,217,255,.78);
+    font:700 9px/1 "JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+}
+
+.more-intro-main{
+    margin:15px 0 13px;
+    color:#edfaff;
+    font-size:clamp(64px,11vw,132px);
+    font-weight:800;
+    line-height:.82;
+    letter-spacing:-.075em;
+    text-shadow:0 0 28px rgba(102,217,255,.11),0 0 70px rgba(156,140,255,.06);
+}
+
+.more-intro-sub{
+    color:rgba(184,211,224,.46);
+    font:600 9px/1 "JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    letter-spacing:.19em;
+}
+
+.more-intro-mark{
+    display:inline-block;
+    margin-top:22px;
+    width:34px;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(102,217,255,.75),transparent);
+    opacity:.7;
+}
+
+@keyframes moreIntroGrid{
+    0%{opacity:0;transform:scale(1.08)}
+    35%{opacity:.48}
+    100%{opacity:.25;transform:scale(1)}
+}
+@keyframes moreIntroBloom{
+    0%{opacity:0;transform:scale(.55)}
+    38%{opacity:1}
+    100%{opacity:.82;transform:scale(1)}
+}
+@keyframes moreIntroSweep{
+    0%{opacity:0;transform:scaleX(.15)}
+    35%{opacity:1}
+    100%{opacity:.42;transform:scaleX(1)}
+}
+@keyframes moreIntroContent{
+    0%{opacity:0;transform:translateY(18px) scale(.97);filter:blur(8px)}
+    45%{opacity:1;filter:blur(0)}
+    100%{opacity:1;transform:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+    #moreIntro{display:none}
+    .more-intro-grid,.more-intro-bloom,.more-intro-sweep,.more-intro-content{animation:none!important}
+}
+
 /* =========================================================
    TOP NAV
    ========================================================= */
@@ -746,6 +883,50 @@ main {
 }
 
 
+
+/* =========================================================
+   Q&A CARD IMAGE // replace with assets/Questions.png
+   ========================================================= */
+
+.card.active::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background:
+        linear-gradient(90deg,
+            rgba(5,9,19,.96) 0%,
+            rgba(5,9,19,.82) 42%,
+            rgba(5,9,19,.48) 72%,
+            rgba(5,9,19,.68) 100%
+        ),
+        linear-gradient(180deg,
+            rgba(5,9,19,.12),
+            rgba(5,9,19,.48)
+        ),
+        url("assets/Questions.png") center / cover no-repeat;
+    opacity:.72;
+    filter:saturate(.72) contrast(1.04);
+    transform:scale(1.01);
+    transition:opacity .5s ease, transform .8s cubic-bezier(.16,1,.3,1), filter .5s ease;
+}
+.card.active > *{
+    position:relative;
+    z-index:2;
+}
+.card.active:hover::after{
+    opacity:.9;
+    transform:scale(1.035);
+    filter:saturate(.88) contrast(1.06);
+}
+.card.active::before{
+    z-index:1;
+}
+.card.active .active-signal{
+    z-index:3;
+}
+
 /* =========================================================
    ACTIVE Q&A CARD
    ========================================================= */
@@ -919,6 +1100,178 @@ main {
     transform: translateY(-2px);
 }
 
+
+
+/* =========================================================
+   MORE // OUTRO
+   ========================================================= */
+
+.more-outro{
+    position:relative;
+    width:min(760px, 100%);
+    margin:0 auto;
+    padding:96px 24px 118px;
+    text-align:center;
+    overflow:hidden;
+}
+.more-outro::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:18px;
+    width:min(520px, 82%);
+    height:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(90deg,transparent,rgba(102,217,255,.28),rgba(156,140,255,.2),transparent);
+}
+.more-outro::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:0;
+    width:280px;
+    height:180px;
+    transform:translateX(-50%);
+    background:radial-gradient(ellipse,rgba(102,217,255,.055),transparent 68%);
+    pointer-events:none;
+}
+.more-outro-label{
+    position:relative;
+    z-index:1;
+    color:rgba(102,217,255,.5);
+    font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+}
+.more-outro h2{
+    position:relative;
+    z-index:1;
+    margin:18px 0 14px;
+    color:rgba(235,249,255,.9);
+    font-size:clamp(28px,5vw,48px);
+    line-height:1;
+    letter-spacing:-.045em;
+}
+.more-outro p{
+    position:relative;
+    z-index:1;
+    max-width:540px;
+    margin:0 auto;
+    color:rgba(184,211,224,.42);
+    font-size:12px;
+    line-height:1.85;
+}
+.more-outro-signature{
+    position:relative;
+    z-index:1;
+    margin-top:22px;
+    color:rgba(156,140,255,.48);
+    font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    font-size:9px;
+    letter-spacing:.16em;
+}
+
+/* =========================================================
+   Q&A OPEN TRANSITION
+   ========================================================= */
+
+#qaTransition{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    display:grid;
+    place-items:center;
+    pointer-events:none;
+    background:#030711;
+    opacity:0;
+    visibility:hidden;
+    overflow:hidden;
+}
+#qaTransition.active{
+    opacity:1;
+    visibility:visible;
+}
+#qaTransition::before{
+    content:"";
+    position:absolute;
+    inset:-20%;
+    background:
+        radial-gradient(ellipse at 50% 50%,rgba(102,217,255,.075),transparent 32%),
+        radial-gradient(ellipse at 50% 50%,rgba(156,140,255,.055),transparent 62%);
+    transform:scale(.7);
+    opacity:0;
+    animation:qaAtmosphere 1s cubic-bezier(.16,1,.3,1) forwards;
+}
+.qa-transition-noise{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    background:
+        repeating-linear-gradient(0deg,rgba(255,255,255,.018) 0,rgba(255,255,255,.018) 1px,transparent 1px,transparent 4px);
+    mix-blend-mode:screen;
+    animation:qaNoise .8s ease forwards;
+}
+.qa-transition-text{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    opacity:0;
+    transform:translateY(22px) scale(.94);
+    animation:qaCoreIn .78s .08s cubic-bezier(.16,1,.3,1) forwards;
+}
+.qa-transition-small,
+.qa-transition-sub{
+    font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    font-size:9px;
+    letter-spacing:.22em;
+}
+.qa-transition-small{color:rgba(102,217,255,.62);margin-bottom:13px}
+.qa-transition-main{
+    color:#e8f7ff;
+    font-size:clamp(48px,11vw,100px);
+    font-weight:800;
+    line-height:.85;
+    letter-spacing:-.075em;
+    text-shadow:0 0 28px rgba(102,217,255,.18),0 0 70px rgba(156,140,255,.08);
+}
+.qa-transition-sub{margin-top:16px;color:rgba(184,211,224,.42)}
+
+@keyframes qaAtmosphere{
+    0%{opacity:0;transform:scale(.7)}
+    35%{opacity:1}
+    100%{opacity:1;transform:scale(1.12)}
+}
+@keyframes qaNoise{
+    0%{opacity:0}
+    35%{opacity:.5}
+    100%{opacity:.14}
+}
+@keyframes qaCoreIn{
+    0%{opacity:0;transform:translateY(24px) scale(.9);filter:blur(8px)}
+    55%{opacity:1;transform:translateY(-2px) scale(1.015);filter:blur(0)}
+    100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+
+@media(max-width:760px){
+    .more-outro{padding:72px 12px 88px}
+    .card.active::after{
+        background:
+            linear-gradient(90deg,rgba(5,9,19,.9),rgba(5,9,19,.58)),
+            linear-gradient(180deg,rgba(5,9,19,.1),rgba(5,9,19,.55)),
+            url("assets/Questions.png") center / cover no-repeat;
+    }
+}
+@media(prefers-reduced-motion:reduce){
+    #qaTransition::before,.qa-transition-noise,.qa-transition-text{animation:none}
+    #qaTransition::before{opacity:1;transform:none}
+    .qa-transition-text{opacity:1;transform:none}
+    .card.active::after{transition:none}
+}
 
 /* =========================================================
    RETURN TRANSITION
@@ -1155,6 +1508,412 @@ footer {
 }
 
 
+
+/* =========================================================
+   PACKPM // MORE RENOVATION
+   Featured archive + quieter atmosphere + cinematic Q&A open
+   ========================================================= */
+
+.pages-section{
+    position:relative;
+    padding-top:42px;
+}
+
+.pages-section::before{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    height:1px;
+    background:linear-gradient(90deg,rgba(102,217,255,.24),transparent 35%,rgba(156,140,255,.16) 68%,transparent);
+    opacity:.7;
+}
+
+.pages-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+}
+
+.card{
+    border-radius:20px;
+}
+
+.card.active.qa-card{
+    isolation:isolate;
+    min-height:500px;
+    padding:0;
+    border-color:rgba(102,217,255,.34);
+    background:#050b15;
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.015),
+        inset 0 -80px 120px rgba(0,0,0,.28),
+        0 24px 70px rgba(0,0,0,.24),
+        0 0 42px rgba(102,217,255,.045);
+    transition:
+        transform .6s cubic-bezier(.16,1,.3,1),
+        border-color .5s ease,
+        box-shadow .6s ease;
+}
+
+.card.active.qa-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(102,217,255,.55);
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.02),
+        inset 0 -80px 120px rgba(0,0,0,.22),
+        0 30px 80px rgba(0,0,0,.3),
+        0 0 58px rgba(102,217,255,.075);
+}
+
+.qa-card-image,
+.qa-card-vignette,
+.qa-card-scan{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.qa-card-image{
+    z-index:-3;
+    background:
+        url("assets/Questions.png") center 38% / cover no-repeat;
+    opacity:.58;
+    filter:saturate(.72) contrast(1.05) brightness(.76);
+    transform:scale(1.015);
+    transition:transform 1.1s cubic-bezier(.16,1,.3,1),opacity .7s ease,filter .7s ease;
+}
+
+.qa-card:hover .qa-card-image{
+    opacity:.72;
+    filter:saturate(.9) contrast(1.06) brightness(.82);
+    transform:scale(1.045);
+}
+
+.qa-card-vignette{
+    z-index:-2;
+    background:
+        linear-gradient(90deg,
+            rgba(3,7,15,.96) 0%,
+            rgba(3,7,15,.86) 30%,
+            rgba(3,7,15,.5) 58%,
+            rgba(3,7,15,.5) 100%),
+        linear-gradient(180deg,
+            rgba(3,7,15,.2) 0%,
+            rgba(3,7,15,.12) 35%,
+            rgba(3,7,15,.72) 100%);
+}
+
+.qa-card-scan{
+    z-index:1;
+    inset:auto 0 0;
+    height:34%;
+    opacity:.28;
+    background:repeating-linear-gradient(0deg,transparent 0,transparent 6px,rgba(102,217,255,.02) 7px,transparent 8px);
+    mask-image:linear-gradient(to top,black,transparent 100%);
+}
+
+.qa-card .card-topline,
+.qa-card .qa-card-content,
+.qa-card .qa-card-meta{
+    position:relative;
+    z-index:3;
+}
+
+.qa-card .card-topline{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    justify-content:space-between;
+    padding:30px 34px 0;
+}
+
+.qa-card .card-number{
+    color:rgba(102,217,255,.5);
+    letter-spacing:.18em;
+}
+
+.qa-availability{
+    color:rgba(102,217,255,.46);
+    font:700 9px/1 "JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    letter-spacing:.2em;
+}
+
+.qa-card-content{
+    max-width:760px;
+    padding:58px 34px 118px;
+}
+
+.qa-kicker{
+    margin-bottom:18px;
+    color:rgba(156,140,255,.62);
+    font:700 9px/1.3 "JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    letter-spacing:.17em;
+}
+
+.qa-card h3{
+    margin:0;
+    max-width:760px;
+    color:#eaf7ff;
+    font-size:clamp(44px,6vw,84px);
+    line-height:.92;
+    letter-spacing:-.06em;
+    text-wrap:balance;
+    text-shadow:0 0 30px rgba(102,217,255,.08);
+}
+
+.qa-title-break{display:block}
+
+.qa-card p{
+    margin-top:25px;
+    max-width:590px;
+    color:rgba(184,211,224,.62);
+    font-size:13px;
+    line-height:1.85;
+}
+
+.qa-card-meta{
+    position:absolute !important;
+    left:34px;
+    right:34px;
+    bottom:30px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.qa-meta-line{
+    display:block;
+    width:min(40%,260px);
+    height:1px;
+    background:linear-gradient(90deg,rgba(102,217,255,.42),transparent);
+    box-shadow:0 0 16px rgba(102,217,255,.08);
+}
+
+.qa-card .card-arrow{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 13px;
+    border:1px solid rgba(102,217,255,.22);
+    border-radius:999px;
+    background:rgba(5,11,21,.52);
+    backdrop-filter:blur(8px);
+    color:rgba(235,249,255,.68);
+    font-size:9px;
+    letter-spacing:.14em;
+    transition:color .35s ease,border-color .35s ease,background .35s ease,transform .35s ease;
+}
+
+.qa-card:hover .card-arrow{
+    color:#fff;
+    border-color:rgba(102,217,255,.48);
+    background:rgba(7,16,29,.72);
+    transform:translate(2px,-2px);
+}
+
+.qa-card .active-signal{
+    top:72px;
+    right:34px;
+    z-index:4;
+}
+
+.card.disabled{
+    min-height:220px;
+    opacity:.3;
+    background:linear-gradient(145deg,rgba(10,22,37,.52),rgba(6,13,24,.42));
+}
+
+.card.disabled::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(135deg,transparent 30%,rgba(102,217,255,.018),transparent 75%);}
+
+/* -------------------------
+   MORE OUTRO
+   ------------------------- */
+
+.more-outro{
+    position:relative;
+    width:min(820px,100%);
+    min-height:360px;
+    margin:18px auto 0;
+    padding:110px 24px 118px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+.more-outro::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:54px;
+    width:min(620px,90%);
+    height:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(90deg,transparent,rgba(102,217,255,.22),rgba(156,140,255,.18),transparent);
+}
+
+.more-outro::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:80px;
+    width:420px;
+    height:260px;
+    transform:translateX(-50%);
+    background:radial-gradient(ellipse,rgba(102,217,255,.052),transparent 68%);
+    pointer-events:none;
+}
+
+.more-outro-orbit{
+    position:absolute;
+    left:50%;
+    top:34px;
+    width:4px;
+    height:4px;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:var(--cyan);
+    box-shadow:0 0 8px rgba(102,217,255,.9),0 0 24px rgba(102,217,255,.32);
+    animation:outroPulse 2.8s ease-in-out infinite;
+}
+
+.more-outro-label,
+.more-outro-signature,
+.more-outro-note{position:relative;z-index:2;font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;}
+
+.more-outro-label{color:rgba(102,217,255,.48);font-size:9px;font-weight:700;letter-spacing:.24em;}
+.more-outro h2{position:relative;z-index:2;margin:18px 0 12px;color:rgba(235,249,255,.92);font-size:clamp(34px,5.2vw,56px);line-height:1;letter-spacing:-.05em;}
+.more-outro p{position:relative;z-index:2;max-width:570px;margin:0 auto;color:rgba(184,211,224,.42);font-size:12px;line-height:1.9;}
+.more-outro-signature{margin-top:24px;color:rgba(156,140,255,.52);font-size:9px;letter-spacing:.15em;}
+.more-outro-note{margin-top:34px;color:rgba(184,211,224,.18);font-size:8px;letter-spacing:.16em;}
+
+@keyframes outroPulse{0%,100%{opacity:.45;transform:translateX(-50%) scale(.85)}50%{opacity:1;transform:translateX(-50%) scale(1.18)}}
+
+/* -------------------------
+   Q&A OPEN TRANSITION
+   ------------------------- */
+
+#qaTransition{
+    position:fixed;
+    inset:0;
+    z-index:100000;
+    display:grid;
+    place-items:center;
+    pointer-events:none;
+    background:#02050c;
+    opacity:0;
+    visibility:hidden;
+    overflow:hidden;
+}
+
+#qaTransition.active{opacity:1;visibility:visible;}
+
+.qa-transition-grid,
+.qa-transition-glow{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+}
+
+.qa-transition-grid{
+    opacity:0;
+    background:
+        linear-gradient(rgba(102,217,255,.055) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(102,217,255,.055) 1px,transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(circle at center,black 0%,transparent 72%);
+    animation:qaGridIn 1.18s ease forwards;
+}
+
+.qa-transition-glow{
+    opacity:0;
+    background:
+        radial-gradient(ellipse at 50% 50%,rgba(102,217,255,.12),transparent 30%),
+        radial-gradient(ellipse at 50% 52%,rgba(156,140,255,.08),transparent 58%);
+    transform:scale(.72);
+    animation:qaGlowIn 1.18s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.qa-transition-archive{
+    position:absolute;
+    width:min(860px,82vw);
+    aspect-ratio:1.85 / 1;
+    border:1px solid rgba(102,217,255,.24);
+    border-radius:22px;
+    background:rgba(4,10,18,.58);
+    box-shadow:0 0 0 1px rgba(255,255,255,.012),0 20px 90px rgba(0,0,0,.32),0 0 60px rgba(102,217,255,.045);
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(18px) scale(.88);
+    animation:qaArchiveOpen 1.05s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.qa-archive-image{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,6,12,.9),rgba(2,6,12,.42)),url("assets/Questions.png") center/cover no-repeat;opacity:.48;filter:saturate(.72) brightness(.72);}
+.qa-archive-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(2,6,12,.78));}
+.qa-archive-top,.qa-archive-bottom{position:absolute;left:22px;right:22px;z-index:2;display:flex;justify-content:space-between;gap:20px;font:700 8px/1 "JetBrains Mono","SFMono-Regular",Consolas,monospace;letter-spacing:.17em;}
+.qa-archive-top{top:20px;color:rgba(102,217,255,.5)}
+.qa-archive-bottom{bottom:20px;color:rgba(235,249,255,.42)}
+
+.qa-transition-text{
+    position:relative;
+    z-index:5;
+    max-width:min(820px,88vw);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    opacity:0;
+    transform:translateY(24px) scale(.95);
+    animation:qaCoreIn 1.1s .18s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.qa-transition-small,
+.qa-transition-sub,
+.qa-transition-signature{font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;}
+.qa-transition-small{color:rgba(102,217,255,.68);font-size:9px;letter-spacing:.28em;margin-bottom:18px;}
+.qa-transition-main{max-width:760px;color:#edfaff;font-size:clamp(42px,7vw,82px);font-weight:800;line-height:.92;letter-spacing:-.065em;text-shadow:0 0 30px rgba(102,217,255,.15),0 0 80px rgba(156,140,255,.08);text-wrap:balance;}
+.qa-transition-sub{margin-top:18px;color:rgba(184,211,224,.46);font-size:9px;letter-spacing:.21em;}
+.qa-transition-sub::after{content:"";display:block;width:48px;height:1px;margin:18px auto 0;background:linear-gradient(90deg,transparent,rgba(102,217,255,.7),transparent);}
+.qa-transition-signature{margin-top:18px;color:rgba(156,140,255,.3);font-size:8px;letter-spacing:.15em;opacity:0;animation:qaSignatureIn .55s .72s ease forwards;}
+
+@keyframes qaGridIn{0%{opacity:0;transform:scale(1.06)}35%{opacity:.9}100%{opacity:.35;transform:scale(1)}}
+@keyframes qaGlowIn{0%{opacity:0;transform:scale(.72)}30%{opacity:1}100%{opacity:1;transform:scale(1.15)}}
+@keyframes qaArchiveOpen{0%{opacity:0;transform:translateY(18px) scale(.88);filter:blur(8px)}28%{opacity:1}58%{transform:translateY(-2px) scale(1.02);filter:blur(0)}100%{opacity:.3;transform:translateY(-5px) scale(1.16)}}
+@keyframes qaCoreIn{0%{opacity:0;transform:translateY(24px) scale(.92);filter:blur(10px)}48%{opacity:1;transform:translateY(-2px) scale(1.01);filter:blur(0)}100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes qaSignatureIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+
+@media (max-width:760px){
+    .pages-section{padding-top:32px}
+    .pages-grid{grid-template-columns:1fr}
+    .card.active.qa-card{min-height:470px}
+    .qa-card .card-topline{padding:24px 24px 0}
+    .qa-card-content{padding:54px 24px 122px}
+    .qa-card h3{font-size:clamp(42px,13vw,68px)}
+    .qa-card p{font-size:12px;max-width:480px}
+    .qa-card-meta{left:24px;right:24px;bottom:24px}
+    .qa-card .active-signal{top:58px;right:24px}
+    .qa-title-break{display:none}
+    .qa-transition-archive{width:90vw;aspect-ratio:1 / 1.15;border-radius:18px}
+    .qa-transition-main{max-width:88vw;font-size:clamp(34px,10vw,58px)}
+    .qa-transition-signature{font-size:7px;letter-spacing:.11em}
+    .more-outro{min-height:310px;padding:90px 18px 96px}
+}
+
+@media (prefers-reduced-motion:reduce){
+    .more-outro-orbit,.qa-transition-grid,.qa-transition-glow,.qa-transition-archive,.qa-transition-text,.qa-transition-signature{animation:none}
+    .qa-transition-grid{opacity:.35}
+    .qa-transition-glow{opacity:1;transform:none}
+    .qa-transition-archive{opacity:.25;transform:none}
+    .qa-transition-text,.qa-transition-signature{opacity:1;transform:none}
+}
+
 /* =========================================================
    REDUCED MOTION
    ========================================================= */
@@ -1178,11 +1937,382 @@ footer {
         transform: none;
     }
 }
+<style id="packpm-more-final-transition-fix">
+/* =========================================================
+   PACKPM // FINAL MORE TRANSITION FIX
+   ========================================================= */
+
+/* The Q&A card is a featured destination, not a giant text block. */
+.card.active.qa-card{
+    min-height:500px;
+    overflow:hidden;
+}
+.qa-card-content{
+    width:min(760px,calc(100% - 68px));
+    max-width:760px;
+    padding:58px 0 118px;
+}
+.qa-card h3{
+    width:100%;
+    max-width:680px;
+    font-size:clamp(42px,5.15vw,72px);
+    line-height:.9;
+    letter-spacing:-.065em;
+    text-wrap:balance;
+}
+.qa-title-break{display:block}
+.qa-card p{
+    max-width:560px;
+    margin-top:24px;
+    font-size:12px;
+    line-height:1.8;
+}
+.qa-card-meta{
+    left:34px;
+    right:34px;
+    bottom:28px;
+}
+.qa-card .card-arrow{
+    white-space:nowrap;
+    min-width:132px;
+    justify-content:center;
+}
+
+/* -------------------------
+   Q&A OPENING // ARCHIVE ENTRY
+   ------------------------- */
+#qaTransition{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    display:grid;
+    place-items:center;
+    pointer-events:none;
+    background:#02050b;
+    opacity:0;
+    visibility:hidden;
+    overflow:hidden;
+    isolation:isolate;
+}
+#qaTransition.active{
+    opacity:1;
+    visibility:visible;
+}
+#qaTransition::before{
+    content:"";
+    position:absolute;
+    inset:-25%;
+    background:
+        radial-gradient(circle at 50% 50%,rgba(103,232,249,.18),transparent 20%),
+        radial-gradient(circle at 50% 50%,rgba(167,139,250,.13),transparent 46%),
+        linear-gradient(180deg,#02050b 0%,#050814 100%);
+    opacity:0;
+    transform:scale(.55);
+}
+#qaTransition::after{
+    content:"";
+    position:absolute;
+    inset:-12%;
+    background:
+        linear-gradient(rgba(103,232,249,.065) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(103,232,249,.065) 1px,transparent 1px);
+    background-size:44px 44px;
+    opacity:0;
+    transform:scale(1.22);
+    mask-image:radial-gradient(circle at center,#000 0%,transparent 72%);
+    -webkit-mask-image:radial-gradient(circle at center,#000 0%,transparent 72%);
+}
+#qaTransition.active::before{animation:qaFinalBloom 1.55s cubic-bezier(.16,1,.3,1) forwards}
+#qaTransition.active::after{animation:qaFinalGrid 1.55s cubic-bezier(.16,1,.3,1) forwards}
+
+.qa-transition-grid,
+.qa-transition-glow{display:none}
+.qa-transition-archive{
+    position:absolute;
+    z-index:2;
+    width:min(760px,82vw);
+    height:min(430px,56vh);
+    border:1px solid rgba(103,232,249,.28);
+    background:
+        linear-gradient(180deg,rgba(5,12,22,.08),rgba(3,7,14,.78)),
+        url("assets/Questions.png") center / cover no-repeat;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.015),
+        0 0 80px rgba(103,232,249,.08),
+        inset 0 0 80px rgba(0,0,0,.48);
+    opacity:0;
+    transform:scale(.42) translateY(18px);
+    clip-path:inset(18% 28% 18% 28% round 22px);
+    overflow:hidden;
+}
+#qaTransition.active .qa-transition-archive{
+    animation:qaArchiveOpen 1.15s .05s cubic-bezier(.16,1,.3,1) forwards;
+}
+.qa-transition-archive::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg,rgba(2,6,12,.82),rgba(2,6,12,.3) 55%,rgba(2,6,12,.72)),
+        linear-gradient(180deg,rgba(2,6,12,.15),rgba(2,6,12,.78));
+}
+.qa-archive-top,
+.qa-archive-bottom{
+    position:absolute;
+    left:22px;
+    right:22px;
+    z-index:2;
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    font:700 8px/1 "JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    letter-spacing:.18em;
+    color:rgba(210,239,248,.52);
+    text-transform:uppercase;
+}
+.qa-archive-top{top:20px}
+.qa-archive-bottom{bottom:20px;color:rgba(103,232,249,.58)}
+.qa-archive-image{display:none}
+
+.qa-transition-text{
+    position:relative;
+    z-index:4;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:12px;
+    opacity:0;
+    transform:translateY(24px) scale(.94);
+    pointer-events:none;
+}
+#qaTransition.active .qa-transition-text{
+    animation:qaFinalTextIn .82s .72s cubic-bezier(.16,1,.3,1) forwards;
+}
+.qa-transition-small,
+.qa-transition-sub,
+.qa-transition-signature{
+    font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    text-transform:uppercase;
+}
+.qa-transition-small{
+    color:rgba(103,232,249,.72);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.34em;
+}
+.qa-transition-main{
+    max-width:min(900px,88vw);
+    color:#eefaff;
+    font-size:clamp(38px,7vw,78px);
+    font-weight:800;
+    line-height:.9;
+    letter-spacing:-.065em;
+    text-shadow:0 0 28px rgba(103,232,249,.18),0 0 70px rgba(167,139,250,.1);
+}
+.qa-transition-sub{
+    color:rgba(196,181,253,.72);
+    font-size:9px;
+    letter-spacing:.24em;
+}
+.qa-transition-signature{
+    margin-top:22px;
+    color:rgba(184,211,224,.28);
+    font-size:8px;
+    letter-spacing:.16em;
+}
+
+@keyframes qaFinalBloom{
+    0%{opacity:0;transform:scale(.55)}
+    28%{opacity:1}
+    100%{opacity:1;transform:scale(1.08)}
+}
+@keyframes qaFinalGrid{
+    0%{opacity:0;transform:scale(1.22)}
+    35%{opacity:.7}
+    100%{opacity:.2;transform:scale(1)}
+}
+@keyframes qaArchiveOpen{
+    0%{opacity:0;transform:scale(.42) translateY(18px);clip-path:inset(18% 28% 18% 28% round 22px);filter:blur(10px)}
+    38%{opacity:1;filter:blur(0)}
+    72%{transform:scale(1.02) translateY(-2px);clip-path:inset(0 round 22px)}
+    100%{opacity:.22;transform:scale(1.08) translateY(-5px);clip-path:inset(0 round 22px)}
+}
+@keyframes qaFinalTextIn{
+    0%{opacity:0;transform:translateY(24px) scale(.94);filter:blur(9px)}
+    58%{opacity:1;transform:translateY(-2px) scale(1.01);filter:blur(0)}
+    100%{opacity:1;transform:none;filter:none}
+}
+body.qa-leaving .page,
+body.qa-leaving main{
+    animation:qaMorePageOut 1.02s cubic-bezier(.7,0,.84,0) forwards;
+}
+@keyframes qaMorePageOut{
+    0%{opacity:1;transform:scale(1) translateY(0);filter:blur(0)}
+    100%{opacity:0;transform:scale(.975) translateY(-16px);filter:blur(7px)}
+}
+
+/* -------------------------
+   RETURN TO PORTFOLIO
+   ------------------------- */
+#returnTransition{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    display:grid;
+    place-items:center;
+    pointer-events:none;
+    background:#02050b;
+    opacity:0;
+    visibility:hidden;
+    overflow:hidden;
+    isolation:isolate;
+}
+#returnTransition.active{
+    opacity:1;
+    visibility:visible;
+}
+.return-transition-grid{
+    position:absolute;
+    inset:-15%;
+    background:
+        linear-gradient(rgba(103,232,249,.05) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(103,232,249,.05) 1px,transparent 1px);
+    background-size:48px 48px;
+    mask-image:radial-gradient(circle at center,#000 0%,transparent 76%);
+    -webkit-mask-image:radial-gradient(circle at center,#000 0%,transparent 76%);
+    opacity:0;
+    transform:scale(1.25) translateY(8%);
+}
+.return-transition-sweep{
+    position:absolute;
+    left:-20%;
+    top:50%;
+    width:140%;
+    height:2px;
+    background:linear-gradient(90deg,transparent,rgba(103,232,249,.85) 46%,rgba(167,139,250,.72) 54%,transparent);
+    box-shadow:0 0 18px rgba(103,232,249,.6),0 0 70px rgba(103,232,249,.2);
+    opacity:0;
+    transform:translateX(-45%) scaleX(.25);
+}
+.return-transition-ring{
+    position:absolute;
+    width:110px;
+    height:110px;
+    border:1px solid rgba(103,232,249,.42);
+    border-radius:50%;
+    box-shadow:0 0 30px rgba(103,232,249,.14),inset 0 0 30px rgba(103,232,249,.05);
+    opacity:0;
+    transform:scale(.2);
+}
+#returnTransition.active .return-transition-grid{animation:returnGridIn 1.28s cubic-bezier(.16,1,.3,1) forwards}
+#returnTransition.active .return-transition-sweep{animation:returnSweep 1.1s cubic-bezier(.16,1,.3,1) forwards}
+#returnTransition.active .return-transition-ring{animation:returnRing 1.15s cubic-bezier(.16,1,.3,1) forwards}
+.return-transition-text{
+    position:relative;
+    z-index:3;
+    text-align:center;
+    font-family:"JetBrains Mono","SFMono-Regular",Consolas,monospace;
+    opacity:0;
+    transform:translateY(18px) scale(.96);
+}
+#returnTransition.active .return-transition-text{animation:returnTextIn .72s .18s cubic-bezier(.16,1,.3,1) forwards}
+.return-transition-small{
+    margin-bottom:13px;
+    color:rgba(103,232,249,.62);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.28em;
+}
+.return-transition-main{
+    color:#eefaff;
+    font-family:"Space Grotesk","Segoe UI",sans-serif;
+    font-size:clamp(38px,8vw,82px);
+    font-weight:800;
+    line-height:.88;
+    letter-spacing:-.065em;
+    text-shadow:0 0 26px rgba(103,232,249,.16),0 0 70px rgba(167,139,250,.08);
+}
+.return-transition-sub{
+    margin-top:13px;
+    color:rgba(196,181,253,.64);
+    font-size:8px;
+    letter-spacing:.22em;
+}
+.return-transition-signature{
+    margin-top:26px;
+    color:rgba(184,211,224,.24);
+    font-size:7px;
+    letter-spacing:.16em;
+}
+@keyframes returnGridIn{
+    0%{opacity:0;transform:scale(1.25) translateY(8%)}
+    45%{opacity:.6}
+    100%{opacity:.18;transform:scale(1) translateY(0)}
+}
+@keyframes returnSweep{
+    0%{opacity:0;transform:translateX(-55%) scaleX(.2)}
+    22%{opacity:1}
+    55%{opacity:1;transform:translateX(0) scaleX(1)}
+    100%{opacity:0;transform:translateX(45%) scaleX(1.3)}
+}
+@keyframes returnRing{
+    0%{opacity:0;transform:scale(.2)}
+    35%{opacity:.85}
+    100%{opacity:0;transform:scale(10)}
+}
+@keyframes returnTextIn{
+    0%{opacity:0;transform:translateY(18px) scale(.96);filter:blur(8px)}
+    55%{opacity:1;transform:translateY(-2px) scale(1.01);filter:blur(0)}
+    100%{opacity:1;transform:none;filter:none}
+}
+
+@media(max-width:760px){
+    .qa-card-content{width:calc(100% - 44px);padding:48px 0 110px}
+    .qa-card h3{font-size:clamp(38px,10.5vw,58px);max-width:100%}
+    .qa-card p{max-width:100%;font-size:11px}
+    .qa-card-meta{left:22px;right:22px;bottom:22px}
+    .qa-card .card-arrow{min-width:0;padding:9px 11px}
+    .qa-archive-top,.qa-archive-bottom{left:14px;right:14px;font-size:7px}
+    .return-transition-signature{letter-spacing:.11em}
+}
+
+@media(prefers-reduced-motion:reduce){
+    #qaTransition::before,#qaTransition::after,.qa-transition-archive,.qa-transition-text,
+    body.qa-leaving .page,body.qa-leaving main,
+    .return-transition-grid,.return-transition-sweep,.return-transition-ring,.return-transition-text{
+        animation:none!important;
+    }
+    #qaTransition::before,#qaTransition::after,.qa-transition-archive,.qa-transition-text,
+    #returnTransition,.return-transition-text{opacity:1;transform:none;visibility:visible}
+}
+
+<style id="packpm-short-qa-tuning">
+/* Shorter Q&A label + stable single-line card title. */
+.qa-card h3{max-width:100%;white-space:nowrap;text-wrap:nowrap;}
+.qa-title-break{display:none!important;}
+.qa-transition-main{max-width:min(760px,90vw);text-align:center;white-space:nowrap;}
+@media(max-width:760px){
+  .qa-card h3{white-space:normal;text-wrap:balance;}
+  .qa-transition-main{white-space:normal;text-wrap:balance;}
+}
 </style>
 </head>
 
 
 <body>
+<div id="moreIntro" aria-hidden="true">
+    <div class="more-intro-grid"></div>
+    <div class="more-intro-bloom"></div>
+    <div class="more-intro-sweep"></div>
+    <div class="more-intro-content">
+        <div class="more-intro-kicker">SIDE CHANNEL // PACKPM</div>
+        <div class="more-intro-main">MORE?</div>
+        <div class="more-intro-sub">A FEW THINGS THAT DIDN'T FIT ANYWHERE ELSE</div>
+        <span class="more-intro-mark" aria-hidden="true"></span>
+    </div>
+</div>
+
 
 <canvas id="spaceField"></canvas>
 <div class="space-atmosphere"></div>
@@ -1315,36 +2445,44 @@ footer {
 
         <div class="pages-grid">
 
-
-            <!-- Q&A -->
+            <!-- Q&A // FEATURED ARCHIVE -->
 
             <a
-                class="card active"
+                class="card active qa-card"
                 href="questions.html"
                 id="qaCard"
+                aria-label="Open Questions I Ask"
             >
 
-                <div class="active-signal"></div>
+                <div class="qa-card-image" aria-hidden="true"></div>
+                <div class="qa-card-vignette" aria-hidden="true"></div>
+                <div class="qa-card-scan" aria-hidden="true"></div>
 
-                <div class="card-number">
-                    01
+                <div class="active-signal" aria-hidden="true"></div>
+
+                <div class="card-topline">
+                    <div class="card-number">01</div>
+                    <div class="qa-availability">AVAILABLE</div>
                 </div>
 
-                <h3>
-                    Questions I Ask Myself
-                </h3>
+                <div class="qa-card-content">
+                    <div class="qa-kicker">PERSONAL ARCHIVE // 15 ENTRIES</div>
 
-                <p>
-                    A personal archive of thoughts,
-                    weird questions, lessons,
-                    burnout, MVs, producers,
-                    and whatever else ended up living
-                    inside Packpm's head.
-                </p>
+                    <h3>
+                        Questions I Ask
+                    </h3>
 
-                <span class="card-arrow">
-                    OPEN ↗
-                </span>
+                    <p>
+                        A personal archive of thoughts, weird questions,
+                        lessons, burnout, MVs, producers, and whatever else
+                        ended up living inside Packpm's head.
+                    </p>
+                </div>
+
+                <div class="qa-card-meta">
+                    <span class="qa-meta-line" aria-hidden="true"></span>
+                    <span class="card-arrow">OPEN ARCHIVE ↗</span>
+                </div>
 
             </a>
 
@@ -1426,6 +2564,23 @@ footer {
 
 
     <!-- ===================================================
+     MORE // OUTRO
+     =================================================== -->
+
+<section class="more-outro" aria-label="End of More page">
+    <div class="more-outro-orbit" aria-hidden="true"></div>
+    <div class="more-outro-label">END OF SIDE CHANNEL</div>
+    <h2>That's all... for now.</h2>
+    <p>
+        Some things are finished. Some are waiting.
+        Some probably shouldn't exist yet.
+        We'll see what ends up here next.
+    </p>
+    <div class="more-outro-signature">— PACKPM // SEE YOU AROUND</div>
+    <div class="more-outro-note">NO FINAL MESSAGE. JUST ONE MORE PAGE.</div>
+</section>
+
+<!-- ===================================================
          RETURN
          =================================================== -->
 
@@ -1451,27 +2606,48 @@ footer {
 
 
 <!-- =======================================================
+     Q&A OPEN TRANSITION
+     ======================================================= -->
+
+<div id="qaTransition" aria-hidden="true">
+    <div class="qa-transition-grid" aria-hidden="true"></div>
+    <div class="qa-transition-glow" aria-hidden="true"></div>
+
+    <div class="qa-transition-archive" aria-hidden="true">
+        <div class="qa-archive-top">
+            <span>01 // PERSONAL ARCHIVE</span>
+            <span>PACKPM</span>
+        </div>
+        <div class="qa-archive-image"></div>
+        <div class="qa-archive-bottom">
+            <span>QUESTIONS I ASK</span>
+            <span>15 ENTRIES</span>
+        </div>
+    </div>
+
+    <div class="qa-transition-text">
+        <div class="qa-transition-small">OPENING</div>
+        <div class="qa-transition-main">Questions I Ask</div>
+        <div class="qa-transition-sub">PERSONAL ARCHIVE</div>
+        <div class="qa-transition-signature">OH. PACKPM MADE ANOTHER THING.</div>
+    </div>
+
+</div>
+
+<!-- =======================================================
      RETURN TRANSITION
      ======================================================= -->
 
-<div id="returnTransition">
-
+<div id="returnTransition" aria-hidden="true">
+    <div class="return-transition-grid" aria-hidden="true"></div>
+    <div class="return-transition-sweep" aria-hidden="true"></div>
+    <div class="return-transition-ring" aria-hidden="true"></div>
     <div class="return-transition-text">
-
-        <div class="return-transition-small">
-            RETURNING TO
-        </div>
-
-        <div class="return-transition-main">
-            PACKPM
-        </div>
-
-        <div class="return-transition-sub">
-            PORTFOLIO // HOME
-        </div>
-
+        <div class="return-transition-small">RETURNING TO</div>
+        <div class="return-transition-main">PACKPM</div>
+        <div class="return-transition-sub">PORTFOLIO // HOME</div>
+        <div class="return-transition-signature">SIDE CHANNEL CLOSED // SIGNAL RETURNING</div>
     </div>
-
 </div>
 
 
@@ -1490,8 +2666,8 @@ let dpr = Math.min(window.devicePixelRatio || 1, 2);
 let stars = [];
 let fallingStars = [];
 
-const STAR_COUNT = 125;
-const FALLING_STAR_COUNT = 4;
+const STAR_COUNT = 58;
+const FALLING_STAR_COUNT = 2;
 
 
 /* resize */
@@ -1858,7 +3034,7 @@ document
                         window.location.href =
                             destination;
                     },
-                    850
+                    1280
                 );
 
             }
@@ -1867,29 +3043,83 @@ document
     });
 
 
+
+/* =========================================================
+   MORE? ARRIVAL
+   ========================================================= */
+
+(() => {
+    const intro = document.getElementById("moreIntro");
+    if (!intro) return;
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+        intro.remove();
+        return;
+    }
+
+    /* Give the browser one paint before starting the reveal. */
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            intro.classList.add("active");
+
+            window.setTimeout(() => {
+                intro.classList.add("done");
+                window.setTimeout(() => intro.remove(), 460);
+            }, 1120);
+        });
+    });
+})();
+
+
 /* =========================================================
    Q&A TRANSITION
    ========================================================= */
 
-const qaCard =
-    document.getElementById(
-        "qaCard"
-    );
+const qaCard = document.getElementById("qaCard");
 
 if (qaCard) {
+    qaCard.addEventListener("click", event => {
+        if (
+            event.metaKey ||
+            event.ctrlKey ||
+            event.shiftKey ||
+            event.altKey ||
+            event.button !== 0
+        ) return;
 
-    qaCard.addEventListener(
-        "click",
-        () => {
+        event.preventDefault();
 
-            sessionStorage.setItem(
-                "packpm-skip-startup",
-                "1"
-            );
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const destination = qaCard.href;
 
+        try {
+            /* Let questions.html play its own cinematic archive intro.
+               The arrival flag is the hand-off between the two pages. */
+            sessionStorage.removeItem("packpm-skip-startup");
+            sessionStorage.removeItem("packpm-skip-qa-intro");
+            sessionStorage.setItem("packpm-qa-arrival", "1");
+        } catch (e) {}
+
+        if (reduce) {
+            window.location.href = destination;
+            return;
         }
-    );
 
+        const qaTransition = document.getElementById("qaTransition");
+
+        if (!qaTransition) {
+            window.location.href = destination;
+            return;
+        }
+
+        document.body.classList.add("qa-leaving");
+        qaTransition.classList.add("active");
+
+        window.setTimeout(() => {
+            window.location.href = destination;
+        }, 1080);
+    });
 }
 
 
