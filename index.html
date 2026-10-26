@@ -3250,74 +3250,84 @@ body::before{
 </script>
 
 
-<style id="packpm-fiction-cinematic-redesign-v1">
-/* IT'S FICTION. — cinematic motion-study redesign. Scoped to this card only. */
-#my-works .fiction-project{
-  --fiction-blue:#3c66ff;--fiction-pink:#ff3e91;--fiction-orange:#ff9b52;--fiction-cyan:#86eaff;
-  display:grid;grid-template-columns:minmax(0,1.16fr) minmax(260px,.84fr);
-  gap:clamp(1.1rem,2.4vw,2.4rem);align-items:stretch;
-  padding:clamp(1rem,2vw,1.65rem);min-height:0;overflow:hidden;
-  border:1px solid rgba(89,130,255,.48);border-radius:12px;
-  background:radial-gradient(ellipse at 12% 45%,rgba(43,77,255,.18),transparent 43%),linear-gradient(125deg,#080b18 0%,#0b1022 55%,#110b1b 100%);
-  box-shadow:0 22px 70px rgba(0,0,0,.32),inset 0 1px rgba(255,255,255,.07);
+<style id="packpm-fiction-teto-companion-integration-v1">
+/* Teto is a separate companion bay to the LEFT of the existing It's fiction card.
+   The original CRT art, title, credits, metadata and Watch MV link remain intact. */
+#my-works .fiction-feature-row{
+  display:grid!important;
+  grid-template-columns:minmax(220px,.31fr) minmax(0,1fr);
+  align-items:stretch;
+  gap:clamp(14px,2.1vw,26px);
+  width:100%;
+  margin:clamp(16px,2vw,24px) 0;
+  overflow:visible;
 }
-#my-works .fiction-project::before{
-  inset:0;background:linear-gradient(90deg,transparent 0 68%,rgba(255,62,145,.045) 68.1%,transparent 68.3%),radial-gradient(ellipse at 75% 15%,rgba(255,62,145,.14),transparent 34%),radial-gradient(ellipse at 10% 90%,rgba(60,102,255,.18),transparent 36%);
-  animation:fiction-color-leak 12s ease-in-out infinite alternate;
+#my-works .fiction-feature-row>.fiction-project{width:100%;min-width:0;margin:0!important;align-self:stretch;}
+#my-works .fiction-teto-companion{
+  --teto-pink:#ff2d83;--teto-lime:#caff55;--teto-blue:#273bff;--teto-cream:#fff4ef;
+  position:relative;z-index:5;isolation:isolate;align-self:center;min-width:0;width:100%;
+  display:flex;flex-direction:column;gap:9px;padding:11px;
+  overflow:visible;border:1px solid rgba(123,234,255,.48);border-radius:8px 12px 9px 11px;
+  background:linear-gradient(145deg,rgba(12,16,42,.97),rgba(12,9,25,.98) 75%);
+  box-shadow:5px 6px 0 rgba(255,45,131,.2),0 12px 34px rgba(0,0,0,.26);
+  transform:rotate(-.35deg);
 }
-#my-works .fiction-project::after{
-  opacity:.16;background:repeating-linear-gradient(to bottom,transparent 0 3px,rgba(151,197,255,.13) 4px,transparent 5px 8px),linear-gradient(100deg,transparent 20%,rgba(255,255,255,.06) 48%,transparent 58%);
-  background-size:100% 8px,240% 100%;
+#my-works .fiction-teto-companion::before{content:"";position:absolute;inset:5px;z-index:-1;pointer-events:none;border:1px dashed rgba(123,234,255,.17);}
+#my-works .fiction-teto-companion::after{content:"TETO";position:absolute;right:-5px;top:48%;z-index:-1;color:rgba(255,45,131,.1);font:1000 clamp(2rem,3.3vw,3.2rem)/.8 ui-monospace,monospace;letter-spacing:-.1em;writing-mode:vertical-rl;pointer-events:none;}
+#my-works .fiction-teto-topline{display:flex;align-items:center;justify-content:space-between;gap:7px;min-width:0;color:#91a6c7;font:800 .56rem/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.055em;}
+#my-works .fiction-teto-topline>span:first-child{display:flex;align-items:center;min-width:0;color:var(--teto-pink);}
+#my-works .fiction-teto-topline #tapCounter{white-space:nowrap;color:var(--teto-lime);font-size:.54rem;}
+#my-works .fiction-teto-status-dot{display:inline-block;width:6px;height:6px;flex:0 0 auto;margin-right:6px;border-radius:50%;background:var(--teto-lime);box-shadow:0 0 8px var(--teto-lime);}
+#my-works .fiction-teto-filemark{display:flex;align-items:center;justify-content:space-between;gap:7px;min-width:0;padding:7px 8px;background:rgba(30,47,122,.25);border-left:3px solid var(--teto-blue);color:#d8eaff;font:800 .58rem/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em;}
+#my-works .fiction-teto-filemark span{color:#7085bb;font-size:.48rem;white-space:nowrap;}
+#my-works .fiction-teto-companion .hint{position:absolute;z-index:6;top:70px;right:15px;max-width:min(165px,74%);padding:8px 10px;color:#17131b;background:var(--teto-lime);border:1px solid #14111c;font:900 .68rem/1.25 ui-sans-serif,system-ui,sans-serif;box-shadow:3px 3px 0 #080914;transform:rotate(2deg);transition:opacity .22s ease,transform .22s ease;pointer-events:none;}
+#my-works .fiction-teto-companion .hint::before{content:"";position:absolute;top:-5px;left:14px;width:9px;height:9px;background:var(--teto-lime);transform:rotate(45deg);}
+#my-works .fiction-teto-companion .hint-arrow{position:absolute;left:-12px;bottom:-17px;color:var(--teto-pink);font-size:20px;}
+#my-works .fiction-teto-companion .hint.is-hidden{opacity:0;transform:translateY(-6px) rotate(2deg);}
+#my-works .fiction-teto-companion .teto-stage{position:relative;display:block;width:100%;height:clamp(250px,24vw,330px);min-height:0;margin:0;padding:0;overflow:hidden;isolation:isolate;border:3px solid #fff;border-radius:4px;background:linear-gradient(135deg,#f8eaf2,#dbe4ff 58%,#f6cde2);box-shadow:4px 5px 0 #080914;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+#my-works .fiction-teto-companion .teto-stage:focus-visible{outline:3px solid var(--teto-lime);outline-offset:4px;}
+#my-works .fiction-teto-companion .face-layer{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transition:opacity 0ms linear;pointer-events:none;}
+#my-works .fiction-teto-companion .face-layer.active{opacity:1;}
+#my-works .fiction-teto-companion .face-layer img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom;user-select:none;-webkit-user-drag:none;}
+#my-works .fiction-teto-companion .missing-label{position:absolute;inset:0;display:none;place-content:center;text-align:center;color:#25202d;background:rgba(248,234,242,.88);font:800 .72rem/1.7 ui-monospace,monospace;pointer-events:none;}
+#my-works .fiction-teto-companion .missing-label small{font-size:.6rem;font-weight:400;}
+#my-works .fiction-teto-companion .teto-stage.show-missing .missing-label{display:grid;}
+#my-works .fiction-teto-companion .tap-flash{position:absolute;inset:0;opacity:0;pointer-events:none;background:rgba(255,45,131,.17);}
+#my-works .fiction-teto-companion .teto-stage:active .tap-flash{opacity:1;}
+#my-works .fiction-teto-companion .teto-help{margin:0;color:#8290af;text-align:center;font:800 .53rem/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;}
+#my-works .fiction-teto-companion .dialogue{position:relative;min-height:48px;margin:0;padding:10px 11px;color:#fff5fa;background:linear-gradient(120deg,rgba(255,45,131,.14),rgba(31,28,57,.98));border:1px solid rgba(255,45,131,.67);border-radius:4px;font:700 .78rem/1.55 ui-sans-serif,system-ui,sans-serif;overflow-wrap:anywhere;opacity:1;transform:translateY(0);transition:opacity 450ms ease,transform 450ms ease;}
+#my-works .fiction-teto-companion .dialogue[hidden]{display:none;}
+#my-works .fiction-teto-companion .dialogue.is-fading{opacity:0;transform:translateY(5px);}
+#my-works .fiction-teto-companion .dialogue-caret{margin-right:6px;color:var(--teto-pink);}
+#my-works .fiction-teto-companion .dialogue-cursor{color:var(--teto-lime);animation:fiction-teto-blink 1s steps(1,end) infinite;}
+@keyframes fiction-teto-blink{50%{opacity:0;}}
+#my-works .fiction-teto-footer{display:flex;align-items:center;justify-content:space-between;gap:7px;padding-top:8px;border-top:1px solid rgba(123,234,255,.16);color:#6277a5;font:700 .49rem/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.035em;}
+#my-works .fiction-teto-footer #lineCount{color:var(--teto-pink);white-space:nowrap;}
+@media(max-width:1050px){
+  #my-works .fiction-feature-row{grid-template-columns:minmax(195px,.30fr) minmax(0,1fr);gap:14px;}
+  #my-works .fiction-teto-companion{padding:9px;}
+  #my-works .fiction-teto-topline{font-size:.51rem;}
+  #my-works .fiction-teto-filemark{font-size:.54rem;}
+  #my-works .fiction-teto-companion .teto-stage{height:clamp(235px,26vw,300px);}
 }
-#my-works .fiction-art-column{flex:initial;width:100%;padding:clamp(8px,1.5vw,16px) 4px 10px 8px;align-self:center;}
-#my-works .fiction-crt-frame{
-  max-width:none;padding:6px 7px 7px;transform:rotate(-.65deg);
-  border:1px solid rgba(120,158,255,.55);border-radius:5px;
-  background:linear-gradient(145deg,#1a2440,#030611 55%,#11182b);
-  box-shadow:0 0 0 1px rgba(72,111,255,.2),0 20px 38px rgba(0,0,0,.52),-7px 7px 0 rgba(255,62,145,.13);
-}
-#my-works .fiction-crt-frame::before{inset:-4px;border-color:rgba(134,234,255,.24);}
-#my-works .fiction-crt-topbar{padding:3px 4px 7px;color:#a6b9ff;font-size:clamp(.55rem,.7vw,.68rem);}
-#my-works .fiction-screen-wrap{aspect-ratio:16/9;border:1px solid rgba(112,151,255,.72);background:#081a79;box-shadow:inset 0 0 30px rgba(0,0,0,.35);}
-#my-works .fiction-screen-wrap::after{opacity:.32;mix-blend-mode:screen;}
-#my-works .fiction-screen-wrap img{filter:saturate(1.12) contrast(1.06);}
-#my-works .fiction-crt-bottom{padding:6px 4px 1px;color:#8092ba;font-size:.55rem;letter-spacing:.1em;}
-#my-works .fiction-side-label{left:-2px;top:7%;padding:8px 10px;background:linear-gradient(105deg,rgba(8,12,31,.98),rgba(20,34,78,.95));}
-#my-works .fiction-sticker{right:-1px;bottom:6%;padding:10px 13px;font-size:clamp(.75rem,1.05vw,.95rem);transform:rotate(4deg);box-shadow:4px 5px 0 #030611,0 0 20px rgba(255,62,145,.12);}
-#my-works .fiction-scribble-left{left:-.05em;bottom:2%;font-size:clamp(3rem,6vw,5rem);opacity:.66;}
-#my-works .fiction-scribble-right{right:-.02em;top:0;font-size:clamp(2.5rem,5vw,4rem);opacity:.62;}
-#my-works .fiction-info{
-  padding:clamp(1rem,2.3vw,2rem) clamp(.7rem,1.8vw,1.5rem);align-self:stretch;justify-content:center;
-  border-left:1px solid rgba(112,145,255,.23);background:linear-gradient(145deg,rgba(13,19,43,.76),rgba(8,10,24,.38));
-  box-shadow:inset 1px 0 rgba(255,255,255,.025);
-}
-#my-works .fiction-info::before{content:"ANIMATION / MOTION STUDY";display:block;margin-bottom:clamp(1rem,2vw,1.5rem);color:#86eaff;font:700 .62rem/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;}
-#my-works .fiction-meta{margin-bottom:1rem;font-size:.62rem;letter-spacing:.13em;color:#91a7e9;}
-#my-works .fiction-meta span:first-child{color:#ff6ca8;}
-#my-works .fiction-title{font-size:clamp(2.3rem,4.1vw,4.1rem);line-height:.94;letter-spacing:-.075em;text-shadow:2px 0 rgba(255,62,145,.58),-2px 0 rgba(49,94,255,.75);}
-#my-works .fiction-producer{margin-top:1rem!important;color:#ff75ae!important;font-size:clamp(.95rem,1.4vw,1.18rem);}
-#my-works .fiction-producer span{color:#647bb4;}
-#my-works .fiction-rule{margin:1.2rem 0 1.25rem;gap:3px;}
-#my-works .fiction-rule span{height:3px;}
-#my-works .fiction-bottom-row{align-items:flex-end;}
-#my-works .fiction-caption{font-size:.61rem;letter-spacing:.12em;color:#8395bd;}
-#my-works .fiction-caption strong{color:#ffca72;font-size:.72rem;letter-spacing:.06em;}
-#my-works .fiction-watch{padding:12px 14px;border-color:rgba(255,62,145,.82);background:linear-gradient(105deg,rgba(255,62,145,.12),rgba(57,94,255,.08));font-size:.7rem;letter-spacing:.09em;}
-#my-works .fiction-code{margin-top:1.2rem;padding-top:.75rem;border-top:1px solid rgba(110,145,255,.22);font-size:.58rem;color:#6479a8;}
-#my-works .fiction-code span{color:#ff6ca8;}
-#my-works .fiction-project:hover .fiction-crt-frame{transform:rotate(0deg) translateY(-3px);box-shadow:0 0 0 1px rgba(95,145,255,.48),0 24px 44px rgba(0,0,0,.58),-10px 8px 0 rgba(255,62,145,.18);}
-#my-works .fiction-project:hover .fiction-screen-wrap img{transform:scale(1.045);filter:saturate(1.24) contrast(1.1);}
-#my-works .fiction-project:hover .fiction-title{text-shadow:3px 0 rgba(255,62,145,.78),-3px 0 rgba(49,94,255,.9);}
 @media(max-width:760px){
- #my-works .fiction-project{grid-template-columns:minmax(0,1fr);gap:1rem;padding:1rem;}
- #my-works .fiction-art-column{padding:8px 5px 12px;}
- #my-works .fiction-info{border-left:0;border-top:1px solid rgba(112,145,255,.23);padding:1.2rem .3rem .4rem;}
- #my-works .fiction-info::before{margin-bottom:.85rem;}
- #my-works .fiction-title{font-size:clamp(2.4rem,11vw,3.5rem);}
- #my-works .fiction-bottom-row{align-items:stretch;}
- #my-works .fiction-watch{width:100%;}
+  #my-works .fiction-feature-row{grid-template-columns:minmax(0,1fr);gap:16px;}
+  #my-works .fiction-teto-companion{width:min(100%,520px);justify-self:center;align-self:stretch;transform:none;padding:12px;}
+  #my-works .fiction-teto-companion .teto-stage{height:clamp(260px,70vw,365px);}
+  #my-works .fiction-teto-companion .hint{top:72px;right:18px;}
+  #my-works .fiction-feature-row>.fiction-project{margin-top:0!important;}
 }
-@media(prefers-reduced-motion:reduce){#my-works .fiction-project::before,#my-works .fiction-project::after{animation:none!important;}}
+@media(max-width:430px){
+  #my-works .fiction-teto-topline{font-size:.48rem;}
+  #my-works .fiction-teto-filemark{font-size:.52rem;}
+  #my-works .fiction-teto-filemark span{font-size:.44rem;}
+  #my-works .fiction-teto-companion .teto-stage{height:270px;}
+  #my-works .fiction-teto-companion .dialogue{font-size:.75rem;}
+}
+@media(prefers-reduced-motion:reduce){
+  #my-works .fiction-teto-companion *{animation-duration:.01ms!important;animation-iteration-count:1!important;}
+  #my-works .fiction-teto-companion .dialogue,#my-works .fiction-teto-companion .hint{transition-duration:.01ms!important;}
+}
 </style>
 
 </head>
@@ -3721,6 +3731,21 @@ body::before{
 <div class="projects">
 
                     <!-- 01 — It's fiction. / MV-inspired CRT card -->
+                    <div class="fiction-feature-row">
+                    <aside class="fiction-teto-companion" id="tetoWidget" aria-label="Interactive Kasane Teto Easter egg">
+                        <div class="fiction-teto-topline"><span><i class="fiction-teto-status-dot" aria-hidden="true"></i> UNAUTHORIZED GUEST</span><span id="tapCounter">TAPS: 000</span></div>
+                        <div class="fiction-teto-filemark" aria-hidden="true">FICTION_MODE.exe <span>GUEST PROCESS</span></div>
+                        <div class="hint" id="hint">Ay ay, why not click on her? <span class="hint-arrow" aria-hidden="true">↘</span></div>
+                        <button class="teto-stage" id="tetoButton" type="button" aria-label="Click Kasane Teto to interact" aria-describedby="tetoHelp">
+                            <span class="face-layer active" id="faceLayerA"><img alt="Kasane Teto expression"></span>
+                            <span class="face-layer" id="faceLayerB"><img alt="Kasane Teto expression"></span>
+                            <span class="missing-label" id="missingLabel" aria-hidden="true">ADD TETO PNG FILES<br><small>See README-INTEGRATION.md</small></span>
+                            <span class="tap-flash" aria-hidden="true"></span>
+                        </button>
+                        <p class="teto-help" id="tetoHelp">CLICK HER · SHE HAS OPINIONS</p>
+                        <div class="dialogue" id="dialogue" role="status" aria-live="polite" aria-atomic="true" hidden><span class="dialogue-caret" aria-hidden="true">▸</span><span id="dialogueText"></span><span class="dialogue-cursor" aria-hidden="true">_</span></div>
+                        <div class="fiction-teto-footer"><span>INTERACTIVE GUEST / 01</span><span id="lineCount">76 LINES</span></div>
+                    </aside>
                     <article class="project fiction-project">
                         <div class="fiction-art-column">
                             <span class="fiction-side-label" aria-hidden="true">REC <span class="fiction-rec-dot"></span> / PLAY</span>
@@ -3745,6 +3770,7 @@ body::before{
                             <div class="fiction-code" aria-hidden="true">FICTION_MODE.exe <span>██████░░ 78%</span></div>
                         </div>
                     </article>
+                </div>
 
 
                     <!-- 02 -->
@@ -3764,7 +3790,7 @@ body::before{
 
                         <div class="project-info">
 
-                            <div class="lp-project-number"><span></span></div>
+                            <div class="lp-project-number">Project <span>15</span></div>
                             <a
                                 class="project-title"
                                 href="https://www.youtube.com/watch?v=YSBZFVSvqL0"
@@ -5678,5 +5704,27 @@ window.addEventListener("load", updateNavbarVisibility);
 <div class="qa-transition" id="qaTransition" aria-hidden="true">
   <div class="qa-transition-core"><span>OPENING</span><strong>Q&A</strong><span>PERSONAL ARCHIVE</span></div>
 </div>
+
+<style id="packpm-final-polish-2026-10-24">
+/* Final targeted polish: keep the scrapbook Letterplane base intact. */
+/* XP-window titlebar and featured metadata share a consistent line height. */
+#my-works .mv-window-titlebar{min-height:36px;height:36px;box-sizing:border-box;align-items:center;padding-top:5px;padding-bottom:5px;}
+#my-works .mv-meta-line{min-height:36px;align-items:center;line-height:1.2;margin:0 0 10px;padding:0 2px;color:#25344a;font-weight:800;}
+#my-works .mv-meta-line span{display:inline-flex;align-items:center;min-height:36px;}
+/* Keep the XP popup treatment confined to Latest Work; no global window styling. */
+#my-works .mv-featured-window .mv-featured-info{padding-top:8px!important;}
+/* Reduce excess vertical space without flattening the scrapbook layout. */
+#my-works .letterplane-project{margin-top:clamp(12px,1.8vw,22px)!important;margin-bottom:clamp(12px,1.8vw,22px)!important;}
+#my-works .letterplane-project .project-info{gap:10px;}
+#my-works .letterplane-project .lp-letter-contents{padding-top:17px;padding-bottom:18px;}
+/* Do That Again keeps its original lime/dark-green palette and escaped GUMI cutout. */
+#my-works .do-again-project{background:linear-gradient(112deg,#0b130c 0%,#10180e 56%,#080e0b 100%)!important;}
+#my-works .do-again-art-link{background:#d5ff39!important;}
+#my-works .do-again-character{z-index:5;filter:drop-shadow(2px 0 0 #d5ff39) drop-shadow(-2px 0 0 #d5ff39) drop-shadow(0 9px 14px rgba(0,0,0,.55));}
+/* No .avi badge/label on Do That Again. */
+#my-works .do-again-project .avi-label,#my-works .do-again-project .avi-badge,#my-works .do-again-project [class*="avi-label"],#my-works .do-again-project [class*="avi-badge"]{display:none!important;}
+</style>
+
+<script src="teto.js"></script>
 </body>
 </html>
