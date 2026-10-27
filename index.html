@@ -2060,6 +2060,18 @@ body::marker{display:none}
     line-height: 1.8;
   }
 
+  /* "My Works" keeps its original look in Thai mode: English letters stay in
+     Arial (same as ENG / 日本語), and IBM Plex Sans Thai is used only for the
+     Thai characters. Line height is kept the same as the other languages too. */
+  html[lang="th"] #my-works {
+    font-family: Arial, Helvetica, "IBM Plex Sans Thai", "Noto Sans Thai", sans-serif;
+    line-height: 1.7;
+  }
+
+  html[lang="th"] #my-works button {
+    font-family: inherit;
+  }
+
   html[lang="th"] h1,
   html[lang="th"] h2,
   html[lang="th"] h3,
