@@ -3413,10 +3413,12 @@ body::before{
 #my-works .letterplane-project .project-title{display:flex;flex-direction:column;align-items:flex-start;gap:2px;max-width:100%;color:#12366f!important;text-decoration:none!important;line-height:1.08!important;overflow:visible!important}
 #my-works .letterplane-project .lp-title-jp{font-family:'Noto Serif JP','Yu Mincho', "IBM Plex Sans Thai", serif!important;font-size:clamp(2.25rem,4.5vw,4.1rem)!important;line-height:1.25!important;letter-spacing:.07em!important;color:#12366f!important}
 #my-works .letterplane-project .lp-title-en{margin:.02em 0 .1em .12em!important;color:#5797f7!important;font:600 clamp(2.6rem,4.8vw,4.25rem)/.95 'Caveat','Segoe Print', "IBM Plex Sans Thai","Noto Serif JP", cursive!important;transform:rotate(-3deg)!important}
-#my-works .letterplane-project .producer{margin:4px 0 0!important;color:#285185!important;font-size:clamp(.9rem,1.4vw,1.05rem)!important}
+#my-works .letterplane-project .producer{margin:4px 0 0!important;color:#285185!important;font-size:clamp(.9rem,1.4vw,1.05rem)!important;font-weight:600!important}
 #my-works .letterplane-project .lp-deck{max-width:35rem;margin:8px 0 0!important;color:#193e70!important;font:500 clamp(.95rem,1.45vw,1.12rem)/1.8 Arial,sans-serif!important}
 #my-works .letterplane-project .lp-meta{display:flex;align-items:center;justify-content:flex-start;gap:18px;position:relative;margin-top:auto;padding:12px 100px 12px 0!important;border-top:1px dashed #c8ad7e!important;border-bottom:1px dashed #c8ad7e!important;color:#725f42!important;font:800 .68rem/1.5 ui-monospace, "IBM Plex Sans Thai", monospace!important;letter-spacing:.07em!important}
-#my-works .letterplane-project .lp-meta::after{content:'飛行手紙 · AIR MAIL\A31 · 07 · 2026\AONE LETTER,\AONE SUMMER';white-space:pre;position:absolute;right:5px;top:50%;transform:translateY(-50%) rotate(-7deg);padding:8px 9px;border:3px solid #d96b83;color:#c84e6b;background:rgba(255,248,238,.92);font:900 .52rem/1.35 Arial,sans-serif;text-align:center;letter-spacing:.035em;min-width:90px;box-sizing:border-box}
+/* The stamp is attached to "VE 015", so it covers only those 6 characters: "UNSENT / ARCHI" stays visible. */
+#my-works .letterplane-project .lp-meta .lp-stamp-anchor{position:relative}
+#my-works .letterplane-project .lp-meta .lp-stamp-anchor::after{content:'飛行手紙 · AIR MAIL\A 31 · 07 · 2026\AONE LETTER,\AONE SUMMER';white-space:pre;position:absolute;left:3px;right:auto;top:50%;transform:translateY(-50%) rotate(-7deg);padding:8px 9px;border:3px solid #d96b83;color:#c84e6b;background:rgba(255,248,238,.92);font:900 .52rem/1.35 Arial,sans-serif;text-align:center;letter-spacing:.035em;min-width:90px;box-sizing:border-box}
 #my-works .letterplane-project .lp-memory-strip{display:none!important}
 #my-works .letterplane-project .lp-letter-toggle{grid-column:1/-1;grid-row:2;position:relative;display:flex!important;align-items:center;justify-content:center;gap:14px;width:100%;min-height:76px;margin:22px 0 0!important;padding:18px!important;border:1px solid #dfd1b8!important;border-radius:0!important;background:linear-gradient(180deg,#fffaf0,#f0e4ce)!important;box-shadow:0 5px 12px rgba(70,55,34,.12)!important;color:#173d78!important;font:600 1.3rem/1.4 'Caveat','Segoe Print', "IBM Plex Sans Thai","Noto Serif JP", cursive!important;cursor:pointer}
 #my-works .letterplane-project .lp-letter-toggle::before{content:'';position:absolute;inset:0;opacity:.65;pointer-events:none;background:repeating-linear-gradient(to bottom,transparent 0,transparent 24px,rgba(82,132,189,.12) 25px,transparent 26px)}
@@ -4280,7 +4282,7 @@ body::before{
 /* Thai subtitle labels tuned to each project's existing visual language. */
 #my-works .do-again-subtitle-label{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;gap:7px;margin:7px 0 2px;padding:7px 11px;background:rgba(8,20,10,.82);border:1px solid #baff42;color:#d4ff75;box-shadow:3px 3px 0 #507c17,0 0 15px rgba(186,255,66,.12);font:800 .65rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase;transform:rotate(-1deg)}
 #my-works .do-again-subtitle-label::before{content:"";width:5px;height:5px;border-radius:50%;background:#caff59;box-shadow:0 0 8px #caff59}
-#my-works .letterplane-project .lp-sticky-note{font-size:clamp(.66rem,1vw,.82rem)!important;line-height:1.3!important;letter-spacing:.035em!important;text-align:center;max-width:150px;padding:18px 14px!important;overflow-wrap:anywhere}
+#my-works .letterplane-project .lp-sticky-note{font-size:clamp(.66rem,1vw,.82rem)!important;line-height:1.3!important;letter-spacing:.035em!important;text-align:center;width:fit-content!important;max-width:none!important;right:6px!important;padding:10px 15px!important;overflow-wrap:normal}
 /* Watch link shares Do That Again's subtitle-label treatment: lime, compact, no play icon. */
 #my-works .do-again-watch-link{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:5px 0 3px;padding:7px 11px;background:rgba(8,20,10,.82);border:1px solid #baff42;color:#fff!important;box-shadow:3px 3px 0 #507c17,0 0 15px rgba(186,255,66,.12);font:800 .65rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;transform:rotate(-1deg);transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
 #my-works .do-again-watch-link span{font-size:1rem;line-height:.8;color:#d4ff75}
@@ -4911,6 +4913,7 @@ body::before{
                                     <span class="dld-crosshair" aria-hidden="true">+</span>
                                 </a>
                                 <div class="dld-scan-caption" aria-hidden="true"><span>IMAGE SIGNAL: UNSTABLE</span><span class="dld-signal-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>1280×720</span></div>
+                                <div class="dld-error-window" aria-hidden="true"><div class="dld-error-title"><span>⚠ SYSTEM MESSAGE</span><span>×</span></div><p>PLEASE KEEP BREATHING_</p><small>YOU ARE MORE THAN YOUR OUTPUT.</small></div>
                             </div>
                             <div class="project-info dld-project-info">
                                 <div class="dld-alert-strip" aria-hidden="true"><span class="dld-alert-blink">!</span> WORK CYCLE EXCEEDED SAFE LIMIT <span>ERR_041</span></div>
@@ -4919,22 +4922,111 @@ body::before{
                                     <a class="project-title dld-title" data-glitch="DON'T LET&#10;ME DOWN." href="https://www.youtube.com/watch?v=QzXs2d02_8A" target="_blank" rel="noopener noreferrer">DON'T LET<br><em>ME DOWN</em><span class="dld-title-period">.</span></a>
                                     <span class="dld-title-side" aria-hidden="true">PLEASE<br>RESPOND_</span>
                                 </div>
-                                <div class="dld-terminal-line" aria-hidden="true"><span>WORK CYCLE: ENDLESS</span><span class="dld-live-dot"><i></i> LIVE FEED</span></div>
-                                <div class="dld-meters" aria-label="Decorative fictional system status indicators">
-                                    <div class="dld-meter"><div><span>ENERGY</span><b>03%</b></div><span class="dld-meter-track"><i class="dld-energy-fill"></i></span></div>
-                                    <div class="dld-meter"><div><span>TASKS REMAINING</span><b>∞</b></div><span class="dld-meter-track"><i class="dld-task-fill"></i></span></div>
+                                <div class="dld-status" aria-hidden="true">
+                                    <div class="dld-status-panel">
+                                        <div class="dld-terminal-line"><span>WORK CYCLE: ENDLESS</span><span class="dld-live-dot"><i></i> LIVE FEED</span></div>
+                                        <div class="dld-meter"><div><span>ENERGY</span><b>03%</b></div><span class="dld-meter-track"><i class="dld-energy-fill"></i></span></div>
+                                        <div class="dld-meter"><div><span>TASKS REMAINING</span><b>∞</b></div></div>
+                                    </div>
+                                    <span class="dld-meter-track dld-task-track"><i class="dld-task-fill"></i></span>
                                 </div>
-                                <div class="dld-error-window" aria-hidden="true"><div class="dld-error-title"><span>⚠ SYSTEM MESSAGE</span><span>×</span></div><p>PLEASE KEEP BREATHING_</p><small>YOU ARE MORE THAN YOUR OUTPUT.</small></div>
                                 <p class="producer dld-credit">d0tc0mmie <span>//</span> PROJECT 10 <span>//</span> FEAT. GUMI</p>
                                 <p class="dld-tagline">NO BREAKS. NO EXIT.<br><strong>STILL ALIVE?</strong></p>
+                                <div class="dld-action-row">
                                 <div class="subtitle-language-badges" aria-label="Available subtitle languages"><span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span></div>
                                 <a class="project-watch-button project-watch-button--pink dld-watch-button" href="https://www.youtube.com/watch?v=QzXs2d02_8A" target="_blank" rel="noopener noreferrer" aria-label="Watch Don't Let Me Down featuring GUMI music video on YouTube"><span aria-hidden="true">▶</span> WATCH THE MV <span aria-hidden="true">↗</span></a>
-                                <span class="dld-side-note" aria-hidden="true">URGENT / UNFINISHED / UNABLE TO LOG OUT</span>
+                                </div>
+                                <div class="dld-footer-row">
+                                    <span class="dld-side-note" aria-hidden="true">URGENT / UNFINISHED / UNABLE TO LOG OUT</span>
+                                    <button type="button" class="dld-effects-toggle" id="dldEffectsToggle" aria-pressed="true">EFFECTS: ON</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dld-motion-gate" id="dldMotionGate" role="alertdialog" aria-labelledby="dldGateTitle" aria-describedby="dldGateText">
+                            <div class="dld-gate-panel">
+                                <div class="dld-gate-tape"><span id="dldGateTitle">MOTION SAFETY</span></div>
+                                <div class="dld-gate-body" id="dldGateText">
+                                    <p class="dld-gate-lead"><span data-l="en">This card contains heavy effects.</span><span data-l="th">การ์ดนี้มีเอฟเฟกต์ภาพที่รุนแรง</span><span data-l="ja">このカードには強い視覚エフェクトが含まれています。</span></p>
+                                    <p class="dld-gate-hint"><span data-l="en">If you are sensitive to motion or flashing lights, please choose <b>NO</b>.</span><span data-l="th">หากคุณไวต่อการเคลื่อนไหวหรือแสงกะพริบ กรุณาเลือก <b>ไม่</b></span><span data-l="ja">動きや点滅する光に敏感な方は、<b>いいえ</b>を選んでください。</span></p>
+                                    <p class="dld-gate-q"><span data-l="en">Keep the effects?</span><span data-l="th">เปิดเอฟเฟกต์ต่อไปหรือไม่?</span><span data-l="ja">エフェクトを表示しますか？</span></p>
+                                </div>
+                                <div class="dld-gate-actions">
+                                    <button type="button" class="dld-gate-btn dld-gate-btn--yes" data-dld-effects="on"><span data-l="en">YES</span><span data-l="th">ใช่</span><span data-l="ja">はい</span></button>
+                                    <button type="button" class="dld-gate-btn dld-gate-btn--no" data-dld-effects="off"><span data-l="en">NO</span><span data-l="th">ไม่</span><span data-l="ja">いいえ</span></button>
+                                </div>
                             </div>
                         </div>
                         <div class="dld-bottom-ticker" aria-hidden="true"><div><span>OVERTIME OVERTIME OVERTIME</span><b>✳</b><span>NO EXIT FOUND</span><b>✳</b><span>PLEASE KEEP BREATHING_</span><b>✳</b><span>OVERTIME OVERTIME OVERTIME</span><b>✳</b><span>NO EXIT FOUND</span><b>✳</b></div></div>
                         <span class="dld-corner-code" aria-hidden="true">DLD-10 / 404: REST NOT FOUND</span>
                     </article>
+<script>
+/* DON'T LET ME DOWN — motion-safety choice (remembered on this device) */
+(function () {
+  var card = document.querySelector('.dld-reboot');
+  var gate = card && card.querySelector('.dld-motion-gate');
+  if (!card || !gate) return;
+  var toggle = card.querySelector('#dldEffectsToggle');
+  var KEY = 'packpm-dld-effects';
+  var parts = card.querySelectorAll('.dld-topbar, .dld-main-grid, .dld-bottom-ticker');
+  var LABELS = {
+    en: ['EFFECTS: ON', 'EFFECTS: OFF'],
+    th: ['เอฟเฟกต์: เปิด', 'เอฟเฟกต์: ปิด'],
+    ja: ['エフェクト: ON', 'エフェクト: OFF']
+  };
+  function lang() {
+    var l = (document.documentElement.lang || 'en').slice(0, 2);
+    return LABELS[l] ? l : 'en';
+  }
+  function setInert(on) {
+    Array.prototype.forEach.call(parts, function (el) {
+      if (on) el.setAttribute('inert', ''); else el.removeAttribute('inert');
+    });
+  }
+  function label() {
+    if (!toggle || card.classList.contains('dld-pending')) return;
+    var off = card.classList.contains('dld-calm');
+    toggle.setAttribute('aria-pressed', off ? 'false' : 'true');
+    toggle.textContent = LABELS[lang()][off ? 1 : 0];
+  }
+  function apply(mode) {
+    card.classList.remove('dld-pending');
+    setInert(false);
+    card.classList.toggle('dld-calm', mode === 'off');
+    label();
+  }
+  function save(mode) { try { localStorage.setItem(KEY, mode); } catch (e) {} }
+
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (saved === 'on' || saved === 'off') {
+    apply(saved);
+  } else if (reduce) {
+    apply('off');
+  } else {
+    card.classList.add('dld-pending');
+    setInert(true);
+    if (toggle) toggle.textContent = LABELS[lang()][0];
+  }
+
+  gate.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-dld-effects]');
+    if (!b) return;
+    var mode = b.getAttribute('data-dld-effects');
+    save(mode);
+    apply(mode);
+    if (toggle) toggle.focus({ preventScroll: true });
+  });
+  if (toggle) toggle.addEventListener('click', function () {
+    var next = card.classList.contains('dld-calm') ? 'on' : 'off';
+    save(next);
+    apply(next);
+  });
+  new MutationObserver(label).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+})();
+</script>
+
 
 
                     <!-- 06 — DO THAT AGAIN: OUT OF BOUNDS -->
@@ -4995,7 +5087,7 @@ body::before{
 
                             <p class="producer">Yowane | Project 15</p>
                             <p class="lp-deck">A letter that never found its address. A summer that never really left.</p>
-                            <div class="lp-meta"><span>飛行手紙</span><span>UNSENT / ARCHIVE 015</span></div>
+                            <div class="lp-meta"><span>飛行手紙</span><span>UNSENT / ARCHI<span class="lp-stamp-anchor">VE 015</span></span></div>
                             <div class="lp-memory-strip">
                                 <img src="./assets/card-assets/letterplane-memory.webp" alt="Letterplane scrapbook memory: Teto, blue sky and telephone wires" loading="lazy">
                                 <span>MEMORY FRAGMENT 01 <i>— the sky was painfully blue</i></span>
@@ -7099,6 +7191,103 @@ window.addEventListener("load", updateScrollHint);
 }
 
 </style>
+
+<style id="dld-polish">
+/* DON'T LET ME DOWN — readability, status block, labels and the motion-safety gate.
+   Loaded after the original card styles, so these rules win. */
+#my-works .dld-reboot{--dld-dim:rgba(170,186,255,.62)}
+#my-works .dld-reboot::before{opacity:.12}   /* scanlines: lighter so text stays readable */
+#my-works .dld-reboot::after{opacity:.11}    /* diagonal light beam */
+
+/* 1. Decoration stays small and quiet; real information gets bigger and brighter */
+#my-works .dld-kicker-row{font-size:.6rem;color:rgba(32,224,192,.72)}
+#my-works .dld-scan-caption{font-size:.6rem;color:var(--dld-dim)}
+#my-works .dld-micro-label{font-size:.6rem;color:rgba(32,224,192,.78)}
+#my-works .dld-alert-strip{font-size:.6rem}
+#my-works .dld-side-note{margin:0;font-size:.58rem;color:rgba(119,136,191,.85)}
+#my-works .dld-corner-code{font-size:.56rem;color:rgba(170,186,255,.5)}
+#my-works .project .producer.dld-credit{margin:2px 0 2px;color:#fff;opacity:1;font:800 .92rem/1.35 ui-monospace,SFMono-Regular,Menlo,Consolas,"IBM Plex Sans Thai",monospace;letter-spacing:.04em}
+#my-works .project .producer.dld-credit span{color:var(--dld-pink)}
+#my-works .dld-tagline{font-size:.82rem}
+#my-works .dld-tagline strong{font-size:1.1rem}
+#my-works .dld-watch-button{font-size:.84rem;padding:11px 16px}
+#my-works .dld-watch-button:focus-visible{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--dld-pink),0 0 16px rgba(234,255,0,.2);outline:2px solid #fff;outline-offset:3px}
+
+/* 2. Left column: thumbnail lines up with the SUBJECT line, system message docks at the bottom */
+#my-works .dld-hero-column{justify-content:flex-start;padding-top:46px}
+#my-works .dld-hero-column .dld-error-window{align-self:flex-start;width:min(100%,360px);margin:auto 0 0;position:relative;z-index:2}
+#my-works .dld-hero-column .dld-scan-caption{margin-bottom:18px}
+#my-works .dld-error-title{font-size:.62rem}
+#my-works .dld-error-window p{font-size:.9rem}
+#my-works .dld-error-window small{font-size:.74rem;color:#e3e9ff}
+
+/* 3. Logo row: "PLEASE RESPOND_" sits beside the logo instead of under its shadow */
+#my-works .dld-title-wrap{align-self:stretch;display:flex;flex-wrap:wrap;align-items:flex-end;column-gap:16px}
+#my-works .dld-title-wrap .dld-micro-label{flex:0 0 100%}
+#my-works .dld-title-side{position:static;margin:0 0 14px;font-size:.64rem;transform:rotate(5deg)}
+
+/* 4. One status block. The "infinite" task bar breaks out of it and runs to the card edge. */
+#my-works .dld-status{align-self:stretch;position:relative;margin:4px 0 8px}
+#my-works .dld-status-panel{box-sizing:border-box;width:57%;min-width:236px;max-width:100%;padding:10px 12px 24px;border:1px solid rgba(123,139,202,.62);background:linear-gradient(160deg,rgba(18,61,255,.2),rgba(8,15,44,.74));box-shadow:3px 3px 0 rgba(255,57,189,.3)}
+#my-works .dld-status-panel .dld-terminal-line{margin:0 0 10px;padding-bottom:7px;font-size:.62rem;color:var(--dld-dim)}
+#my-works .dld-status-panel .dld-meter+.dld-meter{margin-top:9px}
+#my-works .dld-status-panel .dld-meter>div{font-size:.62rem;color:var(--dld-dim)}
+#my-works .dld-status-panel .dld-meter b{font-size:.82rem}
+#my-works .dld-status-panel .dld-meter:last-child b{font-size:1.15rem;line-height:.8}
+#my-works .dld-task-track{position:relative;z-index:2;display:block;height:10px;margin:-18px -16px 0 12px;border-right:0}
+@media(max-width:680px){
+  #my-works .dld-hero-column{padding-top:12px}
+  #my-works .dld-hero-column .dld-error-window{margin:14px 0 0;width:100%}
+  #my-works .dld-status-panel{width:100%}
+  #my-works .dld-task-track{margin-right:0}
+}
+
+/* 5. Thai subtitle label + watch button belong together */
+#my-works .dld-action-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin:4px 0 0}
+#my-works .dld-reboot .subtitle-language-badges{margin:0}
+#my-works .dld-reboot .subtitle-language-badge--th{min-height:40px;padding:6px 14px 6px 6px;gap:10px;border:2px solid var(--dld-pink);border-radius:0;background:var(--dld-blue);color:var(--dld-lime);box-shadow:4px 4px 0 var(--dld-pink);transform:rotate(-1deg);font:900 .84rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,"IBM Plex Sans Thai",monospace;letter-spacing:.08em}
+#my-works .dld-reboot .subtitle-language-badge--th::before{content:"CC";width:auto;height:auto;flex:none;padding:6px 6px;border-radius:0;background:var(--dld-lime);color:#07102c;box-shadow:none;font-size:.72rem;letter-spacing:.03em}
+
+/* 6. Footer row: tiny note + effects switch */
+#my-works .dld-footer-row{align-self:stretch;display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0 14px}
+#my-works .dld-effects-toggle{flex:none;min-height:30px;padding:6px 10px;border:1px solid rgba(170,186,255,.5);background:rgba(8,15,44,.7);color:#c9d4ff;font:800 .62rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,"IBM Plex Sans Thai",monospace;letter-spacing:.08em;cursor:pointer}
+#my-works .dld-effects-toggle:hover,#my-works .dld-effects-toggle:focus-visible{border-color:var(--dld-lime);color:var(--dld-lime);outline:none}
+#my-works .dld-effects-toggle:focus-visible{outline:2px solid #fff;outline-offset:2px}
+
+/* 7. Motion-safety gate (covers and blurs the card until the visitor chooses) */
+#my-works .dld-motion-gate{display:none;position:absolute;inset:0;z-index:30;place-items:center;padding:18px;background:rgba(4,8,26,.6);-webkit-backdrop-filter:blur(14px) saturate(.85);backdrop-filter:blur(14px) saturate(.85)}
+#my-works .dld-reboot.dld-pending .dld-motion-gate{display:grid}
+#my-works .dld-motion-gate [data-l]{display:none}
+html:not([lang="th"]):not([lang="ja"]) #my-works .dld-motion-gate [data-l="en"],
+html[lang="th"] #my-works .dld-motion-gate [data-l="th"],
+html[lang="ja"] #my-works .dld-motion-gate [data-l="ja"]{display:inline}
+#my-works .dld-gate-panel{width:min(100%,540px);background:#07102c;border:2px solid var(--dld-lime);box-shadow:7px 7px 0 var(--dld-pink),0 0 44px rgba(18,61,255,.5);color:#fff;text-align:center}
+#my-works .dld-gate-tape{padding:14px 12px;border-bottom:2px solid var(--dld-lime);background:repeating-linear-gradient(-45deg,var(--dld-lime) 0 14px,#07102c 14px 28px)}
+#my-works .dld-gate-tape span{display:inline-block;padding:7px 16px;border:2px solid var(--dld-lime);background:#07102c;color:var(--dld-lime);font:900 clamp(1rem,3.6vw,1.35rem)/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.22em}
+#my-works .dld-gate-body{padding:20px 22px 4px}
+#my-works .dld-gate-body p{margin:0}
+#my-works .dld-gate-lead{margin-bottom:12px!important;font:900 clamp(1rem,2.8vw,1.2rem)/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,"IBM Plex Sans Thai",monospace;color:#fff}
+#my-works .dld-gate-hint{display:inline-block;padding:9px 14px;border-left:4px solid var(--dld-lime);background:rgba(234,255,0,.14);color:#eef2ff;font:600 .95rem/1.55 Arial,Helvetica,"IBM Plex Sans Thai",sans-serif;text-align:left}
+#my-works .dld-gate-hint b{color:var(--dld-lime);font-weight:900;font-size:1.08em}
+#my-works .dld-gate-q{margin-top:30px!important;font:900 clamp(1.15rem,3.6vw,1.55rem)/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,"IBM Plex Sans Thai",monospace;color:#fff}
+#my-works .dld-gate-actions{display:flex;justify-content:center;gap:18px;padding:14px 22px 24px}
+#my-works .dld-gate-btn{min-width:132px;padding:12px 26px;border:3px solid #07102c;color:#07102c;font:900 clamp(1.4rem,5vw,2rem)/1 ui-monospace,SFMono-Regular,Menlo,Consolas,"IBM Plex Sans Thai",monospace;letter-spacing:.08em;cursor:pointer}
+#my-works .dld-gate-btn--yes{background:var(--dld-lime);box-shadow:5px 5px 0 var(--dld-pink)}
+#my-works .dld-gate-btn--no{background:var(--dld-pink);box-shadow:5px 5px 0 var(--dld-blue)}
+#my-works .dld-gate-btn:hover,#my-works .dld-gate-btn:focus-visible{background:#fff;transform:translate(-3px,-3px);box-shadow:8px 8px 0 var(--dld-blue),0 0 22px rgba(255,255,255,.35)}
+#my-works .dld-gate-btn:focus-visible{outline:3px solid var(--dld-lime);outline-offset:3px}
+@media(max-width:680px){#my-works .dld-motion-gate{place-items:start center;padding-top:26px}#my-works .dld-gate-body{padding:16px 16px 2px}#my-works .dld-gate-actions{gap:12px;padding:12px 16px 20px}}
+
+/* 8. Calm mode (visitor chose NO, or the device asks for reduced motion) and the waiting state before choosing */
+#my-works .dld-reboot.dld-calm *,#my-works .dld-reboot.dld-calm::before,#my-works .dld-reboot.dld-calm::after,
+#my-works .dld-reboot.dld-pending *,#my-works .dld-reboot.dld-pending::before,#my-works .dld-reboot.dld-pending::after{animation:none!important;transition:none!important}
+#my-works .dld-reboot.dld-calm::after,#my-works .dld-reboot.dld-pending::after{display:none}
+#my-works .dld-reboot.dld-calm .dld-image-link:hover img{transform:none;filter:saturate(1.22) contrast(1.09)}
+#my-works .dld-reboot.dld-calm .dld-title:hover::before,#my-works .dld-reboot.dld-calm .dld-title:hover::after,
+#my-works .dld-reboot.dld-calm .dld-title:focus-visible::before,#my-works .dld-reboot.dld-calm .dld-title:focus-visible::after{opacity:0}
+#my-works .dld-reboot.dld-calm .dld-bottom-ticker>div{transform:none}
+</style>
+
 
 </body>
 </html>
