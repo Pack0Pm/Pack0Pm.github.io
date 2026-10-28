@@ -4129,6 +4129,186 @@ body::before{
   #my-works .project.character-t-project .character-t-art-img { height:86% !important; top:8px !important; }
 }
 </style>
+
+<style id="subtitle-language-badges-css">
+/* Clear, compact language labels for projects with available subtitles. */
+.subtitle-language-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin-top: 12px;
+}
+.subtitle-language-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 25px;
+    padding: 5px 9px;
+    border: 1px solid rgba(148, 163, 184, .24);
+    border-radius: 999px;
+    background: rgba(8, 13, 28, .76);
+    color: #e2e8f0;
+    font: 800 .62rem/1.1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.subtitle-language-badge--en {
+    border-color: rgba(57, 237, 255, .42);
+    color: #7df4ff;
+    box-shadow: inset 0 0 12px rgba(57, 237, 255, .05);
+}
+.subtitle-language-badge--th {
+    border-color: rgba(255, 61, 143, .42);
+    color: #ff79b4;
+    box-shadow: inset 0 0 12px rgba(255, 61, 143, .05);
+}
+.subtitle-language-badge::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    flex: 0 0 5px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 8px currentColor;
+}
+.fiction-subtitle-badges {
+    margin-top: 10px;
+}
+#my-works .baka-subtitle-badges {
+    margin-top: -2px;
+    margin-bottom: 1px;
+}
+#my-works .subtitle-language-badge--baka-th {
+    border-color: rgba(164, 255, 53, .7);
+    color: #b5ff52;
+    background: rgba(5, 10, 5, .78);
+    border-radius: 3px;
+    box-shadow: 3px 3px 0 rgba(255, 40, 111, .72), inset 0 0 12px rgba(164, 255, 53, .06);
+    transform: rotate(-1deg);
+}
+@media (max-width: 600px) {
+    .subtitle-language-badge {
+        font-size: .58rem;
+        padding: 5px 8px;
+    }
+}
+</style>
+
+
+<style id="fiction-reference-ui-refinement-v1">
+/* Keep the reference's sharp, native HTML button treatment — never rasterize it. */
+#my-works .fiction-watch{
+  min-height:68px;
+  padding:18px 19px;
+  gap:12px;
+  border:1px solid #ff2d83;
+  border-radius:2px;
+  background:rgba(255,45,131,.035);
+  box-shadow:7px 7px 0 rgba(0,0,0,.55);
+  color:#fff!important;
+  font-size:clamp(.72rem,.85vw,.82rem);
+  letter-spacing:.11em;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  transform:none;
+}
+#my-works .fiction-watch:focus-visible{
+  outline:2px solid #7beaff;
+  outline-offset:5px;
+  box-shadow:7px 7px 0 rgba(0,0,0,.55),0 0 0 4px rgba(123,234,255,.12);
+}
+#my-works .fiction-project:hover .fiction-watch{
+  background:rgba(255,45,131,.14);
+  box-shadow:7px 7px 0 rgba(0,0,0,.55),0 0 22px rgba(255,45,131,.12);
+  transform:none;
+}
+#my-works .fiction-watch span{flex:0 0 auto;line-height:1; text-rendering:geometricPrecision;}
+@media(max-width:760px){
+  #my-works .fiction-watch{min-height:58px;padding:16px 18px;box-shadow:5px 5px 0 rgba(0,0,0,.55);}
+  #my-works .fiction-project:hover .fiction-watch{box-shadow:5px 5px 0 rgba(0,0,0,.55),0 0 18px rgba(255,45,131,.12);}
+}
+</style>
+
+<style id="fiction-feature-row-height-balance-v1">
+/* Balance the companion panel and It's fiction card: same outer height, tighter right-side rhythm. */
+#my-works .fiction-feature-row{
+  align-items:stretch;
+}
+#my-works .fiction-feature-row > .fiction-teto-companion{
+  align-self:stretch;
+  min-height:0;
+  height:100%;
+}
+#my-works .fiction-feature-row > .fiction-project{
+  align-self:stretch;
+  min-height:0;
+  height:100%;
+  padding:clamp(12px,1.55vw,20px) clamp(16px,2vw,26px);
+  gap:clamp(1rem,2vw,2rem);
+}
+#my-works .fiction-feature-row > .fiction-project .fiction-art-column{
+  padding-top:2px;
+  padding-bottom:2px;
+}
+#my-works .fiction-feature-row > .fiction-project .fiction-info{
+  padding:0;
+}
+#my-works .fiction-feature-row > .fiction-project .fiction-meta{
+  margin-bottom:clamp(.55rem,1.1vw,.9rem);
+}
+#my-works .fiction-feature-row > .fiction-project .fiction-producer{
+  margin-top:.65rem!important;
+}
+#my-works .fiction-feature-row > .fiction-project .fiction-rule{
+  margin:clamp(.65rem,1.2vw,.95rem) 0 .8rem;
+}
+#my-works .fiction-feature-row > .fiction-project .fiction-code{
+  margin-top:clamp(.65rem,1.2vw,1rem);
+}
+@media(max-width:760px){
+  #my-works .fiction-feature-row{align-items:stretch;}
+  #my-works .fiction-feature-row > .fiction-teto-companion,
+  #my-works .fiction-feature-row > .fiction-project{height:auto;}
+  #my-works .fiction-feature-row > .fiction-project{padding:1rem;}
+}
+</style>
+
+
+<style id="do-again-letterplane-subtitle-labels">
+/* Thai subtitle labels tuned to each project's existing visual language. */
+#my-works .do-again-subtitle-label{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;gap:7px;margin:7px 0 2px;padding:7px 11px;background:rgba(8,20,10,.82);border:1px solid #baff42;color:#d4ff75;box-shadow:3px 3px 0 #507c17,0 0 15px rgba(186,255,66,.12);font:800 .65rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase;transform:rotate(-1deg)}
+#my-works .do-again-subtitle-label::before{content:"";width:5px;height:5px;border-radius:50%;background:#caff59;box-shadow:0 0 8px #caff59}
+#my-works .letterplane-project .lp-sticky-note{font-size:clamp(.66rem,1vw,.82rem)!important;line-height:1.3!important;letter-spacing:.035em!important;text-align:center;max-width:150px;padding:18px 14px!important;overflow-wrap:anywhere}
+/* Watch link shares Do That Again's subtitle-label treatment: lime, compact, no play icon. */
+#my-works .do-again-watch-link{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin:5px 0 3px;padding:7px 11px;background:rgba(8,20,10,.82);border:1px solid #baff42;color:#fff!important;box-shadow:3px 3px 0 #507c17,0 0 15px rgba(186,255,66,.12);font:800 .65rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;transform:rotate(-1deg);transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+#my-works .do-again-watch-link span{font-size:1rem;line-height:.8;color:#d4ff75}
+#my-works .do-again-watch-link:hover,#my-works .do-again-watch-link:focus-visible{background:rgba(30,53,16,.96);transform:rotate(0deg) translateY(-2px);box-shadow:4px 5px 0 #507c17,0 0 20px rgba(186,255,66,.2);outline:2px solid #d4ff75;outline-offset:3px}
+/* Letterplane's existing cover link becomes a handwritten corner signature. */
+#my-works .letterplane-project .project-image-link{position:relative}
+#my-works .letterplane-project .project-image-link::after{content:"Watch the MV  ↗";position:absolute;left:13px;bottom:13px;z-index:8;color:#fff;font-family:"Segoe Script","Bradley Hand","Comic Sans MS",cursive;font-size:clamp(1rem,2vw,1.45rem);font-weight:600;font-style:italic;letter-spacing:.015em;text-shadow:0 1px 4px rgba(12,35,67,.85),0 2px 12px rgba(12,35,67,.6);transform:rotate(-7deg);transform-origin:left bottom;white-space:nowrap;pointer-events:none}
+#my-works .letterplane-project .project-image-link:hover::after{transform:rotate(-4deg) scale(1.04)}
+@media(max-width:760px){#my-works .do-again-subtitle-label{font-size:.6rem;padding:7px 9px}#my-works .do-again-watch-link{font-size:.6rem;padding:7px 9px}#my-works .letterplane-project .lp-sticky-note{max-width:128px;padding:14px 10px!important}#my-works .letterplane-project .project-image-link::after{left:8px;bottom:9px;font-size:1rem}}
+</style>
+
+
+<style id="watch-mv-old-button-cleanup">
+/* Remove the old pink tape decoration that was overlapping the Letterplane cover label. */
+#my-works .letterplane-project .project-image-link::after{
+  background: transparent !important;
+  top: auto !important;
+  right: auto !important;
+  width: max-content !important;
+  height: auto !important;
+  clip-path: none !important;
+}
+
+/* Keep Letterplane's handwritten photo-corner link; remove any legacy standalone MV button from that card. */
+#my-works .letterplane-project .project-watch-button,
+#my-works .letterplane-project .do-again-watch-link,
+#my-works .letterplane-project .baka-watch-button { display: none !important; }
+</style>
 </head>
 
 <body>
@@ -4524,6 +4704,10 @@ body::before{
         </a>
         <p class="featured-producer">Chenomio</p>
         <p class="mv-featured-vocals">feat. Kasane Teto &amp; GUMI</p>
+        <div class="subtitle-language-badges" aria-label="Available subtitle languages">
+            <span class="subtitle-language-badge subtitle-language-badge--en">ENGLISH</span>
+            <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
+        </div>
         <div class="mv-info-divider"></div>
         <div class="mv-action-row">
             <span class="mv-project-status">PROJECT STATUS:<strong>UNRESOLVED</strong></span>
@@ -4571,6 +4755,9 @@ body::before{
                             <div class="fiction-meta"><span>FIRST PROJECT</span><span>01 // NO DATA?</span></div>
                             <a class="project-title fiction-title" href="https://www.youtube.com/watch?v=LxVv4QneUuU" target="_blank" rel="noopener noreferrer">It's fiction.</a>
                             <p class="producer fiction-producer">Chenomio <span> / </span> feat. Kasane Teto</p>
+                            <div class="subtitle-language-badges fiction-subtitle-badges" aria-label="Available subtitle languages">
+                                <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
+                            </div>
                             <div class="fiction-rule" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
                             <div class="fiction-bottom-row">
                                 <div class="fiction-caption"><span>VISUAL SYSTEM</span><strong>REALITY NOT FOUND</strong></div>
@@ -4663,6 +4850,10 @@ body::before{
                             <p class="producer">
                                 ABM | Project 4
                             </p>
+                            <div class="subtitle-language-badges" aria-label="Available subtitle languages">
+                                <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
+                            </div>
+                            <a class="project-watch-button project-watch-button--pink" href="https://www.youtube.com/watch?v=T24rF_x0TmQ" target="_blank" rel="noopener noreferrer" aria-label="Watch YARARARA music video on YouTube"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
 
                         </div>
 
@@ -4690,6 +4881,9 @@ body::before{
                             <a class="project-title baka-project-title" href="https://www.youtube.com/watch?v=eQsg69cWaac" target="_blank" rel="noopener noreferrer">Baka Backer</a>
                             <p class="baka-feature-credit">feat. Kasane Teto (UTAU &amp; SV)</p>
                             <p class="producer baka-producer"><span class="baka-play-triangle" aria-hidden="true">▶</span> Shü</p>
+                            <div class="subtitle-language-badges baka-subtitle-badges" aria-label="Available subtitle languages">
+                                <span class="subtitle-language-badge subtitle-language-badge--baka-th">THAI SUBTITLE</span>
+                            </div>
                             <div class="baka-divider" aria-hidden="true"></div>
                             <p class="baka-meta">VOCALOID <span>/</span> UTAU <span>/</span> SYNTHESIZER V</p>
                             <p class="baka-project-note">A birthday celebration for Teto — and for the fans who've been along for the ride. 💗</p>
@@ -4731,6 +4925,10 @@ body::before{
                             <p class="producer">
                                 d0tc0mmie | Project 10
                             </p>
+                            <div class="subtitle-language-badges" aria-label="Available subtitle languages">
+                                <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
+                            </div>
+                            <a class="project-watch-button project-watch-button--pink" href="https://www.youtube.com/watch?v=QzXs2d02_8A" target="_blank" rel="noopener noreferrer" aria-label="Watch Don't Let Me Down featuring GUMI music video on YouTube"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
 
                         </div>
 
@@ -4757,6 +4955,8 @@ body::before{
                             <p class="do-again-kicker">OUT OF BOUNDS / VISUAL ARCHIVE</p>
                             <a class="project-title do-again-title" href="https://www.youtube.com/watch?v=jK-tt-3XJ7c" target="_blank" rel="noopener noreferrer">Do That Again ft. GUMI</a>
                             <p class="producer">Teirrel | Project 11</p>
+                            <div class="do-again-subtitle-label" aria-label="Available subtitles">✳ THAI SUBTITLE ✳</div>
+                            <a class="do-again-watch-link" href="https://www.youtube.com/watch?v=jK-tt-3XJ7c" target="_blank" rel="noopener noreferrer" aria-label="Watch Do That Again music video on YouTube">WATCH MV <span aria-hidden="true">↗</span></a>
                             <div class="do-again-tags" aria-label="Visual effects">
                                 <span>LOOP ECHO</span><span>PIXEL DRIFT</span><span>GUMI / GREEN WORLD</span>
                             </div>
@@ -4780,7 +4980,7 @@ body::before{
                         <span class="lp-screen-label">SUMMER MEMORY / 015</span><span class="lp-plane" aria-hidden="true">➤</span></a>
 
                         <div class="project-info">
-                            <div class="lp-sticky-note">DON’T FORGET<br>TO SEND IT</div>
+                            <div class="lp-sticky-note" aria-label="Available subtitles">THAI<br>SUBTITLE</div>
 
                             <a
                                 class="project-title"
@@ -4843,6 +5043,10 @@ body::before{
                             <p class="producer">
                                 Adeliae | Project 19
                             </p>
+                            <div class="subtitle-language-badges" aria-label="Available subtitle languages">
+                                <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
+                            </div>
+                            <a class="project-watch-button project-watch-button--pink" href="https://www.youtube.com/watch?v=L9Yob_ylEAQ" target="_blank" rel="noopener noreferrer" aria-label="Watch Anger Management / Miyamai Moca music video on YouTube"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
 
                         </div>
 
@@ -4881,6 +5085,11 @@ body::before{
                             <p class="producer">
                                 Mokurock | Project 20
                             </p>
+                            <div class="subtitle-language-badges" aria-label="Available subtitle languages">
+                                <span class="subtitle-language-badge subtitle-language-badge--en">ENGLISH</span>
+                                <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
+                            </div>
+                            <a class="project-watch-button project-watch-button--pink" href="https://www.youtube.com/watch?v=cWWrWLTQyE8" target="_blank" rel="noopener noreferrer" aria-label="Watch ミューテーション music video on YouTube"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
 
                         </div>
 
@@ -6697,6 +6906,47 @@ window.addEventListener("load", updateScrollHint);
  else initLetterplaneLayout();
 })();
 </script>
+
+
+<style id="project-watch-buttons-yarara-dld">
+/* Native, crisp watch links for the regular project cards. */
+#my-works .project-watch-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  margin-top: 5px;
+  padding: 12px 15px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: rgba(8, 10, 22, .78);
+  color: #fff;
+  font: 800 .76rem/1.1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .1em;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 4px 4px 0 rgba(255, 45, 131, .78);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+#my-works .project-watch-button--pink { border-color: #ff3d8f; }
+#my-works .project-watch-button--pink > span:first-child { color: #ff3d8f; }
+#my-works .project-watch-button:hover {
+  transform: translate(-2px, -2px);
+  background: rgba(255, 45, 131, .12);
+  box-shadow: 6px 6px 0 rgba(255, 45, 131, .7), 0 0 18px rgba(255, 45, 131, .12);
+}
+#my-works .project-watch-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+@media (max-width: 640px) {
+  #my-works .project-watch-button { min-height: 46px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #my-works .project-watch-button { transition: none; }
+}
+</style>
 
 </body>
 </html>
