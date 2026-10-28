@@ -6607,6 +6607,33 @@ window.addEventListener("load", updateScrollHint);
 #my-works .do-again-character{z-index:5;filter:drop-shadow(2px 0 0 #d5ff39) drop-shadow(-2px 0 0 #d5ff39) drop-shadow(0 9px 14px rgba(0,0,0,.55));}
 /* No .avi badge/label on Do That Again. */
 #my-works .do-again-project .avi-label,#my-works .do-again-project .avi-badge,#my-works .do-again-project [class*="avi-label"],#my-works .do-again-project [class*="avi-badge"]{display:none!important;}
+
+/* Final Character T scale calibration: match the reference screenshot rather than letting earlier responsive rules enlarge the PNGs. */
+#my-works .project.character-t-project .character-t-art-img {
+  height: 78% !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  transform: scale(.94) !important;
+}
+#my-works .character-t-art-left .character-t-art-img {
+  left: 0 !important; right: auto !important;
+  transform-origin: top left !important;
+}
+#my-works .character-t-art-right .character-t-art-img {
+  right: 0 !important; left: auto !important;
+  transform-origin: top right !important;
+}
+#my-works .character-t-project:hover .character-t-art-left .character-t-art-img,
+#my-works .character-t-project:hover .character-t-art-right .character-t-art-img {
+  transform: scale(.94) !important;
+}
+@media (max-width: 760px) {
+  #my-works .project.character-t-project .character-t-art-img { height: 76% !important; }
+}
+@media (max-width: 480px) {
+  #my-works .project.character-t-project .character-t-art-img { height: 73% !important; }
+}
 </style>
 
 <script src="teto.js"></script>
