@@ -5666,18 +5666,45 @@ window.addEventListener("load", updateScrollHint);
   revealTargets.forEach((el) => el.classList.add("reveal"));
 
   if (!reduceMotion.matches && "IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries, obs) => {
+    const onIntersect = (entries, obs) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
         entry.target.classList.add("visible");
         obs.unobserve(entry.target);
       }
-    }, {
-      threshold: 0.08,
-      rootMargin: "0px 0px -60px 0px"
+    };
+    const rootMargin = "0px 0px -60px 0px";
+    /* Small cards fade in when 8% is on screen. Big wrappers (sections and the whole
+       page card) use threshold 0: on a phone they are taller than the screen, so an
+       "8% visible" rule can never be met and the page would stay invisible. */
+    const cardObserver = new IntersectionObserver(onIntersect, { threshold: 0.08, rootMargin });
+    const wrapperObserver = new IntersectionObserver(onIntersect, { threshold: 0, rootMargin });
+
+    revealTargets.forEach((el) => {
+      (el.matches("section, .profile-card") ? wrapperObserver : cardObserver).observe(el);
     });
 
-    revealTargets.forEach((el) => observer.observe(el));
+    /* Safety net for any tall element (now or in future cards): reveal it once a good part
+       of the screen shows it, whatever its height is. */
+    let safetyQueued = false;
+    const revealSafety = () => {
+      safetyQueued = false;
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      qsa(".reveal:not(.visible)").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        const seen = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+        if (seen > 0 && (seen >= r.height * 0.08 || seen >= vh * 0.35)) el.classList.add("visible");
+      });
+    };
+    const queueSafety = () => {
+      if (safetyQueued) return;
+      safetyQueued = true;
+      requestAnimationFrame(revealSafety);
+    };
+    window.addEventListener("scroll", queueSafety, { passive: true });
+    window.addEventListener("resize", queueSafety);
+    window.addEventListener("load", queueSafety);
+    setTimeout(queueSafety, 400);
   } else {
     revealTargets.forEach((el) => el.classList.add("visible"));
   }
