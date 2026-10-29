@@ -1,14 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Packpm - Subtitle Creator</title>
-
-    <link rel="icon" type="image/png" href="assets/P.png">
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Packpm - Subtitle Creator</title>
+<link href="assets/P.png" rel="icon" type="image/png"/>
+<style>
         * {
             box-sizing: border-box;
         }
@@ -1107,7 +1105,6 @@ footer{padding:35px 0 15px}
 .startup-screen.is-failed .startup-loader::before{content:"BOOT INTERRUPTED"}
 .startup-screen.is-failed .startup-loader::after{color:rgba(252,165,165,.75)}
 </style>
-
 <style id="final-polish-css">
 /* ============================================
    PACKPM // FINAL POLISH
@@ -1158,7 +1155,6 @@ footer{padding:35px 0 15px}
   .progress-bar{transition:none}
 }
 </style>
-
 <style id="production-1000x-css">
 
 :root {
@@ -1629,7 +1625,6 @@ section > .card {
   }
 }
 </style>
-
 <style id="about-center-fix">
 /* About section alignment fix */
 #about {
@@ -1675,7 +1670,6 @@ section > .card {
   }
 }
 </style>
-
 <style id="hero-center-fix">
 /* Center the main "About Me" hero title and subtitle on the viewport. */
 .hero#home {
@@ -1706,7 +1700,6 @@ section > .card {
   }
 }
 </style>
-
 <style id="packpm-100x-overhaul">
 /* =========================================================
    PACKPM 100X — STARTUP + MOTION OVERHAUL
@@ -1997,12 +1990,10 @@ body::marker{display:none}
   .reveal{filter:none;transform:none;opacity:1}
 }
 </style>
-
-
 <!-- PACKPM THAI TYPOGRAPHY -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Anton&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Anton&amp;family=Chakra+Petch:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <style id="packpm-thai-font">
   /* Keep the Latin design, give Thai its own polished typeface. */
   body:lang(th),
@@ -2041,8 +2032,6 @@ body::marker{display:none}
     }
   }
 </style>
-
-
 <style id="packpm-thai-everywhere">
   /* Thai mode: apply the Thai typeface to the entire portfolio,
      while keeping the original Latin typography intact. */
@@ -2089,8 +2078,6 @@ body::marker{display:none}
     font-family: "IBM Plex Sans Thai", "Noto Sans Thai", Arial, sans-serif;
   }
 </style>
-
-
 <style id="packpm-10x-design">
 /* =========================================================
    PACKPM 10X — VISUAL IDENTITY PASS
@@ -2509,8 +2496,6 @@ section{
   }
 }
 </style>
-
-
 <style id="packpm-navbar-startup-fix">
 /* Keep the navbar's slide-up/slide-down state stable after boot. */
 .navbar {
@@ -2531,8 +2516,6 @@ section{
     max-width: 850px;
 }
 </style>
-
-
 <style id="qa-page-transition">
 .qa-transition{position:fixed;inset:0;z-index:100000;pointer-events:none;display:grid;place-items:center;background:#03040a;opacity:0;visibility:hidden;overflow:hidden;transition:opacity .72s cubic-bezier(.16,1,.3,1),visibility 0s linear .72s}
 .qa-transition::before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 50% 50%,rgba(103,232,249,.16),transparent 24%),radial-gradient(circle at 50% 50%,rgba(167,139,250,.14),transparent 48%);transform:scale(.35);opacity:0}
@@ -2558,7 +2541,6 @@ body.qa-leaving .page,body.qa-leaving .profile-card,body.qa-leaving main{animati
 @keyframes qaPageOut{to{opacity:0;transform:scale(.975) translateY(-14px);filter:blur(7px)}}
 @media(prefers-reduced-motion:reduce){.qa-transition{display:none!important}body.qa-leaving .page,body.qa-leaving .profile-card,body.qa-leaving main{animation:none!important}}
 </style>
-
 <style id="packpm-cyber-scrollbar-100x">
 /* =========================================================
    PACKPM // CYBER SCROLLBAR 100X
@@ -2615,7 +2597,6 @@ html {
 /* A thin cyan/violet scan beam follows the page scroll position. */
 body::marker { content: none; }
 </style>
-
 <style id="packpm-mv-list-layout-v1">
 /* PACKPM // one MV per row — structure only, no per-MV themes yet */
 #my-works .projects{
@@ -2722,8 +2703,6 @@ body::marker { content: none; }
   #my-works .project,#my-works .project img,#my-works .featured-image-link img{transition:none!important}
 }
 </style>
-
-
 <style id="packpm-schrodinger-featured-v1">
 /* MV-inspired featured card: the rest of Packpm keeps its existing identity. */
 body{
@@ -2980,8 +2959,6 @@ body::before{
   .mv-window-link,.mv-window-link img,.mv-watch-button{transition:none!important}
 }
 </style>
-
-
 <style id="packpm-fiction-mode-card-v1">
 /* It's fiction. — custom CRT / kinetic-graphic identity */
 #my-works .fiction-project{
@@ -3051,8 +3028,6 @@ body::before{
  #my-works .fiction-project *{transition:none!important;scroll-behavior:auto!important;}
 }
 </style>
-
-
 <style id="packpm-baka-backer-teto-birthday-chaos-v1">
 /* BAKA BACKER — Teto Birthday Chaos. Scoped to this card + a quiet My Works ambience. */
 #my-works{position:relative;isolation:isolate}
@@ -3104,8 +3079,6 @@ body::before{
 @media(max-width:760px){#my-works .baka-backer-project{grid-template-columns:minmax(0,1fr);gap:18px;padding:16px}#my-works .baka-art-stage{width:100%;max-width:640px;margin:0 auto;padding:17px 10px 26px}#my-works .baka-project-info{padding:5px 2px 2px}#my-works .baka-project-title{font-size:clamp(2rem,10vw,3.1rem)}#my-works .baka-sticker{right:1%;top:0}#my-works .baka-project-note{max-width:none}}
 @media(prefers-reduced-motion:reduce){#my-works::before,#my-works .baka-backer-project::before,#my-works .baka-burst,#my-works .baka-doodle,#my-works .baka-live-dot,#my-works .baka-confetti{animation:none!important}#my-works .baka-poster-link,#my-works .baka-watch-button{transition:none!important}}
 </style>
-
-
 <style id="packpm-fiction-crt-refinement-v2">
 /* It's fiction. — more picture, less bezel; turn REC / PLAY into a real-looking signal widget. */
 #my-works .fiction-art-column{flex:0 1 61%;padding:5px 7px 7px 2px;}
@@ -3128,8 +3101,6 @@ body::before{
 }
 @media(prefers-reduced-motion:reduce){#my-works .fiction-side-label::before,#my-works .fiction-side-label .fiction-rec-dot{animation:none!important}}
 </style>
-
-
 <style id="packpm-do-that-again-out-of-bounds-v1">
 /* DO THAT AGAIN — corrupted loop with a character escaping the image frame.
    All effects are scoped to this card; the site-wide background is untouched. */
@@ -3219,8 +3190,6 @@ body::before{
  #my-works .do-again-project,#my-works .do-again-stage,#my-works .do-again-art,#my-works .do-again-character,#my-works .do-again-title{transition:none!important}
 }
 </style>
-
-
 <style id="packpm-do-that-again-character-fit-v2">
 /* Keep the full-body character inside the visible stage while still letting her overlap the frame. */
 #my-works .do-again-character{
@@ -3242,8 +3211,6 @@ body::before{
   }
 }
 </style>
-
-
 <style id="packpm-letterplane-summer-scrapbook-v2">
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap');
 /* LETTERPLANE — a warm white scrapbook page with a paper-framed information panel. */
@@ -3314,8 +3281,6 @@ body::before{
   else initLetterplane();
 })();
 </script>
-
-
 <style id="packpm-fiction-teto-companion-integration-v1">
 /* Teto is a separate companion bay to the LEFT of the existing It's fiction card.
    The original CRT art, title, credits, metadata and Watch MV link remain intact. */
@@ -3395,8 +3360,6 @@ body::before{
   #my-works .fiction-teto-companion .dialogue,#my-works .fiction-teto-companion .hint{transition-duration:.01ms!important;}
 }
 </style>
-
-
 <style id="letterplane-paper-mail-redesign-v1">
 /* Letterplane: paper/letter treatment. Scoped to this project only. */
 #my-works .letterplane-project{
@@ -3443,7 +3406,6 @@ body::before{
 @media(max-width:760px){#my-works .letterplane-project{grid-template-columns:minmax(0,1fr)!important;padding:12px!important}#my-works .letterplane-project .project-image-link{width:100%;margin:0!important}#my-works .letterplane-project .project-info{padding:25px 16px!important}#my-works .letterplane-project .lp-letter-toggle{grid-column:1;grid-row:auto}#my-works .letterplane-project .lp-letter-contents,#my-works .letterplane-project .lp-memory-collage{grid-column:1;grid-row:auto}#my-works .letterplane-project .lp-memory-collage{grid-template-columns:repeat(2,minmax(0,1fr))}#my-works .letterplane-project .lp-sticky-note{width:120px;right:8px;top:8px;font-size:.65rem}}
 @media(max-width:430px){#my-works .letterplane-project .lp-memory-collage{grid-template-columns:1fr}#my-works .letterplane-project .lp-title-jp{font-size:2.1rem!important}#my-works .letterplane-project .lp-title-en{font-size:2.65rem!important}}
 </style>
-
 <style id="letterplane-scrapbook-placement-v2">
 /* Letterplane opened state: squared paper, a left portrait, torn photo pair,
    graduation photo below, then the actual letter text panel. */
@@ -3572,7 +3534,6 @@ body::before{
 }
 @media(prefers-reduced-motion:reduce){#my-works .letterplane-project .lp-reveal-collage{animation:none!important;}}
 </style>
-
 <style id="letterplane-user-photo-polish-v4">
 /* Use the two photos supplied by the user in the torn memory frame. */
 #my-works .letterplane-project .lp-torn-teto img,
@@ -3674,8 +3635,6 @@ body::before{
   #my-works .letterplane-project .lp-dried-tear { top: 135px !important; right: 18px !important; }
 }
 </style>
-
-
 <style id="letterplane-natural-tear-layout-v5">
 /* Letterplane v5: organic paper fibers, caption tucked under the torn pair,
    and a wider centered graduation photo. */
@@ -3839,8 +3798,6 @@ body::before{
   #my-works .letterplane-project .lp-dried-tear { bottom: 52px !important; right: 15px !important; }
 }
 </style>
-
-
 <style id="packpm-character-t-project-v1">
 /* Character T — SV left, UTAU right, real MV thumbnail and compact info in the middle. */
 #my-works .project.character-t-project{
@@ -3984,8 +3941,6 @@ body::before{
   #my-works .character-t-art-img,#my-works .character-t-thumbnail img,#my-works .character-t-play{transition:none!important}
 }
 </style>
-
-
 <style id="packpm-character-t-project-v2">
 /* Refinements: keep the entire figures visible, while allowing hair/arms to spill beyond the paper edge. */
 #my-works .character-t-stage {
@@ -4100,8 +4055,6 @@ body::before{
   #my-works .character-t-art-img { transition:none !important; }
 }
 </style>
-
-
 <style id="character-t-correct-reference-size-patch">
 /* Match the user's corrected reference: keep both full figures just inside the paper's vertical footprint. */
 #my-works .character-t-stage { min-height:590px !important; }
@@ -4131,7 +4084,6 @@ body::before{
   #my-works .project.character-t-project .character-t-art-img { height:86% !important; top:8px !important; }
 }
 </style>
-
 <style id="subtitle-language-badges-css">
 /* Clear, compact language labels for projects with available subtitles. */
 .subtitle-language-badges {
@@ -4197,8 +4149,6 @@ body::before{
     }
 }
 </style>
-
-
 <style id="fiction-reference-ui-refinement-v1">
 /* Keep the reference's sharp, native HTML button treatment — never rasterize it. */
 #my-works .fiction-watch{
@@ -4232,7 +4182,6 @@ body::before{
   #my-works .fiction-project:hover .fiction-watch{box-shadow:5px 5px 0 rgba(0,0,0,.55),0 0 18px rgba(255,45,131,.12);}
 }
 </style>
-
 <style id="fiction-feature-row-height-balance-v1">
 /* Balance the companion panel and It's fiction card: same outer height, tighter right-side rhythm. */
 #my-works .fiction-feature-row{
@@ -4276,8 +4225,6 @@ body::before{
   #my-works .fiction-feature-row > .fiction-project{padding:1rem;}
 }
 </style>
-
-
 <style id="do-again-letterplane-subtitle-labels">
 /* Thai subtitle labels tuned to each project's existing visual language. */
 #my-works .do-again-subtitle-label{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;gap:7px;margin:7px 0 2px;padding:7px 11px;background:rgba(8,20,10,.82);border:1px solid #baff42;color:#d4ff75;box-shadow:3px 3px 0 #507c17,0 0 15px rgba(186,255,66,.12);font:800 .65rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;text-transform:uppercase;transform:rotate(-1deg)}
@@ -4293,8 +4240,6 @@ body::before{
 #my-works .letterplane-project .project-image-link:hover::after{transform:rotate(-4deg) scale(1.04)}
 @media(max-width:760px){#my-works .do-again-subtitle-label{font-size:.6rem;padding:7px 9px}#my-works .do-again-watch-link{font-size:.6rem;padding:7px 9px}#my-works .letterplane-project .lp-sticky-note{max-width:128px;padding:14px 10px!important}#my-works .letterplane-project .project-image-link::after{left:8px;bottom:9px;font-size:1rem}}
 </style>
-
-
 <style id="watch-mv-old-button-cleanup">
 /* Remove the old pink tape decoration that was overlapping the Letterplane cover label. */
 #my-works .letterplane-project .project-image-link::after{
@@ -4311,210 +4256,508 @@ body::before{
 #my-works .letterplane-project .do-again-watch-link,
 #my-works .letterplane-project .baka-watch-button { display: none !important; }
 </style>
-</head>
 
+<style id="anger-management-hr-report-card">
+/* PROJECT 19 — HR paperwork / corporate burnout. Fully scoped so other cards stay unchanged. */
+#my-works .anger-report-project {
+  --hr-paper: #f0eee7;
+  --hr-paper-light: #faf8f1;
+  --hr-ink: #20272d;
+  --hr-muted: #667078;
+  --hr-rule: rgba(43, 52, 58, .24);
+  --hr-red: #cf3040;
+  --hr-red-dark: #a51f2e;
+  grid-column: 1 / -1;
+  position: relative;
+  isolation: isolate;
+  display: block;
+  min-width: 0;
+  padding: 0 !important;
+  overflow: hidden;
+  color: var(--hr-ink) !important;
+  background: var(--hr-paper) !important;
+  border: 1px solid rgba(228, 226, 215, .75) !important;
+  border-radius: 13px !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,.23), inset 0 0 0 1px rgba(255,255,255,.65) !important;
+  font-family: Inter, "Noto Sans JP", "Yu Gothic", "Meiryo", sans-serif;
+  transform: none;
+}
+#my-works .anger-report-project::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: .24;
+  background-image: repeating-linear-gradient(0deg, transparent 0 5px, rgba(40,42,43,.035) 6px, transparent 7px 12px), repeating-linear-gradient(90deg, transparent 0 31px, rgba(40,42,43,.018) 32px, transparent 33px 64px);
+}
+#my-works .anger-report-project > * { position: relative; z-index: 1; }
+#my-works .anger-report-project:hover { transform: translateY(-2px) !important; border-color: rgba(207,48,64,.52) !important; box-shadow: 0 29px 68px rgba(0,0,0,.27), inset 0 0 0 1px rgba(255,255,255,.7) !important; }
+#my-works .anger-report-header { display:grid; grid-template-columns: 112px minmax(0,1fr) auto; align-items:stretch; min-height:82px; border-bottom:1px solid var(--hr-rule); background:rgba(255,255,255,.36); }
+#my-works .anger-report-file-number { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:0; border-right:1px solid var(--hr-rule); text-transform:uppercase; }
+#my-works .anger-report-file-number span { font:800 .61rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.14em; }
+#my-works .anger-report-file-number strong { color:var(--hr-red); font:900 clamp(2rem,4vw,3rem)/.95 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:-.07em; }
+#my-works .anger-report-header-title { align-self:center; display:flex; flex-direction:column; gap:3px; padding:14px 24px; }
+#my-works .anger-report-eyebrow, #my-works .anger-report-jp-small { color:var(--hr-muted); font:800 .61rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.12em; }
+#my-works .anger-report-header-title > strong { font-size:clamp(.85rem,1.45vw,1.1rem); line-height:1.25; letter-spacing:.07em; }
+#my-works .anger-report-priority { align-self:center; min-width:142px; margin:12px 18px 12px 0; padding:8px 12px; border:1.5px solid var(--hr-red); color:var(--hr-red); transform:rotate(-1.2deg); }
+#my-works .anger-report-priority > span { display:block; font:800 .55rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.18em; }
+#my-works .anger-report-priority > strong { display:flex; align-items:center; gap:7px; font:900 1rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.07em; }
+#my-works .anger-report-priority i { display:inline-grid; place-items:center; width:18px; height:18px; color:var(--hr-paper-light); background:var(--hr-red); font-style:normal; border-radius:2px; }
+#my-works .anger-report-main { display:grid; grid-template-columns:minmax(250px,.72fr) minmax(0,1.55fr); gap:0; }
+#my-works .anger-report-subject { padding:clamp(18px,2.2vw,29px); border-right:1px solid var(--hr-rule); }
+#my-works .anger-report-section-label, #my-works .anger-report-block-heading, #my-works .anger-report-field > span, #my-works .anger-report-evidence-bar, #my-works .anger-report-evidence-footer, #my-works .anger-report-status-row > div:first-child > span, #my-works .anger-report-footer-note > span, #my-works .anger-report-footer-status > span { font:800 .59rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.1em; }
+#my-works .anger-report-section-label { margin:0 0 12px; padding-bottom:7px; border-bottom:1px solid var(--hr-rule); color:var(--hr-muted); }
+#my-works .anger-report-title-jp { margin:0; color:var(--hr-ink); font-size:clamp(1.45rem,2.55vw,2.35rem); font-weight:900; line-height:1.19; letter-spacing:.025em; overflow-wrap:anywhere; }
+#my-works .anger-report-title-en { margin:8px 0 0; color:var(--hr-red); font:900 clamp(.87rem,1.5vw,1.16rem)/1.25 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.07em; }
+#my-works .anger-report-rule { height:1px; margin:18px 0 12px; background:var(--hr-rule); }
+#my-works .anger-report-field { display:flex; flex-direction:column; align-items:flex-start; gap:3px; min-width:0; padding:8px 0; border-bottom:1px solid var(--hr-rule); }
+#my-works .anger-report-field > span { color:var(--hr-muted); font-size:.55rem; }
+#my-works .anger-report-field > strong { font-size:1rem; font-weight:850; line-height:1.35; overflow-wrap:anywhere; }
+#my-works .anger-report-field > small { color:var(--hr-muted); font:700 .6rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.09em; }
+#my-works .anger-report-meta-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+#my-works .anger-report-meta-grid .anger-report-field { border-bottom:0; }
+#my-works .anger-report-meta-grid .anger-report-field > strong { color:var(--hr-red); }
+#my-works .anger-report-language > strong { color:var(--hr-ink) !important; }
+#my-works .anger-report-language b { margin-left:4px; font-size:.86rem; }
+#my-works .anger-report-stamp { display:inline-flex; flex-direction:column; align-items:center; margin:13px 0 8px; padding:6px 11px 5px; border:2px solid rgba(207,48,64,.68); color:rgba(177,38,51,.8); transform:rotate(-2deg); }
+#my-works .anger-report-stamp strong { font-size:1.2rem; line-height:1.1; letter-spacing:.12em; }
+#my-works .anger-report-stamp span { font:800 .48rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.08em; }
+#my-works .anger-report-side-note { display:flex; align-items:flex-start; gap:7px; margin:7px 0 0; color:var(--hr-muted); font-size:.69rem; line-height:1.5; }
+#my-works .anger-report-side-note span { color:var(--hr-red); }
+#my-works .anger-report-evidence { display:flex; flex-direction:column; align-self:start; min-width:0; padding:clamp(16px,2vw,25px); }
+#my-works .anger-report-evidence-bar { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:0 0 9px; color:var(--hr-muted); font-size:.58rem; }
+#my-works .anger-report-evidence-bar > span:first-child { display:flex; align-items:center; gap:7px; }
+#my-works .anger-report-evidence-bar i, #my-works .anger-report-status-row strong i, #my-works .anger-report-footer-status strong i { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--hr-red); box-shadow:0 0 0 3px rgba(207,48,64,.12); }
+#my-works .anger-report-evidence-bar b { color:var(--hr-red); }
+#my-works .anger-report-evidence-link { position:relative; display:block; overflow:hidden; aspect-ratio:16/9; background:#b7c0c0; border:8px solid #252c30; border-radius:7px; box-shadow:0 5px 0 rgba(32,39,45,.14); }
+#my-works .anger-report-project .anger-report-evidence-image { display:block; width:100%; height:100%; aspect-ratio:16/9; object-fit:cover; filter:none !important; transform:none !important; transition:filter .25s ease !important; }
+#my-works .anger-report-evidence-link:hover .anger-report-evidence-image { filter:contrast(1.04) saturate(1.06) !important; transform:none !important; }
+#my-works .anger-report-image-tag { position:absolute; top:10px; z-index:2; padding:5px 7px; color:white; background:rgba(27,33,37,.79); font:800 .5rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.1em; }
+#my-works .anger-report-image-tag-left { left:10px; }
+#my-works .anger-report-image-tag-right { right:10px; color:#ffe5e3; }
+#my-works .anger-report-play { position:absolute; left:50%; top:50%; display:grid; place-items:center; width:54px; height:54px; padding-left:3px; border:1px solid rgba(255,255,255,.68); border-radius:50%; color:#fff; background:rgba(207,48,64,.9); box-shadow:0 4px 22px rgba(0,0,0,.28); font-size:1.05rem; transform:translate(-50%,-50%); transition:transform .2s ease,background .2s ease; }
+#my-works .anger-report-evidence-link:hover .anger-report-play { background:var(--hr-red-dark); transform:translate(-50%,-50%) scale(1.07); }
+#my-works .anger-report-evidence-footer { display:flex; justify-content:space-between; gap:12px; padding:10px 0 13px; border-bottom:1px solid var(--hr-rule); color:var(--hr-muted); font-size:.52rem; }
+#my-works .anger-report-evidence-footer b { color:var(--hr-red); }
+#my-works .anger-report-status-row { display:grid; grid-template-columns:minmax(0,1fr) minmax(110px,.8fr); align-items:center; gap:18px; padding-top:15px; }
+#my-works .anger-report-status-row > div:first-child { display:flex; flex-direction:column; gap:6px; }
+#my-works .anger-report-status-row > div:first-child > span { color:var(--hr-muted); font-size:.54rem; }
+#my-works .anger-report-status-row strong { display:flex; align-items:center; gap:7px; color:var(--hr-red); font:900 .78rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+#my-works .anger-report-meter { display:flex; gap:4px; height:12px; align-items:stretch; }
+#my-works .anger-report-meter span { flex:1; border:1px solid rgba(165,31,46,.2); background:rgba(207,48,64,.11); }
+#my-works .anger-report-meter span:nth-child(-n+10) { background:var(--hr-red); }
+#my-works .anger-report-lower { display:grid; grid-template-columns:1.05fr 1fr 1fr; border-top:1px solid var(--hr-rule); border-bottom:1px solid var(--hr-rule); }
+#my-works .anger-report-paper-block { min-width:0; padding:clamp(15px,2vw,23px); }
+#my-works .anger-report-paper-block + .anger-report-paper-block { border-left:1px solid var(--hr-rule); }
+#my-works .anger-report-block-heading { display:flex; justify-content:space-between; gap:12px; padding-bottom:10px; margin-bottom:13px; border-bottom:1px solid var(--hr-rule); font-size:.57rem; }
+#my-works .anger-report-block-heading span:last-child { color:var(--hr-red); }
+#my-works .anger-report-summary > p { margin:0 0 11px; font-size:.78rem; line-height:1.65; }
+#my-works .anger-report-summary > .anger-report-jp-copy { font-size:.85rem; font-weight:750; line-height:1.75; }
+#my-works .anger-report-summary-foot { display:flex; flex-wrap:wrap; justify-content:space-between; gap:5px 10px; margin-top:18px; padding-top:10px; border-top:1px solid var(--hr-rule); color:var(--hr-muted); font:700 .53rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.04em; }
+#my-works .anger-report-summary-foot strong { color:var(--hr-red-dark); }
+#my-works .anger-report-trigger-row { display:grid; grid-template-columns:24px minmax(0,1fr) auto; align-items:center; gap:7px; padding:10px 0; border-bottom:1px dashed var(--hr-rule); }
+#my-works .anger-report-trigger-index { display:grid; place-items:center; width:21px; height:21px; border:1px solid var(--hr-rule); color:var(--hr-red); font:800 .63rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+#my-works .anger-report-trigger-row div { display:flex; flex-direction:column; gap:3px; min-width:0; }
+#my-works .anger-report-trigger-row strong { font-size:.7rem; line-height:1.35; }
+#my-works .anger-report-trigger-row small { color:var(--hr-muted); font-size:.59rem; line-height:1.3; }
+#my-works .anger-report-trigger-row em { color:var(--hr-red); font:800 .47rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-style:normal; letter-spacing:.03em; text-align:right; }
+#my-works .anger-report-micro-note { margin:13px 0 0; color:var(--hr-muted); font:700 .52rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.03em; }
+#my-works .anger-report-rule-title { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:5px; }
+#my-works .anger-report-rule-title > span { color:var(--hr-muted); font:800 .52rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.06em; }
+#my-works .anger-report-rule-title > strong { color:var(--hr-red); font:900 1.1rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+#my-works .anger-report-protocol ol { list-style:none; margin:0; padding:0; }
+#my-works .anger-report-protocol li { display:grid; grid-template-columns:26px minmax(0,1fr); gap:9px; align-items:start; padding:9px 0; border-bottom:1px solid var(--hr-rule); }
+#my-works .anger-report-protocol li > span { display:grid; place-items:center; width:24px; height:24px; border:1px solid var(--hr-red); color:var(--hr-red); font:800 .57rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+#my-works .anger-report-protocol li div { display:flex; flex-direction:column; gap:3px; }
+#my-works .anger-report-protocol li strong { font-size:.69rem; line-height:1.35; }
+#my-works .anger-report-protocol li small { color:var(--hr-muted); font-size:.61rem; line-height:1.4; }
+#my-works .anger-report-protocol-warning { display:flex; align-items:center; gap:7px; margin-top:12px; padding:9px 8px; border:1px solid rgba(207,48,64,.47); color:var(--hr-red-dark); font:850 .51rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+#my-works .anger-report-protocol-warning b { display:grid; place-items:center; flex:0 0 17px; height:17px; color:white; background:var(--hr-red); font-size:.66rem; }
+#my-works .anger-report-footer { display:grid; grid-template-columns:1fr 1fr minmax(230px,1.15fr); align-items:stretch; background:rgba(255,255,255,.29); }
+#my-works .anger-report-footer-note, #my-works .anger-report-footer-status { display:flex; flex-direction:column; justify-content:center; gap:5px; min-width:0; padding:17px 22px; border-right:1px solid var(--hr-rule); }
+#my-works .anger-report-footer-note > span, #my-works .anger-report-footer-status > span { color:var(--hr-muted); font-size:.53rem; }
+#my-works .anger-report-footer-note > strong { font-size:1.03rem; line-height:1.4; }
+#my-works .anger-report-footer-note > small, #my-works .anger-report-footer-status > small { color:var(--hr-muted); font:700 .52rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+#my-works .anger-report-footer-status > strong { display:flex; align-items:center; gap:8px; font:900 .67rem/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color:var(--hr-red-dark); }
+#my-works .anger-report-footer-status strong i { flex:0 0 7px; }
+#my-works .anger-report-watch { display:flex; flex-direction:column; justify-content:center; gap:5px; margin:12px 16px; padding:10px 13px; color:var(--hr-paper-light) !important; background:var(--hr-red) !important; border:1px solid var(--hr-red-dark); border-radius:3px; text-decoration:none !important; box-shadow:3px 3px 0 rgba(32,39,45,.16); transition:background .2s ease,transform .2s ease,box-shadow .2s ease; }
+#my-works .anger-report-watch:hover { color:white !important; background:var(--hr-red-dark) !important; transform:translate(-1px,-1px); box-shadow:5px 5px 0 rgba(32,39,45,.16); }
+#my-works .anger-report-watch-top { font:800 .5rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.13em; opacity:.85; }
+#my-works .anger-report-watch > strong { display:flex; align-items:center; justify-content:space-between; gap:9px; font-size:clamp(.83rem,1.3vw,1.05rem); line-height:1.35; letter-spacing:.03em; }
+#my-works .anger-report-watch > small { font:700 .48rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing:.015em; }
+@media (max-width: 800px) {
+  #my-works .anger-report-main { grid-template-columns:minmax(220px,.76fr) minmax(0,1.24fr); }
+  #my-works .anger-report-lower { grid-template-columns:1fr 1fr; }
+  #my-works .anger-report-protocol { grid-column:1/-1; border-top:1px solid var(--hr-rule); border-left:0 !important; }
+  #my-works .anger-report-protocol ol { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+  #my-works .anger-report-protocol li { grid-template-columns:23px minmax(0,1fr); }
+  #my-works .anger-report-footer { grid-template-columns:1fr 1fr; }
+  #my-works .anger-report-watch { grid-column:1/-1; margin-top:0; }
+}
+@media (max-width: 560px) {
+  #my-works .anger-report-header { grid-template-columns:66px minmax(0,1fr); min-height:0; }
+  #my-works .anger-report-file-number { grid-row:1/3; }
+  #my-works .anger-report-file-number strong { font-size:2rem; }
+  #my-works .anger-report-file-number span { font-size:.48rem; }
+  #my-works .anger-report-header-title { padding:12px 13px 8px; }
+  #my-works .anger-report-eyebrow, #my-works .anger-report-jp-small { font-size:.48rem; letter-spacing:.06em; }
+  #my-works .anger-report-header-title > strong { font-size:.75rem; }
+  #my-works .anger-report-priority { grid-column:2; justify-self:start; min-width:0; margin:0 0 10px 13px; padding:4px 7px; transform:none; }
+  #my-works .anger-report-priority > span { display:inline; margin-right:5px; font-size:.47rem; }
+  #my-works .anger-report-priority > strong { display:inline-flex; font-size:.7rem; }
+  #my-works .anger-report-priority i { width:13px; height:13px; font-size:.6rem; }
+  #my-works .anger-report-main { grid-template-columns:1fr; }
+  #my-works .anger-report-subject { padding:18px 17px; border-right:0; border-bottom:1px solid var(--hr-rule); }
+  #my-works .anger-report-title-jp { font-size:1.7rem; }
+  #my-works .anger-report-evidence { padding:15px 13px 18px; }
+  #my-works .anger-report-evidence-bar { font-size:.49rem; }
+  #my-works .anger-report-evidence-link { border-width:5px; }
+  #my-works .anger-report-image-tag { top:6px; padding:4px 5px; font-size:.4rem; letter-spacing:.035em; }
+  #my-works .anger-report-image-tag-left { left:6px; }
+  #my-works .anger-report-image-tag-right { right:6px; }
+  #my-works .anger-report-play { width:42px; height:42px; font-size:.9rem; }
+  #my-works .anger-report-evidence-footer { font-size:.43rem; }
+  #my-works .anger-report-status-row { grid-template-columns:1fr; gap:10px; }
+  #my-works .anger-report-meter { height:10px; }
+  #my-works .anger-report-lower { grid-template-columns:1fr; }
+  #my-works .anger-report-paper-block { padding:16px 17px; }
+  #my-works .anger-report-paper-block + .anger-report-paper-block { border-left:0; border-top:1px solid var(--hr-rule); }
+  #my-works .anger-report-protocol { grid-column:auto; }
+  #my-works .anger-report-protocol ol { grid-template-columns:1fr; gap:0; }
+  #my-works .anger-report-protocol li { grid-template-columns:26px minmax(0,1fr); }
+  #my-works .anger-report-footer { grid-template-columns:1fr; }
+  #my-works .anger-report-footer-note, #my-works .anger-report-footer-status { padding:14px 17px; border-right:0; border-bottom:1px solid var(--hr-rule); }
+  #my-works .anger-report-watch { grid-column:auto; margin:12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #my-works .anger-report-watch, #my-works .anger-report-play, #my-works .anger-report-evidence-image { transition:none !important; }
+}
+</style>
+
+
+<style id="anger-management-hr-report-title-fit">
+/* Keep the Japanese title on one clean line at desktop and mobile sizes. */
+#my-works .anger-report-title-jp { font-size: clamp(1.25rem, 1.7vw, 1.55rem); line-height: 1.25; letter-spacing: 0; white-space: nowrap; }
+@media (max-width: 560px) { #my-works .anger-report-title-jp { font-size: clamp(1.25rem, 5.6vw, 1.5rem); white-space: nowrap; } }
+</style>
+
+<style id="anger-management-hr-disclosure-layout">
+/* Project 19 compact cover + accessible expandable incident dossier. */
+#my-works .anger-report-project .anger-report-main { display:block !important; margin:0 !important; padding:0 !important; }
+#my-works .anger-report-project .anger-report-subject {
+  display:grid; grid-template-columns:minmax(220px,.92fr) minmax(0,1.08fr); align-items:center;
+  gap:clamp(18px,3vw,38px); margin:0 !important; padding:clamp(18px,2.3vw,29px); border-right:0 !important; border-bottom:1px solid var(--hr-rule);
+}
+#my-works .anger-report-subject-intro { min-width:0; }
+#my-works .anger-report-subject-intro .anger-report-rule { margin:13px 0 0; }
+#my-works .anger-report-subject-meta { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:center; gap:0 22px; min-width:0; }
+#my-works .anger-report-subject-meta > .anger-report-field { padding:6px 0; }
+#my-works .anger-report-subject-meta > .anger-report-meta-grid { grid-column:1/-1; }
+#my-works .anger-report-subject-meta > .anger-report-stamp { justify-self:start; align-self:center; margin:10px 0 5px; }
+#my-works .anger-report-subject-meta > .anger-report-side-note { grid-column:1/-1; margin-top:5px; font-size:.64rem; }
+#my-works .anger-report-project .anger-report-disclosure { display:block; border:0; }
+#my-works .anger-report-project .anger-report-toggle {
+  position:relative; display:grid; grid-template-columns:46px minmax(0,1fr) 30px; align-items:center; gap:13px;
+  margin:clamp(13px,1.7vw,20px) clamp(17px,2.2vw,28px) clamp(16px,2vw,24px); padding:14px 16px;
+  list-style:none; cursor:pointer; user-select:none; color:var(--hr-red-dark); background:rgba(250,248,241,.9);
+  border:1.5px dashed rgba(207,48,64,.75); box-shadow:3px 3px 0 rgba(32,39,45,.09); transition:background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+#my-works .anger-report-project .anger-report-toggle::-webkit-details-marker { display:none; }
+#my-works .anger-report-project .anger-report-toggle::marker { content:""; }
+#my-works .anger-report-project .anger-report-toggle:hover { transform:translateY(-1px); border-style:solid; box-shadow:4px 5px 0 rgba(32,39,45,.12); }
+#my-works .anger-report-project .anger-report-toggle:focus-visible { outline:3px solid rgba(207,48,64,.55); outline-offset:3px; }
+#my-works .anger-report-toggle-icon { display:grid; place-items:center; width:42px; height:42px; border:1px solid currentColor; font:900 1.25rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+#my-works .anger-report-toggle-icon-closed { background:rgba(207,48,64,.08); }
+#my-works .anger-report-toggle-icon-open, #my-works .anger-report-toggle-copy-open { display:none !important; }
+#my-works .anger-report-toggle-copy { display:flex; min-width:0; flex-direction:column; gap:5px; }
+#my-works .anger-report-toggle-copy > strong { font:900 clamp(.8rem,1.3vw,1rem)/1.25 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.045em; }
+#my-works .anger-report-toggle-copy > small { color:var(--hr-muted); font:750 .54rem/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.07em; }
+#my-works .anger-report-toggle-arrow { justify-self:end; font:900 1.45rem/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; transition:transform .2s ease; }
+#my-works .anger-report-project .anger-report-disclosure[open] > .anger-report-toggle {
+  margin-bottom:0; color:#f7f4ec; background:#242c31; border:1.5px solid #242c31; border-left:5px solid var(--hr-red); border-radius:2px 2px 0 0; box-shadow:none;
+}
+#my-works .anger-report-project .anger-report-disclosure[open] .anger-report-toggle-icon-closed,
+#my-works .anger-report-project .anger-report-disclosure[open] .anger-report-toggle-copy-closed { display:none !important; }
+#my-works .anger-report-project .anger-report-disclosure[open] .anger-report-toggle-copy-open { display:flex !important; }
+#my-works .anger-report-project .anger-report-disclosure[open] .anger-report-toggle-icon-open { display:grid !important; color:#fff; background:var(--hr-red); border-color:var(--hr-red); font-size:1.7rem; }
+#my-works .anger-report-project .anger-report-disclosure[open] .anger-report-toggle-copy-open > small { color:#c7ccce; }
+#my-works .anger-report-project .anger-report-disclosure[open] .anger-report-toggle-arrow { transform:rotate(180deg); color:#ff9aa4; }
+#my-works .anger-report-details { border-top:1px solid var(--hr-rule); animation:hrDossierReveal .24s ease-out both; }
+#my-works .anger-report-details .anger-report-evidence { border-bottom:1px solid var(--hr-rule); }
+#my-works .anger-report-details .anger-report-lower { border-top:0; }
+/* Neutralize the portfolio's generic scroll-reveal offsets inside this custom report,
+   so expanded content appears immediately and does not reserve phantom vertical gaps. */
+#my-works .anger-report-project section { margin-block:0 !important; opacity:1 !important; transform:none !important; filter:none !important; top:auto !important; }
+#my-works .anger-report-project .anger-report-footer { margin:0 !important; padding:0 !important; }
+@keyframes hrDossierReveal { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
+@media (max-width:800px) {
+  #my-works .anger-report-project .anger-report-subject { grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:18px; }
+  #my-works .anger-report-project .anger-report-subject-meta { gap:0 14px; }
+}
+@media (max-width:560px) {
+  #my-works .anger-report-project .anger-report-subject { grid-template-columns:1fr; gap:11px; padding:17px 17px 14px; }
+  #my-works .anger-report-project .anger-report-subject-meta { gap:0 16px; }
+  #my-works .anger-report-project .anger-report-subject-meta > .anger-report-field > strong { font-size:.87rem; }
+  #my-works .anger-report-project .anger-report-subject-meta > .anger-report-side-note { font-size:.61rem; }
+  #my-works .anger-report-project .anger-report-toggle { grid-template-columns:35px minmax(0,1fr) 20px; gap:10px; margin:12px; padding:11px 10px; }
+  #my-works .anger-report-toggle-icon { width:33px; height:36px; font-size:1rem; }
+  #my-works .anger-report-toggle-copy > strong { font-size:.72rem; }
+  #my-works .anger-report-toggle-copy > small { font-size:.45rem; letter-spacing:.025em; }
+  #my-works .anger-report-toggle-arrow { font-size:1.2rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #my-works .anger-report-project .anger-report-toggle, #my-works .anger-report-toggle-arrow, #my-works .anger-report-details { transition:none !important; animation:none !important; }
+}
+</style>
+
+
+<style id="packpm-card-archive-toggle-styles">
+/* CARD ARCHIVE LAUNCHER — intentionally scoped to My Works. */
+#my-works .packpm-card-archive-launcher {
+  width: min(100%, 760px);
+  margin: 1.65rem auto 2.1rem;
+  position: relative;
+  isolation: isolate;
+}
+#my-works .packpm-card-archive-button {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(12px, 2.5vw, 24px);
+  padding: clamp(16px, 2.6vw, 24px);
+  border: 1px solid rgba(120, 235, 218, .48);
+  border-radius: 17px;
+  text-align: left;
+  color: #f4fff9;
+  background:
+    radial-gradient(ellipse at 90% 0%, rgba(74, 220, 205, .18), transparent 42%),
+    linear-gradient(118deg, #101b27 0%, #142d38 54%, #112029 100%);
+  box-shadow: 0 12px 32px rgba(0,0,0,.17), inset 0 1px 0 rgba(255,255,255,.08);
+  cursor: pointer;
+  transition: border-color .22s ease, box-shadow .22s ease, transform .22s ease, background .22s ease;
+  font: inherit;
+}
+#my-works .packpm-card-archive-button:hover,
+#my-works .packpm-card-archive-button:focus-visible {
+  border-color: #92f4e6;
+  box-shadow: 0 16px 42px rgba(30, 207, 193, .15), inset 0 1px 0 rgba(255,255,255,.12);
+  transform: translateY(-2px);
+  outline: none;
+}
+#my-works .packpm-card-archive-button:focus-visible { outline: 3px solid #a4fff1; outline-offset: 4px; }
+#my-works .packpm-card-archive-button:disabled { cursor: progress; opacity: .88; transform: none; }
+#my-works .packpm-archive-index {
+  align-self: stretch;
+  min-height: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 4px;
+  border: 1px solid rgba(134, 240, 225, .25);
+  border-radius: 10px;
+  background: rgba(3, 12, 20, .42);
+  color: #9cf9e9;
+}
+#my-works .packpm-archive-index-mark { font-size: 27px; line-height: 1; text-shadow: 0 0 15px rgba(91,241,220,.35); }
+#my-works .packpm-archive-index-number { font: 700 9px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .08em; white-space: nowrap; }
+#my-works .packpm-archive-index-status { display: flex; gap: 5px; align-items: center; font: 700 7px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .07em; color: #89adae; white-space: nowrap; }
+#my-works .packpm-archive-index-status i { width: 5px; height: 5px; border-radius: 50%; background: #80f3ba; box-shadow: 0 0 7px #80f3ba; }
+#my-works .packpm-archive-copy { display: grid; gap: 6px; min-width: 0; }
+#my-works .packpm-archive-eyebrow { color: #8ae8dc; font: 700 9px/1.1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .2em; }
+#my-works .packpm-archive-eyebrow span { color: #e8c77b; margin-left: 4px; }
+#my-works .packpm-archive-title { color: #f2fff9; font-size: clamp(18px, 2.8vw, 25px); line-height: 1.12; font-weight: 800; letter-spacing: -.035em; text-wrap: balance; }
+#my-works .packpm-archive-subtitle { color: #9ebdc0; font: 700 9px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .075em; }
+#my-works .packpm-archive-subtitle b { color: #e6ce92; font-weight: 700; }
+#my-works .packpm-archive-open-mark { position: relative; display: grid; justify-items: end; align-content: center; gap: 2px; min-width: 48px; color: #a0f4e6; font: 800 9px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; transition: transform .2s ease; }
+#my-works .packpm-archive-open-mark b { font-size: 25px; line-height: 1; font-weight: 500; }
+#my-works .packpm-card-archive-button:hover .packpm-archive-open-mark { transform: translate(2px, -2px); }
+#my-works .packpm-archive-scanline { position: absolute; left: 0; right: 0; top: 0; height: 2px; opacity: .75; pointer-events: none; background: linear-gradient(90deg, transparent 0%, #a3fff0 24%, #6edfd2 48%, transparent 76%); transform: translateX(-110%); }
+#my-works .packpm-card-archive-button:hover .packpm-archive-scanline,
+#my-works .packpm-card-archive-button:focus-visible .packpm-archive-scanline { animation: packpmArchiveScan 1.05s ease-out 1; }
+@keyframes packpmArchiveScan { to { transform: translateX(110%); } }
+#my-works .packpm-archive-loader {
+  margin-top: 10px;
+  padding: 15px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #d9fff8;
+  border: 1px solid rgba(135, 240, 222, .31);
+  border-radius: 12px;
+  background: linear-gradient(110deg, #0b141e, #11262d);
+  box-shadow: inset 0 0 25px rgba(60, 226, 205, .035);
+}
+#my-works .packpm-archive-loader[hidden],
+#my-works #packpmFeaturedWork[hidden],
+#my-works #packpmProjectGrid[hidden] { display: none !important; }
+#my-works .packpm-loader-glyph { flex: 0 0 30px; height: 30px; position: relative; display: grid; grid-template: repeat(2, 1fr) / repeat(2, 1fr); gap: 3px; transform: rotate(-8deg); }
+#my-works .packpm-loader-glyph span { border: 1px solid #8df3e5; background: rgba(94, 237, 216, .12); animation: packpmLoaderPulse .75s ease-in-out infinite alternate; }
+#my-works .packpm-loader-glyph span:nth-child(2) { animation-delay: .12s; }
+#my-works .packpm-loader-glyph span:nth-child(3) { animation-delay: .24s; }
+#my-works .packpm-loader-glyph span:nth-child(4) { animation-delay: .36s; }
+#my-works .packpm-loader-main { flex: 1; min-width: 0; }
+#my-works .packpm-loader-top, #my-works .packpm-loader-foot { display: flex; justify-content: space-between; gap: 10px; font: 700 8px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .09em; }
+#my-works .packpm-loader-top { color: #b9fff3; }
+#my-works .packpm-loader-foot { margin-top: 7px; color: #718f96; font-size: 7px; }
+#my-works .packpm-loader-track { height: 4px; margin-top: 8px; background: #263b42; overflow: hidden; border-radius: 2px; }
+#my-works .packpm-loader-track span { display: block; width: 40%; height: 100%; background: linear-gradient(90deg, #58cdbc, #d8ffe9); box-shadow: 0 0 12px rgba(100,245,220,.4); animation: packpmLoaderRun .74s cubic-bezier(.25,.7,.3,1) forwards; }
+#my-works .packpm-archive-loader.is-closing .packpm-loader-track span { animation-duration: .38s; background: linear-gradient(90deg, #e6c985, #f6efca); }
+@keyframes packpmLoaderRun { from { width: 3%; } 25% { width: 29%; } 68% { width: 72%; } to { width: 100%; } }
+@keyframes packpmLoaderPulse { from { opacity: .35; } to { opacity: 1; } }
+@media (max-width: 520px) {
+  #my-works .packpm-card-archive-launcher { margin: 1.2rem auto 1.65rem; }
+  #my-works .packpm-card-archive-button { grid-template-columns: 54px minmax(0,1fr) 26px; gap: 10px; padding: 13px 12px; border-radius: 13px; }
+  #my-works .packpm-archive-index { min-height: 68px; }
+  #my-works .packpm-archive-index-mark { font-size: 23px; }
+  #my-works .packpm-archive-index-number { font-size: 7px; letter-spacing: 0; }
+  #my-works .packpm-archive-index-status { font-size: 6px; letter-spacing: 0; }
+  #my-works .packpm-archive-title { font-size: clamp(16px, 4.5vw, 21px); }
+  #my-works .packpm-archive-subtitle { font-size: 7px; letter-spacing: .035em; }
+  #my-works .packpm-archive-open-mark { min-width: 20px; }
+  #my-works .packpm-archive-open-mark span { display: none; }
+  #my-works .packpm-archive-open-mark b { font-size: 22px; }
+  #my-works .packpm-archive-loader { padding: 12px; gap: 10px; }
+  #my-works .packpm-loader-foot { font-size: 6px; letter-spacing: .035em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #my-works .packpm-card-archive-button, #my-works .packpm-archive-open-mark { transition: none !important; }
+  #my-works .packpm-card-archive-button:hover .packpm-archive-scanline,
+  #my-works .packpm-card-archive-button:focus-visible .packpm-archive-scanline { animation: none !important; }
+  #my-works .packpm-loader-glyph span, #my-works .packpm-loader-track span { animation: none !important; }
+}
+</style>
+
+</head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
-
-    <!-- =========================
+<!-- =========================
          STARTUP SCREEN
     ========================= -->
-
-    <div class="startup-screen" id="startupScreen">
-
-        <div class="startup-content">
-
-            <div class="startup-greeting-wrap">
-                <h1 class="startup-greeting" id="startupGreeting" aria-live="polite"></h1>
-                <p class="startup-notice" id="startupNotice" aria-hidden="true">
+<div class="startup-screen" id="startupScreen">
+<div class="startup-content">
+<div class="startup-greeting-wrap">
+<h1 aria-live="polite" class="startup-greeting" id="startupGreeting"></h1>
+<p aria-hidden="true" class="startup-notice" id="startupNotice">
                     Loading failed
-                    <small>skipping ahead &middot; some pictures may be missing</small>
-                </p>
-            </div>
-
-            <p class="startup-subtitle">
+                    <small>skipping ahead · some pictures may be missing</small>
+</p>
+</div>
+<p class="startup-subtitle">
                 Packpm • Subtitle Creator
             </p>
-
-            <div class="startup-loader" data-pct="0%">
-                <div class="startup-loader-bar"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================
+<div class="startup-loader" data-pct="0%">
+<div class="startup-loader-bar"></div>
+</div>
+</div>
+</div>
+<!-- =========================
          NAVIGATION
     ========================= -->
-
-    <nav class="navbar">
-
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#what-i-do">What I Do</a>
-        <a href="#my-works">My Works</a>
-        <a href="#contact">Contact</a>
-        <a class="questions-nav" href="questions.html">Q&A ❓</a>
-
-    </nav>
-
-
-    <div class="page" id="main-content">
-
-    <!-- =========================
+<nav class="navbar">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#what-i-do">What I Do</a>
+<a href="#my-works">My Works</a>
+<a href="#contact">Contact</a>
+<a class="questions-nav" href="questions.html">Q&amp;A ❓</a>
+</nav>
+<div class="page" id="main-content">
+<!-- =========================
          PROFILE CARD
     ========================= -->
-
-    <div class="profile-card">
-
-        <div class="profile-bar">
-
-            <div class="avatar">
+<div class="profile-card">
+<div class="profile-bar">
+<div class="avatar">
                 P
             </div>
-
-            <div class="profile-info">
-                <p class="profile-name">Packpm</p>
-                <p class="profile-meta">
+<div class="profile-info">
+<p class="profile-name">Packpm</p>
+<p class="profile-meta">
                     Subtitle Creator • Thailand
                 </p>
-            </div>
-
-            <div class="profile-actions">
-
-                <a
-                    class="profile-button subscribe-button"
-                    href="https://www.youtube.com/@Pack0Pm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+</div>
+<div class="profile-actions">
+<a class="profile-button subscribe-button" href="https://www.youtube.com/@Pack0Pm" rel="noopener noreferrer" target="_blank">
                     Subscribe
                 </a>
-
-                <a
-                    class="profile-button channel-button"
-                    href="https://www.youtube.com/@Pack0Pm"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+<a class="profile-button channel-button" href="https://www.youtube.com/@Pack0Pm" rel="noopener noreferrer" target="_blank">
                     View channel ↗
                 </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- =========================
+</div>
+</div>
+<!-- =========================
              SOCIAL LINKS
         ========================= -->
-
-        <div class="social-links">
-
-            <!-- YouTube -->
-            <a
-                href="https://www.youtube.com/@Pack0Pm"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-button"
-            >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.8 3.9-6.8 3.9Z"/>
-                </svg>
+<div class="social-links">
+<!-- YouTube -->
+<a class="social-button" href="https://www.youtube.com/@Pack0Pm" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.8 3.9-6.8 3.9Z"></path>
+</svg>
                 YouTube
             </a>
-
-            <!-- Discord -->
-            <a
-                href="https://discord.com/users/759341756025798656"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-button"
-            >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19.5 5.2A18.6 18.6 0 0 0 15 3.8l-.6 1.2a16.5 16.5 0 0 0-4.8 0L9 3.8a18.6 18.6 0 0 0-4.5 1.4C1.7 9.4 1 13.5 1.3 17.6A18.4 18.4 0 0 0 6.8 20l1.3-1.7a11 11 0 0 1-1.9-.9l.5-.4a13.1 13.1 0 0 0 10.6 0l.5.4c-.6.4-1.3.7-1.9.9l1.3 1.7a18.4 18.4 0 0 0 5.5-2.4c.4-4.8-.7-8.8-3.7-12.4ZM8.7 15.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8 2 1.8 2-.8 2-1.8 2Z"/>
-                </svg>
+<!-- Discord -->
+<a class="social-button" href="https://discord.com/users/759341756025798656" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M19.5 5.2A18.6 18.6 0 0 0 15 3.8l-.6 1.2a16.5 16.5 0 0 0-4.8 0L9 3.8a18.6 18.6 0 0 0-4.5 1.4C1.7 9.4 1 13.5 1.3 17.6A18.4 18.4 0 0 0 6.8 20l1.3-1.7a11 11 0 0 1-1.9-.9l.5-.4a13.1 13.1 0 0 0 10.6 0l.5.4c-.6.4-1.3.7-1.9.9l1.3 1.7a18.4 18.4 0 0 0 5.5-2.4c.4-4.8-.7-8.8-3.7-12.4ZM8.7 15.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8 2 1.8 2-.8 2-1.8 2Z"></path>
+</svg>
                 Discord
             </a>
-
-            <!-- X -->
-            <a
-                href="https://x.com/Pack0pm"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-button"
-            >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.4L2.8 2h6.4l4.4 5.8L18.9 2Zm-1.1 17.7h1.7L8.2 4.2H6.4l11.4 15.5Z"/>
-                </svg>
+<!-- X -->
+<a class="social-button" href="https://x.com/Pack0pm" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.4L2.8 2h6.4l4.4 5.8L18.9 2Zm-1.1 17.7h1.7L8.2 4.2H6.4l11.4 15.5Z"></path>
+</svg>
                 X
             </a>
-
-            <!-- TikTok -->
-            <a
-                href="https://www.tiktok.com/@pack0pm"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="social-button"
-            >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19.3 7.1a5.7 5.7 0 0 1-3.5-1.2v8.2a5.9 5.9 0 1 1-5.9-5.9c.4 0 .8 0 1.2.1v3a3 3 0 1 0 1.7 2.8V2h3a5.7 5.7 0 0 0 3.5 3.5v1.6Z"/>
-                </svg>
+<!-- TikTok -->
+<a class="social-button" href="https://www.tiktok.com/@pack0pm" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M19.3 7.1a5.7 5.7 0 0 1-3.5-1.2v8.2a5.9 5.9 0 1 1-5.9-5.9c.4 0 .8 0 1.2.1v3a3 3 0 1 0 1.7 2.8V2h3a5.7 5.7 0 0 0 3.5 3.5v1.6Z"></path>
+</svg>
                 TikTok
             </a>
-
-            <!-- Email -->
-            <a
-                href="mailto:doubletp90@gmail.com"
-                class="social-button"
-            >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M2 5h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.3l10 6.2 10-6.2V7H2Zm20 10V9.7l-9.5 5.9a1 1 0 0 1-1 0L2 9.7V17h20Z"/>
-                </svg>
+<!-- Email -->
+<a class="social-button" href="mailto:doubletp90@gmail.com">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M2 5h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.3l10 6.2 10-6.2V7H2Zm20 10V9.7l-9.5 5.9a1 1 0 0 1-1 0L2 9.7V17h20Z"></path>
+</svg>
                 Email
             </a>
-
-        </div>
-
-
-        <div class="content">
-
-            <!-- =========================
+</div>
+<div class="content">
+<!-- =========================
                  HERO
             ========================= -->
-
-            <div class="hero" id="home">
-
-                <h1>
-                    <span class="bracket">&gt;</span> About Me <span class="bracket">&lt;</span>
-                </h1>
-
-                <p>
+<div class="hero" id="home">
+<h1>
+<span class="bracket">&gt;</span> About Me <span class="bracket">&lt;</span>
+</h1>
+<p>
                     Subtitle Creator • Vocaloid / UTAU / Synthesizer V
                 </p>
-
-                <a class="scroll-hint" id="scrollHint" href="#about" aria-label="Scroll down to About">
-                    <span>scroll</span><span class="scroll-hint-arrow" aria-hidden="true">↓</span>
-                </a>
-
-            </div>
-
-
-            <!-- =========================
+<a aria-label="Scroll down to About" class="scroll-hint" href="#about" id="scrollHint">
+<span>scroll</span><span aria-hidden="true" class="scroll-hint-arrow">↓</span>
+</a>
+</div>
+<!-- =========================
                  ABOUT ME
             ========================= -->
-
-            <section id="about">
-
-    <h2 class="section-title">
+<section id="about">
+<h2 class="section-title">
         Hi! I'm Packpm <span>👋</span>
-                </h2>
-
-                <div class="info-card">
-
-                    <p class="intro">
+</h2>
+<div class="info-card">
+<p class="intro">
                         I'm a subtitle creator from Thailand who mainly works
                         with
                         <span class="accent">
@@ -4522,443 +4765,364 @@ body::before{
                         </span>
                         music.
                     </p>
-
-                    <p>
+<p>
                         🎬 I create Thai subtitles and occasionally English
                         subtitles for music videos I enjoy.
                     </p>
-
-                    <p>
+<p>
                         🎵 Favorite synth:
                         <strong>Kasane Teto</strong>
-                    </p>
-
-                    <p class="birthday">
+</p>
+<p class="birthday">
                         🎂 My birthday is on October 9, 20XX!
                         If you have some free time, come wish me a happy birthday!
                         It would make me really happy! ❤️
                     </p>
-
-                    <p>
+<p>
                         💻 Tools I use:
                     </p>
-
-                    <div class="tools">
-                        <span class="tag">Aegisub</span>
-                        <span class="tag">YTSubConverter</span>
-                        <span class="tag">GitHub</span>
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- =========================
+<div class="tools">
+<span class="tag">Aegisub</span>
+<span class="tag">YTSubConverter</span>
+<span class="tag">GitHub</span>
+</div>
+</div>
+</section>
+<!-- =========================
                  GOAL
             ========================= -->
-
-            <section>
-
-                <h2 class="section-title">
+<section>
+<h2 class="section-title">
                     My Goal <span>🌱</span>
-                </h2>
-
-                <div class="goal-card">
-
-                    <p class="goal-number">
+</h2>
+<div class="goal-card">
+<p class="goal-number">
                         25+ <span>/ 100 MVs</span>
-                    </p>
-
-                    <div class="progress" role="progressbar" aria-label="100 MV subtitle goal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="25">
-                        <div class="progress-bar" data-progress="25"></div>
-                    </div>
-
-                    <p class="goal-text">
+</p>
+<div aria-label="100 MV subtitle goal" aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="progress" role="progressbar">
+<div class="progress-bar" data-progress="25"></div>
+</div>
+<p class="goal-text">
                         A small record of my journey toward subtitling
                         100 music videos.
                     </p>
-
-                    <p>
+<p>
                         I started making subtitles simply because I wanted
                         more Vocaloid songs to be accessible to
                         Thai-speaking listeners.
                         Over time, it became something I genuinely love doing.
                     </p>
-
-                    <p>
+<p>
                         I also sometimes work directly with producers
                         to provide official subtitles for their MVs.
                     </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- =========================
+</div>
+</section>
+<!-- =========================
                  WHAT I DO
             ========================= -->
-
-            <section id="what-i-do">
-
-    <h2 class="section-title">
+<section id="what-i-do">
+<h2 class="section-title">
         What I Do <span>🎬</span>
-                </h2>
-
-                <div class="things">
-
-                    <div class="thing">
+</h2>
+<div class="things">
+<div class="thing">
                         🇹🇭 Japanese / English → Thai lyric translation
                     </div>
-
-                    <div class="thing">
+<div class="thing">
                         🇬🇧 Japanese / Thai → English translation
                     </div>
-
-                    <div class="thing">
+<div class="thing">
                         🎬 Aegisub subtitle timing
                     </div>
-
-                    <div class="thing">
+<div class="thing">
                         ✨ Subtitle styling and effects
                     </div>
-
-                    <div class="thing">
+<div class="thing">
                         📺 YouTube subtitle preparation
                     </div>
-
-                    <div class="thing">
+<div class="thing">
                         🤝 Subtitle contributions for Vocaloid producers
                     </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- =========================
+</div>
+</section>
+<!-- =========================
                  MY WORKS
             ========================= -->
-
-            <section id="my-works">
-
-    <h2 class="section-title">
+<section id="my-works">
+<h2 class="section-title">
         My Works <span>📚</span>
-                </h2>
-
-                <p>
+</h2>
+<p>
                     I've worked on subtitles for various Vocaloid, UTAU,
                     and Synthesizer V music videos.
                 </p>
-
-                <a 
-    class="archive-link" 
-    href="https://www.youtube.com/playlist?list=PLf3_u5ost2n4"
-    target="_blank"
-    rel="noopener noreferrer"
->
+<a class="archive-link" href="https://www.youtube.com/playlist?list=PLf3_u5ost2n4" rel="noopener noreferrer" target="_blank">
     View my subtitle archive →
 </a>
-
-
+<div class="packpm-card-archive-launcher" id="packpm-card-archive-toggle-v1">
+  <button class="packpm-card-archive-button" id="packpmArchiveToggle" type="button"
+          aria-expanded="false" aria-controls="packpmFeaturedWork packpmProjectGrid">
+    <span class="packpm-archive-index" aria-hidden="true">
+      <span class="packpm-archive-index-mark">▤</span>
+      <span class="packpm-archive-index-number">INDEX / 010</span>
+      <span class="packpm-archive-index-status"><i></i> STORED LOCALLY</span>
+    </span>
+    <span class="packpm-archive-copy">
+      <span class="packpm-archive-eyebrow">THE SUBTITLE VAULT <span>↘</span></span>
+      <span class="packpm-archive-title" id="packpmArchiveButtonTitle">View my card archive</span>
+      <span class="packpm-archive-subtitle" id="packpmArchiveButtonSub">10 CARDS AVAILABLE <b>—</b> OPEN THE COLLECTION</span>
+    </span>
+    <span class="packpm-archive-open-mark" aria-hidden="true"><span>OPEN</span><b>↗</b></span>
+    <span class="packpm-archive-scanline" aria-hidden="true"></span>
+  </button>
+  <div class="packpm-archive-loader" id="packpmArchiveLoader" role="status" aria-live="polite" hidden>
+    <div class="packpm-loader-glyph" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="packpm-loader-main">
+      <div class="packpm-loader-top"><span id="packpmArchiveLoaderLabel">MOUNTING PROJECT FILES</span><span id="packpmArchiveLoaderPct">00%</span></div>
+      <div class="packpm-loader-track"><span></span></div>
+      <div class="packpm-loader-foot"><span>PACKPM.EXE // ARCHIVE INDEX</span><span>PLEASE STAND BY</span></div>
+    </div>
+  </div>
+</div>
 <!-- =========================
      LATEST WORK
 ========================= -->
-
-<div class="featured-project mv-featured-window">
-
-    <div class="featured-label">
+<div class="featured-project mv-featured-window" id="packpmFeaturedWork" hidden>
+<div class="featured-label">
         ✦ LATEST WORK <span class="mv-label-status">/ SYSTEM SIGNAL UNSTABLE</span>
-    </div>
-
-    <a
-        class="featured-image-link mv-window-link"
-        href="https://www.youtube.com/watch?v=naCd6NQAiQ0"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Watch Schrödinger's Me on YouTube"
-    >
-        <span class="mv-window-titlebar">
-            <span class="mv-window-icon" aria-hidden="true">⚠</span>
-            <span>ERROR ! — SCHRÖDINGER.EXE</span>
-            <span class="mv-window-close" aria-hidden="true">×</span>
-        </span>
-        <img
-            src="./assets/card-assets/schrodinger-me.jpg"
-            alt="Frame from Chenomio's Schrödinger's Me music video, showing retro error popups, a green-haired character, and a surreal corridor"
-        >
-        <span class="mv-window-footer">
-            <span>SYSTEM STATUS: UNRESOLVED</span>
-            <span class="mv-window-fake-buttons" aria-hidden="true"><i>OK</i><i>CANCEL</i></span>
-        </span>
-    </a>
-
-    <div class="featured-info mv-featured-info">
-        <div class="mv-meta-line"><span>FEATURED PROJECT</span><span>00.exe</span></div>
-        <a
-            class="featured-title"
-            href="https://www.youtube.com/watch?v=naCd6NQAiQ0"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
+</div>
+<a aria-label="Watch Schrödinger's Me on YouTube" class="featured-image-link mv-window-link" href="https://www.youtube.com/watch?v=naCd6NQAiQ0" rel="noopener noreferrer" target="_blank">
+<span class="mv-window-titlebar">
+<span aria-hidden="true" class="mv-window-icon">⚠</span>
+<span>ERROR ! — SCHRÖDINGER.EXE</span>
+<span aria-hidden="true" class="mv-window-close">×</span>
+</span>
+<img alt="Frame from Chenomio's Schrödinger's Me music video, showing retro error popups, a green-haired character, and a surreal corridor" src="./assets/card-assets/schrodinger-me.jpg"/>
+<span class="mv-window-footer">
+<span>SYSTEM STATUS: UNRESOLVED</span>
+<span aria-hidden="true" class="mv-window-fake-buttons"><i>OK</i><i>CANCEL</i></span>
+</span>
+</a>
+<div class="featured-info mv-featured-info">
+<div class="mv-meta-line"><span>FEATURED PROJECT</span><span>00.exe</span></div>
+<a class="featured-title" href="https://www.youtube.com/watch?v=naCd6NQAiQ0" rel="noopener noreferrer" target="_blank">
             Schrödinger's Me
         </a>
-        <p class="featured-producer">Chenomio</p>
-        <p class="mv-featured-vocals">feat. Kasane Teto &amp; GUMI</p>
-        <div class="subtitle-language-badges" aria-label="Available subtitle languages">
-            <span class="subtitle-language-badge subtitle-language-badge--en">ENGLISH</span>
-            <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
-        </div>
-        <div class="mv-info-divider"></div>
-        <div class="mv-action-row">
-            <span class="mv-project-status">PROJECT STATUS:<strong>UNRESOLVED</strong></span>
-            <a class="mv-watch-button" href="https://www.youtube.com/watch?v=naCd6NQAiQ0" target="_blank" rel="noopener noreferrer">
-                <span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span>
-            </a>
-        </div>
-        <div class="mv-signal-code" aria-hidden="true">0100 1101 // SIGNAL UNSTABLE</div>
-    </div>
-
+<p class="featured-producer">Chenomio</p>
+<p class="mv-featured-vocals">feat. Kasane Teto &amp; GUMI</p>
+<div aria-label="Available subtitle languages" class="subtitle-language-badges">
+<span class="subtitle-language-badge subtitle-language-badge--en">ENGLISH</span>
+<span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
 </div>
-
-
-<div class="projects">
-
-                    <!-- 01 — It's fiction. / MV-inspired CRT card -->
-                    <div class="fiction-feature-row">
-                    <aside class="fiction-teto-companion" id="tetoWidget" aria-label="Interactive Kasane Teto Easter egg">
-                        <div class="fiction-teto-topline"><span><i class="fiction-teto-status-dot" aria-hidden="true"></i> UNAUTHORIZED GUEST</span><span id="tapCounter">TAPS: 000</span></div>
-                        <div class="fiction-teto-filemark" aria-hidden="true">FICTION_MODE.exe <span>GUEST PROCESS</span></div>
-                        <div class="hint" id="hint">Ay ay, why not click on her? <span class="hint-arrow" aria-hidden="true">↘</span></div>
-                        <button class="teto-stage" id="tetoButton" type="button" aria-label="Click Kasane Teto to interact" aria-describedby="tetoHelp">
-                            <span class="face-layer active" id="faceLayerA"><img alt="Kasane Teto expression"></span>
-                            <span class="face-layer" id="faceLayerB"><img alt="Kasane Teto expression"></span>
-                            <span class="missing-label" id="missingLabel" aria-hidden="true">PICTURE FAILED TO LOAD<br><small>ERROR 404 // TETO NOT FOUND</small></span>
-                            <span class="tap-flash" aria-hidden="true"></span>
-                        </button>
-                        <p class="teto-help" id="tetoHelp">CLICK HER · SHE HAS OPINIONS</p>
-                        <div class="dialogue" id="dialogue" role="status" aria-live="polite" aria-atomic="true" hidden><span class="dialogue-caret" aria-hidden="true">▸</span><span id="dialogueText"></span><span class="dialogue-cursor" aria-hidden="true">_</span></div>
-                        <div class="fiction-teto-footer"><span>INTERACTIVE GUEST / 01</span><span id="lineCount">76 LINES</span></div>
-                    </aside>
-                    <article class="project fiction-project">
-                        <div class="fiction-art-column">
-                            <span class="fiction-side-label" aria-hidden="true">REC <span class="fiction-rec-dot"></span> / PLAY</span>
-                            <a class="fiction-crt-frame" href="https://www.youtube.com/watch?v=LxVv4QneUuU" target="_blank" rel="noopener noreferrer" aria-label="Watch It's fiction. feat. Kasane Teto on YouTube">
-                                <span class="fiction-crt-topbar"><span>● FICTION SIGNAL</span><span>00101110</span><span class="fiction-crt-close" aria-hidden="true">×</span></span>
-                                <span class="fiction-screen-wrap"><img src="./assets/card-assets/its-fiction.webp" alt="Frame from It's fiction. showing the pink-haired character on an electric-blue CRT screen" loading="lazy"></span>
-                                <span class="fiction-crt-bottom"><span>CHENOMIO SYSTEMS</span><span>SCREEN // 01</span></span>
-                            </a>
-                            <span class="fiction-sticker" aria-hidden="true">FICTION<br>MODE</span>
-                            <span class="fiction-scribble fiction-scribble-left" aria-hidden="true">〰</span>
-                            <span class="fiction-scribble fiction-scribble-right" aria-hidden="true">✳</span>
-                        </div>
-                        <div class="project-info fiction-info">
-                            <div class="fiction-meta"><span>FIRST PROJECT</span><span>01 // NO DATA?</span></div>
-                            <a class="project-title fiction-title" href="https://www.youtube.com/watch?v=LxVv4QneUuU" target="_blank" rel="noopener noreferrer">It's fiction.</a>
-                            <p class="producer fiction-producer">Chenomio <span> / </span> feat. Kasane Teto</p>
-                            <div class="subtitle-language-badges fiction-subtitle-badges" aria-label="Available subtitle languages">
-                                <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
-                            </div>
-                            <div class="fiction-rule" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-                            <div class="fiction-bottom-row">
-                                <div class="fiction-caption"><span>VISUAL SYSTEM</span><strong>REALITY NOT FOUND</strong></div>
-                                <a class="fiction-watch" href="https://www.youtube.com/watch?v=LxVv4QneUuU" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
-                            </div>
-                            <div class="fiction-code" aria-hidden="true">FICTION_MODE.exe <span>██████░░ 78%</span></div>
-                        </div>
-                    </article>
-                </div>
-                    <!-- 02 — Character T / Atena: custom SV + UTAU composition -->
-                    <article class="project character-t-project" aria-label="Character T by Atena">
-                        <div class="character-t-stage">
-                            <div class="character-t-paper" aria-hidden="true"></div>
-
-                            <div class="character-t-art-frame character-t-art-left" aria-hidden="true">
-                                <img class="character-t-art-img" src="./assets/character-t/Teto-SV.png"
-                                    alt="Kasane Teto SV"
-                                    loading="lazy">
-                            </div>
-                            <div class="character-t-art-frame character-t-art-right" aria-hidden="true">
-                                <img class="character-t-art-img" src="./assets/character-t/Teto-UTAU.png"
-                                    alt="Kasane Teto UTAU"
-                                    loading="lazy">
-                            </div>
-
-                            <div class="character-t-content">
-                                <div class="character-t-kicker"><span aria-hidden="true">♥</span> FEATURED MV <span aria-hidden="true">♥</span></div>
-                                <h2 class="character-t-heading">Character T</h2>
-                                <p class="character-t-subtitle">Kasane Teto / Kasane Teto SV</p>
-                                <p class="character-t-credit">ATENA <span aria-hidden="true">·</span> PROJECT 02</p>
-
-                                <a class="character-t-thumbnail" href="https://www.youtube.com/watch?v=YSBZFVSvqL0" target="_blank" rel="noopener noreferrer" aria-label="Watch Character T by Atena on YouTube">
-                                    <img
-                                        src="https://img.youtube.com/vi/YSBZFVSvqL0/hqdefault.jpg"
-                                        alt="Character T thumbnail"
-                                        loading="lazy"
-                                        width="480" height="360"
-                                    >
-                                    <span class="character-t-play" aria-hidden="true">▶</span>
-                                    <span class="character-t-watch-label">WATCH MV ↗</span>
-                                </a>
-
-                                <div class="character-t-details">
-                                    <span class="character-t-detail-pill">THAI SUBTITLE</span>
-                                </div>
-                                <p class="character-t-vocal-line"><strong>VOCALS</strong> Kasane Teto + Kasane Teto SV</p>
-                                <p class="character-t-production-line">Animation &amp; music by <strong>Atena</strong></p>
-                            </div>
-
-                            <div class="character-t-side-tag character-t-side-tag-left" aria-hidden="true">
-                                <span>KASANE TETO</span><strong>SV</strong><i></i>
-                            </div>
-                            <div class="character-t-side-tag character-t-side-tag-right" aria-hidden="true">
-                                <span>KASANE TETO</span><strong>UTAU</strong><i></i>
-                            </div>
-                            <div class="character-t-corner-code" aria-hidden="true">T / 02 <span>♡</span></div>
-                        </div>
-                    </article>
-
-
-                    <!-- 03 -->
-                    <div class="project">
-
-                        <a
-                            class="project-image-link"
-                            href="https://www.youtube.com/watch?v=T24rF_x0TmQ"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img
-                                src="https://img.youtube.com/vi/T24rF_x0TmQ/maxresdefault.jpg"
-                                onerror="this.onerror=null;this.src='https://img.youtube.com/vi/T24rF_x0TmQ/hqdefault.jpg'"
-                                alt="YARARARA thumbnail"
-                                loading="lazy"
-                                width="1280" height="720"
-                            >
-                        </a>
-
-                        <div class="project-info">
-
-                            <a
-                                class="project-title"
-                                href="https://www.youtube.com/watch?v=T24rF_x0TmQ"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
+<div class="mv-info-divider"></div>
+<div class="mv-action-row">
+<span class="mv-project-status">PROJECT STATUS:<strong>UNRESOLVED</strong></span>
+<a class="mv-watch-button" href="https://www.youtube.com/watch?v=naCd6NQAiQ0" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span>
+</a>
+</div>
+<div aria-hidden="true" class="mv-signal-code">0100 1101 // SIGNAL UNSTABLE</div>
+</div>
+</div>
+<div class="projects" id="packpmProjectGrid" hidden>
+<!-- 01 — It's fiction. / MV-inspired CRT card -->
+<div class="fiction-feature-row">
+<aside aria-label="Interactive Kasane Teto Easter egg" class="fiction-teto-companion" id="tetoWidget">
+<div class="fiction-teto-topline"><span><i aria-hidden="true" class="fiction-teto-status-dot"></i> UNAUTHORIZED GUEST</span><span id="tapCounter">TAPS: 000</span></div>
+<div aria-hidden="true" class="fiction-teto-filemark">FICTION_MODE.exe <span>GUEST PROCESS</span></div>
+<div class="hint" id="hint">Ay ay, why not click on her? <span aria-hidden="true" class="hint-arrow">↘</span></div>
+<button aria-describedby="tetoHelp" aria-label="Click Kasane Teto to interact" class="teto-stage" id="tetoButton" type="button">
+<span class="face-layer active" id="faceLayerA"><img alt="Kasane Teto expression"/></span>
+<span class="face-layer" id="faceLayerB"><img alt="Kasane Teto expression"/></span>
+<span aria-hidden="true" class="missing-label" id="missingLabel">PICTURE FAILED TO LOAD<br/><small>ERROR 404 // TETO NOT FOUND</small></span>
+<span aria-hidden="true" class="tap-flash"></span>
+</button>
+<p class="teto-help" id="tetoHelp">CLICK HER · SHE HAS OPINIONS</p>
+<div aria-atomic="true" aria-live="polite" class="dialogue" hidden="" id="dialogue" role="status"><span aria-hidden="true" class="dialogue-caret">▸</span><span id="dialogueText"></span><span aria-hidden="true" class="dialogue-cursor">_</span></div>
+<div class="fiction-teto-footer"><span>INTERACTIVE GUEST / 01</span><span id="lineCount">76 LINES</span></div>
+</aside>
+<article class="project fiction-project">
+<div class="fiction-art-column">
+<span aria-hidden="true" class="fiction-side-label">REC <span class="fiction-rec-dot"></span> / PLAY</span>
+<a aria-label="Watch It's fiction. feat. Kasane Teto on YouTube" class="fiction-crt-frame" href="https://www.youtube.com/watch?v=LxVv4QneUuU" rel="noopener noreferrer" target="_blank">
+<span class="fiction-crt-topbar"><span>● FICTION SIGNAL</span><span>00101110</span><span aria-hidden="true" class="fiction-crt-close">×</span></span>
+<span class="fiction-screen-wrap"><img alt="Frame from It's fiction. showing the pink-haired character on an electric-blue CRT screen" loading="lazy" src="./assets/card-assets/its-fiction.webp"/></span>
+<span class="fiction-crt-bottom"><span>CHENOMIO SYSTEMS</span><span>SCREEN // 01</span></span>
+</a>
+<span aria-hidden="true" class="fiction-sticker">FICTION<br/>MODE</span>
+<span aria-hidden="true" class="fiction-scribble fiction-scribble-left">〰</span>
+<span aria-hidden="true" class="fiction-scribble fiction-scribble-right">✳</span>
+</div>
+<div class="project-info fiction-info">
+<div class="fiction-meta"><span>FIRST PROJECT</span><span>01 // NO DATA?</span></div>
+<a class="project-title fiction-title" href="https://www.youtube.com/watch?v=LxVv4QneUuU" rel="noopener noreferrer" target="_blank">It's fiction.</a>
+<p class="producer fiction-producer">Chenomio <span> / </span> feat. Kasane Teto</p>
+<div aria-label="Available subtitle languages" class="subtitle-language-badges fiction-subtitle-badges">
+<span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
+</div>
+<div aria-hidden="true" class="fiction-rule"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<div class="fiction-bottom-row">
+<div class="fiction-caption"><span>VISUAL SYSTEM</span><strong>REALITY NOT FOUND</strong></div>
+<a class="fiction-watch" href="https://www.youtube.com/watch?v=LxVv4QneUuU" rel="noopener noreferrer" target="_blank"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
+</div>
+<div aria-hidden="true" class="fiction-code">FICTION_MODE.exe <span>██████░░ 78%</span></div>
+</div>
+</article>
+</div>
+<!-- 02 — Character T / Atena: custom SV + UTAU composition -->
+<article aria-label="Character T by Atena" class="project character-t-project">
+<div class="character-t-stage">
+<div aria-hidden="true" class="character-t-paper"></div>
+<div aria-hidden="true" class="character-t-art-frame character-t-art-left">
+<img alt="Kasane Teto SV" class="character-t-art-img" loading="lazy" src="./assets/character-t/Teto-SV.png"/>
+</div>
+<div aria-hidden="true" class="character-t-art-frame character-t-art-right">
+<img alt="Kasane Teto UTAU" class="character-t-art-img" loading="lazy" src="./assets/character-t/Teto-UTAU.png"/>
+</div>
+<div class="character-t-content">
+<div class="character-t-kicker"><span aria-hidden="true">♥</span> FEATURED MV <span aria-hidden="true">♥</span></div>
+<h2 class="character-t-heading">Character T</h2>
+<p class="character-t-subtitle">Kasane Teto / Kasane Teto SV</p>
+<p class="character-t-credit">ATENA <span aria-hidden="true">·</span> PROJECT 02</p>
+<a aria-label="Watch Character T by Atena on YouTube" class="character-t-thumbnail" href="https://www.youtube.com/watch?v=YSBZFVSvqL0" rel="noopener noreferrer" target="_blank">
+<img alt="Character T thumbnail" height="360" loading="lazy" src="https://img.youtube.com/vi/YSBZFVSvqL0/hqdefault.jpg" width="480"/>
+<span aria-hidden="true" class="character-t-play">▶</span>
+<span class="character-t-watch-label">WATCH MV ↗</span>
+</a>
+<div class="character-t-details">
+<span class="character-t-detail-pill">THAI SUBTITLE</span>
+</div>
+<p class="character-t-vocal-line"><strong>VOCALS</strong> Kasane Teto + Kasane Teto SV</p>
+<p class="character-t-production-line">Animation &amp; music by <strong>Atena</strong></p>
+</div>
+<div aria-hidden="true" class="character-t-side-tag character-t-side-tag-left">
+<span>KASANE TETO</span><strong>SV</strong><i></i>
+</div>
+<div aria-hidden="true" class="character-t-side-tag character-t-side-tag-right">
+<span>KASANE TETO</span><strong>UTAU</strong><i></i>
+</div>
+<div aria-hidden="true" class="character-t-corner-code">T / 02 <span>♡</span></div>
+</div>
+</article>
+<!-- 03 — YARARARA / RED SIGNAL Japanese music-poster card -->
+<article class="project yararara-project">
+<a aria-label="Watch YARARARA feat. Kasane Teto on YouTube" class="project-image-link yararara-poster-frame" href="https://www.youtube.com/watch?v=T24rF_x0TmQ" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="yararara-frame-top"><span>MV ARCHIVE</span><span>NO. 04 / RED SIGNAL</span></span>
+<img alt="YARARARA feat. Kasane Teto music video thumbnail" height="720" loading="lazy" src="https://img.youtube.com/vi/T24rF_x0TmQ/maxresdefault.jpg" width="1280"/>
+<span aria-hidden="true" class="yararara-frame-bottom"><span>重音テト SV2</span><span>16:9 <i>///</i> ABM</span></span>
+</a>
+<div class="project-info yararara-info">
+<div aria-hidden="true" class="yararara-kicker"><span class="yararara-signal-dot"></span> RED SIGNAL <span class="yararara-kicker-divider">/</span> ARCHIVE 004</div>
+<a class="project-title yararara-title" href="https://www.youtube.com/watch?v=T24rF_x0TmQ" rel="noopener noreferrer" target="_blank">
                                 YARARARA feat. 重音テト
                             </a>
-
-                            <p class="producer">
-                                ABM | Project 4
-                            </p>
-                            <div class="subtitle-language-badges" aria-label="Available subtitle languages">
-                                <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
-                            </div>
-                            <a class="project-watch-button project-watch-button--pink" href="https://www.youtube.com/watch?v=T24rF_x0TmQ" target="_blank" rel="noopener noreferrer" aria-label="Watch YARARARA music video on YouTube"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- 04 — Baka Backer / Teto Birthday Chaos -->
-                    <article class="project baka-backer-project">
-                        <div class="baka-art-stage">
-                            <span class="baka-sticker baka-sticker-top" aria-hidden="true">✦ TETO DAY!! ✦</span>
-                            <span class="baka-burst baka-burst-one" aria-hidden="true">✹</span>
-                            <span class="baka-burst baka-burst-two" aria-hidden="true">✦</span>
-                            <span class="baka-wave baka-wave-one" aria-hidden="true"></span>
-                            <span class="baka-wave baka-wave-two" aria-hidden="true"></span>
-                            <a class="baka-poster-link" href="https://www.youtube.com/watch?v=eQsg69cWaac" target="_blank" rel="noopener noreferrer" aria-label="Watch Baka Backer by Shü on YouTube">
-                                <span class="baka-poster-tag baka-tag-utau">UTAU<br>TETO</span>
-                                <img class="baka-poster-image" src="./assets/card-assets/baka-backer.webp" alt="Baka Backer artwork showing Kasane Teto UTAU and Synthesizer V versions with Japanese title typography">
-                                <span class="baka-poster-tag baka-tag-sv">SV<br>TETO</span>
-                            </a>
-                            <span class="baka-doodle baka-doodle-left" aria-hidden="true">★</span>
-                            <span class="baka-doodle baka-doodle-right" aria-hidden="true">△</span>
-                        </div>
-                        <div class="project-info baka-project-info">
-                            <div class="baka-project-kicker"><span>PROJECT // 07</span><span class="baka-live-dot">● TETO FOREVER</span></div>
-                            <a class="project-title baka-project-title" href="https://www.youtube.com/watch?v=eQsg69cWaac" target="_blank" rel="noopener noreferrer">Baka Backer</a>
-                            <p class="baka-feature-credit">feat. Kasane Teto (UTAU &amp; SV)</p>
-                            <p class="producer baka-producer"><span class="baka-play-triangle" aria-hidden="true">▶</span> Shü</p>
-                            <div class="subtitle-language-badges baka-subtitle-badges" aria-label="Available subtitle languages">
-                                <span class="subtitle-language-badge subtitle-language-badge--baka-th">THAI SUBTITLE</span>
-                            </div>
-                            <div class="baka-divider" aria-hidden="true"></div>
-                            <p class="baka-meta">VOCALOID <span>/</span> UTAU <span>/</span> SYNTHESIZER V</p>
-                            <p class="baka-project-note">A birthday celebration for Teto — and for the fans who've been along for the ride. 💗</p>
-                            <a class="baka-watch-button" href="https://www.youtube.com/watch?v=eQsg69cWaac" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
-                            <div class="baka-party-footer" aria-hidden="true"><span>HAPPY BIRTHDAY, TETO!</span><span class="baka-confetti">✦ ✹ ★ ✦</span></div>
-                        </div>
-                    </article>
-
-
-                    <!-- 05 — DON'T LET ME DOWN: SYSTEM OVERLOAD / BURNOUT -->
-                    <article class="project dont-let-me-down-project dld-reboot">
-                        <div class="dld-topbar" aria-hidden="true">
-                            <span class="dld-window-dots"><i></i><i></i><i></i></span>
-                            <span>DLMD.exe // WORKSTATION 10</span>
-                            <span class="dld-topbar-status">● REC</span>
-                        </div>
-                        <div class="dld-main-grid">
-                            <div class="dld-hero-column">
-                                <div class="dld-kicker-row" aria-hidden="true"><span>VOCALOID MV ARCHIVE</span><span>FILE NO. 010 / 041</span></div>
-                                <a class="project-image-link dld-image-link" href="https://www.youtube.com/watch?v=QzXs2d02_8A" target="_blank" rel="noopener noreferrer" aria-label="Watch Don't Let Me Down featuring GUMI music video on YouTube">
-                                    <img src="https://img.youtube.com/vi/QzXs2d02_8A/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/QzXs2d02_8A/hqdefault.jpg'" alt="Don't Let Me Down feat. GUMI music video thumbnail" loading="lazy" width="1280" height="720">
-                                    <span class="dld-image-tint" aria-hidden="true"></span>
-                                    <span class="dld-stamp dld-stamp-top" aria-hidden="true">OVERTIME // 10</span>
-                                    <span class="dld-stamp dld-stamp-bottom" aria-hidden="true">KEEP BREATHING_</span>
-                                    <span class="dld-crosshair" aria-hidden="true">+</span>
-                                </a>
-                                <div class="dld-scan-caption" aria-hidden="true"><span>IMAGE SIGNAL: UNSTABLE</span><span class="dld-signal-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>1280×720</span></div>
-                                <div class="dld-error-window" aria-hidden="true"><div class="dld-error-title"><span>⚠ SYSTEM MESSAGE</span><span>×</span></div><p>PLEASE KEEP BREATHING_</p><small>YOU ARE MORE THAN YOUR OUTPUT.</small></div>
-                            </div>
-                            <div class="project-info dld-project-info">
-                                <div class="dld-alert-strip" aria-hidden="true"><span class="dld-alert-blink">!</span> WORK CYCLE EXCEEDED SAFE LIMIT <span>ERR_041</span></div>
-                                <div class="dld-title-wrap">
-                                    <p class="dld-micro-label">SUBJECT: GUMI // CONDITION: OVERLOADED</p>
-                                    <a class="project-title dld-title" data-glitch="DON'T LET&#10;ME DOWN." href="https://www.youtube.com/watch?v=QzXs2d02_8A" target="_blank" rel="noopener noreferrer">DON'T LET<br><em>ME DOWN</em><span class="dld-title-period">.</span></a>
-                                    <span class="dld-title-side" aria-hidden="true">PLEASE<br>RESPOND_</span>
-                                </div>
-                                <div class="dld-status" aria-hidden="true">
-                                    <div class="dld-status-panel">
-                                        <div class="dld-terminal-line"><span>WORK CYCLE: ENDLESS</span><span class="dld-live-dot"><i></i> LIVE FEED</span></div>
-                                        <div class="dld-meter"><div><span>ENERGY</span><b>03%</b></div><span class="dld-meter-track"><i class="dld-energy-fill"></i></span></div>
-                                        <div class="dld-meter"><div><span>TASKS REMAINING</span><b>∞</b></div></div>
-                                    </div>
-                                    <span class="dld-meter-track dld-task-track"><i class="dld-task-fill"></i></span>
-                                </div>
-                                <p class="producer dld-credit">d0tc0mmie <span>//</span> PROJECT 10 <span>//</span> FEAT. GUMI</p>
-                                <p class="dld-tagline">NO BREAKS. NO EXIT.<br><strong>STILL ALIVE?</strong></p>
-                                <div class="dld-action-row">
-                                <div class="subtitle-language-badges" aria-label="Available subtitle languages"><span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span></div>
-                                <a class="project-watch-button project-watch-button--pink dld-watch-button" href="https://www.youtube.com/watch?v=QzXs2d02_8A" target="_blank" rel="noopener noreferrer" aria-label="Watch Don't Let Me Down featuring GUMI music video on YouTube"><span aria-hidden="true">▶</span> WATCH THE MV <span aria-hidden="true">↗</span></a>
-                                </div>
-                                <div class="dld-footer-row">
-                                    <span class="dld-side-note" aria-hidden="true">URGENT / UNFINISHED / UNABLE TO LOG OUT</span>
-                                    <button type="button" class="dld-effects-toggle" id="dldEffectsToggle" aria-pressed="true">EFFECTS: ON</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dld-motion-gate" id="dldMotionGate" role="alertdialog" aria-labelledby="dldGateTitle" aria-describedby="dldGateText">
-                            <div class="dld-gate-panel">
-                                <div class="dld-gate-tape"><span id="dldGateTitle">MOTION SAFETY</span></div>
-                                <div class="dld-gate-body" id="dldGateText">
-                                    <p class="dld-gate-lead"><span data-l="en">This card contains heavy effects.</span><span data-l="th">หน้านี้มีเอฟเฟกต์ภาพที่เยอะเป็นพิเศษ</span><span data-l="ja">このカードには強い視覚エフェクトが含まれています。</span></p>
-                                    <p class="dld-gate-hint"><span data-l="en">If you are sensitive to motion or flashing lights, please choose <b>NO</b>.</span><span data-l="th">หากคุณไวต่อการเคลื่อนไหวหรือแสง กรุณาเลือก <b>ไม่</b></span><span data-l="ja">動きや点滅する光に敏感な方は、<b>いいえ</b>を選んでください。</span></p>
-                                    <p class="dld-gate-q"><span data-l="en">Keep the effects?</span><span data-l="th">เปิดเอฟเฟกต์ต่อไปหรือไม่?</span><span data-l="ja">エフェクトを表示しますか？</span></p>
-                                </div>
-                                <div class="dld-gate-actions">
-                                    <button type="button" class="dld-gate-btn dld-gate-btn--yes" data-dld-effects="on"><span data-l="en">YES</span><span data-l="th">เปิด</span><span data-l="ja">はい</span></button>
-                                    <button type="button" class="dld-gate-btn dld-gate-btn--no" data-dld-effects="off"><span data-l="en">NO</span><span data-l="th">ไม่</span><span data-l="ja">いいえ</span></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dld-bottom-ticker" aria-hidden="true"><div><span>OVERTIME OVERTIME OVERTIME</span><b>✳</b><span>NO EXIT FOUND</span><b>✳</b><span>PLEASE KEEP BREATHING_</span><b>✳</b><span>OVERTIME OVERTIME OVERTIME</span><b>✳</b><span>NO EXIT FOUND</span><b>✳</b></div></div>
-                        <span class="dld-corner-code" aria-hidden="true">DLD-10 / 404: REST NOT FOUND</span>
-                    </article>
+<p class="producer yararara-producer">ABM <span aria-hidden="true">/</span> Project 4</p>
+<div aria-label="Available subtitle languages" class="subtitle-language-badges yararara-language-badges">
+<span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
+</div>
+<div class="yararara-action-row">
+<a aria-label="Watch YARARARA music video on YouTube" class="project-watch-button project-watch-button--pink yararara-watch-button" href="https://www.youtube.com/watch?v=T24rF_x0TmQ" rel="noopener noreferrer" target="_blank"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
+<div aria-label="One step further" class="yararara-lyric-mark"><span lang="ja">もう一歩先へ</span><small>ONE STEP FURTHER</small></div>
+</div>
+</div>
+</article>
+<!-- 04 — Baka Backer / Teto Birthday Chaos -->
+<article class="project baka-backer-project">
+<div class="baka-art-stage">
+<span aria-hidden="true" class="baka-sticker baka-sticker-top">✦ TETO DAY!! ✦</span>
+<span aria-hidden="true" class="baka-burst baka-burst-one">✹</span>
+<span aria-hidden="true" class="baka-burst baka-burst-two">✦</span>
+<span aria-hidden="true" class="baka-wave baka-wave-one"></span>
+<span aria-hidden="true" class="baka-wave baka-wave-two"></span>
+<a aria-label="Watch Baka Backer by Shü on YouTube" class="baka-poster-link" href="https://www.youtube.com/watch?v=eQsg69cWaac" rel="noopener noreferrer" target="_blank">
+<span class="baka-poster-tag baka-tag-utau">UTAU<br/>TETO</span>
+<img alt="Baka Backer artwork showing Kasane Teto UTAU and Synthesizer V versions with Japanese title typography" class="baka-poster-image" src="./assets/card-assets/baka-backer.webp"/>
+<span class="baka-poster-tag baka-tag-sv">SV<br/>TETO</span>
+</a>
+<span aria-hidden="true" class="baka-doodle baka-doodle-left">★</span>
+<span aria-hidden="true" class="baka-doodle baka-doodle-right">△</span>
+</div>
+<div class="project-info baka-project-info">
+<div class="baka-project-kicker"><span>PROJECT // 07</span><span class="baka-live-dot">● TETO FOREVER</span></div>
+<a class="project-title baka-project-title" href="https://www.youtube.com/watch?v=eQsg69cWaac" rel="noopener noreferrer" target="_blank">Baka Backer</a>
+<p class="baka-feature-credit">feat. Kasane Teto (UTAU &amp; SV)</p>
+<p class="producer baka-producer"><span aria-hidden="true" class="baka-play-triangle">▶</span> Shü</p>
+<div aria-label="Available subtitle languages" class="subtitle-language-badges baka-subtitle-badges">
+<span class="subtitle-language-badge subtitle-language-badge--baka-th">THAI SUBTITLE</span>
+</div>
+<div aria-hidden="true" class="baka-divider"></div>
+<p class="baka-meta">VOCALOID <span>/</span> UTAU <span>/</span> SYNTHESIZER V</p>
+<p class="baka-project-note">A birthday celebration for Teto — and for the fans who've been along for the ride. 💗</p>
+<a class="baka-watch-button" href="https://www.youtube.com/watch?v=eQsg69cWaac" rel="noopener noreferrer" target="_blank"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
+<div aria-hidden="true" class="baka-party-footer"><span>HAPPY BIRTHDAY, TETO!</span><span class="baka-confetti">✦ ✹ ★ ✦</span></div>
+</div>
+</article>
+<!-- 05 — DON'T LET ME DOWN: SYSTEM OVERLOAD / BURNOUT -->
+<article class="project dont-let-me-down-project dld-reboot">
+<div aria-hidden="true" class="dld-topbar">
+<span class="dld-window-dots"><i></i><i></i><i></i></span>
+<span>DLMD.exe // WORKSTATION 10</span>
+<span class="dld-topbar-status">● REC</span>
+</div>
+<div class="dld-main-grid">
+<div class="dld-hero-column">
+<div aria-hidden="true" class="dld-kicker-row"><span>VOCALOID MV ARCHIVE</span><span>FILE NO. 010 / 041</span></div>
+<a aria-label="Watch Don't Let Me Down featuring GUMI music video on YouTube" class="project-image-link dld-image-link" href="https://www.youtube.com/watch?v=QzXs2d02_8A" rel="noopener noreferrer" target="_blank">
+<img alt="Don't Let Me Down feat. GUMI music video thumbnail" height="720" loading="lazy" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/QzXs2d02_8A/hqdefault.jpg'" src="https://img.youtube.com/vi/QzXs2d02_8A/maxresdefault.jpg" width="1280"/>
+<span aria-hidden="true" class="dld-image-tint"></span>
+<span aria-hidden="true" class="dld-stamp dld-stamp-top">OVERTIME // 10</span>
+<span aria-hidden="true" class="dld-stamp dld-stamp-bottom">KEEP BREATHING_</span>
+<span aria-hidden="true" class="dld-crosshair">+</span>
+</a>
+<div aria-hidden="true" class="dld-scan-caption"><span>IMAGE SIGNAL: UNSTABLE</span><span class="dld-signal-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>1280×720</span></div>
+<div aria-hidden="true" class="dld-error-window"><div class="dld-error-title"><span>⚠ SYSTEM MESSAGE</span><span>×</span></div><p>PLEASE KEEP BREATHING_</p><small>YOU ARE MORE THAN YOUR OUTPUT.</small></div>
+</div>
+<div class="project-info dld-project-info">
+<div aria-hidden="true" class="dld-alert-strip"><span class="dld-alert-blink">!</span> WORK CYCLE EXCEEDED SAFE LIMIT <span>ERR_041</span></div>
+<div class="dld-title-wrap">
+<p class="dld-micro-label">SUBJECT: GUMI // CONDITION: OVERLOADED</p>
+<a class="project-title dld-title" data-glitch="DON'T LET
+ME DOWN." href="https://www.youtube.com/watch?v=QzXs2d02_8A" rel="noopener noreferrer" target="_blank">DON'T LET<br/><em>ME DOWN</em><span class="dld-title-period">.</span></a>
+<span aria-hidden="true" class="dld-title-side">PLEASE<br/>RESPOND_</span>
+</div>
+<div aria-hidden="true" class="dld-status">
+<div class="dld-status-panel">
+<div class="dld-terminal-line"><span>WORK CYCLE: ENDLESS</span><span class="dld-live-dot"><i></i> LIVE FEED</span></div>
+<div class="dld-meter"><div><span>ENERGY</span><b>03%</b></div><span class="dld-meter-track"><i class="dld-energy-fill"></i></span></div>
+<div class="dld-meter"><div><span>TASKS REMAINING</span><b>∞</b></div></div>
+</div>
+<span class="dld-meter-track dld-task-track"><i class="dld-task-fill"></i></span>
+</div>
+<p class="producer dld-credit">d0tc0mmie <span>//</span> PROJECT 10 <span>//</span> FEAT. GUMI</p>
+<p class="dld-tagline">NO BREAKS. NO EXIT.<br/><strong>STILL ALIVE?</strong></p>
+<div class="dld-action-row">
+<div aria-label="Available subtitle languages" class="subtitle-language-badges"><span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span></div>
+<a aria-label="Watch Don't Let Me Down featuring GUMI music video on YouTube" class="project-watch-button project-watch-button--pink dld-watch-button" href="https://www.youtube.com/watch?v=QzXs2d02_8A" rel="noopener noreferrer" target="_blank"><span aria-hidden="true">▶</span> WATCH THE MV <span aria-hidden="true">↗</span></a>
+</div>
+<div class="dld-footer-row">
+<span aria-hidden="true" class="dld-side-note">URGENT / UNFINISHED / UNABLE TO LOG OUT</span>
+<button aria-pressed="true" class="dld-effects-toggle" id="dldEffectsToggle" type="button">EFFECTS: ON</button>
+</div>
+</div>
+</div>
+<div aria-describedby="dldGateText" aria-labelledby="dldGateTitle" class="dld-motion-gate" id="dldMotionGate" role="alertdialog">
+<div class="dld-gate-panel">
+<div class="dld-gate-tape"><span id="dldGateTitle">MOTION SAFETY</span></div>
+<div class="dld-gate-body" id="dldGateText">
+<p class="dld-gate-lead"><span data-l="en">This card contains heavy effects.</span><span data-l="th">หน้านี้มีเอฟเฟกต์ภาพที่เยอะเป็นพิเศษ</span><span data-l="ja">このカードには強い視覚エフェクトが含まれています。</span></p>
+<p class="dld-gate-hint"><span data-l="en">If you are sensitive to motion or flashing lights, please choose <b>NO</b>.</span><span data-l="th">หากคุณไวต่อการเคลื่อนไหวหรือแสง กรุณาเลือก <b>ไม่</b></span><span data-l="ja">動きや点滅する光に敏感な方は、<b>いいえ</b>を選んでください。</span></p>
+<p class="dld-gate-q"><span data-l="en">Keep the effects?</span><span data-l="th">เปิดเอฟเฟกต์ต่อไปหรือไม่?</span><span data-l="ja">エフェクトを表示しますか？</span></p>
+</div>
+<div class="dld-gate-actions">
+<button class="dld-gate-btn dld-gate-btn--yes" data-dld-effects="on" type="button"><span data-l="en">YES</span><span data-l="th">เปิด</span><span data-l="ja">はい</span></button>
+<button class="dld-gate-btn dld-gate-btn--no" data-dld-effects="off" type="button"><span data-l="en">NO</span><span data-l="th">ไม่</span><span data-l="ja">いいえ</span></button>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="dld-bottom-ticker"><div><span>OVERTIME OVERTIME OVERTIME</span><b>✳</b><span>NO EXIT FOUND</span><b>✳</b><span>PLEASE KEEP BREATHING_</span><b>✳</b><span>OVERTIME OVERTIME OVERTIME</span><b>✳</b><span>NO EXIT FOUND</span><b>✳</b></div></div>
+<span aria-hidden="true" class="dld-corner-code">DLD-10 / 404: REST NOT FOUND</span>
+</article>
 <script>
 /* DON'T LET ME DOWN — motion-safety choice (remembered on this device) */
 (function () {
@@ -5026,291 +5190,323 @@ body::before{
   new MutationObserver(label).observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 })();
 </script>
+<!-- 06 — DO THAT AGAIN: OUT OF BOUNDS -->
+<article class="project do-again-project">
+<div class="do-again-stage">
+<a aria-label="Watch Do That Again by Teirrel" class="do-again-art-link" href="https://www.youtube.com/watch?v=jK-tt-3XJ7c" rel="noopener noreferrer" target="_blank">
+<img alt="Do That Again MV artwork: green-haired GUMI framed by black fish silhouettes in a vivid lime-green world" class="do-again-art" src="./assets/card-assets/do-that-again-art.webp"/>
+</a>
+<div aria-hidden="true" class="do-again-grid"></div>
+<div aria-hidden="true" class="do-again-scan"></div>
+<div aria-hidden="true" class="do-again-echo do-again-echo-one"></div>
+<div aria-hidden="true" class="do-again-echo do-again-echo-two"></div>
+<img alt="" aria-hidden="true" class="do-again-character" src="./assets/card-assets/do-that-again-character.webp"/>
+<span aria-hidden="true" class="do-again-chip do-again-chip-top">LOOP SIGNAL <i></i></span>
+<span aria-hidden="true" class="do-again-chip do-again-chip-bottom">FRAME // 011</span>
+<span aria-hidden="true" class="do-again-cross do-again-cross-a">✳</span>
+<span aria-hidden="true" class="do-again-cross do-again-cross-b">+</span>
+</div>
+<div class="project-info do-again-info">
+<p class="do-again-kicker">OUT OF BOUNDS / VISUAL ARCHIVE</p>
+<a class="project-title do-again-title" href="https://www.youtube.com/watch?v=jK-tt-3XJ7c" rel="noopener noreferrer" target="_blank">Do That Again ft. GUMI</a>
+<p class="producer">Teirrel | Project 11</p>
+<div aria-label="Available subtitles" class="do-again-subtitle-label">✳ THAI SUBTITLE ✳</div>
+<a aria-label="Watch Do That Again music video on YouTube" class="do-again-watch-link" href="https://www.youtube.com/watch?v=jK-tt-3XJ7c" rel="noopener noreferrer" target="_blank">WATCH MV <span aria-hidden="true">↗</span></a>
+<div aria-label="Visual effects" class="do-again-tags">
+<span>LOOP ECHO</span><span>PIXEL DRIFT</span><span>GUMI / GREEN WORLD</span>
+</div>
+</div>
+</article>
+<!-- 07 -->
+<div class="project letterplane-project">
+<a class="project-image-link" href="https://www.youtube.com/watch?v=m8jn4eSfVBM" rel="noopener noreferrer" target="_blank">
+<img alt="Letterplane — Kasane Teto sending a paper plane into a summer-blue sky" src="./assets/card-assets/letterplane-cover.webp"/>
+<span class="lp-screen-label">SUMMER MEMORY / 015</span><span aria-hidden="true" class="lp-plane">➤</span></a>
+<div class="project-info">
+<div aria-label="Available subtitles" class="lp-sticky-note">THAI<br/>SUBTITLE</div>
+<a class="project-title" href="https://www.youtube.com/watch?v=m8jn4eSfVBM" rel="noopener noreferrer" target="_blank">
+<span class="lp-title-jp">飛行手紙</span><span class="lp-title-en">Letterplane</span>
+</a>
+<p class="producer">Yowane | Project 15</p>
+<p class="lp-deck">A letter that never found its address. A summer that never really left.</p>
+<div class="lp-meta"><span>飛行手紙</span><span>UNSENT / ARCHI<span class="lp-stamp-anchor">VE 015</span></span></div>
+<div class="lp-memory-strip">
+<img alt="Letterplane scrapbook memory: Teto, blue sky and telephone wires" loading="lazy" src="./assets/card-assets/letterplane-memory.webp"/>
+<span>MEMORY FRAGMENT 01 <i>— the sky was painfully blue</i></span>
+</div>
+<button aria-controls="lp-letter-contents" aria-expanded="false" class="lp-letter-toggle" type="button"><span aria-hidden="true" class="lp-toggle-icon">✉</span><span>Tap to unfold the letter</span><span aria-hidden="true" class="lp-toggle-arrow">↗</span></button>
+<div class="lp-letter-contents" hidden="" id="lp-letter-contents">
+<p class="lp-letter-heading">A LETTER THAT NEVER FOUND ITS ADDRESS</p>
+<figure class="lp-writing-photo-wrap"><img alt="Teto writing the letter in the warm afternoon shade" class="lp-writing-photo" src="./assets/card-assets/letterplane-writing.webp"/><figcaption>the words I could never send</figcaption></figure>
+<p>“Do you remember why we became friends? Because we were the same height.”</p>
+<p>We grew up, made new friends, and drifted apart without a fight or a goodbye. The letters kept piling up, with nowhere to be sent.</p>
+<p class="lp-letter-end">If these folded words could become a song, may they fly far away toward you.</p>
+</div>
+</div>
+</div>
+<!-- 08 -->
+<!-- 10 — ANGER MANAGEMENT / HR INCIDENT REPORT -->
+<article aria-label="Anger Management featuring Miyamai Moca, Project 19" class="project anger-report-project">
+  <header class="anger-report-header">
+    <div class="anger-report-file-number">
+      <span>CASE FILE</span>
+      <strong>019</strong>
+    </div>
+    <div class="anger-report-header-title">
+      <span class="anger-report-eyebrow">HUMAN RESOURCES DEPARTMENT</span>
+      <strong>EMPLOYEE INCIDENT REPORT</strong>
+      <span class="anger-report-jp-small">社員感情インシデント報告書</span>
+    </div>
+    <div class="anger-report-priority" aria-label="Priority high">
+      <span>PRIORITY</span>
+      <strong><i aria-hidden="true">!</i> HIGH</strong>
+    </div>
+  </header>
 
+  <!-- Compact cover: the evidence image and report sections stay sealed until requested. -->
+  <div class="anger-report-main">
+    <section class="anger-report-subject" aria-label="Project details">
+      <div class="anger-report-subject-intro">
+        <p class="anger-report-section-label">SUBJECT / 件名</p>
+        <h3 class="anger-report-title-jp" lang="ja">アンガーマネジメント</h3>
+        <p class="anger-report-title-en">ANGER MANAGEMENT</p>
+        <div class="anger-report-rule"></div>
+      </div>
 
+      <div class="anger-report-subject-meta">
+        <div class="anger-report-field">
+          <span>VOCAL / 歌唱</span>
+          <strong lang="ja">宮舞モカ</strong>
+          <small>MIYAMAI MOCA</small>
+        </div>
+        <div class="anger-report-field">
+          <span>MUSIC &amp; LYRICS / 音楽・作詞</span>
+          <strong>Adeliae</strong>
+        </div>
+        <div class="anger-report-meta-grid">
+          <div class="anger-report-field">
+            <span>PROJECT NO.</span>
+            <strong>19</strong>
+          </div>
+          <div class="anger-report-field anger-report-language">
+            <span>SUBTITLE</span>
+            <strong>Thai <b aria-hidden="true">🇹🇭</b></strong>
+          </div>
+        </div>
+        <div class="anger-report-stamp" aria-hidden="true">
+          <strong lang="ja">要注意</strong>
+          <span>HANDLE WITH CARE</span>
+        </div>
+        <p class="anger-report-side-note"><span aria-hidden="true">✳</span> A routine workday. An increasingly non-routine emotional state.</p>
+      </div>
+    </section>
+  </div>
 
-                    <!-- 06 — DO THAT AGAIN: OUT OF BOUNDS -->
-                    <article class="project do-again-project">
-                        <div class="do-again-stage">
-                            <a class="do-again-art-link" href="https://www.youtube.com/watch?v=jK-tt-3XJ7c" target="_blank" rel="noopener noreferrer" aria-label="Watch Do That Again by Teirrel">
-                                <img class="do-again-art" src="./assets/card-assets/do-that-again-art.webp" alt="Do That Again MV artwork: green-haired GUMI framed by black fish silhouettes in a vivid lime-green world">
-                            </a>
-                            <div class="do-again-grid" aria-hidden="true"></div>
-                            <div class="do-again-scan" aria-hidden="true"></div>
-                            <div class="do-again-echo do-again-echo-one" aria-hidden="true"></div>
-                            <div class="do-again-echo do-again-echo-two" aria-hidden="true"></div>
-                            <img class="do-again-character" src="./assets/card-assets/do-that-again-character.webp" alt="" aria-hidden="true">
-                            <span class="do-again-chip do-again-chip-top" aria-hidden="true">LOOP SIGNAL <i></i></span>
-                            <span class="do-again-chip do-again-chip-bottom" aria-hidden="true">FRAME // 011</span>
-                            <span class="do-again-cross do-again-cross-a" aria-hidden="true">✳</span>
-                            <span class="do-again-cross do-again-cross-b" aria-hidden="true">+</span>
-                        </div>
-                        <div class="project-info do-again-info">
-                            <p class="do-again-kicker">OUT OF BOUNDS / VISUAL ARCHIVE</p>
-                            <a class="project-title do-again-title" href="https://www.youtube.com/watch?v=jK-tt-3XJ7c" target="_blank" rel="noopener noreferrer">Do That Again ft. GUMI</a>
-                            <p class="producer">Teirrel | Project 11</p>
-                            <div class="do-again-subtitle-label" aria-label="Available subtitles">✳ THAI SUBTITLE ✳</div>
-                            <a class="do-again-watch-link" href="https://www.youtube.com/watch?v=jK-tt-3XJ7c" target="_blank" rel="noopener noreferrer" aria-label="Watch Do That Again music video on YouTube">WATCH MV <span aria-hidden="true">↗</span></a>
-                            <div class="do-again-tags" aria-label="Visual effects">
-                                <span>LOOP ECHO</span><span>PIXEL DRIFT</span><span>GUMI / GREEN WORLD</span>
-                            </div>
-                        </div>
-                    </article>
+  <details class="anger-report-disclosure">
+    <summary class="anger-report-toggle">
+      <span class="anger-report-toggle-icon anger-report-toggle-icon-closed" aria-hidden="true">▤</span>
+      <span class="anger-report-toggle-copy anger-report-toggle-copy-closed">
+        <strong>OPEN INCIDENT DOSSIER</strong>
+        <small>TAP TO REVIEW EVIDENCE + REPORT SECTIONS 01—03</small>
+      </span>
+      <span class="anger-report-toggle-icon anger-report-toggle-icon-open" aria-hidden="true">×</span>
+      <span class="anger-report-toggle-copy anger-report-toggle-copy-open">
+        <strong>CLOSE INCIDENT FILE</strong>
+        <small>HIDE EVIDENCE &amp; REPORT DETAILS</small>
+      </span>
+      <span class="anger-report-toggle-arrow" aria-hidden="true">↘</span>
+    </summary>
 
+    <div class="anger-report-details" id="anger-report-details">
+      <section class="anger-report-evidence" aria-label="Music video evidence panel">
+        <div class="anger-report-evidence-bar">
+          <span><i aria-hidden="true"></i> EVIDENCE / MV FRAME</span>
+          <span>PLAYBACK <b>READY</b></span>
+        </div>
+        <a class="anger-report-evidence-link" href="https://www.youtube.com/watch?v=L9Yob_ylEAQ" aria-label="Watch Anger Management by Adeliae featuring Miyamai Moca on YouTube" rel="noopener noreferrer" target="_blank">
+          <img class="anger-report-evidence-image" src="https://img.youtube.com/vi/L9Yob_ylEAQ/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/L9Yob_ylEAQ/hqdefault.jpg'" alt="Anger Management MV frame: an overwhelmed anime office worker, a six-second timer, and a red anger meter" width="1280" height="720" loading="lazy" decoding="async" />
+          <span class="anger-report-image-tag anger-report-image-tag-left">MV EVIDENCE // 019</span>
+          <span class="anger-report-image-tag anger-report-image-tag-right">6-SECOND RULE</span>
+          <span class="anger-report-play" aria-hidden="true">▶</span>
+        </a>
+        <div class="anger-report-evidence-footer">
+          <span>WORKPLACE PRESSURE / EMOTIONAL CONTROL</span>
+          <span>OPEN ORIGINAL MV <b aria-hidden="true">↗</b></span>
+        </div>
+        <div class="anger-report-status-row">
+          <div>
+            <span>EMPLOYEE EMOTIONAL STATUS</span>
+            <strong><i aria-hidden="true"></i> NEAR THE LIMIT</strong>
+          </div>
+          <div class="anger-report-meter" role="img" aria-label="Illustrative anger meter approaching the limit">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </section>
 
-                    <!-- 07 -->
-                    <div class="project letterplane-project">
+      <div class="anger-report-lower">
+        <section class="anger-report-paper-block anger-report-summary">
+          <div class="anger-report-block-heading"><span>01 / INCIDENT SUMMARY</span><span>概要</span></div>
+          <p class="anger-report-jp-copy" lang="ja">過重労働、不合理な納期、認められない努力。怒りを抑えるために6秒待つ——その余裕さえ、現実の職場では簡単に生まれない。</p>
+          <p>Overwork, unrealistic deadlines, and effort that goes unrecognized. The six-second rule sounds simple—until the next demand arrives before the last one is resolved.</p>
+          <div class="anger-report-summary-foot"><span>CASE NOTE</span><strong>FRUSTRATION IS NOT A BUG.</strong></div>
+        </section>
 
-                        <a
-                            class="project-image-link"
-                            href="https://www.youtube.com/watch?v=m8jn4eSfVBM"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img
-                                src="./assets/card-assets/letterplane-cover.webp"
-                                alt="Letterplane — Kasane Teto sending a paper plane into a summer-blue sky"
-                            >
-                        <span class="lp-screen-label">SUMMER MEMORY / 015</span><span class="lp-plane" aria-hidden="true">➤</span></a>
+        <section class="anger-report-paper-block anger-report-triggers">
+          <div class="anger-report-block-heading"><span>02 / REPORTED TRIGGERS</span><span>要因</span></div>
+          <div class="anger-report-trigger-row"><span class="anger-report-trigger-index">A</span><div><strong>Chronic overtime</strong><small>長時間労働</small></div><em>FATIGUE</em></div>
+          <div class="anger-report-trigger-row"><span class="anger-report-trigger-index">B</span><div><strong>Unreasonable deadlines</strong><small>無理な納期</small></div><em>PRESSURE</em></div>
+          <div class="anger-report-trigger-row"><span class="anger-report-trigger-index">C</span><div><strong>Unfair criticism</strong><small>理不尽な指摘</small></div><em>ANGER</em></div>
+          <div class="anger-report-trigger-row"><span class="anger-report-trigger-index">D</span><div><strong>No time to recover</strong><small>休息の不足</small></div><em>OVERLOAD</em></div>
+          <p class="anger-report-micro-note">OBSERVATION: STRESSORS MAY ACCUMULATE.</p>
+        </section>
 
-                        <div class="project-info">
-                            <div class="lp-sticky-note" aria-label="Available subtitles">THAI<br>SUBTITLE</div>
+        <section class="anger-report-paper-block anger-report-protocol">
+          <div class="anger-report-block-heading"><span>03 / ANGER MANAGEMENT PROTOCOL</span><span>対処</span></div>
+          <div class="anger-report-rule-title"><span>RECOMMENDED RESPONSE</span><strong>6 SEC.</strong></div>
+          <ol>
+            <li><span>01</span><div><strong>Pause before reacting.</strong><small>まず6秒待つ。</small></div></li>
+            <li><span>02</span><div><strong>Take a slow breath.</strong><small>深呼吸をする。</small></div></li>
+            <li><span>03</span><div><strong>Respond when ready.</strong><small>落ち着いてから返答する。</small></div></li>
+          </ol>
+          <div class="anger-report-protocol-warning"><b aria-hidden="true">!</b><span>THEORY IS SIMPLE. THE WORKDAY IS NOT.</span></div>
+        </section>
+      </div>
 
-                            <a
-                                class="project-title"
-                                href="https://www.youtube.com/watch?v=m8jn4eSfVBM"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <span class="lp-title-jp">飛行手紙</span><span class="lp-title-en">Letterplane</span>
-                            </a>
-
-                            <p class="producer">Yowane | Project 15</p>
-                            <p class="lp-deck">A letter that never found its address. A summer that never really left.</p>
-                            <div class="lp-meta"><span>飛行手紙</span><span>UNSENT / ARCHI<span class="lp-stamp-anchor">VE 015</span></span></div>
-                            <div class="lp-memory-strip">
-                                <img src="./assets/card-assets/letterplane-memory.webp" alt="Letterplane scrapbook memory: Teto, blue sky and telephone wires" loading="lazy">
-                                <span>MEMORY FRAGMENT 01 <i>— the sky was painfully blue</i></span>
-                            </div>
-                            <button class="lp-letter-toggle" type="button" aria-expanded="false" aria-controls="lp-letter-contents"><span class="lp-toggle-icon" aria-hidden="true">✉</span><span>Tap to unfold the letter</span><span class="lp-toggle-arrow" aria-hidden="true">↗</span></button>
-                            <div class="lp-letter-contents" id="lp-letter-contents" hidden>
-                                <p class="lp-letter-heading">A LETTER THAT NEVER FOUND ITS ADDRESS</p>
-                                <figure class="lp-writing-photo-wrap"><img class="lp-writing-photo" src="./assets/card-assets/letterplane-writing.webp" alt="Teto writing the letter in the warm afternoon shade"><figcaption>the words I could never send</figcaption></figure>
-                                <p>“Do you remember why we became friends? Because we were the same height.”</p>
-                                <p>We grew up, made new friends, and drifted apart without a fight or a goodbye. The letters kept piling up, with nowhere to be sent.</p>
-                                <p class="lp-letter-end">If these folded words could become a song, may they fly far away toward you.</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                    <!-- 08 -->
-                    <div class="project">
-
-                        <a
-                            class="project-image-link"
-                            href="https://www.youtube.com/watch?v=L9Yob_ylEAQ"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img
-                                src="https://img.youtube.com/vi/L9Yob_ylEAQ/maxresdefault.jpg"
-                                onerror="this.onerror=null;this.src='https://img.youtube.com/vi/L9Yob_ylEAQ/hqdefault.jpg'"
-                                alt="Anger Management thumbnail"
-                                loading="lazy"
-                                width="1280" height="720"
-                            >
-                        </a>
-
-                        <div class="project-info">
-
-                            <a
-                                class="project-title"
-                                href="https://www.youtube.com/watch?v=L9Yob_ylEAQ"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Anger Management / Miyamai Moca
-                            </a>
-
-                            <p class="producer">
-                                Adeliae | Project 19
-                            </p>
-                            <div class="subtitle-language-badges" aria-label="Available subtitle languages">
-                                <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
-                            </div>
-                            <a class="project-watch-button project-watch-button--pink" href="https://www.youtube.com/watch?v=L9Yob_ylEAQ" target="_blank" rel="noopener noreferrer" aria-label="Watch Anger Management / Miyamai Moca music video on YouTube"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- 09 -->
-                    <div class="project">
-
-                        <a
-                            class="project-image-link"
-                            href="https://www.youtube.com/watch?v=cWWrWLTQyE8"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img
-                                src="https://img.youtube.com/vi/cWWrWLTQyE8/maxresdefault.jpg"
-                                onerror="this.onerror=null;this.src='https://img.youtube.com/vi/cWWrWLTQyE8/hqdefault.jpg'"
-                                alt="ミューテーション thumbnail"
-                                loading="lazy"
-                                width="1280" height="720"
-                            >
-                        </a>
-
-                        <div class="project-info">
-
-                            <a
-                                class="project-title"
-                                href="https://www.youtube.com/watch?v=cWWrWLTQyE8"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                ミューテーション
-                            </a>
-
-                            <p class="producer">
-                                Mokurock | Project 20
-                            </p>
-                            <div class="subtitle-language-badges" aria-label="Available subtitle languages">
-                                <span class="subtitle-language-badge subtitle-language-badge--en">ENGLISH</span>
-                                <span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
-                            </div>
-                            <a class="project-watch-button project-watch-button--pink" href="https://www.youtube.com/watch?v=cWWrWLTQyE8" target="_blank" rel="noopener noreferrer" aria-label="Watch ミューテーション music video on YouTube"><span aria-hidden="true">▶</span> WATCH MV <span aria-hidden="true">↗</span></a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-
-
-            <!-- =========================
+      <div class="anger-report-footer">
+        <div class="anger-report-footer-note"><span>PERSONAL NOTE / メモ</span><strong lang="ja">がんばりすぎないでね。</strong><small>PLEASE DON'T PUSH YOURSELF TOO FAR.</small></div>
+        <div class="anger-report-footer-status"><span>FILE STATUS</span><strong><i aria-hidden="true"></i> OPEN / UNDER REVIEW</strong><small>PROJECT 19 · THAI SUBTITLES</small></div>
+        <a class="anger-report-watch" href="https://www.youtube.com/watch?v=L9Yob_ylEAQ" rel="noopener noreferrer" target="_blank" aria-label="Watch Anger Management by Adeliae featuring Miyamai Moca on YouTube"><span class="anger-report-watch-top">ATTACHED MEDIA</span><strong><span aria-hidden="true">▶</span> WATCH THE MV <span aria-hidden="true">↗</span></strong><small>CAUTION: MAY TRIGGER WORKPLACE FLASHBACKS.</small></a>
+      </div>
+    </div>
+  </details>
+</article>
+<!-- 09 — MUTATION / HORIZON: centered MV + sea-glass reflection card -->
+<article class="project mutation-horizon-card">
+<section aria-label="ミューテーション music video thumbnail reflected on a sea-glass surface" class="mutation-horizon-visual">
+<div class="mutation-horizon-sky">
+<div aria-hidden="true" class="mutation-horizon-visual-meta">
+<span><i class="mutation-meta-dot"></i> HORIZON STUDY <b>/</b> 01</span>
+<span>LIVE ACTION <b>×</b> 2D</span>
+</div>
+<a aria-label="Watch ミューテーション by もくろ on YouTube" class="mutation-horizon-thumb" href="https://www.youtube.com/watch?v=cWWrWLTQyE8" rel="noopener noreferrer" target="_blank">
+<img alt="ミューテーション music video still showing an illustrated girl on a real school walkway" decoding="async" height="720" loading="lazy" src="https://img.youtube.com/vi/cWWrWLTQyE8/maxresdefault.jpg" width="1280"/>
+<span aria-hidden="true" class="mutation-thumb-corner mutation-thumb-corner-left">MV FRAME / 020</span>
+<span aria-hidden="true" class="mutation-thumb-corner mutation-thumb-corner-right">未知の未来 <i>///</i></span>
+</a>
+</div>
+<div aria-hidden="true" class="mutation-horizon-water">
+<img alt="" class="mutation-horizon-reflection" decoding="async" height="720" loading="lazy" src="https://img.youtube.com/vi/cWWrWLTQyE8/maxresdefault.jpg" width="1280"/>
+<span class="mutation-water-shimmer mutation-water-shimmer-one"></span>
+<span class="mutation-water-shimmer mutation-water-shimmer-two"></span>
+<span class="mutation-waterline"></span>
+</div>
+</section>
+<div class="project-info mutation-horizon-info">
+<div class="mutation-horizon-copy">
+<p class="mutation-horizon-kicker"><span aria-hidden="true" class="mutation-horizon-kicker-line"></span> A LINE TO HOLD ONTO <span class="mutation-horizon-kicker-slash">/</span> 01</p>
+<a class="project-title mutation-horizon-title" href="https://www.youtube.com/watch?v=cWWrWLTQyE8" rel="noopener noreferrer" target="_blank">
+<span class="mutation-horizon-title-jp">ミューテーション</span>
+<span class="mutation-horizon-title-en">MUTATION</span>
+</a>
+<p class="mutation-horizon-vocal">初音ミク <span aria-hidden="true">·</span> HATSUNE MIKU</p>
+<p class="producer mutation-horizon-producer">Mokurock <span aria-hidden="true">|</span> Project 20</p>
+<blockquote class="mutation-horizon-lyric">
+<span class="mutation-horizon-lyric-jp">どこまでも迷っていいから</span>
+<span class="mutation-horizon-lyric-en">It’s okay to be lost, no matter how far.</span>
+</blockquote>
+</div>
+<div class="mutation-horizon-actions">
+<a aria-label="Watch ミューテーション music video on YouTube" class="project-watch-button mutation-horizon-watch-button" href="https://www.youtube.com/watch?v=cWWrWLTQyE8" rel="noopener noreferrer" target="_blank">
+<span aria-hidden="true" class="mutation-watch-icon">▶</span>
+<span class="mutation-watch-copy"><small>OFFICIAL MUSIC VIDEO</small><strong>WATCH THE MV</strong></span>
+<span aria-hidden="true" class="mutation-watch-arrow">↗</span>
+</a>
+<div aria-label="Available subtitle languages" class="subtitle-language-badges mutation-horizon-badges">
+<span class="subtitle-language-badge subtitle-language-badge--en">ENGLISH</span>
+<span class="subtitle-language-badge subtitle-language-badge--th">THAI SUBTITLE</span>
+</div>
+<p class="mutation-horizon-action-note">LET THE HORIZON STAY UNKNOWN.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- =========================
                  CONTACT
             ========================= -->
-
-            <section class="contact-section" id="contact">
-
-                <p class="contact-label">
+<section class="contact-section" id="contact">
+<p class="contact-label">
                     C O N T A C T
                 </p>
-
-                <h2>
+<h2>
                     Got an MV that needs subtitles?
                 </h2>
-
-                <p class="contact-description">
+<p class="contact-description">
                     Drop me a message! If you want Thai or English subtitles for your song, I'd be happy to help. 🎬
                 </p>
-
-                <div class="contact-links">
-
-                    <!-- Email -->
-                    <a
-                        href="mailto:doubletp90@gmail.com"
-                        class="contact-button"
-                    >
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M2 5h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.3l10 6.2 10-6.2V7H2Zm20 10V9.7l-9.5 5.9a1 1 0 0 1-1 0L2 9.7V17h20Z"/>
-                        </svg>
+<div class="contact-links">
+<!-- Email -->
+<a class="contact-button" href="mailto:doubletp90@gmail.com">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M2 5h20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.3l10 6.2 10-6.2V7H2Zm20 10V9.7l-9.5 5.9a1 1 0 0 1-1 0L2 9.7V17h20Z"></path>
+</svg>
                         Email ↗
                     </a>
-
-                    <!-- Discord -->
-                    <a
-                        href="https://discord.com/users/759341756025798656"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-button"
-                    >
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M19.5 5.2A18.6 18.6 0 0 0 15 3.8l-.6 1.2a16.5 16.5 0 0 0-4.8 0L9 3.8a18.6 18.6 0 0 0-4.5 1.4C1.7 9.4 1 13.5 1.3 17.6A18.4 18.4 0 0 0 6.8 20l1.3-1.7a11 11 0 0 1-1.9-.9l.5-.4a13.1 13.1 0 0 0 10.6 0l.5.4c-.6.4-1.3.7-1.9.9l1.3 1.7a18.4 18.4 0 0 0 5.5-2.4c.4-4.8-.7-8.8-3.7-12.4ZM8.7 15.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"/>
-                        </svg>
+<!-- Discord -->
+<a class="contact-button" href="https://discord.com/users/759341756025798656" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M19.5 5.2A18.6 18.6 0 0 0 15 3.8l-.6 1.2a16.5 16.5 0 0 0-4.8 0L9 3.8a18.6 18.6 0 0 0-4.5 1.4C1.7 9.4 1 13.5 1.3 17.6A18.4 18.4 0 0 0 6.8 20l1.3-1.7a11 11 0 0 1-1.9-.9l.5-.4a13.1 13.1 0 0 0 10.6 0l.5.4c-.6.4-1.3.7-1.9.9l1.3 1.7a18.4 18.4 0 0 0 5.5-2.4c.4-4.8-.7-8.8-3.7-12.4ZM8.7 15.3c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Zm6.6 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.8.9 1.8 2-.8 2-1.8 2Z"></path>
+</svg>
                         Discord ↗
                     </a>
-
-                    <!-- X -->
-                    <a
-                        href="https://x.com/Pack0pm"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="contact-button"
-                    >
-                        <svg viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.4L2.8 2h6.4l4.4 5.8L18.9 2Zm-1.1 17.7h1.7L8.2 4.2H6.4l11.4 15.5Z"/>
-                        </svg>
+<!-- X -->
+<a class="contact-button" href="https://x.com/Pack0pm" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24">
+<path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.4L2.8 2h6.4l4.4 5.8L18.9 2Zm-1.1 17.7h1.7L8.2 4.2H6.4l11.4 15.5Z"></path>
+</svg>
                         X ↗
                     </a>
-
-                </div>
-
-            </section>
-
-
-            <!-- =========================
+</div>
+</section>
+<!-- =========================
                  IMPORTANT INFORMATION
             ========================= -->
-
-            <section>
-
-                <div class="important">
-
-                    <h2 class="section-title">
+<section>
+<div class="important">
+<h2 class="section-title">
                         Completely Important Information <span>🥶</span>
-                    </h2>
-
-                    <p>
+</h2>
+<p>
                         I love Aegisub.
                     </p>
-
-                    <p>
+<p>
                         I don't know why.
                     </p>
-
-                    <p>
+<p>
                         It has consumed my life.
                     </p>
-
-                    <div class="quote">
+<div class="quote">
 
                         😭🙏
 
-                        <br><br>
+                        <br/><br/>
 
                         "Just one more MV."
 
-                        <br>
+                        <br/>
 
                         — Me, approximately uncountable subtitle lines later
 
                     </div>
-
-                </div>
-
-            </section>
-
-        </div>
-
-    </div>
-
-
-    <footer>
+</div>
+</section>
+</div>
+</div>
+<footer>
         Made with subtitles, Aegisub, and questionable amounts of time.
     </footer>
-
 </div>
-
 <script>
     const greetings = [
     "Hello",
@@ -5567,7 +5763,6 @@ window.addEventListener("load", updateScrollHint);
 })();
 
 </script>
-
 <script id="qa-navigation-transition">
 (() => {
   // The transition overlay is declared near the end of <body>, so wait
@@ -5608,7 +5803,6 @@ window.addEventListener("load", updateScrollHint);
   }
 })();
 </script>
-
 <script id="production-1000x-js">
 (() => {
   "use strict";
@@ -5779,7 +5973,6 @@ window.addEventListener("load", updateScrollHint);
   });
 })();
 </script>
-
 <script>
 /* =========================
    PACKPM LANGUAGE SWITCHER
@@ -6685,7 +6878,6 @@ window.addEventListener("load", updateScrollHint);
 
 })();
 </script>
-
 <script id="packpm-100x-js">
 (() => {
   "use strict";
@@ -6901,8 +7093,6 @@ window.addEventListener("load", updateScrollHint);
   }
 })();
 </script>
-
-
 <script id="packpm-thai-mode-js">
 (() => {
   const applyThaiMode = () => {
@@ -6918,8 +7108,6 @@ window.addEventListener("load", updateScrollHint);
   });
 })();
 </script>
-
-
 <script id="packpm-10x-scroll-js">
 (() => {
   "use strict";
@@ -6943,12 +7131,9 @@ window.addEventListener("load", updateScrollHint);
   window.addEventListener("load", updateScrollProgress, { once: true });
 })();
 </script>
-
-
-<div class="qa-transition" id="qaTransition" aria-hidden="true">
-  <div class="qa-transition-core"><span>OPENING</span><strong>Q&A</strong><span>PERSONAL ARCHIVE</span></div>
+<div aria-hidden="true" class="qa-transition" id="qaTransition">
+<div class="qa-transition-core"><span>OPENING</span><strong>Q&amp;A</strong><span>PERSONAL ARCHIVE</span></div>
 </div>
-
 <style id="packpm-final-polish-2026-10-24">
 /* Final targeted polish: keep the scrapbook Letterplane base intact. */
 /* XP-window titlebar and featured metadata share a consistent line height. */
@@ -6968,9 +7153,7 @@ window.addEventListener("load", updateScrollHint);
 /* No .avi badge/label on Do That Again. */
 #my-works .do-again-project .avi-label,#my-works .do-again-project .avi-badge,#my-works .do-again-project [class*="avi-label"],#my-works .do-again-project [class*="avi-badge"]{display:none!important;}
 </style>
-
 <script src="teto.js"></script>
-
 <script id="letterplane-layout-adapter-v2">
 (() => {
  const memoryPhotos = {
@@ -7027,8 +7210,6 @@ window.addEventListener("load", updateScrollHint);
  else initLetterplaneLayout();
 })();
 </script>
-
-
 <style id="project-watch-buttons-yarara-dld">
 /* Native, crisp watch links for the regular project cards. */
 #my-works .project-watch-button {
@@ -7068,8 +7249,6 @@ window.addEventListener("load", updateScrollHint);
   #my-works .project-watch-button { transition: none; }
 }
 </style>
-
-
 <style id="dont-let-me-down-overtime-ui">
 /* DON'T LET ME DOWN — replaceable, thumbnail-led overtime interface. */
 #my-works .dont-let-me-down-project.dld-reboot{--dld-blue:#123dff;--dld-pink:#ff39bd;--dld-lime:#eaff00;--dld-mint:#20e0c0;position:relative;display:block;overflow:hidden;isolation:isolate;background:#07102c;color:#f7f9ff;border:2px solid var(--dld-blue);box-shadow:8px 8px 0 var(--dld-pink),0 0 30px rgba(18,61,255,.2);}
@@ -7218,7 +7397,6 @@ window.addEventListener("load", updateScrollHint);
 }
 
 </style>
-
 <style id="dld-polish">
 /* DON'T LET ME DOWN — readability, status block, labels and the motion-safety gate.
    Loaded after the original card styles, so these rules win. */
@@ -7318,7 +7496,798 @@ html[lang="ja"] #my-works .dld-motion-gate [data-l="ja"]{display:inline}
 #my-works .dld-reboot.dld-calm .dld-title:focus-visible::before,#my-works .dld-reboot.dld-calm .dld-title:focus-visible::after{opacity:0}
 #my-works .dld-reboot.dld-calm .dld-bottom-ticker>div{transform:none}
 </style>
+<style id="yararara-red-signal-poster-v1">
+/* YARARARA — RED SIGNAL. Compact Japanese music-poster identity, scoped to this card. */
+#my-works .yararara-project{
+  --yr-red:#f01926;
+  --yr-hot:#ff2937;
+  --yr-ink:#09090d;
+  --yr-paper:#f4f0ed;
+  position:relative;
+  isolation:isolate;
+  grid-column:1 / -1;
+  display:grid!important;
+  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  align-items:stretch;
+  gap:clamp(16px,2.4vw,27px);
+  min-width:0;
+  padding:clamp(8px,1.1vw,12px)!important;
+  overflow:hidden;
+  border:1px solid rgba(240,25,38,.72)!important;
+  border-radius:5px!important;
+  background:
+    linear-gradient(118deg,rgba(240,25,38,.045),transparent 34%),
+    linear-gradient(105deg,#09090d 0%,#101015 58%,#0a0a0e 100%)!important;
+  color:var(--yr-paper);
+  box-shadow:5px 5px 0 var(--yr-red),0 15px 35px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.045)!important;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important;
+}
+#my-works .yararara-project::before{
+  content:"ヤラララ";
+  position:absolute;
+  z-index:-1;
+  right:1.2%;
+  top:50%;
+  transform:translateY(-50%);
+  color:rgba(240,25,38,.08);
+  font:900 clamp(3.2rem,8vw,7.5rem)/.9 system-ui,"Noto Sans JP",sans-serif;
+  letter-spacing:-.09em;
+  writing-mode:vertical-rl;
+  pointer-events:none;
+  user-select:none;
+}
+#my-works .yararara-project::after{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:3px;
+  background:linear-gradient(var(--yr-red) 0 32%,transparent 32% 38%,var(--yr-red) 38% 74%,transparent 74% 80%,var(--yr-red) 80%);
+  opacity:.9;
+  pointer-events:none;
+}
+#my-works .yararara-project:hover{
+  transform:translateY(-2px)!important;
+  border-color:#ff4c55!important;
+  box-shadow:6px 7px 0 var(--yr-red),0 19px 42px rgba(0,0,0,.34),0 0 22px rgba(240,25,38,.09)!important;
+}
+#my-works .yararara-poster-frame{
+  position:relative;
+  align-self:stretch;
+  min-width:0;
+  display:flex!important;
+  flex-direction:column;
+  justify-content:center;
+  gap:0;
+  overflow:hidden;
+  padding:0 5px;
+  border:1px solid rgba(240,25,38,.76);
+  border-radius:2px;
+  background:#050507;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.045),4px 4px 0 rgba(240,25,38,.8);
+  text-decoration:none;
+  transition:border-color .22s ease,box-shadow .22s ease;
+}
+#my-works .yararara-frame-top,
+#my-works .yararara-frame-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  min-width:0;
+  padding:4px 2px;
+  color:#f1e9e9;
+  font:800 .54rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+#my-works .yararara-frame-top{border-bottom:1px solid rgba(240,25,38,.34)}
+#my-works .yararara-frame-top span:first-child{color:var(--yr-red)}
+#my-works .yararara-frame-top span:last-child{opacity:.72;font-size:.91em}
+#my-works .yararara-poster-frame img{
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  display:block;
+  aspect-ratio:16/9!important;
+  object-fit:cover;
+  border-radius:0!important;
+  filter:saturate(.96) contrast(1.02);
+  transform:scale(1);
+  transition:filter .24s ease,transform .35s cubic-bezier(.2,.7,.2,1)!important;
+}
+#my-works .yararara-frame-bottom{
+  border-top:1px solid rgba(240,25,38,.34);
+  color:rgba(245,237,237,.72);
+  letter-spacing:.09em;
+}
+#my-works .yararara-frame-bottom span:first-child{color:#fff}
+#my-works .yararara-frame-bottom i{color:var(--yr-red);font-style:normal;padding:0 2px}
+#my-works .yararara-project:hover .yararara-poster-frame{
+  border-color:var(--yr-hot);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.07),4px 4px 0 var(--yr-red),0 0 19px rgba(240,25,38,.10);
+}
+#my-works .yararara-project:hover .yararara-poster-frame img{filter:saturate(1.06) contrast(1.04);transform:scale(1.012)}
+#my-works .yararara-info{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  min-width:0;
+  padding:clamp(7px,1.3vw,15px) clamp(8px,1.6vw,17px) clamp(7px,1.3vw,14px) 0!important;
+}
+#my-works .yararara-kicker{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 10px;
+  color:#ff525b;
+  font:800 .63rem/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing:.17em;
+}
+#my-works .yararara-signal-dot{
+  width:7px;height:7px;flex:0 0 7px;
+  border-radius:50%;
+  background:var(--yr-red);
+  box-shadow:0 0 0 3px rgba(240,25,38,.13);
+}
+#my-works .yararara-kicker-divider{color:rgba(255,255,255,.3)}
+#my-works .yararara-title{
+  position:relative;
+  width:fit-content;
+  max-width:100%;
+  color:#f7f3f1!important;
+  font:900 clamp(1.35rem,2.45vw,2.05rem)/1.12 system-ui,"Noto Sans JP",sans-serif!important;
+  letter-spacing:-.045em;
+  overflow-wrap:anywhere;
+  text-decoration:none;
+  text-shadow:1px 0 rgba(240,25,38,.3);
+  transition:color .2s ease,text-shadow .2s ease!important;
+}
+#my-works .yararara-title::after{
+  content:"";
+  display:block;
+  width:38%;height:3px;
+  margin-top:9px;
+  background:var(--yr-red);
+  transform-origin:left;
+  transition:width .22s ease;
+}
+#my-works .yararara-title:hover{color:#fff!important;text-shadow:2px 0 rgba(240,25,38,.55),-1px 0 rgba(255,255,255,.08)}
+#my-works .yararara-project:hover .yararara-title::after{width:68%}
+#my-works .yararara-producer{
+  margin:8px 0 0!important;
+  color:rgba(242,237,237,.63)!important;
+  font-size:.82rem!important;
+  letter-spacing:.025em;
+}
+#my-works .yararara-producer span{color:var(--yr-red);padding:0 3px}
+#my-works .yararara-language-badges{margin:12px 0 0!important}
+#my-works .yararara-language-badges .subtitle-language-badge{
+  border:1px solid rgba(240,25,38,.56)!important;
+  border-radius:2px!important;
+  background:rgba(240,25,38,.075)!important;
+  color:#ff858b!important;
+  box-shadow:inset 3px 0 0 var(--yr-red);
+  font-size:.62rem!important;
+  letter-spacing:.12em!important;
+  padding:6px 9px 6px 12px!important;
+}
+#my-works .yararara-action-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  width:100%;
+  margin-top:15px;
+  flex-wrap:wrap;
+}
+#my-works .yararara-watch-button{
+  margin-top:0!important;
+  border-color:var(--yr-red)!important;
+  border-radius:2px!important;
+  color:#f8f4f4!important;
+  background:rgba(240,25,38,.065)!important;
+  box-shadow:3px 3px 0 rgba(240,25,38,.82)!important;
+  letter-spacing:.13em!important;
+}
+#my-works .yararara-watch-button>span:first-child{color:#ff4650!important}
+#my-works .yararara-watch-button:hover{
+  transform:translate(-1px,-1px)!important;
+  background:rgba(240,25,38,.14)!important;
+  box-shadow:4px 4px 0 rgba(240,25,38,.82),0 0 16px rgba(240,25,38,.11)!important;
+}
+#my-works .yararara-lyric-mark{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:3px;
+  margin-left:auto;
+  text-align:right;
+  color:#f4eded;
+}
+#my-works .yararara-lyric-mark span{
+  color:rgba(255,74,83,.9);
+  font:800 .95rem/1.15 system-ui,"Noto Sans JP",sans-serif;
+  letter-spacing:.04em;
+}
+#my-works .yararara-lyric-mark small{
+  color:rgba(245,237,237,.42);
+  font:700 .52rem/1.2 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing:.13em;
+}
+#my-works .yararara-project a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+@media(max-width:640px){
+  #my-works .yararara-project{grid-template-columns:minmax(0,1fr);gap:12px;padding:10px!important}
+  #my-works .yararara-poster-frame{max-width:none}
+  #my-works .yararara-info{padding:5px 5px 7px!important}
+  #my-works .yararara-kicker{margin-bottom:8px}
+  #my-works .yararara-title{font-size:clamp(1.35rem,6.1vw,1.8rem)!important}
+  #my-works .yararara-action-row{margin-top:12px}
+}
+@media(prefers-reduced-motion:reduce){
+  #my-works .yararara-project,
+  #my-works .yararara-poster-frame,
+  #my-works .yararara-poster-frame img,
+  #my-works .yararara-title::after,
+  #my-works .yararara-title,
+  #my-works .yararara-watch-button{transition:none!important;animation:none!important}
+}
+</style>
+<style id="mutation-horizon-centered-sea-glass-v2">
+/* MUTATION / HORIZON — let the MV lead; reflection and information share one sea-glass field. */
+#my-works .mutation-horizon-card {
+  --mut-ink: #233f47;
+  --mut-ink-soft: #587d82;
+  --mut-sea: #bfd8d5;
+  --mut-sea-light: #e4efeb;
+  --mut-line: rgba(83, 127, 132, .28);
+  position: relative;
+  isolation: isolate;
+  grid-column: 1 / -1;
+  display: flex !important;
+  flex-direction: column;
+  gap: 0 !important;
+  min-width: 0;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(134, 174, 173, .6) !important;
+  border-radius: 16px !important;
+  color: var(--mut-ink) !important;
+  background: #dcebe7 !important;
+  box-shadow: 0 8px 22px rgba(29, 58, 64, .12), inset 0 0 0 1px rgba(255,255,255,.64) !important;
+  transition: transform .24s ease, border-color .24s ease, box-shadow .24s ease !important;
+}
+#my-works .mutation-horizon-card::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent 0 31px, rgba(63, 115, 119, .025) 32px 33px);
+}
+#my-works .mutation-horizon-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(99, 157, 158, .9) !important;
+  box-shadow: 0 12px 30px rgba(29, 58, 64, .16), 0 4px 0 rgba(132, 177, 174, .24), inset 0 0 0 1px rgba(255,255,255,.72) !important;
+}
 
+/* The thumbnail is centered and enlarged; its lower edge meets the waterline. */
+#my-works .mutation-horizon-visual {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #dbe9e6;
+}
+#my-works .mutation-horizon-sky {
+  position: relative;
+  z-index: 1;
+  padding: clamp(16px, 2.4vw, 27px) clamp(13px, 2.8vw, 30px) 0;
+  background:
+    radial-gradient(ellipse at 50% -4%, rgba(255,255,255,.84), transparent 60%),
+    radial-gradient(ellipse at 8% 58%, rgba(255,255,255,.28), transparent 42%),
+    linear-gradient(180deg, #e7efeb 0%, #dbe9e5 72%, #cbdedb 100%);
+}
+#my-works .mutation-horizon-visual-meta {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: #63878b;
+  font: 800 clamp(.52rem, .75vw, .66rem)/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+#my-works .mutation-horizon-visual-meta span { display: inline-flex; align-items: center; gap: 7px; min-width: 0; }
+#my-works .mutation-horizon-visual-meta b { color: #9ab8b5; font-weight: 800; }
+#my-works .mutation-meta-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #719f9e;
+  box-shadow: 0 0 0 3px rgba(113,159,158,.13);
+}
+#my-works .mutation-horizon-thumb {
+  position: relative;
+  display: block !important;
+  width: min(74%, 850px);
+  aspect-ratio: 16 / 9;
+  margin: clamp(12px, 2vw, 21px) auto 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.94);
+  border-radius: 7px 7px 0 0;
+  background: #9cbfbe;
+  box-shadow: 0 0 0 1px rgba(98,145,147,.35), 0 8px 23px rgba(58,100,103,.19);
+  text-decoration: none !important;
+  isolation: isolate;
+}
+#my-works .mutation-horizon-thumb::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(20,49,56,.03) 52%, rgba(20,49,56,.42) 100%);
+  opacity: .84;
+}
+#my-works .mutation-horizon-thumb > img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+  object-fit: cover;
+  object-position: center 48%;
+  filter: saturate(.86) contrast(.98);
+  transform: scale(1);
+  transition: transform .42s cubic-bezier(.2,.7,.2,1), filter .42s ease !important;
+}
+#my-works .mutation-thumb-corner {
+  position: absolute;
+  z-index: 3;
+  bottom: 10px;
+  color: rgba(249,255,251,.95);
+  font: 800 clamp(.48rem, .7vw, .6rem)/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .14em;
+  text-shadow: 0 1px 7px rgba(14,42,48,.38);
+  pointer-events: none;
+}
+#my-works .mutation-thumb-corner-left { left: 12px; }
+#my-works .mutation-thumb-corner-right { right: 12px; }
+#my-works .mutation-thumb-corner i { color: #c5e2dc; font-style: normal; padding-left: 3px; }
+
+/* Sea-glass water below the image; a mirrored copy fades into this strip. */
+#my-works .mutation-horizon-water {
+  position: relative;
+  z-index: 2;
+  height: clamp(65px, 8.2vw, 104px);
+  margin-top: 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(248,255,251,.85);
+  background:
+    linear-gradient(180deg, rgba(201,224,220,.48), rgba(190,216,213,.8) 52%, #c3dcda 100%),
+    #c5dcda;
+  box-shadow: inset 0 7px 14px rgba(255,255,255,.18);
+}
+#my-works .mutation-horizon-reflection {
+  position: absolute;
+  z-index: 0;
+  top: -1px;
+  left: 50%;
+  display: block;
+  width: min(calc(74% - clamp(19px, 4.14vw, 44.4px)), 850px) !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center 48%;
+  box-sizing: border-box;
+  transform: translateX(-50%) scaleY(-1);
+  transform-origin: center center;
+  opacity: .43;
+  filter: saturate(.62) brightness(1.08) contrast(.94);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.78) 0%, rgba(0,0,0,.48) 36%, rgba(0,0,0,.16) 78%, transparent 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.78) 0%, rgba(0,0,0,.48) 36%, rgba(0,0,0,.16) 78%, transparent 100%);
+  pointer-events: none;
+}
+#my-works .mutation-horizon-water::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(232,244,239,.14), rgba(193,219,216,.42)),
+    repeating-linear-gradient(178deg, transparent 0 10px, rgba(248,255,251,.2) 11px, transparent 12px 20px);
+}
+#my-works .mutation-horizon-water::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(255,255,255,.22), transparent 17% 80%, rgba(255,255,255,.16));
+}
+#my-works .mutation-waterline {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.96) 14%, rgba(103,156,157,.46) 50%, rgba(255,255,255,.96) 86%, transparent);
+  box-shadow: 0 1px 8px rgba(100,158,157,.24);
+}
+#my-works .mutation-water-shimmer {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  height: 1px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.6);
+  box-shadow: 0 0 7px rgba(255,255,255,.46);
+  pointer-events: none;
+}
+#my-works .mutation-water-shimmer-one { width: 10%; left: 12%; top: 40%; opacity: .56; }
+#my-works .mutation-water-shimmer-two { width: 6%; right: 15%; top: 67%; opacity: .42; }
+
+/* The information panel continues the same sea-glass surface across the full card. */
+#my-works .mutation-horizon-info {
+  position: relative;
+  z-index: 3;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, .42fr);
+  align-items: center;
+  column-gap: clamp(22px, 4vw, 52px);
+  row-gap: 22px;
+  min-width: 0;
+  padding: clamp(22px, 3.5vw, 40px) clamp(20px, 5.2vw, 64px) clamp(24px, 3.8vw, 42px) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: var(--mut-ink) !important;
+  background:
+    radial-gradient(ellipse at 8% 4%, rgba(255,255,255,.47), transparent 42%),
+    linear-gradient(135deg, #e1eeea 0%, #d9e9e5 54%, #d0e3df 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.78), inset 0 -1px 0 rgba(120,168,164,.12);
+}
+#my-works .mutation-horizon-copy { min-width: 0; }
+#my-works .mutation-horizon-kicker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 9px;
+  color: #61858a;
+  font: 800 .62rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+#my-works .mutation-horizon-kicker-line { display: inline-block; width: 19px; height: 1px; flex: 0 0 19px; background: #679a9b; }
+#my-works .mutation-horizon-kicker-slash { color: #9dbcb9; }
+#my-works .mutation-horizon-title {
+  display: flex !important;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  margin: 0;
+  color: #213e47 !important;
+  font: 760 clamp(1.42rem, 2.6vw, 2.05rem)/1.13 "Noto Sans JP", "Yu Gothic", Meiryo, system-ui, sans-serif !important;
+  letter-spacing: .025em;
+  text-decoration: none !important;
+  overflow-wrap: anywhere;
+}
+#my-works .mutation-horizon-title:hover { color: #3e7379 !important; }
+#my-works .mutation-horizon-title-jp { display: inline-block; }
+#my-works .mutation-horizon-title-en {
+  display: inline-block;
+  color: #73989a;
+  font: 800 .68rem/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .2em;
+}
+#my-works .mutation-horizon-vocal {
+  margin: 8px 0 0;
+  color: #52777e;
+  font: 700 .67rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .1em;
+}
+#my-works .mutation-horizon-vocal span { color: #a0beba; padding: 0 4px; }
+#my-works .mutation-horizon-producer {
+  margin: 3px 0 0 !important;
+  color: #66858a !important;
+  font-size: .75rem !important;
+  line-height: 1.45 !important;
+}
+#my-works .mutation-horizon-producer span { color: #97b5b4; padding: 0 3px; }
+#my-works .mutation-horizon-lyric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  margin: 16px 0 0;
+  padding: 10px 14px 11px 15px;
+  border-left: 2px solid #83acab;
+  border-radius: 0 7px 7px 0;
+  background: linear-gradient(100deg, rgba(255,255,255,.48), rgba(255,255,255,.12));
+}
+#my-works .mutation-horizon-lyric-jp {
+  color: #2b5057;
+  font: 700 .88rem/1.4 "Noto Sans JP", "Yu Gothic", Meiryo, system-ui, sans-serif;
+  letter-spacing: .015em;
+}
+#my-works .mutation-horizon-lyric-en { color: #67858a; font-size: .72rem; line-height: 1.45; }
+
+/* Make the MV action the strongest control in the card. */
+#my-works .mutation-horizon-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  min-width: 0;
+  gap: 14px;
+}
+#my-works .mutation-horizon-watch-button {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 13px;
+  width: 100%;
+  min-width: 0;
+  min-height: 68px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 15px 17px !important;
+  border: 1px solid #244e57 !important;
+  border-radius: 9px !important;
+  color: #f4fbf8 !important;
+  background: linear-gradient(135deg, #254f58 0%, #35676d 100%) !important;
+  box-shadow: 5px 5px 0 #a2c6c1, 0 9px 18px rgba(46,91,95,.16) !important;
+  font: 800 .85rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  letter-spacing: .09em;
+  text-align: left;
+  text-decoration: none !important;
+  transition: transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease !important;
+}
+#my-works .mutation-watch-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(244,251,248,.38);
+  border-radius: 50%;
+  color: #effbf7;
+  background: rgba(255,255,255,.1);
+  font-size: .78rem;
+  padding-left: 2px;
+}
+#my-works .mutation-watch-copy { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+#my-works .mutation-watch-copy small { color: rgba(229,246,240,.72); font: 700 .54rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .14em; }
+#my-works .mutation-watch-copy strong { color: #f4fbf8; font: 900 .86rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .09em; }
+#my-works .mutation-watch-arrow { margin-left: auto; color: #c6e5df; font-size: 1.2rem; transition: transform .22s ease; }
+#my-works .mutation-horizon-watch-button:hover {
+  transform: translate(1px, 1px) !important;
+  border-color: #183f47 !important;
+  background: linear-gradient(135deg, #1e454e 0%, #2c5a61 100%) !important;
+  box-shadow: 4px 4px 0 #91b9b5, 0 7px 16px rgba(46,91,95,.14) !important;
+}
+#my-works .mutation-horizon-watch-button:hover .mutation-watch-arrow { transform: translate(2px,-2px); }
+#my-works .mutation-horizon-badges { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; }
+#my-works .mutation-horizon-badges .subtitle-language-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(91,139,143,.4);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #557a7f;
+  background: rgba(255,255,255,.32);
+  font: 800 .59rem/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .09em;
+}
+#my-works .mutation-horizon-action-note {
+  margin: 0;
+  color: #789a9c;
+  font: 800 .54rem/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: .12em;
+}
+#my-works .mutation-horizon-thumb:focus-visible,
+#my-works .mutation-horizon-title:focus-visible,
+#my-works .mutation-horizon-watch-button:focus-visible {
+  outline: 3px solid #3c7279;
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  #my-works .mutation-horizon-thumb { width: min(82%, 760px); }
+  #my-works .mutation-horizon-reflection { width: min(calc(82% - clamp(20px, 4.6vw, 31px)), 760px) !important; }
+  #my-works .mutation-horizon-info {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 22px;
+    padding: 24px clamp(18px, 5vw, 34px) 28px !important;
+  }
+  #my-works .mutation-horizon-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 18px;
+    row-gap: 12px;
+  }
+  #my-works .mutation-horizon-watch-button { max-width: 420px; }
+  #my-works .mutation-horizon-badges { align-content: center; justify-content: flex-end; }
+  #my-works .mutation-horizon-action-note { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  #my-works .mutation-horizon-card { border-radius: 12px !important; }
+  #my-works .mutation-horizon-sky { padding: 15px 10px 0; }
+  #my-works .mutation-horizon-visual-meta { font-size: .48rem; letter-spacing: .08em; }
+  #my-works .mutation-horizon-thumb { width: 94%; margin-top: 13px; border-radius: 5px 5px 0 0; }
+  #my-works .mutation-horizon-reflection { width: calc(94% - 18.8px) !important; }
+  #my-works .mutation-thumb-corner { bottom: 6px; font-size: .45rem; letter-spacing: .06em; }
+  #my-works .mutation-thumb-corner-left { left: 7px; }
+  #my-works .mutation-thumb-corner-right { right: 7px; }
+  #my-works .mutation-horizon-water { height: 58px; }
+  #my-works .mutation-horizon-info { padding: 21px 16px 23px !important; }
+  #my-works .mutation-horizon-title { font-size: 1.45rem !important; }
+  #my-works .mutation-horizon-lyric { margin-top: 13px; }
+  #my-works .mutation-horizon-lyric-jp { font-size: .83rem; }
+  #my-works .mutation-horizon-actions { display: flex; align-items: stretch; gap: 13px; }
+  #my-works .mutation-horizon-watch-button { max-width: none; min-height: 64px; }
+  #my-works .mutation-horizon-badges { justify-content: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #my-works .mutation-horizon-card,
+  #my-works .mutation-horizon-thumb > img,
+  #my-works .mutation-horizon-watch-button,
+  #my-works .mutation-watch-arrow {
+    transition: none !important;
+    transform: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+
+<style id="mutation-horizon-clarity-and-balance-fix">
+/* MUTATION clarity fix: override stale layout and reveal-state haze for this card only. */
+#my-works .mutation-horizon-card.reveal {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  transition: border-color .24s ease, box-shadow .24s ease, transform .24s ease !important;
+}
+#my-works .mutation-horizon-card.reveal:hover {
+  transform: translateY(-2px) !important;
+}
+#my-works .mutation-horizon-card,
+#my-works .mutation-horizon-card .mutation-horizon-visual,
+#my-works .mutation-horizon-card .mutation-horizon-sky,
+#my-works .mutation-horizon-card .mutation-horizon-thumb,
+#my-works .mutation-horizon-card .mutation-horizon-info,
+#my-works .mutation-horizon-card .mutation-horizon-copy,
+#my-works .mutation-horizon-card .mutation-horizon-kicker,
+#my-works .mutation-horizon-card .mutation-horizon-title,
+#my-works .mutation-horizon-card .mutation-horizon-vocal,
+#my-works .mutation-horizon-card .mutation-horizon-producer,
+#my-works .mutation-horizon-card .mutation-horizon-lyric,
+#my-works .mutation-horizon-card .mutation-horizon-actions,
+#my-works .mutation-horizon-card .mutation-horizon-watch-button,
+#my-works .mutation-horizon-card .mutation-horizon-badges,
+#my-works .mutation-horizon-card .mutation-horizon-action-note {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+#my-works .mutation-horizon-thumb > img {
+  filter: saturate(.94) contrast(1.02) !important;
+  image-rendering: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  #my-works .mutation-horizon-card.reveal,
+  #my-works .mutation-horizon-card.reveal:hover,
+  #my-works .mutation-horizon-thumb > img,
+  #my-works .mutation-horizon-watch-button,
+  #my-works .mutation-watch-arrow {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+</style>
+<style id="mutation-stop-inherited-backdrop-blur">
+/* The generic .project::before adds backdrop-filter: blur(7px) for its tiny MV badge.
+   Mutation repurposes ::before as a full-card scanline overlay, so explicitly reset
+   that inherited glass effect here or it blurs every pixel inside this card. */
+#my-works .mutation-horizon-card::before {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+}
+</style>
+
+<script id="packpm-card-archive-toggle-script">
+(() => {
+  "use strict";
+  const section = document.getElementById("my-works");
+  const button = document.getElementById("packpmArchiveToggle");
+  const featured = document.getElementById("packpmFeaturedWork");
+  const grid = document.getElementById("packpmProjectGrid");
+  const loader = document.getElementById("packpmArchiveLoader");
+  const loaderLabel = document.getElementById("packpmArchiveLoaderLabel");
+  const loaderPct = document.getElementById("packpmArchiveLoaderPct");
+  const buttonTitle = document.getElementById("packpmArchiveButtonTitle");
+  const buttonSub = document.getElementById("packpmArchiveButtonSub");
+  if (!section || !button || !featured || !grid || !loader) return;
+
+  const cardCount = 1 + [...grid.children].filter((node) => node.tagName !== "SCRIPT").length;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let expanded = false;
+  let busy = false;
+  buttonSub.innerHTML = `${cardCount} CARDS AVAILABLE <b>—</b> OPEN THE COLLECTION`;
+  const wait = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+
+  button.addEventListener("click", async () => {
+    if (busy) return;
+    busy = true;
+    const opening = !expanded;
+    button.disabled = true;
+    button.setAttribute("aria-busy", "true");
+    loader.hidden = false;
+    loader.classList.toggle("is-closing", !opening);
+    loaderLabel.textContent = opening ? "MOUNTING PROJECT FILES" : "PACKING PROJECT FILES";
+    loaderPct.textContent = opening ? "00%" : "100%";
+    loader.setAttribute("aria-label", opening ? "Opening the project archive" : "Collapsing the project archive");
+    if (opening) {
+      /* Keep the heavy cards out of layout and paint until the short archive intro ends. */
+      featured.hidden = true;
+      grid.hidden = true;
+    }
+
+    const duration = reduceMotion.matches ? 100 : (opening ? 760 : 420);
+    const startedAt = performance.now();
+    const updatePct = () => {
+      const progress = Math.min(100, Math.round(((performance.now() - startedAt) / duration) * 100));
+      loaderPct.textContent = `${opening ? progress : 100 - progress}`.padStart(2, "0") + "%";
+      if (progress < 100) window.requestAnimationFrame(updatePct);
+    };
+    window.requestAnimationFrame(updatePct);
+    await wait(duration);
+
+    if (opening) {
+      featured.hidden = false;
+      grid.hidden = false;
+      expanded = true;
+      button.setAttribute("aria-expanded", "true");
+      buttonTitle.textContent = "Collapse card archive";
+      buttonSub.innerHTML = `${cardCount} CARDS LOADED <b>—</b> CLICK TO FOLD THE COLLECTION`;
+      button.querySelector(".packpm-archive-open-mark span").textContent = "CLOSE";
+      button.querySelector(".packpm-archive-open-mark b").textContent = "↙";
+    } else {
+      featured.hidden = true;
+      grid.hidden = true;
+      expanded = false;
+      button.setAttribute("aria-expanded", "false");
+      buttonTitle.textContent = "View my card archive";
+      buttonSub.innerHTML = `${cardCount} CARDS AVAILABLE <b>—</b> OPEN THE COLLECTION`;
+      button.querySelector(".packpm-archive-open-mark span").textContent = "OPEN";
+      button.querySelector(".packpm-archive-open-mark b").textContent = "↗";
+    }
+
+    loader.hidden = true;
+    loader.classList.remove("is-closing");
+    button.disabled = false;
+    button.removeAttribute("aria-busy");
+    busy = false;
+  });
+})();
+</script>
 
 </body>
 </html>
